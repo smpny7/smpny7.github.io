@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Minecraft on 平和主義なエンジニア</title><link>https://example.com/categories/minecraft/</link><description>Recent content in Minecraft on 平和主義なエンジニア</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 23 Apr 2021 09:19:41 +0900</lastBuildDate><atom:link href="https://example.com/categories/minecraft/index.xml" rel="self" type="application/rss+xml"/><item><title>アプリ版 Minecraft サーバ制御ツールの制作</title><link>https://example.com/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://example.com/p/jokura-app/</guid><description>やっぱアプリ化、したいよね！！ Webベースのツールを作ると、そのアプリ版を作りたくなる、ここまでがテンプレですよね。
+今回は、ストアにリリースが手軽な Android アプリを制作したいと思います。
+Android Studio 使いやすい&amp;hellip; この時、プログラミングというものに触れてまだ半年もたっていませんでした。 なので初心者でも使いやすい Visual Studio Code を当時愛用していました。（今でも時々使っています）
+しかし今回アプリ開発というのもあり、デバッグのしやすいエディタを使うことにしました。 まぁもちろん Android Studio 一択になるわけですが。 JetBrains 社が開発したソフトウェアを初めて触ったのですが、 これがまた使いやすいソフトウェアで感動したのを覚えています。 （私が JetBrains 教徒になる話はまたいつか）
+Android Studio のデザイン画面
+さぁ開発だ！ の前に、デザインを作っていきます。
+スマホによってサイズが異なるので、対応できるデザインを意識して作成しました。
+Adobe XD
+コーディング すべしぬべし 今回の技術的な部分です。サーバの様子を取得するのとリクエストを送る機能をつけます！（大したことはしてませんが）
+スプラッシュ画面（情クラ！アプリ） ホーム（情クラ！アプリ）
+まず、オンラインプレイヤーの取得部分です。 ホーム画面の上半分には、オンラインのメンバーが一覧でわかるようにしています。
+今回、Minecraftの画像を取得するAPIを自作しました。 そこからAndroidに画像を取得するようにしています。 APIからの画像取得には、Picasso というライブラリを使用しました。
+Picasso（公式サイト） https://square.github.io/picasso/
+具体的には、以下のような書き方でさくっとインターネットから画像取得ができちゃうものです！
+Picasso.get() .load(&amp;#34;https://jokura.net/api/getSkin?id=minecraft_id&amp;#34;) // 今回作成したAPI .into(face1); face1というのは ImageView の id で、APIから取得した画像を流し込んでくれます！
+また、プレイヤーがオンラインかどうかは、用意したAPIから返ってきた情報を元に表示を切り替えます。 APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利なライブラリがありますが、 この時（約2年前）は初心者だったこともあり、Java通信（HttpUrlConnection）で実装しました(笑)</description></item><item><title>情クラ！: Minecraftサーバ リモート制御ツールの制作</title><link>https://example.com/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://example.com/p/jokura-web/</guid><description>Minecraft っていいよね Minecraft って、複数人でプレイすると沼ですよね。
+今や大陸内には高速道路が広がり、複数の大陸間には水上橋が建築されています。（やばすぎ）
+水上橋
+ある日、Minecraft のサーバ管理者になった 最初はローカルでサーバを建ててプレイしていましたが、 プレイヤーがどんどん増えてきたため、Google Cloud Platform（GCP）でサーバを立てることにしました。
+これが、「情クラ！」という Minecraft サーバの誕生のきっかけです。
+いつどこでも Minecraft サーバで遊べる環境が完成しましたが、しかし1つ大きな問題が発生しました。 Google Cloud Platform（GCP）が、まだ365日無料トライアルだった頃の話です。 当時は n1-standard-1 プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）を使用していたため、 大人数が長時間プレイしていると動作がもっさりしてくるのです。
+GCPの料金（N1 標準マシンタイプ）
+サーバ管理者だった私は、毎度 SSH 接続してサーバを再起動していました。 ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。
+まずは完成品をどうぞ トップページ（情クラ！） サーバ状況確認ページ（情クラ！）
+最初に実装したのは、「ホーム」のお知らせ機能と「サーバ状況」の機能です。 モバイルファーストのデザインですが、レスポンシブ対応させています。
+ページ 機能 ホーム プレイヤーが自由に建築報告を投稿することができます サーバ状況 サーバの起動・停止状況やオンラインメンバーを確認できます ここで、少し技術的な話をしましょう 一応そういうブログ（ ？）なので、今回 Minecraft サーバと連携したノウハウについて記述しておきます。</description></item></channel></rss>

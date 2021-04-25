@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Node.js on 平和主義なエンジニア</title><link>https://example.com/categories/node.js/</link><description>Recent content in Node.js on 平和主義なエンジニア</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://example.com/categories/node.js/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot（wbot）の開発談</title><link>https://example.com/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://example.com/p/wbot/</guid><description>察してください、ネタ回です 正直にいうと、この草Botを作った理由、一切記憶にないんです(笑)
+でも盛り上がって、つくることになった 草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。
+草Botくん
+実はこの草Bot、今はおもちゃになってます。 （もはやBotの表示名も変えられてます&amp;hellip;）
+敗因: 誰でもプルリクOK＆自動デプロイ仕様にしてしまった サーバメンバーがこのBotに、どんどん単語を登録していきました(笑)
+せっかくなので、自分のお気に入り語録を紹介しましょう。
+これ何だかわかりますか？
+お気に入り語録 その1
+これをみてピンときた人はさすがです！
+実はこれ
+これですね！いつものやつです。
+実は以前、Linuxの日本語文字化けが起こっていた時のものなのですが、
+伏字にしているのに、隠せれてないwwww
+ということで追加されました(笑)
+もう一つのお気に入りはこれです。
+「腹痛」に反応します
+「腹痛」という単語を聞くと、よくわからない係数を測ってくれ、それに応じてアナウンスが流れます。
+元ネタはこちら ニコニコ大百科（ドミネーター）
+しかもこれは、係数に応じてメッセージが変わります。
+技術的なコト Node.js で作りましたが、Bot はすぐできるので記事にするほどでもないかと思います。
+今回、この Bot は Herokuにデプロイしています。 GitHubリポジトリとHerokuAppを連携させていると、GitHubのmainブランチにプッシュされた時に自動でデプロイされるのでとても便利です。
+ただ今回、気をつける点が2つありました。
+Procfile を作成すること プロセスタイプを worker に設定すること Procfile を作成すること Procfile とは、デプロイ時にどのようなコマンドで run（開始）するかを記述したものです。
+書き方は以下の通りです。
+(processType) : (command) 今回の場合、以下の記述が必要です。
+worker: node index.</description></item><item><title>情クラ！: Minecraftサーバ リモート制御ツールの制作</title><link>https://example.com/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://example.com/p/jokura-web/</guid><description>Minecraft っていいよね Minecraft って、複数人でプレイすると沼ですよね。
+今や大陸内には高速道路が広がり、複数の大陸間には水上橋が建築されています。（やばすぎ）
+水上橋
+ある日、Minecraft のサーバ管理者になった 最初はローカルでサーバを建ててプレイしていましたが、 プレイヤーがどんどん増えてきたため、Google Cloud Platform（GCP）でサーバを立てることにしました。
+これが、「情クラ！」という Minecraft サーバの誕生のきっかけです。
+いつどこでも Minecraft サーバで遊べる環境が完成しましたが、しかし1つ大きな問題が発生しました。 Google Cloud Platform（GCP）が、まだ365日無料トライアルだった頃の話です。 当時は n1-standard-1 プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）を使用していたため、 大人数が長時間プレイしていると動作がもっさりしてくるのです。
+GCPの料金（N1 標準マシンタイプ）
+サーバ管理者だった私は、毎度 SSH 接続してサーバを再起動していました。 ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。
+まずは完成品をどうぞ トップページ（情クラ！） サーバ状況確認ページ（情クラ！）
+最初に実装したのは、「ホーム」のお知らせ機能と「サーバ状況」の機能です。 モバイルファーストのデザインですが、レスポンシブ対応させています。
+ページ 機能 ホーム プレイヤーが自由に建築報告を投稿することができます サーバ状況 サーバの起動・停止状況やオンラインメンバーを確認できます ここで、少し技術的な話をしましょう 一応そういうブログ（ ？）なので、今回 Minecraft サーバと連携したノウハウについて記述しておきます。</description></item></channel></rss>
