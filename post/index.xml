@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 平和主義なエンジニア</title><link>https://example.com/post/</link><description>Recent content in Posts on 平和主義なエンジニア</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot（wbot）の開発談</title><link>https://example.com/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://example.com/p/wbot/</guid><description>察してください、ネタ回です 正直にいうと、この草Botを作った理由、一切記憶にないんです(笑)
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ ( coalabo. )</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ ( coalabo. )</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot（wbot）の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>察してください、ネタ回です 正直にいうと、この草Botを作った理由、一切記憶にないんです(笑)
 でも盛り上がって、つくることになった 草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。
 草Botくん
 実はこの草Bot、今はおもちゃになってます。 （もはやBotの表示名も変えられてます&amp;hellip;）
@@ -23,7 +23,7 @@
 Procfile を作成すること プロセスタイプを worker に設定すること Procfile を作成すること Procfile とは、デプロイ時にどのようなコマンドで run（開始）するかを記述したものです。
 書き方は以下の通りです。
 (processType) : (command) 今回の場合、以下の記述が必要です。
-worker: node index.</description></item><item><title>アプリ版 Minecraft サーバ制御ツールの制作</title><link>https://example.com/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://example.com/p/jokura-app/</guid><description>やっぱアプリ化、したいよね！！ Webベースのツールを作ると、そのアプリ版を作りたくなる、ここまでがテンプレですよね。
+worker: node index.</description></item><item><title>アプリ版 Minecraft サーバ制御ツールの制作</title><link>https://coalabo.net/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://coalabo.net/p/jokura-app/</guid><description>やっぱアプリ化、したいよね！！ Webベースのツールを作ると、そのアプリ版を作りたくなる、ここまでがテンプレですよね。
 今回は、ストアにリリースが手軽な Android アプリを制作したいと思います。
 Android Studio 使いやすい&amp;hellip; この時、プログラミングというものに触れてまだ半年もたっていませんでした。 なので初心者でも使いやすい Visual Studio Code を当時愛用していました。（今でも時々使っています）
 しかし今回アプリ開発というのもあり、デバッグのしやすいエディタを使うことにしました。 まぁもちろん Android Studio 一択になるわけですが。 JetBrains 社が開発したソフトウェアを初めて触ったのですが、 これがまた使いやすいソフトウェアで感動したのを覚えています。 （私が JetBrains 教徒になる話はまたいつか）
@@ -38,7 +38,7 @@ Adobe XD
 Picasso（公式サイト） https://square.github.io/picasso/
 具体的には、以下のような書き方でさくっとインターネットから画像取得ができちゃうものです！
 Picasso.get() .load(&amp;#34;https://jokura.net/api/getSkin?id=minecraft_id&amp;#34;) // 今回作成したAPI .into(face1); face1というのは ImageView の id で、APIから取得した画像を流し込んでくれます！
-また、プレイヤーがオンラインかどうかは、用意したAPIから返ってきた情報を元に表示を切り替えます。 APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利なライブラリがありますが、 この時（約2年前）は初心者だったこともあり、Java通信（HttpUrlConnection）で実装しました(笑)</description></item><item><title>情クラ！: Minecraftサーバ リモート制御ツールの制作</title><link>https://example.com/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://example.com/p/jokura-web/</guid><description>Minecraft っていいよね Minecraft って、複数人でプレイすると沼ですよね。
+また、プレイヤーがオンラインかどうかは、用意したAPIから返ってきた情報を元に表示を切り替えます。 APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利なライブラリがありますが、 この時（約2年前）は初心者だったこともあり、Java通信（HttpUrlConnection）で実装しました(笑)</description></item><item><title>情クラ！: Minecraftサーバ リモート制御ツールの制作</title><link>https://coalabo.net/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://coalabo.net/p/jokura-web/</guid><description>Minecraft っていいよね Minecraft って、複数人でプレイすると沼ですよね。
 今や大陸内には高速道路が広がり、複数の大陸間には水上橋が建築されています。（やばすぎ）
 水上橋
 ある日、Minecraft のサーバ管理者になった 最初はローカルでサーバを建ててプレイしていましたが、 プレイヤーがどんどん増えてきたため、Google Cloud Platform（GCP）でサーバを立てることにしました。

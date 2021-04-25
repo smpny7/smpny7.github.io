@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>平和主義なエンジニア</title><link>https://example.com/</link><description>Recent content on 平和主義なエンジニア</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot（wbot）の開発談</title><link>https://example.com/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://example.com/p/wbot/</guid><description>&lt;img src="https://example.com/p/wbot/cover.jpg" alt="Featured image of post 草bot（wbot）の開発談" />&lt;h2 id="察してくださいネタ回です">察してください、ネタ回です&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ ( coalabo. )</title><link>https://coalabo.net/</link><description>Recent content on コアラボ ( coalabo. )</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot（wbot）の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>&lt;img src="https://coalabo.net/p/wbot/cover.jpg" alt="Featured image of post 草bot（wbot）の開発談" />&lt;h2 id="察してくださいネタ回です">察してください、ネタ回です&lt;/h2>
 &lt;p>正直にいうと、この草Botを作った理由、一切記憶にないんです(笑)&lt;/p>
 &lt;h2 id="でも盛り上がってつくることになった">でも盛り上がって、つくることになった&lt;/h2>
 &lt;p>草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 903; flex-basis: 2168px">
-&lt;a href="https://example.com/p/wbot/image_1.jpg" data-size="1220x135">&lt;img src="https://example.com/p/wbot/image_1.jpg"
-srcset="https://example.com/p/wbot/image_1_hua42d7c6e39ca6a89c480d0a8bc87b175_4479_480x0_resize_q75_box.jpg 480w, https://example.com/p/wbot/image_1_hua42d7c6e39ca6a89c480d0a8bc87b175_4479_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/wbot/image_1.jpg" data-size="1220x135">&lt;img src="https://coalabo.net/p/wbot/image_1.jpg"
+srcset="https://coalabo.net/p/wbot/image_1_hua42d7c6e39ca6a89c480d0a8bc87b175_4479_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_1_hua42d7c6e39ca6a89c480d0a8bc87b175_4479_1024x0_resize_q75_box.jpg 1024w"
 width="1220"
 height="135"
 loading="lazy"
@@ -20,8 +20,8 @@ alt="草Botくん">
 &lt;hr>
 &lt;p>これ何だかわかりますか？&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 679; flex-basis: 1631px">
-&lt;a href="https://example.com/p/wbot/image_2.jpg" data-size="2434x358">&lt;img src="https://example.com/p/wbot/image_2.jpg"
-srcset="https://example.com/p/wbot/image_2_huec60b15508aa9ed45bed771f47ab017f_17049_480x0_resize_q75_box.jpg 480w, https://example.com/p/wbot/image_2_huec60b15508aa9ed45bed771f47ab017f_17049_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/wbot/image_2.jpg" data-size="2434x358">&lt;img src="https://coalabo.net/p/wbot/image_2.jpg"
+srcset="https://coalabo.net/p/wbot/image_2_huec60b15508aa9ed45bed771f47ab017f_17049_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_2_huec60b15508aa9ed45bed771f47ab017f_17049_1024x0_resize_q75_box.jpg 1024w"
 width="2434"
 height="358"
 loading="lazy"
@@ -32,8 +32,8 @@ alt="お気に入り語録 その1">
 &lt;p>これをみてピンときた人はさすがです！&lt;/p>
 &lt;hr>
 &lt;p>&lt;figure style="flex-grow: 682; flex-basis: 1638px">
-&lt;a href="https://example.com/p/wbot/image_3.jpg" data-size="2430x356">&lt;img src="https://example.com/p/wbot/image_3.jpg"
-srcset="https://example.com/p/wbot/image_3_huf01c201d97539867668a8b1ff9347cca_28919_480x0_resize_q75_box.jpg 480w, https://example.com/p/wbot/image_3_huf01c201d97539867668a8b1ff9347cca_28919_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/wbot/image_3.jpg" data-size="2430x356">&lt;img src="https://coalabo.net/p/wbot/image_3.jpg"
+srcset="https://coalabo.net/p/wbot/image_3_huf01c201d97539867668a8b1ff9347cca_28919_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_3_huf01c201d97539867668a8b1ff9347cca_28919_1024x0_resize_q75_box.jpg 1024w"
 width="2430"
 height="356"
 loading="lazy"
@@ -50,8 +50,8 @@ alt="実はこれ">
 &lt;hr>
 &lt;p>もう一つのお気に入りはこれです。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 638; flex-basis: 1532px">
-&lt;a href="https://example.com/p/wbot/image_4.jpg" data-size="1220x191">&lt;img src="https://example.com/p/wbot/image_4.jpg"
-srcset="https://example.com/p/wbot/image_4_hu6bf63ff43c572037ab24cf98991b7974_7670_480x0_resize_q75_box.jpg 480w, https://example.com/p/wbot/image_4_hu6bf63ff43c572037ab24cf98991b7974_7670_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/wbot/image_4.jpg" data-size="1220x191">&lt;img src="https://coalabo.net/p/wbot/image_4.jpg"
+srcset="https://coalabo.net/p/wbot/image_4_hu6bf63ff43c572037ab24cf98991b7974_7670_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_4_hu6bf63ff43c572037ab24cf98991b7974_7670_1024x0_resize_q75_box.jpg 1024w"
 width="1220"
 height="191"
 loading="lazy"
@@ -111,7 +111,7 @@ GitHubリポジトリとHerokuAppを連携させていると、GitHubのmainブ�
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">heroku ps:scale &lt;span class="nv">worker&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="草botくんがいてくれてよかった">草botくんがいてくれてよかった&lt;/h2>
 &lt;p>なんだかんだ、やっぱりBotがいてくれると楽しいですよね。&lt;/p>
-&lt;p>次はもっと有用な Bot を作りたいと思います (笑)&lt;/p></description></item><item><title>アプリ版 Minecraft サーバ制御ツールの制作</title><link>https://example.com/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://example.com/p/jokura-app/</guid><description>&lt;img src="https://example.com/p/jokura-app/cover.jpg" alt="Featured image of post アプリ版 Minecraft サーバ制御ツールの制作" />&lt;h2 id="やっぱアプリ化したいよね">やっぱアプリ化、したいよね！！&lt;/h2>
+&lt;p>次はもっと有用な Bot を作りたいと思います (笑)&lt;/p></description></item><item><title>アプリ版 Minecraft サーバ制御ツールの制作</title><link>https://coalabo.net/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://coalabo.net/p/jokura-app/</guid><description>&lt;img src="https://coalabo.net/p/jokura-app/cover.jpg" alt="Featured image of post アプリ版 Minecraft サーバ制御ツールの制作" />&lt;h2 id="やっぱアプリ化したいよね">やっぱアプリ化、したいよね！！&lt;/h2>
 &lt;p>Webベースのツールを作ると、そのアプリ版を作りたくなる、ここまでがテンプレですよね。&lt;/p>
 &lt;p>今回は、ストアにリリースが手軽な Android アプリを制作したいと思います。&lt;/p>
 &lt;h2 id="android-studio-使いやすい">Android Studio 使いやすい&amp;hellip;&lt;/h2>
@@ -123,8 +123,8 @@ JetBrains 社が開発したソフトウェアを初めて触ったのですが�
 これがまた使いやすいソフトウェアで感動したのを覚えています。
 （私が JetBrains 教徒になる話はまたいつか）&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 157; flex-basis: 378px">
-&lt;a href="https://example.com/p/jokura-app/image_1.png" data-size="3808x2414">&lt;img src="https://example.com/p/jokura-app/image_1.png"
-srcset="https://example.com/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_480x0_resize_box_2.png 480w, https://example.com/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_1024x0_resize_box_2.png 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_1.png" data-size="3808x2414">&lt;img src="https://coalabo.net/p/jokura-app/image_1.png"
+srcset="https://coalabo.net/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_480x0_resize_box_2.png 480w, https://coalabo.net/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_1024x0_resize_box_2.png 1024w"
 width="3808"
 height="2414"
 loading="lazy"
@@ -136,8 +136,8 @@ alt="Android Studio のデザイン画面">
 &lt;p>の前に、デザインを作っていきます。&lt;/p>
 &lt;p>スマホによってサイズが異なるので、対応できるデザインを意識して作成しました。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 174; flex-basis: 417px">
-&lt;a href="https://example.com/p/jokura-app/image_2.png" data-size="4064x2334">&lt;img src="https://example.com/p/jokura-app/image_2.png"
-srcset="https://example.com/p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_480x0_resize_box_2.png 480w, https://example.com/p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_1024x0_resize_box_2.png 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_2.png" data-size="4064x2334">&lt;img src="https://coalabo.net/p/jokura-app/image_2.png"
+srcset="https://coalabo.net/p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_480x0_resize_box_2.png 480w, https://coalabo.net/p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_1024x0_resize_box_2.png 1024w"
 width="4064"
 height="2334"
 loading="lazy"
@@ -148,8 +148,8 @@ alt="Adobe XD">
 &lt;h2 id="コーディング-すべしぬべし">コーディング すべしぬべし&lt;/h2>
 &lt;p>今回の技術的な部分です。サーバの様子を取得するのとリクエストを送る機能をつけます！（大したことはしてませんが）&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://example.com/p/jokura-app/image_3.jpg" data-size="720x1344">&lt;img src="https://example.com/p/jokura-app/image_3.jpg"
-srcset="https://example.com/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_3.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_3.jpg"
+srcset="https://coalabo.net/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_1024x0_resize_q75_box.jpg 1024w"
 width="720"
 height="1344"
 loading="lazy"
@@ -157,8 +157,8 @@ alt="スプラッシュ画面（情クラ！アプリ）">
 &lt;/a>
 &lt;figcaption>スプラッシュ画面（情クラ！アプリ）&lt;/figcaption>
 &lt;/figure>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://example.com/p/jokura-app/image_4.jpg" data-size="720x1344">&lt;img src="https://example.com/p/jokura-app/image_4.jpg"
-srcset="https://example.com/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_4.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_4.jpg"
+srcset="https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
 width="720"
 height="1344"
 loading="lazy"
@@ -232,8 +232,8 @@ APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利な�
 &lt;h2 id="ちょっと脱線しちゃいましたね">ちょっと脱線しちゃいましたね&lt;/h2>
 &lt;p>他にどんな機能を実装したのかみてみましょう！たぶんこちらの方が興味ありますよね (笑)&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://example.com/p/jokura-app/image_4.jpg" data-size="720x1344">&lt;img src="https://example.com/p/jokura-app/image_4.jpg"
-srcset="https://example.com/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_4.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_4.jpg"
+srcset="https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
 width="720"
 height="1344"
 loading="lazy"
@@ -241,8 +241,8 @@ alt="ホーム（情クラ！アプリ）">
 &lt;/a>
 &lt;figcaption>ホーム（情クラ！アプリ）&lt;/figcaption>
 &lt;/figure>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://example.com/p/jokura-app/image_5.jpg" data-size="720x1344">&lt;img src="https://example.com/p/jokura-app/image_5.jpg"
-srcset="https://example.com/p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_5.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_5.jpg"
+srcset="https://coalabo.net/p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_1024x0_resize_q75_box.jpg 1024w"
 width="720"
 height="1344"
 loading="lazy"
@@ -260,8 +260,8 @@ WebView で表示させるとよかったですね (笑)&lt;/p>
 &lt;p>本アプリのメイン機能は、なんといってもこの2つです！&lt;/p>
 &lt;p>トップに設置されている「バックアップ」「再起動」の機能について説明します。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 54; flex-basis: 131px">
-&lt;a href="https://example.com/p/jokura-app/image_6.jpg" data-size="1080x1977">&lt;img src="https://example.com/p/jokura-app/image_6.jpg"
-srcset="https://example.com/p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_6.jpg" data-size="1080x1977">&lt;img src="https://coalabo.net/p/jokura-app/image_6.jpg"
+srcset="https://coalabo.net/p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_1024x0_resize_q75_box.jpg 1024w"
 width="1080"
 height="1977"
 loading="lazy"
@@ -269,8 +269,8 @@ alt="バックアップ 実行不可（情クラ！アプリ）">
 &lt;/a>
 &lt;figcaption>バックアップ 実行不可（情クラ！アプリ）&lt;/figcaption>
 &lt;/figure>&lt;figure style="flex-grow: 54; flex-basis: 131px">
-&lt;a href="https://example.com/p/jokura-app/image_7.jpg" data-size="1080x1977">&lt;img src="https://example.com/p/jokura-app/image_7.jpg"
-srcset="https://example.com/p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-app/image_7.jpg" data-size="1080x1977">&lt;img src="https://coalabo.net/p/jokura-app/image_7.jpg"
+srcset="https://coalabo.net/p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_1024x0_resize_q75_box.jpg 1024w"
 width="1080"
 height="1977"
 loading="lazy"
@@ -296,12 +296,12 @@ alt="バックアップ 実行可能（情クラ！アプリ）">
 &lt;h2 id="２年の月日を経て">２年の月日を経て&amp;hellip;&lt;/h2>
 &lt;p>&lt;a class="link" href="../jokura-web" >前回の記事&lt;/a>でも述べた通り、情クラ！はサービス終了しました。&lt;/p>
 &lt;p>今回、&amp;ldquo;プログラムの整合性&amp;rdquo; というものを勉強できた、サービス開発だったと思います。&lt;/p>
-&lt;p>他にも Minecraft 関係で得た知見はかなり大きいものだったので、今後何か一般向けのサービスに繋げていきたいと思います。&lt;/p></description></item><item><title>情クラ！: Minecraftサーバ リモート制御ツールの制作</title><link>https://example.com/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://example.com/p/jokura-web/</guid><description>&lt;img src="https://example.com/p/jokura-web/cover.jpg" alt="Featured image of post 情クラ！: Minecraftサーバ リモート制御ツールの制作" />&lt;h2 id="minecraft-っていいよね">Minecraft っていいよね&lt;/h2>
+&lt;p>他にも Minecraft 関係で得た知見はかなり大きいものだったので、今後何か一般向けのサービスに繋げていきたいと思います。&lt;/p></description></item><item><title>情クラ！: Minecraftサーバ リモート制御ツールの制作</title><link>https://coalabo.net/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://coalabo.net/p/jokura-web/</guid><description>&lt;img src="https://coalabo.net/p/jokura-web/cover.jpg" alt="Featured image of post 情クラ！: Minecraftサーバ リモート制御ツールの制作" />&lt;h2 id="minecraft-っていいよね">Minecraft っていいよね&lt;/h2>
 &lt;p>Minecraft って、複数人でプレイすると沼ですよね。&lt;/p>
 &lt;p>今や大陸内には高速道路が広がり、複数の大陸間には水上橋が建築されています。（やばすぎ）&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 192; flex-basis: 462px">
-&lt;a href="https://example.com/p/jokura-web/image_1.jpg" data-size="2378x1233">&lt;img src="https://example.com/p/jokura-web/image_1.jpg"
-srcset="https://example.com/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-web/image_1.jpg" data-size="2378x1233">&lt;img src="https://coalabo.net/p/jokura-web/image_1.jpg"
+srcset="https://coalabo.net/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w"
 width="2378"
 height="1233"
 loading="lazy"
@@ -318,8 +318,8 @@ Google Cloud Platform（GCP）が、まだ365日無料トライアルだった�
 当時は &lt;code>n1-standard-1&lt;/code> プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）を使用していたため、
 大人数が長時間プレイしていると動作がもっさりしてくるのです。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 110; flex-basis: 264px">
-&lt;a href="https://example.com/p/jokura-web/image_2.jpg" data-size="1870x1694">&lt;img src="https://example.com/p/jokura-web/image_2.jpg"
-srcset="https://example.com/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-web/image_2.jpg" data-size="1870x1694">&lt;img src="https://coalabo.net/p/jokura-web/image_2.jpg"
+srcset="https://coalabo.net/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w"
 width="1870"
 height="1694"
 loading="lazy"
@@ -331,8 +331,8 @@ alt="GCPの料金（N1 標準マシンタイプ）">
 ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。&lt;/p>
 &lt;h2 id="まずは完成品をどうぞ">まずは完成品をどうぞ&lt;/h2>
 &lt;p>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://example.com/p/jokura-web/image_3.jpg" data-size="750x1334">&lt;img src="https://example.com/p/jokura-web/image_3.jpg"
-srcset="https://example.com/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-web/image_3.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_3.jpg"
+srcset="https://coalabo.net/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w"
 width="750"
 height="1334"
 loading="lazy"
@@ -340,8 +340,8 @@ alt="トップページ（情クラ！）">
 &lt;/a>
 &lt;figcaption>トップページ（情クラ！）&lt;/figcaption>
 &lt;/figure>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://example.com/p/jokura-web/image_4.jpg" data-size="750x1334">&lt;img src="https://example.com/p/jokura-web/image_4.jpg"
-srcset="https://example.com/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-web/image_4.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_4.jpg"
+srcset="https://coalabo.net/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w"
 width="750"
 height="1334"
 loading="lazy"
@@ -439,8 +439,8 @@ alt="サーバ状況確認ページ（情クラ！）">
 &lt;p>あまり技術的な話をすると長くなっちゃいそうなので、次に行きます。&lt;/p>
 &lt;p>他に実装した機能も紹介します。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://example.com/p/jokura-web/image_5.jpg" data-size="750x1334">&lt;img src="https://example.com/p/jokura-web/image_5.jpg"
-srcset="https://example.com/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-web/image_5.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_5.jpg"
+srcset="https://coalabo.net/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w"
 width="750"
 height="1334"
 loading="lazy"
@@ -448,8 +448,8 @@ alt="ナビゲーションバー（情クラ！）">
 &lt;/a>
 &lt;figcaption>ナビゲーションバー（情クラ！）&lt;/figcaption>
 &lt;/figure>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://example.com/p/jokura-web/image_6.jpg" data-size="750x1334">&lt;img src="https://example.com/p/jokura-web/image_6.jpg"
-srcset="https://example.com/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-web/image_6.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_6.jpg"
+srcset="https://coalabo.net/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w"
 width="750"
 height="1334"
 loading="lazy"
@@ -574,8 +574,8 @@ sleep &lt;span class="m">1&lt;/span>
 やはり GCP などの従量課金制のサーバで運用するには、かなり気を使ってしまうので正直解放されました。&lt;/p>
 &lt;p>かといって、情クラ！での活動はまだまだ続けていく予定なので、ぜひこのブログでも活動を共有していけたらなと思います！&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://example.com/p/jokura-web/image_7.jpg" data-size="1920x1080">&lt;img src="https://example.com/p/jokura-web/image_7.jpg"
-srcset="https://example.com/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, https://example.com/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w"
+&lt;a href="https://coalabo.net/p/jokura-web/image_7.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/jokura-web/image_7.jpg"
+srcset="https://coalabo.net/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w"
 width="1920"
 height="1080"
 loading="lazy"
