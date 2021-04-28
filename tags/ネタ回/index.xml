@@ -1,26 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ネタ回 on コアラボ (coalabo.)</title><link>https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/</link><description>Recent content in ネタ回 on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot（wbot）の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>察してください、ネタ回です 正直にいうと、この草Botを作った理由、一切記憶にないんです(笑)
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ネタ回 on コアラボ (coalabo.)</title><link>https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/</link><description>Recent content in ネタ回 on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>察してください、ネタ回です 今回どういった話かというと、友人十数名が入ったDiscordサーバーがあるのですが、 そのサーバー用の Bot を作るという箸休め回です。 この Bot は、みんなが登録した語録を紐づけたトリガーに応じてつぶやいてくれるという Bot なのですが、 正直にいうとこの「草Bot」を作ったきっかけが一切記憶にないんです(笑)
 でも盛り上がって、つくることになった 草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。
 草Botくん
-実はこの草Bot、今はおもちゃになってます。 （もはやBotの表示名も変えられてます&amp;hellip;）
-敗因: 誰でもプルリクOK＆自動デプロイ仕様にしてしまった サーバメンバーがこのBotに、どんどん単語を登録していきました(笑)
+実はこの草Bot、今はおもちゃにされています。 （もはやBotの表示名も変えられてますw）
+敗因: 誰でもプルリクOK＆自動デプロイ仕様にしてしまった 最初は「草」と返してくれる Bot だったのですが、サーバーメンバーがこの Bot にどんどん単語を登録していきました。 ただ、そのセンスがかなり良すぎるので、本来の目的が語録に変わって私も大満足です(笑)
 せっかくなので、自分のお気に入り語録を紹介しましょう。
 これ何だかわかりますか？
 お気に入り語録 その1
-これをみてピンときた人はさすがです！
+↑ これをみてピンときた人はさすがですね ！
 実はこれ
 これですね！いつものやつです。
-実は以前、Linuxの日本語文字化けが起こっていた時のものなのですが、
+実は以前、みんなで Raspberry Pi OS をセットアップしてた時ですが、 日本語化がうまくいかず、文字化けで何も見えない現象が発生してしまいました。
+唯一文字化けしていても意味がわかった文面が上の文字列で、
 伏字にしているのに、隠せれてないwwww
 ということで追加されました(笑)
 もう一つのお気に入りはこれです。
 「腹痛」に反応します
 「腹痛」という単語を聞くと、よくわからない係数を測ってくれ、それに応じてアナウンスが流れます。
 元ネタはこちら ニコニコ大百科（ドミネーター）
-しかもこれは、係数に応じてメッセージが変わります。
-技術的なコト Node.js で作りましたが、Bot はすぐできるので記事にするほどでもないかと思います。
-今回、この Bot は Herokuにデプロイしています。 GitHubリポジトリとHerokuAppを連携させていると、GitHubのmainブランチにプッシュされた時に自動でデプロイされるのでとても便利です。
-ただ今回、気をつける点が2つありました。
-Procfile を作成すること プロセスタイプを worker に設定すること Procfile を作成すること Procfile とは、デプロイ時にどのようなコマンドで run（開始）するかを記述したものです。
-書き方は以下の通りです。
-(processType) : (command) 今回の場合、以下の記述が必要です。
-worker: node index.</description></item></channel></rss>
+しかもこれは、例のよくわからない係数（乱数）に応じてメッセージが変わります。
+今回の技術的なコト Node.js で作りましたが、Bot はすぐできるので記事にするほどでもないかと思います。
+詳しくは以下のドキュメントをどうぞ！
+公式ドキュメント https://discord.</description></item></channel></rss>

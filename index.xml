@@ -1,58 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot（wbot）の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>&lt;img src="https://coalabo.net/p/wbot/cover.jpg" alt="Featured image of post 草bot（wbot）の開発談" />&lt;h2 id="察してくださいネタ回です">察してください、ネタ回です&lt;/h2>
-&lt;p>正直にいうと、この草Botを作った理由、一切記憶にないんです(笑)&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>&lt;img src="https://coalabo.net/p/wbot/cover.jpg" alt="Featured image of post 草bot (wbot) の開発談" />&lt;h2 id="察してくださいネタ回です">察してください、ネタ回です&lt;/h2>
+&lt;p>今回どういった話かというと、友人十数名が入ったDiscordサーバーがあるのですが、
+そのサーバー用の Bot を作るという箸休め回です。
+この Bot は、みんなが登録した語録を紐づけたトリガーに応じてつぶやいてくれるという Bot なのですが、
+正直にいうとこの「草Bot」を作ったきっかけが一切記憶にないんです(笑)&lt;/p>
 &lt;h2 id="でも盛り上がってつくることになった">でも盛り上がって、つくることになった&lt;/h2>
 &lt;p>草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 903; flex-basis: 2168px">
-&lt;a href="https://coalabo.net/p/wbot/image_1.jpg" data-size="1220x135">&lt;img src="https://coalabo.net/p/wbot/image_1.jpg"
-srcset="https://coalabo.net/p/wbot/image_1_hua42d7c6e39ca6a89c480d0a8bc87b175_4479_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_1_hua42d7c6e39ca6a89c480d0a8bc87b175_4479_1024x0_resize_q75_box.jpg 1024w"
-width="1220"
+&lt;p>&lt;figure style="flex-grow: 593; flex-basis: 1424px">
+&lt;a href="https://coalabo.net/p/wbot/image_1.jpg" data-size="801x135">&lt;img src="https://coalabo.net/p/wbot/image_1.jpg"
+srcset="https://coalabo.net/p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_1024x0_resize_q75_box.jpg 1024w"
+width="801"
 height="135"
 loading="lazy"
 alt="草Botくん">
 &lt;/a>
 &lt;figcaption>草Botくん&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>実はこの草Bot、今はおもちゃになってます。
-（もはやBotの表示名も変えられてます&amp;hellip;）&lt;/p>
+&lt;p>実はこの草Bot、今はおもちゃにされています。
+（もはやBotの表示名も変えられてますw）&lt;/p>
 &lt;h2 id="敗因-誰でもプルリクok自動デプロイ仕様にしてしまった">敗因: 誰でもプルリクOK＆自動デプロイ仕様にしてしまった&lt;/h2>
-&lt;p>サーバメンバーがこのBotに、どんどん単語を登録していきました(笑)&lt;/p>
+&lt;p>最初は「草」と返してくれる Bot だったのですが、サーバーメンバーがこの Bot にどんどん単語を登録していきました。
+ただ、そのセンスがかなり良すぎるので、本来の目的が語録に変わって私も大満足です(笑)&lt;/p>
 &lt;p>せっかくなので、自分のお気に入り語録を紹介しましょう。&lt;/p>
 &lt;hr>
 &lt;p>これ何だかわかりますか？&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 679; flex-basis: 1631px">
-&lt;a href="https://coalabo.net/p/wbot/image_2.jpg" data-size="2434x358">&lt;img src="https://coalabo.net/p/wbot/image_2.jpg"
-srcset="https://coalabo.net/p/wbot/image_2_huec60b15508aa9ed45bed771f47ab017f_17049_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_2_huec60b15508aa9ed45bed771f47ab017f_17049_1024x0_resize_q75_box.jpg 1024w"
-width="2434"
-height="358"
+&lt;p>&lt;figure style="flex-grow: 445; flex-basis: 1068px">
+&lt;a href="https://coalabo.net/p/wbot/image_2.jpg" data-size="801x180">&lt;img src="https://coalabo.net/p/wbot/image_2.jpg"
+srcset="https://coalabo.net/p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_1024x0_resize_q75_box.jpg 1024w"
+width="801"
+height="180"
 loading="lazy"
 alt="お気に入り語録 その1">
 &lt;/a>
 &lt;figcaption>お気に入り語録 その1&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>これをみてピンときた人はさすがです！&lt;/p>
+&lt;p>↑ これをみてピンときた人はさすがですね ！&lt;/p>
 &lt;hr>
-&lt;p>&lt;figure style="flex-grow: 682; flex-basis: 1638px">
-&lt;a href="https://coalabo.net/p/wbot/image_3.jpg" data-size="2430x356">&lt;img src="https://coalabo.net/p/wbot/image_3.jpg"
-srcset="https://coalabo.net/p/wbot/image_3_huf01c201d97539867668a8b1ff9347cca_28919_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_3_huf01c201d97539867668a8b1ff9347cca_28919_1024x0_resize_q75_box.jpg 1024w"
-width="2430"
-height="356"
+&lt;p>&lt;figure style="flex-grow: 447; flex-basis: 1073px">
+&lt;a href="https://coalabo.net/p/wbot/image_3.jpg" data-size="801x179">&lt;img src="https://coalabo.net/p/wbot/image_3.jpg"
+srcset="https://coalabo.net/p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_1024x0_resize_q75_box.jpg 1024w"
+width="801"
+height="179"
 loading="lazy"
 alt="実はこれ">
 &lt;/a>
 &lt;figcaption>実はこれ&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>これですね！いつものやつです。&lt;/p>
-&lt;p>実は以前、Linuxの日本語文字化けが起こっていた時のものなのですが、&lt;/p>
+&lt;p>実は以前、みんなで Raspberry Pi OS をセットアップしてた時ですが、
+日本語化がうまくいかず、文字化けで何も見えない現象が発生してしまいました。&lt;/p>
+&lt;p>唯一文字化けしていても意味がわかった文面が上の文字列で、&lt;/p>
 &lt;blockquote>
 &lt;p>伏字にしているのに、隠せれてないwwww&lt;/p>
 &lt;/blockquote>
 &lt;p>ということで追加されました(笑)&lt;/p>
 &lt;hr>
 &lt;p>もう一つのお気に入りはこれです。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 638; flex-basis: 1532px">
-&lt;a href="https://coalabo.net/p/wbot/image_4.jpg" data-size="1220x191">&lt;img src="https://coalabo.net/p/wbot/image_4.jpg"
-srcset="https://coalabo.net/p/wbot/image_4_hu6bf63ff43c572037ab24cf98991b7974_7670_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_4_hu6bf63ff43c572037ab24cf98991b7974_7670_1024x0_resize_q75_box.jpg 1024w"
-width="1220"
+&lt;p>&lt;figure style="flex-grow: 419; flex-basis: 1006px">
+&lt;a href="https://coalabo.net/p/wbot/image_4.jpg" data-size="801x191">&lt;img src="https://coalabo.net/p/wbot/image_4.jpg"
+srcset="https://coalabo.net/p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_1024x0_resize_q75_box.jpg 1024w"
+width="801"
 height="191"
 loading="lazy"
 alt="「腹痛」に反応します">
@@ -64,26 +70,42 @@ alt="「腹痛」に反応します">
 &lt;p>元ネタはこちら &lt;a class="link" href="https://dic.nicovideo.jp/a/%E3%83%89%E3%83%9F%E3%83%8D%E3%83%BC%E3%82%BF%E3%83%BC%28psycho-pass%29" target="_blank" rel="noopener"
 >ニコニコ大百科（ドミネーター）&lt;/a>&lt;/p>
 &lt;/blockquote>
-&lt;p>しかもこれは、係数に応じてメッセージが変わります。&lt;/p>
-&lt;h2 id="技術的なコト">技術的なコト&lt;/h2>
+&lt;p>しかもこれは、例のよくわからない係数（乱数）に応じてメッセージが変わります。&lt;/p>
+&lt;h2 id="今回の技術的なコト">今回の技術的なコト&lt;/h2>
 &lt;p>Node.js で作りましたが、Bot はすぐできるので記事にするほどでもないかと思います。&lt;/p>
+&lt;p>詳しくは以下のドキュメントをどうぞ！&lt;/p>
+&lt;blockquote>
+&lt;p>公式ドキュメント &lt;a class="link" href="https://discord.js.org" target="_blank" rel="noopener"
+>https://discord.js.org&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;p>今回、この Bot は &lt;a class="link" href="https://jp.heroku.com/home" target="_blank" rel="noopener"
->Heroku&lt;/a>にデプロイしています。
-GitHubリポジトリとHerokuAppを連携させていると、GitHubのmainブランチにプッシュされた時に自動でデプロイされるのでとても便利です。&lt;/p>
+>Heroku&lt;/a>にデプロイしているので、こちらの知見を共有したいと思います。
+Herokuでは、GitHubリポジトリとHerokuAppを連携させることができます。連携しておくと、
+GitHubのmainブランチにプッシュされた時に WebHook が飛ばされ Heroku に自動でデプロイされるのでとても便利です。&lt;/p>
 &lt;p>ただ今回、気をつける点が2つありました。&lt;/p>
 &lt;ul>
 &lt;li>Procfile を作成すること&lt;/li>
 &lt;li>プロセスタイプを worker に設定すること&lt;/li>
 &lt;/ul>
+&lt;p>この2つを共有して、本記事の締めにしたいと思います。&lt;/p>
 &lt;h2 id="procfile-を作成すること">Procfile を作成すること&lt;/h2>
 &lt;p>Procfile とは、デプロイ時にどのようなコマンドで run（開始）するかを記述したものです。&lt;/p>
+&lt;p>&lt;strong>Procfile | Heroku Dev Center&lt;/strong> には以下のような記述があります。&lt;/p>
+&lt;blockquote>
+&lt;p>Herokuによりサポートされているほとんどの言語で書かれたアプリをデプロイするのに、Procfileは必要はありません。&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>プラットフォームが使われている言語を自動的に検知し、アプリケーションサーバーを起動するために、デフォルトのwebプロセスタイプを作成してくれます。&lt;/p>
+&lt;/blockquote>
+&lt;p>しかし自動的に検知してくれなかったのか、私の環境では実行されなかったので &lt;code>Procfile&lt;/code> を作成しました。&lt;/p>
 &lt;p>書き方は以下の通りです。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="o">(&lt;/span>processType&lt;span class="o">)&lt;/span> : &lt;span class="o">(&lt;/span>&lt;span class="nb">command&lt;/span>&lt;span class="o">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>今回の場合、以下の記述が必要です。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">worker: node index.js
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Procfile&lt;/code> は親ディレクトリに設置しておいたのでOKです。&lt;/p>
-&lt;h2 id="プロセスタイプを-worker-に設定すること">プロセスタイプを worker に設定すること&lt;/h2>
-&lt;p>プロセスタイプには &lt;code>web&lt;/code> , &lt;code>worker&lt;/code> , &lt;code>one-off&lt;/code> の3種類があります。&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Procfile&lt;/code> はアプリのルートディレクトリに設置する必要があります。&lt;/p>
+&lt;h2 id="dyno-を-worker-に設定すること">dyno を worker に設定すること&lt;/h2>
+&lt;p>もう1つ、今回 Heroku 独特のプロセス処理の種類である &lt;code>dyno&lt;/code> をデフォルトから変更する必要がありました。&lt;/p>
+&lt;p>dyno には &lt;code>web&lt;/code> , &lt;code>worker&lt;/code> , &lt;code>one-off&lt;/code> の3種類があります。&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -106,12 +128,12 @@ GitHubリポジトリとHerokuAppを連携させていると、GitHubのmainブ�
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>今回、Discord Bot では常にチャンネルのテキストを取得する必要があるため、worker に設定する必要があります。&lt;/p>
-&lt;p>HerokuCLI を導入している場合は、以下のコマンドで worker に切り替えることができます。&lt;/p>
+&lt;p>今回、Discord Bot では常にチャンネルのテキストを取得する必要があるため、&lt;code>worker&lt;/code> に設定する必要があります。&lt;/p>
+&lt;p>HerokuCLI を導入している場合は、以下のコマンドで &lt;code>worker&lt;/code> に切り替えることができます。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">heroku ps:scale &lt;span class="nv">worker&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="草botくんがいてくれてよかった">草botくんがいてくれてよかった&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="さいごに">さいごに&lt;/h2>
 &lt;p>なんだかんだ、やっぱりBotがいてくれると楽しいですよね。&lt;/p>
-&lt;p>次はもっと有用な Bot を作りたいと思います (笑)&lt;/p></description></item><item><title>アプリ版 Minecraft サーバ制御ツールの制作</title><link>https://coalabo.net/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://coalabo.net/p/jokura-app/</guid><description>&lt;img src="https://coalabo.net/p/jokura-app/cover.jpg" alt="Featured image of post アプリ版 Minecraft サーバ制御ツールの制作" />&lt;h2 id="やっぱアプリ化したいよね">やっぱアプリ化、したいよね！！&lt;/h2>
+&lt;p>次はもっと有用な Bot を作りたいと思います (笑)&lt;/p></description></item><item><title>アプリ版 Minecraft サーバー制御ツールの制作</title><link>https://coalabo.net/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://coalabo.net/p/jokura-app/</guid><description>&lt;img src="https://coalabo.net/p/jokura-app/cover.jpg" alt="Featured image of post アプリ版 Minecraft サーバー制御ツールの制作" />&lt;h2 id="やっぱアプリ化したいよね">やっぱアプリ化、したいよね！！&lt;/h2>
 &lt;p>Webベースのツールを作ると、そのアプリ版を作りたくなる、ここまでがテンプレですよね。&lt;/p>
 &lt;p>今回は、ストアにリリースが手軽な Android アプリを制作したいと思います。&lt;/p>
 &lt;h2 id="android-studio-使いやすい">Android Studio 使いやすい&amp;hellip;&lt;/h2>
@@ -121,7 +143,7 @@ GitHubリポジトリとHerokuAppを連携させていると、GitHubのmainブ�
 まぁもちろん Android Studio 一択になるわけですが。
 JetBrains 社が開発したソフトウェアを初めて触ったのですが、
 これがまた使いやすいソフトウェアで感動したのを覚えています。
-（私が JetBrains 教徒になる話はまたいつか）&lt;/p>
+（私が JetBrains 信徒になる話はまたいつか）&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 157; flex-basis: 378px">
 &lt;a href="https://coalabo.net/p/jokura-app/image_1.png" data-size="3808x2414">&lt;img src="https://coalabo.net/p/jokura-app/image_1.png"
 srcset="https://coalabo.net/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_480x0_resize_box_2.png 480w, https://coalabo.net/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_1024x0_resize_box_2.png 1024w"
@@ -146,7 +168,7 @@ alt="Adobe XD">
 &lt;figcaption>Adobe XD&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;h2 id="コーディング-すべしぬべし">コーディング すべしぬべし&lt;/h2>
-&lt;p>今回の技術的な部分です。サーバの様子を取得するのとリクエストを送る機能をつけます！（大したことはしてませんが）&lt;/p>
+&lt;p>今回の技術的な部分です。サーバーの様子を取得するのとリクエストを送る機能をつけます！（大したことはしてませんが）&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 53; flex-basis: 128px">
 &lt;a href="https://coalabo.net/p/jokura-app/image_3.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_3.jpg"
 srcset="https://coalabo.net/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_1024x0_resize_q75_box.jpg 1024w"
@@ -172,7 +194,8 @@ alt="ホーム（情クラ！アプリ）">
 そこからAndroidに画像を取得するようにしています。
 APIからの画像取得には、Picasso というライブラリを使用しました。&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Picasso（公式サイト）&lt;/strong> &lt;a href="https://square.github.io/picasso/">https://square.github.io/picasso/&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Picasso（公式サイト）&lt;/strong> &lt;a class="link" href="https://square.github.io/picasso/" target="_blank" rel="noopener"
+>https://square.github.io/picasso/&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;p>具体的には、以下のような書き方でさくっとインターネットから画像取得ができちゃうものです！&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">Picasso&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">()&lt;/span>
@@ -181,7 +204,7 @@ APIからの画像取得には、Picasso というライブラリを使用しま
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>face1&lt;/code>というのは ImageView の id で、APIから取得した画像を流し込んでくれます！&lt;/p>
 &lt;p>また、プレイヤーがオンラインかどうかは、用意したAPIから返ってきた情報を元に表示を切り替えます。
 APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利なライブラリがありますが、
-この時（約2年前）は初心者だったこともあり、Java通信（HttpUrlConnection）で実装しました(笑)&lt;/p>
+この時は初心者だったこともあり、Java通信（HttpUrlConnection）で実装しました(笑)&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">var&lt;/span> &lt;span class="nx">connection&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">HttpURLConnection&lt;/span>&lt;span class="o">?&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">reader&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">BufferedReader&lt;/span>&lt;span class="o">?&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>
 &lt;span class="nx">val&lt;/span> &lt;span class="nx">buffer&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">StringBuffer&lt;/span>
@@ -228,7 +251,7 @@ APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利な�
 &lt;span class="c1">// 失敗した時はnullやエラーコードなどを返しましょう。
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="k">return&lt;/span> &lt;span class="kc">null&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>一部抜粋・改変していますが、こんな感じでリクエストをかいています。&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>一部抜粋していますが、こんな感じでリクエストをかいています。&lt;/p>
 &lt;h2 id="ちょっと脱線しちゃいましたね">ちょっと脱線しちゃいましたね&lt;/h2>
 &lt;p>他にどんな機能を実装したのかみてみましょう！たぶんこちらの方が興味ありますよね (笑)&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 53; flex-basis: 128px">
@@ -246,13 +269,13 @@ srcset="https://coalabo.net/p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe
 width="720"
 height="1344"
 loading="lazy"
-alt="サーバ稼働状況（情クラ！アプリ）">
+alt="サーバー稼働状況（情クラ！アプリ）">
 &lt;/a>
-&lt;figcaption>サーバ稼働状況（情クラ！アプリ）&lt;/figcaption>
+&lt;figcaption>サーバー稼働状況（情クラ！アプリ）&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>トップ画面には、「バックアップ」と「再起動」の2つのボタンが用意してあります。
 この2つのボタンについては後述します。&lt;/p>
-&lt;p>また、「稼働状況」を押すとサーバの現在の状況をみることができます。
+&lt;p>また、「稼働状況」を押すとサーバーの現在の状況をみることができます。
 今思うと、ここのデザインは Web 版と同じなので、
 WebView で表示させるとよかったですね (笑)&lt;/p>
 &lt;p>とりあえず、今回は xml ファイルで view を丁寧に記述しました。&lt;/p>
@@ -281,41 +304,44 @@ alt="バックアップ 実行可能（情クラ！アプリ）">
 &lt;p>この Activity の開始と同時に、バックエンドと通信して 再起動 または バックアップ が実行できるか確認して、表示を切り分けます。&lt;/p>
 &lt;p>実行できない例としては、&lt;/p>
 &lt;ul>
-&lt;li>サーバが停止している&lt;/li>
+&lt;li>サーバーが停止している&lt;/li>
 &lt;li>他のユーザが現在処理を行っている&lt;/li>
 &lt;li>処理実行後のクールタイムにある&lt;/li>
 &lt;/ul>
 &lt;p>のいずれかですね。右上の更新ボタンで最新情報を再取得できます。&lt;/p>
 &lt;h2 id="今回神経を使ったのは処理部分でした">今回、神経を使ったのは処理部分でした&lt;/h2>
-&lt;p>なんといってもサーバ関連で怖いのが、リクエストが同時に送られることですよね。&lt;/p>
-&lt;p>今回、サーバを制御できるプラットフォームが複数あるため、他のアプリやWebサイトから同時にリクエストが送られた場合、最初のリクエストのみ通す必要があります。
+&lt;p>なんといってもサーバー関連で怖いのが、リクエストが同時に送られることですよね。&lt;/p>
+&lt;p>今回、サーバーを制御できるプラットフォームが複数あるため、他のアプリやWebサイトから同時にリクエストが送られた場合、最初のリクエストのみ通す必要があります。
 また、再起動やバックアップなどが実行された後は、クールタイムを設ける必要もあります。&lt;/p>
-&lt;p>そういった、さまざまなリクエストを処理できるように、情クラ！ではバックエンドのAPIを用意し、そこからサーバ処理を行っています。
+&lt;p>そういった、さまざまなリクエストを処理できるように、情クラ！ではバックエンドのAPIを用意し、そこからサーバー処理を行っています。
 リクエストが失敗した場合には、その理由をエラーコードで返しユーザに通知しています。
 実行可能の状態でボタンを押した場合でも、バックエンドでキャンセルされた場合その旨のトーストが表示されます。&lt;/p>
 &lt;h2 id="２年の月日を経て">２年の月日を経て&amp;hellip;&lt;/h2>
 &lt;p>&lt;a class="link" href="../jokura-web" >前回の記事&lt;/a>でも述べた通り、情クラ！はサービス終了しました。&lt;/p>
 &lt;p>今回、&amp;ldquo;プログラムの整合性&amp;rdquo; というものを勉強できた、サービス開発だったと思います。&lt;/p>
-&lt;p>他にも Minecraft 関係で得た知見はかなり大きいものだったので、今後何か一般向けのサービスに繋げていきたいと思います。&lt;/p></description></item><item><title>情クラ！: Minecraftサーバ リモート制御ツールの制作</title><link>https://coalabo.net/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://coalabo.net/p/jokura-web/</guid><description>&lt;img src="https://coalabo.net/p/jokura-web/cover.jpg" alt="Featured image of post 情クラ！: Minecraftサーバ リモート制御ツールの制作" />&lt;h2 id="minecraft-っていいよね">Minecraft っていいよね&lt;/h2>
+&lt;p>他にも Minecraft 関係で得た知見はかなり大きいものだったので、今後何か一般向けのサービスに繋げていきたいと思います。&lt;/p></description></item><item><title>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</title><link>https://coalabo.net/p/jokura-web/</link><pubDate>Thu, 22 Apr 2021 09:06:44 +0900</pubDate><guid>https://coalabo.net/p/jokura-web/</guid><description>&lt;img src="https://coalabo.net/p/jokura-web/cover.jpg" alt="Featured image of post Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）" />&lt;h2 id="minecraft-っていいよね">Minecraft っていいよね&lt;/h2>
 &lt;p>Minecraft って、複数人でプレイすると沼ですよね。&lt;/p>
-&lt;p>今や大陸内には高速道路が広がり、複数の大陸間には水上橋が建築されています。（やばすぎ）&lt;/p>
+&lt;p>「 情クラ！」という、知り合い十数名程度の Minecraft サーバーで遊んでいるのですが、
+今や大陸内には高速道路が広がり、複数の大陸間には大きな橋が建築されています。（やばすぎ）&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 192; flex-basis: 462px">
 &lt;a href="https://coalabo.net/p/jokura-web/image_1.jpg" data-size="2378x1233">&lt;img src="https://coalabo.net/p/jokura-web/image_1.jpg"
 srcset="https://coalabo.net/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w"
 width="2378"
 height="1233"
 loading="lazy"
-alt="水上橋">
+alt="瀬戸大橋（こんなのが 5, 6本架かっています）">
 &lt;/a>
-&lt;figcaption>水上橋&lt;/figcaption>
+&lt;figcaption>瀬戸大橋（こんなのが 5, 6本架かっています）&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;h2 id="ある日minecraft-のサーバ管理者になった">ある日、Minecraft のサーバ管理者になった&lt;/h2>
-&lt;p>最初はローカルでサーバを建ててプレイしていましたが、
-プレイヤーがどんどん増えてきたため、Google Cloud Platform（GCP）でサーバを立てることにしました。&lt;/p>
-&lt;p>これが、「情クラ！」という Minecraft サーバの誕生のきっかけです。&lt;/p>
-&lt;p>いつどこでも Minecraft サーバで遊べる環境が完成しましたが、しかし1つ大きな問題が発生しました。
-Google Cloud Platform（GCP）が、まだ365日無料トライアルだった頃の話です。
-当時は &lt;code>n1-standard-1&lt;/code> プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）を使用していたため、
+&lt;h2 id="ある日minecraft-のサーバー管理者になった">ある日、Minecraft のサーバー管理者になった&lt;/h2>
+&lt;p>最初はみんなで家に集まって、ローカルでサーバーを建ててプレイしていました。
+しかしプレイヤーがどんどん増えてきたため、Google Cloud Platform（GCP）でサーバーを立てることにしました。&lt;/p>
+&lt;p>これが、「情クラ！」という Minecraft サーバーの誕生のきっかけです。&lt;/p>
+&lt;p>いつどこでも Minecraft サーバーで遊べる環境が完成し、ワールドの発展度合いが加速度的に大きくなったのですが、
+しかし1つ大きな問題がでてきました。&lt;/p>
+&lt;p>これは、Google Cloud Platform（GCP）がまだ365日無料トライアルだった頃の話なのですが、
+当時GCPには、年間 30,000円分の無料クレジットが付属していました。
+それをちょうど1年間で使い切る&lt;code>n1-standard-1&lt;/code> プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）で運用していたのですが、
 大人数が長時間プレイしていると動作がもっさりしてくるのです。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 110; flex-basis: 264px">
 &lt;a href="https://coalabo.net/p/jokura-web/image_2.jpg" data-size="1870x1694">&lt;img src="https://coalabo.net/p/jokura-web/image_2.jpg"
@@ -327,8 +353,8 @@ alt="GCPの料金（N1 標準マシンタイプ）">
 &lt;/a>
 &lt;figcaption>GCPの料金（N1 標準マシンタイプ）&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>サーバ管理者だった私は、毎度 SSH 接続してサーバを再起動していました。
-ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。&lt;/p>
+&lt;p>サーバー管理者だった私は、連絡を受けるたび SSH 接続してサーバーを再起動していました。&lt;/p>
+&lt;p>ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバーを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。&lt;/p>
 &lt;h2 id="まずは完成品をどうぞ">まずは完成品をどうぞ&lt;/h2>
 &lt;p>&lt;figure style="flex-grow: 56; flex-basis: 134px">
 &lt;a href="https://coalabo.net/p/jokura-web/image_3.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_3.jpg"
@@ -345,12 +371,13 @@ srcset="https://coalabo.net/p/jokura-web/image_4_hu46471f196a2944efda5599a29a118
 width="750"
 height="1334"
 loading="lazy"
-alt="サーバ状況確認ページ（情クラ！）">
+alt="サーバー状況確認ページ（情クラ！）">
 &lt;/a>
-&lt;figcaption>サーバ状況確認ページ（情クラ！）&lt;/figcaption>
+&lt;figcaption>サーバー状況確認ページ（情クラ！）&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>最初に実装したのは、「ホーム」のお知らせ機能と「サーバ状況」の機能です。
-モバイルファーストのデザインですが、レスポンシブ対応させています。&lt;/p>
+&lt;p>最初に実装したのは、「ホーム」のお知らせ（左）と「サーバー状況」の確認画面（右）です。
+モバイルファーストのデザインですが、きちんとレスポンシブ対応させています。&lt;/p>
+&lt;p>以下、それぞれの軽い機能紹介です。&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -364,16 +391,19 @@ alt="サーバ状況確認ページ（情クラ！）">
 &lt;td>プレイヤーが自由に建築報告を投稿することができます&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>サーバ状況&lt;/td>
-&lt;td>サーバの起動・停止状況やオンラインメンバーを確認できます&lt;/td>
+&lt;td>サーバー状況&lt;/td>
+&lt;td>サーバーの起動・停止状況やオンラインメンバーを確認できます&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="ここで少し技術的な話をしましょう">ここで、少し技術的な話をしましょう&lt;/h2>
-&lt;p>一応そういうブログ（ ？）なので、今回 Minecraft サーバと連携したノウハウについて記述しておきます。&lt;/p>
-&lt;p>Minecraft サーバでは、ある特定のパケットを受け取ると、現在のサーバのステータスを返す機能が搭載されています。
-これは、Minecraft のマルチサーバ 一覧画面などで使用されています。&lt;/p>
-&lt;p>まず、クライアント側が Handshake パケットを送信します。（以下 wiki の情報）&lt;/p>
+&lt;p>一応そういうブログ（ ？）なので、今回 Minecraft サーバーと連携したノウハウについて記述しておきます。&lt;/p>
+&lt;p>Minecraft サーバーでは、ある特定のパケットを受け取ると、現在のサーバーのステータスを返す機能が搭載されています。
+&lt;a class="link" href="https://wiki.vg/Server_List_Ping" target="_blank" rel="noopener"
+>こちらのページ&lt;/a>に詳しい仕様が載っています。
+これらの仕様は、Minecraft 起動時のマルチプレイ選択画面などに利用されているそうです。&lt;/p>
+&lt;p>続いて、詳しい仕様について順を追って説明していきます。&lt;/p>
+&lt;p>まず、クライアント側が以下のような Handshake パケットを送信します。&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -410,7 +440,8 @@ alt="サーバ状況確認ページ（情クラ！）">
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>さらに続けてリクエストパケットを送信します。その応答パケットとして、サーバが以下のようなJSONを返します。&lt;/p>
+&lt;p>ここで重要なのが、このレスポンスを待たずに続けてリクエストパケットを送信します。
+その応答パケットとして、サーバーが以下のようなJSONを返します。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="p">{&lt;/span>
 &lt;span class="nt">&amp;#34;version&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;1.16.1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
@@ -431,10 +462,18 @@ alt="サーバ状況確認ページ（情クラ！）">
 &lt;span class="p">},&lt;/span>
 &lt;span class="nt">&amp;#34;favicon&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;data:image/png;base64,&amp;lt;data&amp;gt;&amp;#34;&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>また、このパケットを送信するためのライブラリとして、今回は以下のPHPライブラリを使用しました。&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>PHP-Minecraft-Query&lt;/strong> &lt;a href="https://github.com/xPaw/PHP-Minecraft-Query">https://github.com/xPaw/PHP-Minecraft-Query&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>このJSONを使って、サーバの各情報が取得できます。&lt;/p>
+&lt;p>また、このパケットを送信するライブラリを探してみたところ、
+&lt;a class="link" href="https://gist.github.com/csh/2480d14fbbb33b4bbae3" target="_blank" rel="noopener"
+>C#&lt;/a>・
+&lt;a class="link" href="https://gist.github.com/zh32/7190955" target="_blank" rel="noopener"
+>Java&lt;/a>・
+&lt;a class="link" href="https://gist.github.com/ewized/97814f57ac85af7128bf" target="_blank" rel="noopener"
+>Python3&lt;/a>・
+&lt;a class="link" href="https://github.com/xPaw/PHP-Minecraft-Query" target="_blank" rel="noopener"
+>PHP&lt;/a>
+用に作られたコードが見つかりました。
+今回は、PHPライブラリを使用しました。&lt;/p>
 &lt;h2 id="実装した機能">実装した機能&lt;/h2>
 &lt;p>あまり技術的な話をすると長くなっちゃいそうなので、次に行きます。&lt;/p>
 &lt;p>他に実装した機能も紹介します。&lt;/p>
@@ -471,19 +510,19 @@ alt="再起動（情クラ！）">
 &lt;/tr>
 &lt;tr>
 &lt;td>オンラインユーザ&lt;/td>
-&lt;td>ホワイトリストに登録されたプレイヤーが表示され、サーバに入っているかどうかがわかります&lt;/td>
+&lt;td>ホワイトリストに登録されたプレイヤーが表示され、サーバーに入っているかどうかがわかります&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>起動・停止&lt;/td>
-&lt;td>サーバをしばらく利用しない場合は、GCP課金対策のためにサーバを切ることができます&lt;/td>
+&lt;td>サーバーをしばらく利用しない場合は、GCP課金対策のためにサーバーを切ることができます&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>再起動&lt;/td>
-&lt;td>Minecraft サーバを再起動させることができます&lt;/td>
+&lt;td>Minecraft サーバーを再起動させることができます&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>バックアップ実行&lt;/td>
-&lt;td>Minecraft サーバのバックアップを作成します（毎日5:00に定期実行されます）&lt;/td>
+&lt;td>Minecraft サーバーのバックアップを作成します（毎日5:00に定期実行されます）&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>バックアップ履歴&lt;/td>
@@ -500,15 +539,17 @@ alt="再起動（情クラ！）">
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="みんなログインしよう">みんなログインしよう&lt;/h2>
-&lt;p>今回サーバのコントロール機能が Web に公開されるので、ログイン機能を実装する必要があります。
-全員 Google アカウントを持っていたので、Firebase Authentication を使って Google ログインを実装します。&lt;/p>
+&lt;p>今回サーバーのコントロール機能が Web に公開されるので、ログイン機能を実装する必要があります。
+全員 Google アカウントを持っていたので、Firebase Authentication を使って Google ログインを実装しました。&lt;/p>
+&lt;p>Firebase に関する記事はたくさんあると思うので、今回説明は省略します。&lt;/p>
 &lt;p>以下の公式ドキュメントを読むとよくわかりますよ（雑）&lt;/p>
 &lt;blockquote>
-&lt;p>&lt;strong>Firebase Authentication（Google）&lt;/strong> &lt;a href="https://firebase.google.com/docs/auth/web/start?hl=ja">https://firebase.google.com/docs/auth/web/start?hl=ja&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Firebase Authentication（Google）&lt;/strong> &lt;a class="link" href="https://firebase.google.com/docs/auth/web/start?hl=ja" target="_blank" rel="noopener"
+>https://firebase.google.com/docs/auth/web/start?hl=ja&lt;/a>&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="マイクラサーバのバックエンドはどうなってるの">マイクラサーバのバックエンドはどうなってるの？&lt;/h2>
-&lt;p>Minecraft サーバでは、Node.js + TypeScript でAPIを構築しています。&lt;/p>
-&lt;p>以下は Minecraft を起動するルーティングの一部抜粋です。&lt;/p>
+&lt;h2 id="マイクラサーバーのバックエンドはどうなってるの">マイクラサーバーのバックエンドはどうなってるの？&lt;/h2>
+&lt;p>Minecraft サーバーでは、Node.js + TypeScript でAPIを構築しています。&lt;/p>
+&lt;p>たとえば、以下は Minecraft サーバーを起動するルーティングの一部抜粋です。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-typescript" data-lang="typescript">&lt;span class="c1">// --- Start Server ------------------------------------------------------------
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/api/run/start&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>: &lt;span class="kt">express.Request&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>: &lt;span class="kt">express.Response&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">const&lt;/span> &lt;span class="nx">schema&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">Joi&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kt">object&lt;/span>&lt;span class="p">({&lt;/span>
@@ -530,19 +571,18 @@ alt="再起動（情クラ！）">
 &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;failed due to run interval&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;起動コマンドを拒否しました&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;前回の処理の実行から&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">process&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">WAIT_SECONDS_FROM_LAST_PROCESS&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s2">&amp;#34;秒経過していないため、コマンドを拒否しました。&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="k">else&lt;/span>
-&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;起動コマンドを拒否しました&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;サーバが既に起動しているため、起動コマンドを拒否しました。サーバとの同期ができていない恐れがあります。[Err: startAsync()]&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;起動コマンドを拒否しました&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;サーバーが既に起動しているため、起動コマンドを拒否しました。サーバーとの同期ができていない恐れがあります。[Err: startAsync()]&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">status&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">400&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">send&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Bad request&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="p">})&lt;/span>
 &lt;span class="p">})&lt;/span>
 &lt;span class="p">.&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(()&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;起動コマンドを拒否しました&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;既に起動しているため、起動コマンドを拒否しました。サーバとの同期ができていない恐れがあります。[Err: statusAsync()]&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;起動コマンドを拒否しました&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;既に起動しているため、起動コマンドを拒否しました。サーバーとの同期ができていない恐れがあります。[Err: statusAsync()]&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">status&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">400&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">send&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Bad request&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="p">})&lt;/span>
 &lt;span class="p">})&lt;/span>
 &lt;span class="c1">// -----------------------------------------------------------------------------
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>軽く説明していきます。&lt;/p>
-&lt;p>まず、Joi という npm パッケージを利用して、送信されたクエリパラメータなどのバリデーションを行います。
-そして、post( ) という関数がありますが、これはサーバのエラーなどを Discord のサーバに通知するための関数として用意してあります。
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>まず、Joi という npm パッケージを利用して、送信されたクエリパラメータなどのバリデーションを行います。
+そして、post( ) という関数がありますが、これはサーバーのエラーなどを Discord のサーバーに通知するための関数として用意してあります。
 server.jar は screen 上で走らせているのですが、screen の二重起動にならないように初めに起動してもよいかのチェックも行っています。&lt;/p>
 &lt;p>また、実行系はシェルにまとめてあります。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="cp">#!/bin/bash
@@ -558,7 +598,7 @@ screen -UAmdS minecraft java -server -Xms&lt;span class="si">${&lt;/span>&lt;spa
 &lt;span class="nv">WAIT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">30&lt;/span>
 &lt;span class="nv">STARTSCRIPT&lt;/span>&lt;span class="o">=&lt;/span>/home/jokura_server/minecraft/start.sh
 &lt;span class="nv">SCREEN_NAME&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;minecraft&amp;#39;&lt;/span>
-screen -p &lt;span class="m">0&lt;/span> -S &lt;span class="si">${&lt;/span>&lt;span class="nv">SCREEN_NAME&lt;/span>&lt;span class="si">}&lt;/span> -X &lt;span class="nb">eval&lt;/span> &lt;span class="s1">&amp;#39;stuff &amp;#34;say &amp;#39;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">WAIT&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;秒後にサーバを再起動します\015&amp;#34;&amp;#39;&lt;/span>
+screen -p &lt;span class="m">0&lt;/span> -S &lt;span class="si">${&lt;/span>&lt;span class="nv">SCREEN_NAME&lt;/span>&lt;span class="si">}&lt;/span> -X &lt;span class="nb">eval&lt;/span> &lt;span class="s1">&amp;#39;stuff &amp;#34;say &amp;#39;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">WAIT&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;秒後にサーバーを再起動します\015&amp;#34;&amp;#39;&lt;/span>
 screen -p &lt;span class="m">0&lt;/span> -S &lt;span class="si">${&lt;/span>&lt;span class="nv">SCREEN_NAME&lt;/span>&lt;span class="si">}&lt;/span> -X &lt;span class="nb">eval&lt;/span> &lt;span class="s1">&amp;#39;stuff &amp;#34;say すぐに再接続可能になるので、しばらくお待ち下さい\015&amp;#34;&amp;#39;&lt;/span>
 sleep &lt;span class="nv">$WAIT&lt;/span>
 screen -p &lt;span class="m">0&lt;/span> -S &lt;span class="si">${&lt;/span>&lt;span class="nv">SCREEN_NAME&lt;/span>&lt;span class="si">}&lt;/span> -X &lt;span class="nb">eval&lt;/span> &lt;span class="s1">&amp;#39;stuff &amp;#34;stop\015&amp;#34;&amp;#39;&lt;/span>
@@ -570,8 +610,8 @@ sleep &lt;span class="m">1&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="今現在の-情クラ">今現在の 情クラ！&lt;/h2>
 &lt;p>今は残念ながら、Webサービスを終了しています。
 （Minecraft の活動自体はしています！）&lt;/p>
-&lt;p>2021年4月から、Minecraft サーバを別のメンバーが自宅サーバで建ててくれることになりました。
-やはり GCP などの従量課金制のサーバで運用するには、かなり気を使ってしまうので正直解放されました。&lt;/p>
+&lt;p>2021年4月から、Minecraft サーバーを別のメンバーが自宅サーバーで建ててくれることになりました。
+やはり GCP などの従量課金制のサーバーで運用するには、かなり気を使ってしまうので正直解放されました。&lt;/p>
 &lt;p>かといって、情クラ！での活動はまだまだ続けていく予定なので、ぜひこのブログでも活動を共有していけたらなと思います！&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
 &lt;a href="https://coalabo.net/p/jokura-web/image_7.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/jokura-web/image_7.jpg"
