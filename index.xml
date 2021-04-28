@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>&lt;img src="https://coalabo.net/p/wbot/cover.jpg" alt="Featured image of post 草bot (wbot) の開発談" />&lt;h2 id="察してくださいネタ回です">察してください、ネタ回です&lt;/h2>
-&lt;p>今回どういった話かというと、友人十数名が入ったDiscordサーバーがあるのですが、
-そのサーバー用の Bot を作るという箸休め回です。
-この Bot は、みんなが登録した語録を紐づけたトリガーに応じてつぶやいてくれるという Bot なのですが、
-正直にいうとこの「草Bot」を作ったきっかけが一切記憶にないんです(笑)&lt;/p>
-&lt;h2 id="でも盛り上がってつくることになった">でも盛り上がって、つくることになった&lt;/h2>
+&lt;p>Molly fantasy って実在したんですね。&lt;/p>
+&lt;p>今回は、友人十数名が入ったDiscordサーバーがあるのですが、
+そのサーバー用の Bot を作った、という箸休め回です。&lt;/p>
+&lt;p>この Bot は、みんなが登録したキーワードを打つと対応した語録を発言してくれます。&lt;/p>
+&lt;h2 id="なんか盛り上がってつくることになった">なんか盛り上がって、つくることになった&lt;/h2>
 &lt;p>草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 593; flex-basis: 1424px">
 &lt;a href="https://coalabo.net/p/wbot/image_1.jpg" data-size="801x135">&lt;img src="https://coalabo.net/p/wbot/image_1.jpg"
@@ -15,8 +15,8 @@ alt="草Botくん">
 &lt;/a>
 &lt;figcaption>草Botくん&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>実はこの草Bot、今はおもちゃにされています。
-（もはやBotの表示名も変えられてますw）&lt;/p>
+&lt;p>実はこの草Bot、今はおもちゃにされています。&lt;/p>
+&lt;p>もはやBotの表示名も変えられてますw&lt;/p>
 &lt;h2 id="敗因-誰でもプルリクok自動デプロイ仕様にしてしまった">敗因: 誰でもプルリクOK＆自動デプロイ仕様にしてしまった&lt;/h2>
 &lt;p>最初は「草」と返してくれる Bot だったのですが、サーバーメンバーがこの Bot にどんどん単語を登録していきました。
 ただ、そのセンスがかなり良すぎるので、本来の目的が語録に変わって私も大満足です(笑)&lt;/p>
@@ -52,7 +52,7 @@ alt="実はこれ">
 &lt;blockquote>
 &lt;p>伏字にしているのに、隠せれてないwwww&lt;/p>
 &lt;/blockquote>
-&lt;p>ということで追加されました(笑)&lt;/p>
+&lt;p>という経緯で追加されました(笑)&lt;/p>
 &lt;hr>
 &lt;p>もう一つのお気に入りはこれです。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 419; flex-basis: 1006px">
@@ -75,13 +75,13 @@ alt="「腹痛」に反応します">
 &lt;p>Node.js で作りましたが、Bot はすぐできるので記事にするほどでもないかと思います。&lt;/p>
 &lt;p>詳しくは以下のドキュメントをどうぞ！&lt;/p>
 &lt;blockquote>
-&lt;p>公式ドキュメント &lt;a class="link" href="https://discord.js.org" target="_blank" rel="noopener"
+&lt;p>&lt;strong>Discord.js&lt;/strong> &lt;a class="link" href="https://discord.js.org" target="_blank" rel="noopener"
 >https://discord.js.org&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;p>今回、この Bot は &lt;a class="link" href="https://jp.heroku.com/home" target="_blank" rel="noopener"
->Heroku&lt;/a>にデプロイしているので、こちらの知見を共有したいと思います。
-Herokuでは、GitHubリポジトリとHerokuAppを連携させることができます。連携しておくと、
-GitHubのmainブランチにプッシュされた時に WebHook が飛ばされ Heroku に自動でデプロイされるのでとても便利です。&lt;/p>
+>Heroku&lt;/a>にデプロイしているので、こちらの知見を共有したいと思います。&lt;/p>
+&lt;p>Herokuでは、GitHubリポジトリとHerokuAppを連携させることができます。連携しておくと、
+GitHubのmainブランチにプッシュされた時に Webhook が飛ばされ Heroku に自動でデプロイされるのでとても便利です。&lt;/p>
 &lt;p>ただ今回、気をつける点が2つありました。&lt;/p>
 &lt;ul>
 &lt;li>Procfile を作成すること&lt;/li>

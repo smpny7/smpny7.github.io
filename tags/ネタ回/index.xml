@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ネタ回 on コアラボ (coalabo.)</title><link>https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/</link><description>Recent content in ネタ回 on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>察してください、ネタ回です 今回どういった話かというと、友人十数名が入ったDiscordサーバーがあるのですが、 そのサーバー用の Bot を作るという箸休め回です。 この Bot は、みんなが登録した語録を紐づけたトリガーに応じてつぶやいてくれるという Bot なのですが、 正直にいうとこの「草Bot」を作ったきっかけが一切記憶にないんです(笑)
-でも盛り上がって、つくることになった 草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ネタ回 on コアラボ (coalabo.)</title><link>https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/</link><description>Recent content in ネタ回 on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>察してください、ネタ回です Molly fantasy って実在したんですね。
+今回は、友人十数名が入ったDiscordサーバーがあるのですが、 そのサーバー用の Bot を作った、という箸休め回です。
+この Bot は、みんなが登録したキーワードを打つと対応した語録を発言してくれます。
+なんか盛り上がって、つくることになった 草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。
 草Botくん
-実はこの草Bot、今はおもちゃにされています。 （もはやBotの表示名も変えられてますw）
+実はこの草Bot、今はおもちゃにされています。
+もはやBotの表示名も変えられてますw
 敗因: 誰でもプルリクOK＆自動デプロイ仕様にしてしまった 最初は「草」と返してくれる Bot だったのですが、サーバーメンバーがこの Bot にどんどん単語を登録していきました。 ただ、そのセンスがかなり良すぎるので、本来の目的が語録に変わって私も大満足です(笑)
 せっかくなので、自分のお気に入り語録を紹介しましょう。
 これ何だかわかりますか？
@@ -12,7 +15,7 @@
 実は以前、みんなで Raspberry Pi OS をセットアップしてた時ですが、 日本語化がうまくいかず、文字化けで何も見えない現象が発生してしまいました。
 唯一文字化けしていても意味がわかった文面が上の文字列で、
 伏字にしているのに、隠せれてないwwww
-ということで追加されました(笑)
+という経緯で追加されました(笑)
 もう一つのお気に入りはこれです。
 「腹痛」に反応します
 「腹痛」という単語を聞くと、よくわからない係数を測ってくれ、それに応じてアナウンスが流れます。
@@ -20,4 +23,4 @@
 しかもこれは、例のよくわからない係数（乱数）に応じてメッセージが変わります。
 今回の技術的なコト Node.js で作りましたが、Bot はすぐできるので記事にするほどでもないかと思います。
 詳しくは以下のドキュメントをどうぞ！
-公式ドキュメント https://discord.</description></item></channel></rss>
+Discord.js https://discord.</description></item></channel></rss>
