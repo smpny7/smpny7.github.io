@@ -1,4 +1,191 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>&lt;img src="https://coalabo.net/p/wbot/cover.jpg" alt="Featured image of post 草bot (wbot) の開発談" />&lt;h2 id="察してくださいネタ回です">察してください、ネタ回です&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>&lt;img src="https://coalabo.net/p/hugo/cover.jpg" alt="Featured image of post Hugo + GitHub Pages + 独自ドメイン でサイトを構築する" />&lt;h2 id="男もすなるブログといふものを私もしてみむとてするナリ">男もすなるブログといふものを私もしてみむとてするナリ&lt;/h2>
+&lt;h2 id="ブログを始めてみたい">ブログを始めてみたい！&lt;/h2>
+&lt;p>ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。&lt;/p>
+&lt;p>せっかく作ったものが消えて日の目を浴びなくなるのは勿体ないので、
+ブログという形で供養してやります！&lt;/p>
+&lt;h2 id="なんかかっこいい方法でホスティングしたい">なんかかっこいい方法でホスティングしたい&lt;/h2>
+&lt;p>第一として、運用費用があまりかからないようにする必要があります。
+なので、Nuxt.js を使って静的サイトを書き出し、GitHub Pages にデプロイしようかと考えていました。&lt;/p>
+&lt;p>ただ、フロントエンドやデザインのお仕事が続いており、自分でフロントを作成するのもなんだかなぁという状態でした。&lt;/p>
+&lt;p>とその時、知り合いからHugoを布教されました。なんとHugoにはテンプレートがたくさんあるじゃないですか！&lt;/p>
+&lt;p>Hugoは触ったことがなかったので、勉強がてら（といっても使い方の知見を得るだけですが）これを使ってブログを作成することにしました。&lt;/p>
+&lt;h2 id="書き出しめっちゃ速い">書き出しめっちゃ速い！！&lt;/h2>
+&lt;p>記事を Markdown で書いていくのですが、保存するたびホットリロードでブラウザに反映してくれます。&lt;/p>
+&lt;p>その速度が明らかに速いのです！（私が React や Nuxt.js などに慣れているからかもしれませんが&amp;hellip;）&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/hugo/image_1.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_1.jpg"
+srcset="https://coalabo.net/p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="書き出し速度がやばい！">
+&lt;/a>
+&lt;figcaption>書き出し速度がやばい！&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>Terminal 上に表示されている再レンダリング時間は &lt;code>9ms&lt;/code> とでていますね。&lt;/p>
+&lt;p>もう、一目惚れしました。&lt;/p>
+&lt;h2 id="github-pages-にデプロイしよう">GitHub Pages にデプロイしよう&lt;/h2>
+&lt;p>すいません、タイトル詐欺です。
+デプロイする前に1つすることがありました。&lt;/p>
+&lt;p>今回 &lt;a class="link" href="https://themes.gohugo.io/hugo-theme-stack" target="_blank" rel="noopener"
+>Hugo Theme Stack&lt;/a>というテーマパックを編集して使ったのですが、
+これを submodule 登録しておきます。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>また、git から clone する時は、submodule も忘れず引っ張ってくるようにしましょう。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ git clone --recurse-submodules --depth &lt;span class="m">1&lt;/span> git@github.com:smpny7/coalabo.git
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="github-actions-で自動化しよう">GitHub Actions で自動化しよう&lt;/h2>
+&lt;p>今度こそ、GitHub Actions で GitHub Pages に自動デプロイするように設定していきます。&lt;/p>
+&lt;p>今回 GitHub Pages 用に、&lt;code>&amp;lt;GitHub ユーザー名&amp;gt;.github.io&lt;/code> のリポジトリを作成しました。
+なぜそうしたかというと、&lt;code>https://&amp;lt;GitHub ユーザー名&amp;gt;.github.io&lt;/code> でそのサイトが閲覧できるようになるからです。&lt;/p>
+&lt;p>ドメイン後にパスが続かないのは、カスタムドメインを設定する際に大切です。&lt;/p>
+&lt;p>GitHub Actions には &lt;a class="link" href="https://github.com/marketplace/actions/github-pages-action#getting-started" target="_blank" rel="noopener"
+>GitHub Pages action&lt;/a> というのが
+マーケットプレイスに公開されていたので、これを参考に作成しました。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github pages&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">branches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="l">main &lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># Set a branch name to trigger deployment&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">deploy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-18.04&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">submodules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># Fetch Hugo themes (true OR recursive)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">fetch-depth&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># Fetch all history for .GitInfo and .Lastmod&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Setup Hugo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-hugo@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">hugo-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;0.78.2&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo --minify&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># - name: Deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># uses: peaceiris/actions-gh-pages@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># with:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># github_token: ${{ secrets.GITHUB_TOKEN }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># publish_dir: ./public&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-gh-pages@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">deploy_key&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.ACTIONS_DEPLOY_KEY }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">external_repository&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">smpny7/smpny7.github.io&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">publish_branch&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">cname&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">coalabo.net&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>submodule を一緒に引っ張ってくるのも、忘れないように設定しましょう。&lt;/p>
+&lt;p>そして GitHub の Secrets に、&lt;code>ACTIONS_DEPLOY_KEY&lt;/code> という名前で SSH のプライベートキーを設定しておきます。&lt;/p>
+&lt;h2 id="ドメインが-35円だと">ドメインが 35円だと！？&lt;/h2>
+&lt;p>本当にたまたまです。&lt;code>.com&lt;/code> ドメインや &lt;code>.net&lt;/code> ドメインが 35円セールしてました。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/hugo/image_2.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_2.jpg"
+srcset="https://coalabo.net/p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="お名前.com（2021/4/28 執筆時点）">
+&lt;/a>
+&lt;figcaption>お名前.com（2021/4/28 執筆時点）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>ドメイン移管が安くなるのはしょっちゅう見てましたが、ドメイン自体が安くなっているのを見たのは初めてでした！&lt;/p>
+&lt;p>サイト名に迷走して、3つくらいドメインをとってしまったのは秘密です。&lt;/p>
+&lt;h2 id="取得したドメイン名に設定しよう">取得したドメイン名に設定しよう&lt;/h2>
+&lt;p>お名前.com の管理画面に行き、&lt;code>DNS 設定 &amp;gt; DNSレコード設定を利用する&lt;/code> を選択します。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/hugo/image_3.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_3.jpg"
+srcset="https://coalabo.net/p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="DNS 設定画面（お名前.com）">
+&lt;/a>
+&lt;figcaption>DNS 設定画面（お名前.com）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>Aレコードに、GitHub Pages のアドレスを入力します。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/hugo/image_4.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_4.jpg"
+srcset="https://coalabo.net/p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="DNS 設定（お名前.com）">
+&lt;/a>
+&lt;figcaption>DNS 設定（お名前.com）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>本来は、CNAMEレコードに &lt;code>github.io&lt;/code> のドメインを登録するのが良いのですが、
+私の場合うまく動かなかったので Aレコードで登録しました。&lt;/p>
+&lt;p>GitHub Pages の仕様変更によって、グローバルIPアドレスが変わる恐れもあるので、その辺りは今後の検討課題です。&lt;/p>
+&lt;h2 id="google-search-console-を登録する">Google Search Console を登録する&lt;/h2>
+&lt;p>Google Search Console とは、検索順位やサイト内のエラーを取得してくれる Google のサービスです。
+通称 Googleサチコです。&lt;/p>
+&lt;p>今回登録するにあたり、サイト所有確認なのですが、ドメイン認証にしようと思っているのでここで設定してしまいましょう。&lt;/p>
+&lt;p>先程のレコード登録画面で、レコードを &lt;code>TXT&lt;/code>に、&lt;code>VALUE&lt;/code>をサチコで表示されたコードに設定します。&lt;/p>
+&lt;blockquote>
+&lt;p>諸説ありますが、最後の「転送用のネームサーバーに変更する」は一応チェックを外しておきましょう。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="github-actions-を設定">GitHub Actions を設定&lt;/h2>
+&lt;p>構築も終盤にさしかかってきました。&lt;/p>
+&lt;p>GitHub Pages 設定の &lt;code>Custom domain&lt;/code> 項目に、使用したいドメインを入力します。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/hugo/image_5.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_5.jpg"
+srcset="https://coalabo.net/p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="GitHub Pages 設定画面">
+&lt;/a>
+&lt;figcaption>GitHub Pages 設定画面&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>Save を押すと、ドメインが &lt;code>github.io&lt;/code> に転送されるかのチェックが行われます。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/hugo/image_6.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_6.jpg"
+srcset="https://coalabo.net/p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="GitHub Pages 設定画面">
+&lt;/a>
+&lt;figcaption>GitHub Pages 設定画面&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>確認されたら &lt;code>Enforce HTTPS&lt;/code> が選択できるようになるので、チェックを入れておきましょう。&lt;/p>
+&lt;h2 id="でたな-gtagjs定期">でたな gtag.js（定期）&lt;/h2>
+&lt;p>Google Analytics が最近変更になったらしく、昔は &lt;code>UA-XXXXXX-X&lt;/code> というタグだったのですが、
+今は Gタグと呼ばれる &lt;code>G-XXXXXXX&lt;/code> というものに変更されています。&lt;/p>
+&lt;p>これに伴い、JavaScript 部分も変更になるので、使用していたテーマパックの Google Analytics が正常に動きませんでした。&lt;/p>
+&lt;p>私の使用しているテーマパックでは以下のように対応しました。&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>layouts &amp;gt; partials &amp;gt; head &amp;gt; custom.html&lt;/code> というファイルを作成すると、そこに記述されたコードがサイトの &lt;code>head&lt;/code> に挿入されることがわかった。&lt;/li>
+&lt;li>カスタムテーマにしたかったので、&lt;code>custom.html&lt;/code> から &lt;code>style用ファイル&lt;/code> と &lt;code>analytics用 JSファイル&lt;/code> を読み込みようにした。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>style用ファイル&lt;/code> には自分がカスタムした部分のCSSを、
+&lt;code>analytics用 JSファイル&lt;/code>には例の Google Analytics 用コード9行が書かれています。&lt;/p>
+&lt;p>また、customファイルは以下の通りです。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="c">&amp;lt;!-- Custom Style --&amp;gt;&lt;/span>
+{{ partial &amp;#34;style/custom&amp;#34; . }}
+&lt;span class="c">&amp;lt;!-- Analytics --&amp;gt;&lt;/span>
+{{ if not .Site.IsServer }}
+{{ partial &amp;#34;google/analytics&amp;#34; . }}
+{{ end }}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>↑ デバッグでは Google Analytics がうごかないようにしています&lt;/p>
+&lt;h2 id="さいごに">さいごに&lt;/h2>
+&lt;p>カスタマイズしたサイトは以下のようになりました！&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
+&lt;a href="https://coalabo.net/p/hugo/image_7.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/hugo/image_7.jpg"
+srcset="https://coalabo.net/p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_1024x0_resize_q75_box.jpg 1024w"
+width="1920"
+height="1080"
+loading="lazy"
+alt="COALABO. 完成">
+&lt;/a>
+&lt;figcaption>COALABO. 完成&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>自分があまりチャレンジしたことのない配色でデザインしてみたのですが、
+結構きれいにまとまってて気に入ってます！&lt;/p>
+&lt;p>データの蓄積された Google Analytics をみるのが楽しみです。&lt;/p></description></item><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>&lt;img src="https://coalabo.net/p/wbot/cover.jpg" alt="Featured image of post 草bot (wbot) の開発談" />&lt;h2 id="察してくださいネタ回です">察してください、ネタ回です&lt;/h2>
 &lt;p>Molly fantasy って実在したんですね。&lt;/p>
 &lt;p>今回は、友人十数名が入ったDiscordサーバーがあるのですが、
 そのサーバー用の Bot を作った、という箸休め回です。&lt;/p>

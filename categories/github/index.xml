@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GitHub on コアラボ (coalabo.)</title><link>https://coalabo.net/categories/github/</link><description>Recent content in GitHub on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/categories/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>男もすなるブログといふものを私もしてみむとてするナリ ブログを始めてみたい！ ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。
+せっかく作ったものが消えて日の目を浴びなくなるのは勿体ないので、 ブログという形で供養してやります！
+なんかかっこいい方法でホスティングしたい 第一として、運用費用があまりかからないようにする必要があります。 なので、Nuxt.js を使って静的サイトを書き出し、GitHub Pages にデプロイしようかと考えていました。
+ただ、フロントエンドやデザインのお仕事が続いており、自分でフロントを作成するのもなんだかなぁという状態でした。
+とその時、知り合いからHugoを布教されました。なんとHugoにはテンプレートがたくさんあるじゃないですか！
+Hugoは触ったことがなかったので、勉強がてら（といっても使い方の知見を得るだけですが）これを使ってブログを作成することにしました。
+書き出しめっちゃ速い！！ 記事を Markdown で書いていくのですが、保存するたびホットリロードでブラウザに反映してくれます。
+その速度が明らかに速いのです！（私が React や Nuxt.js などに慣れているからかもしれませんが&amp;hellip;）
+書き出し速度がやばい！
+Terminal 上に表示されている再レンダリング時間は 9ms とでていますね。
+もう、一目惚れしました。
+GitHub Pages にデプロイしよう すいません、タイトル詐欺です。 デプロイする前に1つすることがありました。
+今回 Hugo Theme Stackというテーマパックを編集して使ったのですが、 これを submodule 登録しておきます。
+$ git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack また、git から clone する時は、submodule も忘れず引っ張ってくるようにしましょう。
+$ git clone --recurse-submodules --depth 1 git@github.com:smpny7/coalabo.git GitHub Actions で自動化しよう 今度こそ、GitHub Actions で GitHub Pages に自動デプロイするように設定していきます。</description></item></channel></rss>
