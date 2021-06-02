@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>男もすなるブログといふものを私もしてみむとてするナリ ブログを始めてみたい！ ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>ブログを始めてみたい！ ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。
 せっかく作ったものが消えて日の目を浴びなくなるのは勿体ないので、 ブログという形で供養してやります！
 なんかかっこいい方法でホスティングしたい 第一として、運用費用があまりかからないようにする必要があります。 なので、Nuxt.js を使って静的サイトを書き出し、GitHub Pages にデプロイしようかと考えていました。
 ただ、フロントエンドやデザインのお仕事が続いており、自分でフロントを作成するのもなんだかなぁという状態でした。
@@ -12,7 +12,8 @@ Terminal 上に表示されている再レンダリング時間は 9ms とでて
 GitHub Pages にデプロイしよう すいません、タイトル詐欺です。 デプロイする前に1つすることがありました。
 今回 Hugo Theme Stackというテーマパックを編集して使ったのですが、 これを submodule 登録しておきます。
 $ git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack また、git から clone する時は、submodule も忘れず引っ張ってくるようにしましょう。
-$ git clone --recurse-submodules --depth 1 git@github.com:smpny7/coalabo.git GitHub Actions で自動化しよう 今度こそ、GitHub Actions で GitHub Pages に自動デプロイするように設定していきます。</description></item><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>察してください、ネタ回です Molly fantasy って実在したんですね。
+$ git clone --recurse-submodules --depth 1 git@github.com:smpny7/coalabo.git GitHub Actions で自動化しよう 今度こそ、GitHub Actions で GitHub Pages に自動デプロイするように設定していきます。
+今回 GitHub Pages 用に、&amp;lt;GitHub ユーザー名&amp;gt;.</description></item><item><title>草bot (wbot) の開発談</title><link>https://coalabo.net/p/wbot/</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/wbot/</guid><description>察してください、ネタ回です Molly fantasy って実在したんですね。
 今回は、友人十数名が入ったDiscordサーバーがあるのですが、 そのサーバー用の Bot を作った、という箸休め回です。
 この Bot は、みんなが登録したキーワードを打つと対応した語録を発言してくれます。
 なんか盛り上がって、つくることになった 草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。
