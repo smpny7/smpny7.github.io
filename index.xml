@@ -1,4 +1,186 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>&lt;img src="https://coalabo.net/p/hugo/cover.jpg" alt="Featured image of post Hugo + GitHub Pages + 独自ドメイン でサイトを構築する" />&lt;h2 id="ブログを始めてみたい">ブログを始めてみたい！&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 01 Jun 2021 00:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>鯖管向け！Minecraftサーバーの監視ツールの制作</title><link>https://coalabo.net/p/minecraft-server-monitor/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +2100</pubDate><guid>https://coalabo.net/p/minecraft-server-monitor/</guid><description>&lt;img src="https://coalabo.net/p/minecraft-server-monitor/cover.jpg" alt="Featured image of post 鯖管向け！Minecraftサーバーの監視ツールの制作" />&lt;h2 id="今回の-firebase-は一味違います">今回の Firebase は一味違います&lt;/h2>
+&lt;p>今回作成する監視サーバですが、Google Cloud Platform の Cloud Scheduler を使って、Firebase の Cloud Functions を定期実行させます。&lt;/p>
+&lt;p>Cloud Scheduler と Cloud Functions の連携方法ですが、
+Google が用意してある &lt;code>firebase-functions&lt;/code> というライブラリに付随しているスケジュール機能を使用することで、
+自動で GCP の Cloud Scheduler に登録されます。&lt;/p>
+&lt;h2 id="天下のgoogle様様">天下のGoogle様様&lt;/h2>
+&lt;p>Firebase で定期実行って、かなり金銭的なコストがかかりそうですよね。&lt;/p>
+&lt;p>Web サーバーなどとは違い、時間指定のあるジョブ（ Worker ）になるので、
+結構ホスティングサービスも少ないですし、今回作成する監視サーバーは10分毎に定期実行します。&lt;/p>
+&lt;p>&lt;strong>ですが、Cloud Functions では月200万回までの呼び出しは無料です！！&lt;/strong>&lt;/p>
+&lt;p>具体的に、関数の呼び出しの課金は以下の通りです。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">月間呼び出し回数&lt;/th>
+&lt;th style="text-align:center">料金（100 万回あたり）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">最初の 200 万回&lt;/td>
+&lt;td style="text-align:center">無料&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">200 万回を超えた分&lt;/td>
+&lt;td style="text-align:center">$0.40&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>今回は、かなり複雑なDBの整形ジョブやWebサービスのCRONジョブをするわけではないので、無料枠で十分です。&lt;/p>
+&lt;p>&lt;strong>ただし気をつけないといけないのが、関数のデプロイには料金がかかります。&lt;/strong>&lt;/p>
+&lt;p>まず、関数は無料枠のない Container Registry に保存されるため、デプロイ後にわずかな料金が発生します。
+Container Registry のストレージ費用は、1 GB あたり月額約 $0.026 です。&lt;/p>
+&lt;p>そして、関数のデプロイごとに約 1 分の Cloud Build による処理が行われます。
+料金は $0.003/ビルド分 ですが、1 日あたり最初の 120 ビルド分は無料です。&lt;/p>
+&lt;p>はい、もうほとんど無料ですね。&lt;/p>
+&lt;p>Firebase の料金プランは、Spark → Blaze にアップグレードしておく必要があります。
+また、有効な支払い方法を登録しておく必要があります。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_1.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_1.jpg"
+srcset="https://coalabo.net/p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="Firebase 料金プラン">
+&lt;/a>
+&lt;figcaption>Firebase 料金プラン&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="cloud-functions-プロジェクトの作成">Cloud Functions プロジェクトの作成&lt;/h2>
+&lt;p>Cloud Functions にデプロイするには、Firebase CLI を導入する必要があります。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ npm install -g firebase-tools
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>お使いの Google アカウントでログインしておく必要があります。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase login
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>最後に、プロジェクトを新規作成するには&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase init
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>で新規プロジェクトを作成できます。が&amp;hellip;&lt;/p>
+&lt;h2 id="firebase-init-でハマった">firebase init でハマった！&lt;/h2>
+&lt;p>&lt;code>firebase init&lt;/code> を実行すると、なにやら不穏なメッセージが出ます。&lt;/p>
+&lt;blockquote>
+&lt;p>Error: Cloud resource location is not set for this project but the operation you are attempting to perform in Cloud Firestore requires it. Please see this documentation for more details: &lt;a href="https://firebase.google.com/docs/projects/locations">https://firebase.google.com/docs/projects/locations&lt;/a> .&lt;/p>
+&lt;/blockquote>
+&lt;p>新規 Firebase プロジェクトを利用する際には、初めにリージョンを設定しておかないといけないそうです！&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
+&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_2.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_2.jpg"
+srcset="https://coalabo.net/p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_1024x0_resize_q75_box.jpg 1024w"
+width="3584"
+height="2240"
+loading="lazy"
+alt="デフォルトの GCP リソースロケーション を設定">
+&lt;/a>
+&lt;figcaption>デフォルトの GCP リソースロケーション を設定&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>GCP リソースロケーションについては、以下の通りです。一度設定すると変更することができないので注意です！&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">リージョン名（Tier 1）&lt;/th>
+&lt;th style="text-align:left">地域&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">us-central1&lt;/td>
+&lt;td style="text-align:left">アイオワ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">us-east1&lt;/td>
+&lt;td style="text-align:left">サウスカロライナ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">us-east4&lt;/td>
+&lt;td style="text-align:left">北バージニア&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">europe-west1&lt;/td>
+&lt;td style="text-align:left">ベルギー&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">europe-west2&lt;/td>
+&lt;td style="text-align:left">ロンドン&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">asia-east2&lt;/td>
+&lt;td style="text-align:left">香港&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">asia-northeast1&lt;/td>
+&lt;td style="text-align:left">東京&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">asia-northeast2&lt;/td>
+&lt;td style="text-align:left">大阪&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>無難に、&lt;code>asia-northeast1&lt;/code> か &lt;code>asia-northeast2&lt;/code> あたりがいいと思います。&lt;/p>
+&lt;p>これできちんと新規プロジェクトの作成ができました！&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 141; flex-basis: 338px">
+&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_3.png" data-size="1364x966">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_3.png"
+srcset="https://coalabo.net/p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_480x0_resize_box_2.png 480w, https://coalabo.net/p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_1024x0_resize_box_2.png 1024w"
+width="1364"
+height="966"
+loading="lazy"
+alt="Firebase プロジェクトの新規作成">
+&lt;/a>
+&lt;figcaption>Firebase プロジェクトの新規作成&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="cloud-functions-の環境変数について">Cloud Functions の環境変数について&lt;/h2>
+&lt;p>Cloud Functions には、環境変数を設定できるのですが、&lt;code>.env&lt;/code> ファイルではありません。
+firebaseプロジェクト内に、オブジェクト形式で保存されていきます。&lt;/p>
+&lt;p>例えば今回のプロジェクトでは、&lt;code>address&lt;/code> と &lt;code>port&lt;/code> という環境変数が必要になるのですが、&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:set server.address&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;minecraft-sample-server.com&amp;#34;&lt;/span> server.port&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;25565&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>上記のコマンドで、環境変数を設定できます。&lt;/p>
+&lt;p>プロジェクトの環境構成に現在保存されているものを調べるには、&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:get
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>で、JSON が出力されます。&lt;/p>
+&lt;h2 id="環境変数をローカルエミュレート時に使えるようにする">環境変数をローカルエミュレート時に使えるようにする&lt;/h2>
+&lt;p>Cloud Functions の環境変数を、ローカルエミュレート時にも使うことは多いと思います。&lt;/p>
+&lt;p>調べてみたところ、&lt;code>.runtimeconfig.json&lt;/code> というファイルに環境変数の JSON を出力して
+&lt;code>functions&lt;/code> ディレクトリ直下に置いておくことで、ローカルでも環境変数を取り込むことができるそうです。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:get &amp;gt; .runtimeconfig.json
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="今回作成したもの">今回作成したもの&lt;/h2>
+&lt;p>Minecraft サーバーを監視し、サーバーが落ちた際に Discord に通知してくれるサービス（Worker）を作成しました。&lt;/p>
+&lt;p>詳しくは以下の GitHub リポジトリを参照してください！&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 68; flex-basis: 164px">
+&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_4.jpg" data-size="1482x2168">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_4.jpg"
+srcset="https://coalabo.net/p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_1024x0_resize_q75_box.jpg 1024w"
+width="1482"
+height="2168"
+loading="lazy"
+alt="minecraft-server-monitor (README)">
+&lt;/a>
+&lt;figcaption>minecraft-server-monitor (README)&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="minecraft-server-monitor" >minecraft-server-monitor&lt;/a>　Monitor your Minecraft server and let Discord know the status 🖥&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="discord-の-情クラ-minecraftサーバー-チャンネル">Discord の 情クラ (minecraftサーバー) チャンネル&lt;/h2>
+&lt;p>Discord にサーバの状態をログとして投げてくれます。&lt;/p>
+&lt;p>ボットの名前とアイコンは、メンバーに勝手に変えられているので気にしないでください。。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 370; flex-basis: 888px">
+&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_5.jpg" data-size="1184x320">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_5.jpg"
+srcset="https://coalabo.net/p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_1024x0_resize_q75_box.jpg 1024w"
+width="1184"
+height="320"
+loading="lazy"
+alt="一般的なログ">
+&lt;/a>
+&lt;figcaption>一般的なログ&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>また、GCP の minecraft サーバーが落ちたときは、通知用チャンネルに投稿されます。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 385; flex-basis: 926px">
+&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_6.jpg" data-size="1204x312">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_6.jpg"
+srcset="https://coalabo.net/p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_1024x0_resize_q75_box.jpg 1024w"
+width="1204"
+height="312"
+loading="lazy"
+alt="サーバーが落ちた時のログ">
+&lt;/a>
+&lt;figcaption>サーバーが落ちた時のログ&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="おわりに">おわりに&lt;/h2>
+&lt;p>Firebase は最高ですね！&lt;/p></description></item><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>&lt;img src="https://coalabo.net/p/hugo/cover.jpg" alt="Featured image of post Hugo + GitHub Pages + 独自ドメイン でサイトを構築する" />&lt;h2 id="ブログを始めてみたい">ブログを始めてみたい！&lt;/h2>
 &lt;p>ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。&lt;/p>
 &lt;p>せっかく作ったものが消えて日の目を浴びなくなるのは勿体ないので、
 ブログという形で供養してやります！&lt;/p>

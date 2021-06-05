@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>ブログを始めてみたい！ ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 01 Jun 2021 00:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>鯖管向け！Minecraftサーバーの監視ツールの制作</title><link>https://coalabo.net/p/minecraft-server-monitor/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +2100</pubDate><guid>https://coalabo.net/p/minecraft-server-monitor/</guid><description>今回の Firebase は一味違います 今回作成する監視サーバですが、Google Cloud Platform の Cloud Scheduler を使って、Firebase の Cloud Functions を定期実行させます。
+Cloud Scheduler と Cloud Functions の連携方法ですが、 Google が用意してある firebase-functions というライブラリに付随しているスケジュール機能を使用することで、 自動で GCP の Cloud Scheduler に登録されます。
+天下のGoogle様様 Firebase で定期実行って、かなり金銭的なコストがかかりそうですよね。
+Web サーバーなどとは違い、時間指定のあるジョブ（ Worker ）になるので、 結構ホスティングサービスも少ないですし、今回作成する監視サーバーは10分毎に定期実行します。
+ですが、Cloud Functions では月200万回までの呼び出しは無料です！！
+具体的に、関数の呼び出しの課金は以下の通りです。
+月間呼び出し回数 料金（100 万回あたり） 最初の 200 万回 無料 200 万回を超えた分 $0.40 今回は、かなり複雑なDBの整形ジョブやWebサービスのCRONジョブをするわけではないので、無料枠で十分です。
+ただし気をつけないといけないのが、関数のデプロイには料金がかかります。
+まず、関数は無料枠のない Container Registry に保存されるため、デプロイ後にわずかな料金が発生します。 Container Registry のストレージ費用は、1 GB あたり月額約 $0.</description></item><item><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link>https://coalabo.net/p/hugo/</link><pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate><guid>https://coalabo.net/p/hugo/</guid><description>ブログを始めてみたい！ ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。
 せっかく作ったものが消えて日の目を浴びなくなるのは勿体ないので、 ブログという形で供養してやります！
 なんかかっこいい方法でホスティングしたい 第一として、運用費用があまりかからないようにする必要があります。 なので、Nuxt.js を使って静的サイトを書き出し、GitHub Pages にデプロイしようかと考えていました。
 ただ、フロントエンドやデザインのお仕事が続いており、自分でフロントを作成するのもなんだかなぁという状態でした。
