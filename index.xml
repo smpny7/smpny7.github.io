@@ -1,4 +1,166 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 01 Jun 2021 00:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>鯖管向け！Minecraftサーバーの監視ツールの制作</title><link>https://coalabo.net/p/minecraft-server-monitor/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +2100</pubDate><guid>https://coalabo.net/p/minecraft-server-monitor/</guid><description>&lt;img src="https://coalabo.net/p/minecraft-server-monitor/cover.jpg" alt="Featured image of post 鯖管向け！Minecraftサーバーの監視ツールの制作" />&lt;h2 id="今回の-firebase-は一味違います">今回の Firebase は一味違います&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 05 Jun 2021 22:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>誰にとってもわかりやすいコミットメッセージ</title><link>https://coalabo.net/p/commit-message/</link><pubDate>Sat, 05 Jun 2021 22:00:00 +2100</pubDate><guid>https://coalabo.net/p/commit-message/</guid><description>&lt;img src="https://coalabo.net/p/commit-message/cover.jpg" alt="Featured image of post 誰にとってもわかりやすいコミットメッセージ" />&lt;h2 id="みんなコミットメッセージってどんなふうに書いてるのかな">みんなコミットメッセージってどんなふうに書いてるのかな？&lt;/h2>
+&lt;p>ふと気になって、さまざまなオープンソースのコミットメッセージをみてきました。&lt;/p>
+&lt;p>今まで自分が使ってきたコミットメッセージがあまりにも一般的じゃなかったので、ここで統一したいと思います！（覚え書き）&lt;/p>
+&lt;h2 id="これまでのコミットメッセージの付け方">これまでのコミットメッセージの付け方&lt;/h2>
+&lt;p>はじめて共同プロジェクトを立ち上げた時に、とあるネット上の人のコミットメッセージの書き方を真似て、マイルールとしていました。&lt;/p>
+&lt;p>大かっこ[]の中に Prefix を入れ（例：&lt;code>add&lt;/code> &lt;code>fix&lt;/code> &lt;code>hotfix&lt;/code> など）、その後に日本語でコミットメッセージを記入するという形でしたが、
+あまりこの書き方をしている人が多くなかったのです&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="o">[&lt;/span>add&lt;span class="o">]&lt;/span> リアルタイムデータベースとの通信機能
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="もっとも多かった印象がある--かっこよかったもの">もっとも多かった印象がある &amp;amp; かっこよかったもの&lt;/h2>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">Add: リアルタイムデータベースとの通信機能
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>やっぱこういう Prefix のつけ方がかっこいいですよね。&lt;/p>
+&lt;p>あと当たり前ですが、英語でのコミットメッセージが多かったので、個人開発は英語、友人との共同開発は日本語という感じに分けてもいいですね。&lt;/p>
+&lt;h2 id="prefix-で代表的なもの">Prefix で代表的なもの&lt;/h2>
+&lt;p>&lt;code>add&lt;/code>・&lt;code>update&lt;/code>・&lt;code>upgrade&lt;/code>・&lt;code>fix&lt;/code>・&lt;code>hotfix&lt;/code> などはよく聞きますが、どういった Prefix が共通認識としてよく使われているのでしょうか。&lt;/p>
+&lt;p>また、&lt;code>update&lt;/code> と &lt;code>upgrade&lt;/code> など、違いがよくわからないものも多いので、使う場合のシチュエーションも同時に調べてみたいと思います。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Prefix&lt;/th>
+&lt;th style="text-align:left">使うシチュエーション&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Add:&lt;/td>
+&lt;td style="text-align:left">機能やファイルなどの追加&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Improve:&lt;/td>
+&lt;td style="text-align:left">コードの改善・リファクタリング&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Change:&lt;/td>
+&lt;td style="text-align:left">仕様変更&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Update:&lt;/td>
+&lt;td style="text-align:left">機能修正（バグではない）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Upgrade:&lt;/td>
+&lt;td style="text-align:left">バージョンアップ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Disable:&lt;/td>
+&lt;td style="text-align:left">機能の無効化（コメントアウト等）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Rename:&lt;/td>
+&lt;td style="text-align:left">ファイル名を変更する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Remove:&lt;/td>
+&lt;td style="text-align:left">ファイルを削除する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Move:&lt;/td>
+&lt;td style="text-align:left">ファイルを移動する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Fix:&lt;/td>
+&lt;td style="text-align:left">バグ修正&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Hotfix:&lt;/td>
+&lt;td style="text-align:left">クリティカルなバグ修正&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Revert:&lt;/td>
+&lt;td style="text-align:left">変更取り消し&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>調べてみた結果、&lt;code>update&lt;/code> と &lt;code>upgrade&lt;/code> は上記のように分けている人もいれば、&lt;code>update&lt;/code>　がバージョンアップとしている人もいました。
+また、&lt;code>improve&lt;/code> の代わりに &lt;code>clean&lt;/code> を使う人も多かったですが、こちらはシチュエーションは同じなので問題にはならなそうです。
+&lt;code>change&lt;/code> と &lt;code>update&lt;/code> もほぼ同じ印象を受けました。&lt;/p>
+&lt;p>上の表の中では、&lt;code>update&lt;/code> は二重の捉え方があるので、使うときは気にかけておく方がよさそうですね。。&lt;/p>
+&lt;h2 id="では自分なりの-prefix-表を作ってみよう">では、自分なりの Prefix 表を作ってみよう&lt;/h2>
+&lt;p>上記でさまざまな Prefix を洗い出してみて、その問題点を踏まえた上で、誰にとってもわかりやすい Prefix を自分で決めておきたいと思います。&lt;/p>
+&lt;p>また、&lt;code>Rename&lt;/code> や &lt;code>Move&lt;/code> などはあまりよく使った記憶がないので、今回表からは外しておきます。
+（スタートアップなどの経験が多く、長期的なメンテナンス経験をあまりしてこなかったのも原因かも&amp;hellip;）&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Prefix&lt;/th>
+&lt;th style="text-align:left">使うシチュエーション&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Add:&lt;/td>
+&lt;td style="text-align:left">機能やファイルなどの追加&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Clean:&lt;/td>
+&lt;td style="text-align:left">コードの改善・リファクタリング&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Change:&lt;/td>
+&lt;td style="text-align:left">仕様変更&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Upgrade:&lt;/td>
+&lt;td style="text-align:left">バージョンアップ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Disable:&lt;/td>
+&lt;td style="text-align:left">機能の無効化（コメントアウト等）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Fix:&lt;/td>
+&lt;td style="text-align:left">バグ修正&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Hotfix:&lt;/td>
+&lt;td style="text-align:left">クリティカルなバグ修正&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>曖昧な &lt;code>update&lt;/code> という Prefix は今回避け、&lt;code>improve&lt;/code> も若干 &lt;code>update&lt;/code> と被る気がしたので、
+完全にリファクタリング（仕様はそのままでコードをすっきりさせる）という意味がはっきりと伝わるように &lt;code>clean&lt;/code> に変更しました。&lt;/p>
+&lt;p>この最小編成でとりあえずは立ち回ろうと思います！&lt;/p>
+&lt;h2 id="コミットメッセージって1行しか対応していないと思ってました">コミットメッセージって1行しか対応していないと思ってました&lt;/h2>
+&lt;p>コミットメッセージって、みなさん複数行で書くんですね。
+コミットメッセージ内に Enter って入れられないものだと思ってました(笑)&lt;/p>
+&lt;p>コミットメッセージは、&lt;code>Subject&lt;/code> ・ &lt;code>Body&lt;/code> ・ &lt;code>Footer&lt;/code> という形で書くらしいです。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">&lt;/th>
+&lt;th style="text-align:left">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Subject&lt;/td>
+&lt;td style="text-align:left">そのコミットで何をしたのかをまとめた短い文章&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Body&lt;/td>
+&lt;td style="text-align:left">追加や修正が必要だった理由など&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Footer&lt;/td>
+&lt;td style="text-align:left">Issue の ID やタイトル&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>1行目に &lt;code>Subject&lt;/code>、2行目に空行で、3行目に内容を書きます。
+1行目の &lt;code>Subject&lt;/code> に書く内容は72文字以上は省略されるので、72文字以内が良さそうです。&lt;/p>
+&lt;p>イメージとしては以下の書き方です。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-txt" data-lang="txt">Add: リアルタイムデータベースとの通信機能
+Firebase を使ってランキングを保存できるようにしました。
+...（略）...
+#103 Issue のタイトル
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>また、&lt;code>Body&lt;/code> と &lt;code>Footer&lt;/code> は分けず、以下のようにしているものもありました。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-txt" data-lang="txt">Add: リアルタイムデータベースとの通信機能
+refs #103 Firebase を使ってランキングを保存できるようにしました。
+...（略）...
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>ですが、個人で開発するプロジェクトに関しては、ここまでしなくても内容はわかるかなとも思います。&lt;/p>
+&lt;h2 id="それぞれの案件に応じて臨機応変に対応する">それぞれの案件に応じて臨機応変に対応する&lt;/h2>
+&lt;p>どれだけの人数でプロジェクトを進めていくのか、どのくらい長期的にメンテナンスしていくのかによって、
+コミットメッセージのクオリティを変えていくのがベストプラクティスかなと思います。&lt;/p></description></item><item><title>鯖管向け！Minecraftサーバーの監視ツールの制作</title><link>https://coalabo.net/p/minecraft-server-monitor/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +2100</pubDate><guid>https://coalabo.net/p/minecraft-server-monitor/</guid><description>&lt;img src="https://coalabo.net/p/minecraft-server-monitor/cover.jpg" alt="Featured image of post 鯖管向け！Minecraftサーバーの監視ツールの制作" />&lt;h2 id="今回の-firebase-は一味違います">今回の Firebase は一味違います&lt;/h2>
 &lt;p>今回作成する監視サーバですが、Google Cloud Platform の Cloud Scheduler を使って、Firebase の Cloud Functions を定期実行させます。&lt;/p>
 &lt;p>Cloud Scheduler と Cloud Functions の連携方法ですが、
 Google が用意してある &lt;code>firebase-functions&lt;/code> というライブラリに付随しているスケジュール機能を使用することで、
