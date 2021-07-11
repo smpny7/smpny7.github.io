@@ -1,4 +1,161 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 05 Jun 2021 22:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>誰にとってもわかりやすいコミットメッセージ</title><link>https://coalabo.net/p/commit-message/</link><pubDate>Sat, 05 Jun 2021 22:00:00 +2100</pubDate><guid>https://coalabo.net/p/commit-message/</guid><description>&lt;img src="https://coalabo.net/p/commit-message/cover.jpg" alt="Featured image of post 誰にとってもわかりやすいコミットメッセージ" />&lt;h2 id="みんなコミットメッセージってどんなふうに書いてるのかな">みんなコミットメッセージってどんなふうに書いてるのかな？&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 12 Jul 2021 02:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>学祭2020向け音ゲーの制作: VIVACE</title><link>https://coalabo.net/p/vivace/</link><pubDate>Mon, 12 Jul 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace/</guid><description>&lt;img src="https://coalabo.net/p/vivace/cover.jpg" alt="Featured image of post 学祭2020向け音ゲーの制作: VIVACE" />&lt;h2 id="学祭で何か展示したい">学祭で何か展示したい！&lt;/h2>
+&lt;p>その当時、新しいジャンルのものに挑戦したい！とずっと考えており、Unity に挑戦することにしました。&lt;/p>
+&lt;p>同級生のエンジニア 3名で作ったのですが、制作物は 3人とも大好きな「音ゲー」にしました。&lt;/p>
+&lt;p>こんな感じの音ゲーを制作しました（ネタバレ）↓&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
+&lt;a href="https://coalabo.net/p/vivace/image_1.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/vivace/image_1.jpg"
+srcset="https://coalabo.net/p/vivace/image_1_hu9a8e108379b3f54dd8a3b896da5d54b6_221912_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_1_hu9a8e108379b3f54dd8a3b896da5d54b6_221912_1024x0_resize_q75_box.jpg 1024w"
+width="1920"
+height="1080"
+loading="lazy"
+alt="スプラッシュ画面">
+&lt;/a>
+&lt;figcaption>スプラッシュ画面&lt;/figcaption>
+&lt;/figure>
+&lt;figure style="flex-grow: 177; flex-basis: 426px">
+&lt;a href="https://coalabo.net/p/vivace/image_2.jpg" data-size="1610x906">&lt;img src="https://coalabo.net/p/vivace/image_2.jpg"
+srcset="https://coalabo.net/p/vivace/image_2_hu4cd3db7fb58ff83aaea5039d16da9a20_227693_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_2_hu4cd3db7fb58ff83aaea5039d16da9a20_227693_1024x0_resize_q75_box.jpg 1024w"
+width="1610"
+height="906"
+loading="lazy"
+alt="プレイ画面">
+&lt;/a>
+&lt;figcaption>プレイ画面&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="タイトル決定">タイトル決定&lt;/h2>
+&lt;p>まず初めに考えたのは、仕様でもデザインでもなくタイトルでした。&lt;/p>
+&lt;p>タイトルは、「VIVACE」（ヴィヴァーチェ）です！
+速度記号で、「活発に」という意味があるそうです。&lt;/p>
+&lt;h2 id="デザイン作成">デザイン作成！&lt;/h2>
+&lt;p>デザインを作成するのが一番好きかもしれません（おい）&lt;/p>
+&lt;p>最近はデザインを作成するだけで満足感を得ることができるようになりました。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 207; flex-basis: 498px">
+&lt;a href="https://coalabo.net/p/vivace/image_3.jpg" data-size="2482x1196">&lt;img src="https://coalabo.net/p/vivace/image_3.jpg"
+srcset="https://coalabo.net/p/vivace/image_3_hu5a3d569f3e86769650b80e6e0cb903bf_239954_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_3_hu5a3d569f3e86769650b80e6e0cb903bf_239954_1024x0_resize_q75_box.jpg 1024w"
+width="2482"
+height="1196"
+loading="lazy"
+alt="デザイン作成">
+&lt;/a>
+&lt;figcaption>デザイン作成&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="とりあえず最低限遊べるコードを実装します">とりあえず、最低限遊べるコードを実装します&lt;/h2>
+&lt;p>本来であればタッチで遊べる仕様ですが、とりあえずキーボードでノーツを叩けるようにします。&lt;/p>
+&lt;p>中央から順に、&lt;code>Perfect&lt;/code>・&lt;code>Great&lt;/code>・&lt;code>Good&lt;/code> の3つの &lt;code>Box Collider&lt;/code> を設置し、
+ノーツ落下時の &lt;code>onTriggerEnter&lt;/code> と &lt;code>onTriggerExit&lt;/code> の2つで判定を検知します。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 158; flex-basis: 380px">
+&lt;a href="https://coalabo.net/p/vivace/image_4.jpg" data-size="541x341">&lt;img src="https://coalabo.net/p/vivace/image_4.jpg"
+srcset="https://coalabo.net/p/vivace/image_4_hu4f001d61d1a587084869942b6a54a3f4_14778_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_4_hu4f001d61d1a587084869942b6a54a3f4_14778_1024x0_resize_q75_box.jpg 1024w"
+width="541"
+height="341"
+loading="lazy"
+alt="イメージ画像">
+&lt;/a>
+&lt;figcaption>イメージ画像&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 216; flex-basis: 518px">
+&lt;a href="https://coalabo.net/p/vivace/image_5.jpg" data-size="1898x878">&lt;img src="https://coalabo.net/p/vivace/image_5.jpg"
+srcset="https://coalabo.net/p/vivace/image_5_huf006652439d18c46964515f450384cef_68695_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_5_huf006652439d18c46964515f450384cef_68695_1024x0_resize_q75_box.jpg 1024w"
+width="1898"
+height="878"
+loading="lazy"
+alt="Rider画面">
+&lt;/a>
+&lt;figcaption>Rider画面&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>スコアに関しては、共同開発したメンバーが区分求積法での加算を実装してくれました（天才）&lt;/p>
+&lt;p>ん&amp;hellip; 区分求積法ってなんだっけ？&lt;/p>
+&lt;p>これです！高校数学で習いましたね！（私は gg った）&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 172; flex-basis: 413px">
+&lt;a href="https://coalabo.net/p/vivace/image_6.jpg" data-size="541x314">&lt;img src="https://coalabo.net/p/vivace/image_6.jpg"
+srcset="https://coalabo.net/p/vivace/image_6_hu80c159b536215a2a3a7986786ea41fba_6961_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_6_hu80c159b536215a2a3a7986786ea41fba_6961_1024x0_resize_q75_box.jpg 1024w"
+width="541"
+height="314"
+loading="lazy"
+alt="区分求積法">
+&lt;/a>
+&lt;figcaption>区分求積法&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="ノーツの読み込み仕様を決定">ノーツの読み込み仕様を決定&lt;/h2>
+&lt;p>とりあえず、CSV形式（カンマ区切り）で譜面を制作することにしました！&lt;/p>
+&lt;p>こんな感じ ↓&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">1.6901408450704225,1
+1.6901408450704225,3
+2.007042253521127,2
+2.323943661971831,3
+2.535211267605634,2
+2.535211267605634,4
+2.9577464788732395,2
+2.9577464788732395,4
+3.591549295774648,3
+3.8028169014084505,2
+4.014084507042254,1
+4.225352112676056,0
+...
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>ノーツタッチの時刻と、それに対応するレーン（0〜4）番号を保存しています。&lt;/p>
+&lt;p>また、これを生成するツールも Python で実装しました！&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 144; flex-basis: 346px">
+&lt;a href="https://coalabo.net/p/vivace/image_7.png" data-size="1394x966">&lt;img src="https://coalabo.net/p/vivace/image_7.png"
+srcset="https://coalabo.net/p/vivace/image_7_huf5bf0cb86f39d7079dacdecf48ca5fcf_451000_480x0_resize_box_2.png 480w, https://coalabo.net/p/vivace/image_7_huf5bf0cb86f39d7079dacdecf48ca5fcf_451000_1024x0_resize_box_2.png 1024w"
+width="1394"
+height="966"
+loading="lazy"
+alt="Notes Maker">
+&lt;/a>
+&lt;figcaption>Notes Maker&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>詳しくはこちら ↓&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://github.com/smpny7/notes-maker" target="_blank" rel="noopener"
+>&lt;strong>notes-maker（GitHub）&lt;/strong>&lt;/a> &lt;a href="https://github.com/smpny7/notes-maker">https://github.com/smpny7/notes-maker&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="さて次は楽しい楽しいバックエンド">さて、次は楽しい楽しいバックエンド&lt;/h2>
+&lt;p>VIVACE には、「ランキングボード」という機能があり、各曲上位スコア10名の名前とスコアがクリア時に掲載されます。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
+&lt;a href="https://coalabo.net/p/vivace/image_8.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/vivace/image_8.jpg"
+srcset="https://coalabo.net/p/vivace/image_8_hu12f811843f9fbda2c33f11a63863c5fd_176894_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_8_hu12f811843f9fbda2c33f11a63863c5fd_176894_1024x0_resize_q75_box.jpg 1024w"
+width="1920"
+height="1080"
+loading="lazy"
+alt="クリア画面（サンプル）">
+&lt;/a>
+&lt;figcaption>クリア画面（サンプル）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>鬼譜面ばかりなので、スコアが80万点にすら乗らない曲ばかりですが&amp;hellip;（もはや人間業ではありません）&lt;/p>
+&lt;p>まぁ1~10位が全部100万点とかにならないので、いい感じにランキングボードが機能しているなという感じです。&lt;/p>
+&lt;p>少し脱線しましたが、プレイヤーのクリア履歴は全部サーバーのDBに保管されており、
+ユーザーの認証やデータの別端末への引き継ぎ、スコアの格納などはバックエンドのAPIで行っています。&lt;/p>
+&lt;p>とりあえず、何で作ろう&amp;hellip;？&lt;/p>
+&lt;p>と熟考し、最終的に私の大好きな Express で作ることにしました。
+具体的には&lt;code>Node.js&lt;/code> + &lt;code>Typescript&lt;/code> + &lt;code>Express&lt;/code> で作成しています。&lt;/p>
+&lt;p>サーバーは GCP の無料枠で、Docker 環境で今もなお動かしています。&lt;/p>
+&lt;p>詳しくはこちら ↓&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://github.com/smpny7/vivace-api" target="_blank" rel="noopener"
+>&lt;strong>vivace-api（GitHub）&lt;/strong>&lt;/a> &lt;a href="https://github.com/smpny7/vivace-api">https://github.com/smpny7/vivace-api&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="共同作業の始まりだ">共同作業の始まりだ！&lt;/h2>
+&lt;p>ここからプロジェクトを GitHub Organizations のリポジトリに移植し、
+共同開発がしやすいようにセットアップしました。（&lt;a class="link" href="https://github.com/vivace-app" target="_blank" rel="noopener"
+>こちら&lt;/a>）&lt;/p>
+&lt;p>コーディングは基本メンバーの3人で行い、譜面の作成は、基本他の部員に手伝ってもらいました。（結果 → 鬼譜面）&lt;/p>
+&lt;p>あまりもう覚えてないですが、曲選択機能やノーツ落下速度・タイミング調整機能、
+プレイ時のエフェクトやサウンドなどを2ヶ月くらいかけて極めていきました。&lt;/p>
+&lt;p>学祭当日の朝4:00まで、みんなで徹夜でバグ修正していたのは秘密です（楽しかった）&lt;/p>
+&lt;h2 id="学祭終了後">学祭終了後&lt;/h2>
+&lt;p>3人で話し合い、このソースコードは、バックエンド・譜面生成ツールも含めオープンソース化しようということになりました。&lt;/p>
+&lt;p>海外の人がフォークしてくれてたのには少し驚きましたが、自分達でも楽曲DL機能・GooglePlayログイン機能など、
+少しずつですが、さまざまなアップデートを加えていってます。&lt;/p>
+&lt;p>鬼譜面ですが、史上最強の音ゲーだと思います！&lt;/p>
+&lt;h2 id="最後に">最後に&lt;/h2>
+&lt;p>この音ゲーを制作した経緯として、もう1つの理由があります。&lt;/p>
+&lt;p>サークルの後輩たち（DTM してる人が多いです。）が、コミケに向けて曲をたくさん作っていました。
+しかし、コロナ化の影響で中止となり、アウトプットする場がなくなってしまったこともあり、
+同級生3人でその曲を使った音ゲーを作り、1つの製作物にしようということになりました。&lt;/p>
+&lt;p>エンジニアの3人以外にも、楽曲製作班、譜面製作班など、コロナ禍の学祭で、
+ここまで団結してオンラインで出し物を準備することができるとは思わなかったので、
+忘れられない貴重な体験になりました。&lt;/p>
+&lt;p>制作に協力していただいた皆様、本当にありがとうございました。&lt;/p></description></item><item><title>誰にとってもわかりやすいコミットメッセージ</title><link>https://coalabo.net/p/commit-message/</link><pubDate>Sat, 05 Jun 2021 22:00:00 +2100</pubDate><guid>https://coalabo.net/p/commit-message/</guid><description>&lt;img src="https://coalabo.net/p/commit-message/cover.jpg" alt="Featured image of post 誰にとってもわかりやすいコミットメッセージ" />&lt;h2 id="みんなコミットメッセージってどんなふうに書いてるのかな">みんなコミットメッセージってどんなふうに書いてるのかな？&lt;/h2>
 &lt;p>ふと気になって、さまざまなオープンソースのコミットメッセージをみてきました。&lt;/p>
 &lt;p>今まで自分が使ってきたコミットメッセージがあまりにも一般的じゃなかったので、ここで統一したいと思います！（覚え書き）&lt;/p>
 &lt;h2 id="これまでのコミットメッセージの付け方">これまでのコミットメッセージの付け方&lt;/h2>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ゲーム制作 on コアラボ (coalabo.)</title><link>https://coalabo.net/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E5%88%B6%E4%BD%9C/</link><description>Recent content in ゲーム制作 on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 12 Jul 2021 02:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E5%88%B6%E4%BD%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>学祭2020向け音ゲーの制作: VIVACE</title><link>https://coalabo.net/p/vivace/</link><pubDate>Mon, 12 Jul 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace/</guid><description>学祭で何か展示したい！ その当時、新しいジャンルのものに挑戦したい！とずっと考えており、Unity に挑戦することにしました。
+同級生のエンジニア 3名で作ったのですが、制作物は 3人とも大好きな「音ゲー」にしました。
+こんな感じの音ゲーを制作しました（ネタバレ）↓
+スプラッシュ画面 プレイ画面
+タイトル決定 まず初めに考えたのは、仕様でもデザインでもなくタイトルでした。
+タイトルは、「VIVACE」（ヴィヴァーチェ）です！ 速度記号で、「活発に」という意味があるそうです。
+デザイン作成！ デザインを作成するのが一番好きかもしれません（おい）
+最近はデザインを作成するだけで満足感を得ることができるようになりました。
+デザイン作成
+とりあえず、最低限遊べるコードを実装します 本来であればタッチで遊べる仕様ですが、とりあえずキーボードでノーツを叩けるようにします。
+中央から順に、Perfect・Great・Good の3つの Box Collider を設置し、 ノーツ落下時の onTriggerEnter と onTriggerExit の2つで判定を検知します。
+イメージ画像
+Rider画面
+スコアに関しては、共同開発したメンバーが区分求積法での加算を実装してくれました（天才）
+ん&amp;hellip; 区分求積法ってなんだっけ？
+これです！高校数学で習いましたね！（私は gg った）
+区分求積法
+ノーツの読み込み仕様を決定 とりあえず、CSV形式（カンマ区切り）で譜面を制作することにしました！
+こんな感じ ↓
+1.6901408450704225,1 1.6901408450704225,3 2.007042253521127,2 2.323943661971831,3 2.535211267605634,2 2.535211267605634,4 2.9577464788732395,2 2.9577464788732395,4 3.591549295774648,3 3.8028169014084505,2 4.014084507042254,1 4.225352112676056,0 ... ノーツタッチの時刻と、それに対応するレーン（0〜4）番号を保存しています。
+また、これを生成するツールも Python で実装しました！</description></item></channel></rss>
