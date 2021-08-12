@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 12 Jul 2021 02:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>学祭2020向け音ゲーの制作: VIVACE</title><link>https://coalabo.net/p/vivace/</link><pubDate>Mon, 12 Jul 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace/</guid><description>学祭で何か展示したい！ その当時、新しいジャンルのものに挑戦したい！とずっと考えており、Unity に挑戦することにしました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 12 Aug 2021 00:00:00 +1900</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>iPhoneXSのディスプレイを交換する</title><link>https://coalabo.net/p/iphone-display-replacement/</link><pubDate>Thu, 12 Aug 2021 00:00:00 +1900</pubDate><guid>https://coalabo.net/p/iphone-display-replacement/</guid><description>だってお風呂で音楽聴きたいもん&amp;hellip; こちらの iPhoneXS、毎日お風呂で使ってたんですが水没しちゃいました。
+水没したiPhoneXS（クリックで再生）
+iPhoneXS は 2018 年に発売され、IEC規格60529に基づくIP68等級に適合しているそうです。 どのくらいかというと、最大水深2メートルで最大30分間使用できるらしい。。
+毎日お風呂で壁に立てかけて音楽を聴いてたんですが（風呂に携帯持ち込むなと、友人にめちゃめちゃ怒られました）、突然ディスプレイがちらつき始めたのです。
+先ほどの映像から1時間後のiPhoneXS
+ん、まだ息はある&amp;hellip;？ とりあえず iPhone を完全に放置し、内部が乾燥したであろう2日後に、おそるおそる Mac に接続。
+すると、なんと反応があるではないですか！もしかして壊れていたのはディスプレイだけ&amp;hellip;？
+とりあえず急いでバックアップをとり、密林に行って交換用ディスプレイを購入することにしました。
+購入したもの　https://www.amazon.co.jp/gp/product/B08RYRPJGK/ref=ppx_yo_dt_b_asin_title_o06_s01
+届きました！修理開始です 有機ELディスプレイ
+ディスプレイが届きました！めちゃめちゃ綺麗な箱に入って届いて、若干テンションが上がりました(笑)
+今回のキットにはドライバー3本とピンセット、ヘラ、吸盤、開口ツールなどの工具に加え、防水フレームステッカー（大切）とおまけのガラスフィルムもついてきました。 写真はは左から順に、星型ドライバー、十字型ドライバー、Y字型ドライバーです。
+今回のキットの付属品
+まずはおしりのネジ2つを外していきます。YouTube で分解動画などがよくありますが、皆さん簡単そうに回していますが一番ここが難しかったです。 少しでも力を抜くと、すぐにネジがなめてしまうので注意しましょう。
+こちらは星型ネジです
+あとは大体想像つくかと思いますが、ドライヤーでシールの粘着力を弱めていきます。 そして吸盤で引っ張り、隙間を作って開いていきます。
+お風呂で使っていたため、湿気などで防水フレームのシールが朽ちているかなと思っていましたが、予想通りでした。 ゴムが水分で、画像のように粉々になっていました。（あとで綺麗に除去しておきました。） 交換用の防水フレームシールが入っていてよかったです！
+本体正面から見て右側にケーブルがあるので、あまり深くヘラを差し込まないようにしましょう。
+どんどん隙間を作って開いていきます
+ようやくご対面です（一苦労） iPhoneXSの中身
+ここから、まずバッテリーに接続されているケーブルを外し、その後ディスプレイにつながるケーブル3本を外します。
+ケーブルが接続されているところにはカバーがついているのですが、ここをネジで外します。 驚いたのはネジの高さ（深さ？）で、1~2mm くらいしかありませんでした。 さすが Apple 製品、コンパクトな作りです。（紛失注意）
+ケーブルカバー部
+こちらがカバーを外した画像です。
+ケーブルカバーを外した様子</description></item><item><title>学祭2020向け音ゲーの制作: VIVACE</title><link>https://coalabo.net/p/vivace/</link><pubDate>Mon, 12 Jul 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace/</guid><description>学祭で何か展示したい！ その当時、新しいジャンルのものに挑戦したい！とずっと考えており、Unity に挑戦することにしました。
 同級生のエンジニア 3名で作ったのですが、制作物は 3人とも大好きな「音ゲー」にしました。
 こんな感じの音ゲーを制作しました（ネタバレ）↓
 スプラッシュ画面 プレイ画面
