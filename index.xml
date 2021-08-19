@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 12 Aug 2021 00:00:00 +1900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>iPhoneXSのディスプレイを交換する</title><link>https://coalabo.net/p/iphone-display-replacement/</link><pubDate>Thu, 12 Aug 2021 00:00:00 +1900</pubDate><guid>https://coalabo.net/p/iphone-display-replacement/</guid><description>&lt;img src="https://coalabo.net/p/iphone-display-replacement/cover.jpg" alt="Featured image of post iPhoneXSのディスプレイを交換する" />&lt;h2 id="だってお風呂で音楽聴きたいもん">だってお風呂で音楽聴きたいもん&amp;hellip;&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 19 Aug 2021 11:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>VIVACE（音ゲー）待望のアプリ化！</title><link>https://coalabo.net/p/vivace-asset-bundle/</link><pubDate>Thu, 19 Aug 2021 11:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace-asset-bundle/</guid><description>&lt;img src="https://coalabo.net/p/vivace-asset-bundle/cover.jpg" alt="Featured image of post VIVACE（音ゲー）待望のアプリ化！" />&lt;h2 id="これは１年前のお話">これは１年前のお話&amp;hellip;&lt;/h2>
+&lt;p>学祭に向けて、昨年同級生と3人で&lt;a class="link" href="https://coalabo.net/p/vivace" target="_blank" rel="noopener"
+>音ゲーを作った話&lt;/a>は過去に記事にしたと思います。&lt;/p>
+&lt;p>当日の朝4時まで Discord をつないでコーディングをし、学祭ギリギリでビルドして、エラーがないことも確認できました。&lt;/p>
+&lt;h2 id="discord-の通話を切った後悲劇は起こります">Discord の通話を切った後、悲劇は起こります&lt;/h2>
+&lt;blockquote>
+&lt;p>私: 「じゃぁもう4時半だし、PlayStore に APK ファイルをアップロードして、寝るか〜〜」&lt;/p>
+&lt;p>カチッ&lt;/p>
+&lt;p>カチッ&lt;/p>
+&lt;p>（ドラッグの音）&lt;/p>
+&lt;p>Google Play Store: 「&lt;strong>エラー:&lt;/strong> APK ファイルのサイズを 100 MB まで小さくするか、APK 拡張ファイルを使用する必要があります。」&lt;/p>
+&lt;p>私: 「 ！！！！！！！！！」&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>そうです、この音ゲーアプリ、楽曲ファイルが原因で軽く100MBを超えちゃってるんです。&lt;/strong>&lt;/p>
+&lt;p>さすがに眠くて、Google Play Store でのリリースは諦めました。（当日は APK 配布）&lt;/p>
+&lt;h2 id="今回は追加ダウンロード機能を実装してアプリストアへのリリースまでやります">今回は追加ダウンロード機能を実装して、アプリストアへのリリースまでやります！&lt;/h2>
+&lt;p>大体の音ゲーって、アプリサイズ縮小のために、起動後にコンテンツのダウンロードを行いますよね。&lt;/p>
+&lt;p>今回はそれを、AssetBundle と用意している API サーバを用いて実装していきます。&lt;/p>
+&lt;p>AssetBundle とは、アプリのビルド時に行っている処理を事前に行っておく事により、実行時に外部からアセットがロードできるようにしたものです。
+これを Web サーバなどに置いておくことで、ダウンロードしてリソースを使用できるようになります。&lt;/p>
+&lt;h2 id="assetbundle-の作成">AssetBundle の作成&lt;/h2>
+&lt;p>今回は AssetBundleBrowser を使用します。これはプレリリース版ですので、使用は自己責任でお願いします。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://github.com/Unity-Technologies/AssetBundles-Browser" target="_blank" rel="noopener"
+>&lt;strong>AssetBundleBrowser&lt;/strong> (GitHub)&lt;/a>　https://github.com/Unity-Technologies/AssetBundles-Browser&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;figure style="flex-grow: 183; flex-basis: 439px">
+&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_1.png" data-size="2638x1440">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_1.png"
+srcset="https://coalabo.net/p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_480x0_resize_box_2.png 480w, https://coalabo.net/p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_1024x0_resize_box_2.png 1024w"
+width="2638"
+height="1440"
+loading="lazy"
+alt="AssetBundleBrowser">
+&lt;/a>
+&lt;figcaption>AssetBundleBrowser&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>使い方は簡単、このツールに AssetBundle にまとめたいものをドラッグします。
+今回だと、音源とプレビュー用の音源、各難易度の譜面とアートワークをセットし、
+Build タブに移動します。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 183; flex-basis: 439px">
+&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_2.png" data-size="2638x1440">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_2.png"
+srcset="https://coalabo.net/p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_480x0_resize_box_2.png 480w, https://coalabo.net/p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_1024x0_resize_box_2.png 1024w"
+width="2638"
+height="1440"
+loading="lazy"
+alt="AssetBundleBrowser (Build)">
+&lt;/a>
+&lt;figcaption>AssetBundleBrowser (Build)&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>AssetBundle は各プラットフォームごとに分かれています。
+今回のリリースは、iOS と Android に絞ってますので、この2つを作成します。&lt;/p>
+&lt;h2 id="配信するためのサーバを用意します">配信するためのサーバを用意します&lt;/h2>
+&lt;p>本来は用意してあるバックエンドサーバから、AssetBundle を DL できるようにするといいのですが、
+Google Cloud Platform を使用しているため、あまりディスク容量を増やしたくありません。&lt;/p>
+&lt;p>ということで、Google Drive のいつもの作戦を使います！&lt;/p>
+&lt;p>本来 Google Drive で共有リンクを生成すると、&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>https://drive.google.com/file/d/&lt;/strong> hogehoge &lt;strong>/view?usp=sharing&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>というリンクになるのですが、以下のようにリンクを変更すると、ファイルをダウンロードさせるヘッダーに変更できます。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>https://drive.google.com/uc?id=&lt;/strong> hogehoge &lt;strong>&amp;amp;usp=sharing&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>毎回リンクを手動で変更させるのは面倒なので、データベースには共有リンクで登録しておき、アプリ内でリンクを変換させるようにしておきます。&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cs" data-lang="cs">&lt;span class="n">music&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">asset_bundle_ios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;https://drive.google.com/file/d/&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;https://drive.google.com/uc?id=&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">.&lt;/span>&lt;span class="n">Replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;/view?usp=sharing&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&amp;amp;usp=sharing&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>また、曲選択画面に表示される曲一覧は、DB と同期できるようにしてあります。
+急遽任意の曲を非表示にするときや、楽曲を追加した時でもリアルタイム更新できるようになりました。
+（セキュリティのため、通信には JWT での認証が必要です）&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 122; flex-basis: 293px">
+&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_3.jpg" data-size="2411x1972">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_3.jpg"
+srcset="https://coalabo.net/p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_1024x0_resize_q75_box.jpg 1024w"
+width="2411"
+height="1972"
+loading="lazy"
+alt="楽曲一覧を返すAPI（認証必要）">
+&lt;/a>
+&lt;figcaption>楽曲一覧を返すAPI（認証必要）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>アプリ内画面では、APIのデータを取得しこのように表示されます。&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
+&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_4.jpg" data-size="2208x1242">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_4.jpg"
+srcset="https://coalabo.net/p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_1024x0_resize_q75_box.jpg 1024w"
+width="2208"
+height="1242"
+loading="lazy"
+alt="VIVACE 曲選択画面">
+&lt;/a>
+&lt;figcaption>VIVACE 曲選択画面&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>運用・メンテナンスしていく上では、こういうリモートでの更新機能も大切ですね。&lt;/p>
+&lt;h2 id="unity-内部のコード">Unity 内部のコード&lt;/h2>
+&lt;p>調べてみると、&lt;code>UnityWebRequest&lt;/code> には AssetBundle をダウンロードする専用の &lt;code>UnityWebRequestAssetBundle&lt;/code> が用意されているようです。&lt;/p>
+&lt;p>また、一度DLした楽曲はキャッシュしておきたいので、第2引数に CachedAssetBundle を入れて呼び出すことで、2回目以降の起動でダウンロードを省略できます。&lt;/p>
+&lt;p>キャッシュされる条件ですが、CachedAssetBundle 以外にも &lt;code>version (uint)&lt;/code> や &lt;code>hash (Hash128)&lt;/code> を第2引数に入れてロードすることで、
+同じくキャッシュが行われるそうです。（非推奨になりつつありますが、&lt;code>WWW.LoadFromCacheOrDownload&lt;/code> を使ってキャッシュする場合は version の型は int に変わるそうなので注意）&lt;/p>
+&lt;p>ちなみに非推奨という点では、SendWebRequest の後のリクエスト処理も、&lt;code>request.isNetworkError&lt;/code> ではなく、
+&lt;code>request.result&lt;/code>の値を、&lt;code>UnityWebRequest.Result.Success&lt;/code>・&lt;code>UnityWebRequest.Result.ConnectionError&lt;/code>・&lt;code>UnityWebRequest.Result.ProtocolError&lt;/code>&amp;hellip; といった用意されたクラスの enum の値で識別するのを推奨するようになりましたね。見やすくてとても気に入っています。（コード詳細↓）&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cs" data-lang="cs">&lt;span class="k">private&lt;/span> &lt;span class="n">IEnumerator&lt;/span> &lt;span class="n">DownloadAssetBundle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">MusicList&lt;/span> &lt;span class="n">music&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="n">downloadUrl&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">{&lt;/span>
+&lt;span class="kt">var&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">CachedAssetBundle&lt;/span>
+&lt;span class="p">{&lt;/span>
+&lt;span class="n">name&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">music&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="n">hash&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">Hash128&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">music&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="p">+&lt;/span> &lt;span class="n">music&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">version&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">};&lt;/span>
+&lt;span class="k">using&lt;/span> &lt;span class="nn">var&lt;/span> &lt;span class="n">request&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">UnityWebRequestAssetBundle&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">GetAssetBundle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">downloadUrl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">c&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="k">yield&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">SendWebRequest&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;span class="k">switch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="p">{&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="n">UnityWebRequest&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Success&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="cm">/* 略 */&lt;/span>
+&lt;span class="k">break&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="n">UnityWebRequest&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">ConnectionError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="n">UnityWebRequest&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">ProtocolError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="n">UnityWebRequest&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DataProcessingError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="cm">/* 略 */&lt;/span>
+&lt;span class="k">break&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">case&lt;/span> &lt;span class="n">UnityWebRequest&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InProgress&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="k">break&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="k">default&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="k">throw&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ArgumentOutOfRangeException&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CachedAssetBundle を使用することで、URL から抽出されるファイル名と指定したバージョン番号を意識しなくて良くなり
+（そもそも Google Drive のリンクなのでできないですが&amp;hellip;）、
+保存場所の衝突など AssetBundle でよく発生する問題をハッシュ値で回避することができます。&lt;/p>
+&lt;p>あとは対応するプラットフォーム毎にダウンロードURLを切り替え、
+リソース使用部分を全て AssetBundle から読み込むように設定し直します。&lt;/p>
+&lt;p>今回のプロジェクトの場合、バックエンドのスコア登録機能も、データベースの楽曲テーブルと同期させる必要がありました。&lt;/p>
+&lt;h2 id="無事ストアリリースできました">無事ストアリリースできました！！&lt;/h2>
+&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
+&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_5.jpg" data-size="3840x2160">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_5.jpg"
+srcset="https://coalabo.net/p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_1024x0_resize_q75_box.jpg 1024w"
+width="3840"
+height="2160"
+loading="lazy"
+alt="AppStore">
+&lt;/a>
+&lt;figcaption>AppStore&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
+&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_6.jpg" data-size="3840x2160">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_6.jpg"
+srcset="https://coalabo.net/p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_1024x0_resize_q75_box.jpg 1024w"
+width="3840"
+height="2160"
+loading="lazy"
+alt="GooglePlayStore">
+&lt;/a>
+&lt;figcaption>GooglePlayStore&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>ストアリリース後、1日で60人の方が遊んでくれて、&lt;del>正直GCPの料金が上がらないか心配&lt;/del> &lt;strong>とても嬉しい&lt;/strong> です。&lt;/p>
+&lt;p>ということで、是非こちらから遊んでみてくださいね ♪&lt;/p>
+&lt;p>今秋、楽曲追加も予定しています。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>AppStore:&lt;/strong>
+&lt;a class="link" href="https://bit.ly/vivace-app-ios" target="_blank" rel="noopener"
+>https://bit.ly/vivace-app-ios&lt;/a>&lt;/p>
+&lt;p>&lt;strong>GooglePlayStore:&lt;/strong>
+&lt;a class="link" href="https://bit.ly/vivace-app-android" target="_blank" rel="noopener"
+>https://bit.ly/vivace-app-android&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>iPhoneXSのディスプレイを交換する</title><link>https://coalabo.net/p/iphone-display-replacement/</link><pubDate>Thu, 12 Aug 2021 00:00:00 +1900</pubDate><guid>https://coalabo.net/p/iphone-display-replacement/</guid><description>&lt;img src="https://coalabo.net/p/iphone-display-replacement/cover.jpg" alt="Featured image of post iPhoneXSのディスプレイを交換する" />&lt;h2 id="だってお風呂で音楽聴きたいもん">だってお風呂で音楽聴きたいもん&amp;hellip;&lt;/h2>
 &lt;p>こちらの iPhoneXS、毎日お風呂で使ってたんですが水没しちゃいました。&lt;/p>
 &lt;p>&lt;figure style="flex-grow: 56; flex-basis: 135px">
 &lt;a href="https://coalabo.net/p/iphone-display-replacement/image_1.gif" data-size="360x640">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_1.gif"

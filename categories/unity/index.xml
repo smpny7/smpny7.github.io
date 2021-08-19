@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unity on コアラボ (coalabo.)</title><link>https://coalabo.net/categories/unity/</link><description>Recent content in Unity on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 12 Jul 2021 02:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/categories/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>学祭2020向け音ゲーの制作: VIVACE</title><link>https://coalabo.net/p/vivace/</link><pubDate>Mon, 12 Jul 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace/</guid><description>学祭で何か展示したい！ その当時、新しいジャンルのものに挑戦したい！とずっと考えており、Unity に挑戦することにしました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unity on コアラボ (coalabo.)</title><link>https://coalabo.net/categories/unity/</link><description>Recent content in Unity on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 19 Aug 2021 11:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/categories/unity/index.xml" rel="self" type="application/rss+xml"/><item><title>VIVACE（音ゲー）待望のアプリ化！</title><link>https://coalabo.net/p/vivace-asset-bundle/</link><pubDate>Thu, 19 Aug 2021 11:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace-asset-bundle/</guid><description>これは１年前のお話&amp;hellip; 学祭に向けて、昨年同級生と3人で音ゲーを作った話は過去に記事にしたと思います。
+当日の朝4時まで Discord をつないでコーディングをし、学祭ギリギリでビルドして、エラーがないことも確認できました。
+Discord の通話を切った後、悲劇は起こります 私: 「じゃぁもう4時半だし、PlayStore に APK ファイルをアップロードして、寝るか〜〜」
+カチッ
+カチッ
+（ドラッグの音）
+Google Play Store: 「エラー: APK ファイルのサイズを 100 MB まで小さくするか、APK 拡張ファイルを使用する必要があります。」
+私: 「 ！！！！！！！！！」
+そうです、この音ゲーアプリ、楽曲ファイルが原因で軽く100MBを超えちゃってるんです。
+さすがに眠くて、Google Play Store でのリリースは諦めました。（当日は APK 配布）
+今回は追加ダウンロード機能を実装して、アプリストアへのリリースまでやります！ 大体の音ゲーって、アプリサイズ縮小のために、起動後にコンテンツのダウンロードを行いますよね。
+今回はそれを、AssetBundle と用意している API サーバを用いて実装していきます。
+AssetBundle とは、アプリのビルド時に行っている処理を事前に行っておく事により、実行時に外部からアセットがロードできるようにしたものです。 これを Web サーバなどに置いておくことで、ダウンロードしてリソースを使用できるようになります。
+AssetBundle の作成 今回は AssetBundleBrowser を使用します。これはプレリリース版ですので、使用は自己責任でお願いします。
+AssetBundleBrowser (GitHub)　https://github.com/Unity-Technologies/AssetBundles-Browser
+AssetBundleBrowser
+使い方は簡単、このツールに AssetBundle にまとめたいものをドラッグします。 今回だと、音源とプレビュー用の音源、各難易度の譜面とアートワークをセットし、 Build タブに移動します。
+AssetBundleBrowser (Build)</description></item><item><title>学祭2020向け音ゲーの制作: VIVACE</title><link>https://coalabo.net/p/vivace/</link><pubDate>Mon, 12 Jul 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace/</guid><description>学祭で何か展示したい！ その当時、新しいジャンルのものに挑戦したい！とずっと考えており、Unity に挑戦することにしました。
 同級生のエンジニア 3名で作ったのですが、制作物は 3人とも大好きな「音ゲー」にしました。
 こんな感じの音ゲーを制作しました（ネタバレ）↓
 スプラッシュ画面 プレイ画面
