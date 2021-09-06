@@ -2,7 +2,7 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。"><title>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</title>
 <link rel=canonical href=https://coalabo.net/p/jokura-web/>
-<link rel=stylesheet href=../../scss/style.min.css><meta property="og:title" content="Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
 <meta property="og:description" content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。">
 <meta property="og:url" content="https://coalabo.net/p/jokura-web/">
 <meta property="og:site_name" content="コアラボ (coalabo.)">
@@ -10,7 +10,7 @@
 <meta name=twitter:title content="Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
 <meta name=twitter:description content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。"><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://coalabo.net/p/jokura-web/cover.jpg">
-<link rel="shortcut icon" href=../../img/favicon.png>
+<link rel="shortcut icon" href=/img/favicon.png>
 <style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
@@ -27,29 +27,29 @@ on-phone--column extended">
 </button>
 <header class=site-info>
 <figure class=site-avatar>
-<img src=../../img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
 </figure>
 <h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
 <h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
 </header>
 <ol class=menu id=main-menu>
 <li>
-<a href=../../><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
 <span>ホーム</span>
 </a>
 </li>
 <li>
-<a href=../../about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
 <span>ブログを書いている人</span>
 </a>
 </li>
 <li>
-<a href=../../archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
 <span>記事一覧</span>
 </a>
 </li>
 <li>
-<a href=../../search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
 <span>記事を探す</span>
 </a>
 </li>
@@ -59,27 +59,27 @@ on-phone--column extended">
 <article class="has-image main-article">
 <header class=article-header>
 <div class=article-image>
-<a href=../../p/jokura-web/>
-<img src=../../p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg srcset="../../p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg 800w, ../../p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_1600x0_resize_q75_box.jpg 1600w" width=800 height=450 loading=lazy alt="Featured image of post Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
+<a href=/p/jokura-web/>
+<img src=/p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg srcset="/p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg 800w, /p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_1600x0_resize_q75_box.jpg 1600w" width=800 height=450 loading=lazy alt="Featured image of post Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
 </a>
 </div>
 <div class=article-details>
 <header class=article-category>
-<a href=../../categories/minecraft/ style=background-color:#ca0003;color:#fff>
+<a href=/categories/minecraft/ style=background-color:#ca0003;color:#fff>
 Minecraft
 </a>
-<a href=../../categories/php/ style=background-color:#6580bb;color:#fff>
+<a href=/categories/php/ style=background-color:#6580bb;color:#fff>
 PHP
 </a>
-<a href=../../categories/node.js/ style=background-color:#71bc52;color:#fff>
+<a href=/categories/node.js/ style=background-color:#71bc52;color:#fff>
 Node.js
 </a>
-<a href=../../categories/typescript/ style=background-color:#2d79c7;color:#fff>
+<a href=/categories/typescript/ style=background-color:#2d79c7;color:#fff>
 TypeScript
 </a>
 </header>
 <h2 class=article-title>
-<a href=../../p/jokura-web/>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</a>
+<a href=/p/jokura-web/>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</a>
 </h2>
 <h3 class=article-subtitle>
 プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。
@@ -97,8 +97,8 @@ TypeScript
 <p>「 情クラ！」という、知り合い十数名程度の Minecraft サーバーで遊んでいるのですが、
 今や大陸内には高速道路が広がり、複数の大陸間には大きな橋が建築されています。（やばすぎ）</p>
 <p><figure class=gallery-image style=flex-grow:192;flex-basis:462px>
-<a href=../../p/jokura-web/image_1.jpg data-size=2378x1233>
-<img src=../../p/jokura-web/image_1.jpg width=2378 height=1233 srcset="../../p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="瀬戸大橋（こんなのが 5, 6本架かっています）">
+<a href=/p/jokura-web/image_1.jpg data-size=2378x1233>
+<img src=/p/jokura-web/image_1.jpg width=2378 height=1233 srcset="/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="瀬戸大橋（こんなのが 5, 6本架かっています）">
 </a>
 <figcaption>瀬戸大橋（こんなのが 5, 6本架かっています）</figcaption>
 </figure></p>
@@ -113,8 +113,8 @@ TypeScript
 それをちょうど1年間で使い切る<code>n1-standard-1</code> プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）で運用していたのですが、
 大人数が長時間プレイしていると動作がもっさりしてくるのです。</p>
 <p><figure class=gallery-image style=flex-grow:110;flex-basis:264px>
-<a href=../../p/jokura-web/image_2.jpg data-size=1870x1694>
-<img src=../../p/jokura-web/image_2.jpg width=1870 height=1694 srcset="../../p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="GCPの料金（N1 標準マシンタイプ）">
+<a href=/p/jokura-web/image_2.jpg data-size=1870x1694>
+<img src=/p/jokura-web/image_2.jpg width=1870 height=1694 srcset="/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="GCPの料金（N1 標準マシンタイプ）">
 </a>
 <figcaption>GCPの料金（N1 標準マシンタイプ）</figcaption>
 </figure></p>
@@ -122,13 +122,13 @@ TypeScript
 <p>ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバーを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。</p>
 <h2 id=まずは完成品をどうぞ>まずは完成品をどうぞ</h2>
 <p><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
-<a href=../../p/jokura-web/image_3.jpg data-size=750x1334>
-<img src=../../p/jokura-web/image_3.jpg width=750 height=1334 srcset="../../p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=トップページ（情クラ！）>
+<a href=/p/jokura-web/image_3.jpg data-size=750x1334>
+<img src=/p/jokura-web/image_3.jpg width=750 height=1334 srcset="/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=トップページ（情クラ！）>
 </a>
 <figcaption>トップページ（情クラ！）</figcaption>
 </figure><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
-<a href=../../p/jokura-web/image_4.jpg data-size=750x1334>
-<img src=../../p/jokura-web/image_4.jpg width=750 height=1334 srcset="../../p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=サーバー状況確認ページ（情クラ！）>
+<a href=/p/jokura-web/image_4.jpg data-size=750x1334>
+<img src=/p/jokura-web/image_4.jpg width=750 height=1334 srcset="/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=サーバー状況確認ページ（情クラ！）>
 </a>
 <figcaption>サーバー状況確認ページ（情クラ！）</figcaption>
 </figure></p>
@@ -230,13 +230,13 @@ TypeScript
 <p>あまり技術的な話をすると長くなっちゃいそうなので、次に行きます。</p>
 <p>他に実装した機能も紹介します。</p>
 <p><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
-<a href=../../p/jokura-web/image_5.jpg data-size=750x1334>
-<img src=../../p/jokura-web/image_5.jpg width=750 height=1334 srcset="../../p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=ナビゲーションバー（情クラ！）>
+<a href=/p/jokura-web/image_5.jpg data-size=750x1334>
+<img src=/p/jokura-web/image_5.jpg width=750 height=1334 srcset="/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=ナビゲーションバー（情クラ！）>
 </a>
 <figcaption>ナビゲーションバー（情クラ！）</figcaption>
 </figure><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
-<a href=../../p/jokura-web/image_6.jpg data-size=750x1334>
-<img src=../../p/jokura-web/image_6.jpg width=750 height=1334 srcset="../../p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=再起動（情クラ！）>
+<a href=/p/jokura-web/image_6.jpg data-size=750x1334>
+<img src=/p/jokura-web/image_6.jpg width=750 height=1334 srcset="/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=再起動（情クラ！）>
 </a>
 <figcaption>再起動（情クラ！）</figcaption>
 </figure></p>
@@ -367,16 +367,16 @@ screen -p <span class=m>0</span> -S <span class=si>${</span><span class=nv>SCREE
 やはり GCP などの従量課金制のサーバーで運用するには、かなり気を使ってしまうので正直解放されました。</p>
 <p>かといって、情クラ！での活動はまだまだ続けていく予定なので、ぜひこのブログでも活動を共有していけたらなと思います！</p>
 <p><figure class=gallery-image style=flex-grow:177;flex-basis:426px>
-<a href=../../p/jokura-web/image_7.jpg data-size=1920x1080>
-<img src=../../p/jokura-web/image_7.jpg width=1920 height=1080 srcset="../../p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=アクティブすぎるメンバーの写真>
+<a href=/p/jokura-web/image_7.jpg data-size=1920x1080>
+<img src=/p/jokura-web/image_7.jpg width=1920 height=1080 srcset="/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=アクティブすぎるメンバーの写真>
 </a>
 <figcaption>アクティブすぎるメンバーの写真</figcaption>
 </figure></p>
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=../../tags/%E3%82%B2%E3%83%BC%E3%83%A0/>ゲーム</a>
-<a href=../../tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%A7%8B%E7%AF%89/>サーバー構築</a>
+<a href=/tags/%E3%82%B2%E3%83%BC%E3%83%A0/>ゲーム</a>
+<a href=/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%A7%8B%E7%AF%89/>サーバー構築</a>
 </section>
 <section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
 <span>Licensed under CC BY-NC-SA 4.0</span>
@@ -388,9 +388,9 @@ screen -p <span class=m>0</span> -S <span class=si>${</span><span class=nv>SCREE
 <div class=related-contents>
 <div class="flex article-list--tile">
 <article class=has-image>
-<a href=../../p/minecraft-server-monitor/>
+<a href=/p/minecraft-server-monitor/>
 <div class=article-image>
-<img src=../../p/minecraft-server-monitor/cover.71c762ec839309e33c85971cb9654501_hu9bc544d4ea982a63781cc58d28f20ef3_17688_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=minecraft-server-monitor data-hash="md5-ccdi7IOTCeM8hZccuWVFAQ==">
+<img src=/p/minecraft-server-monitor/cover.71c762ec839309e33c85971cb9654501_hu9bc544d4ea982a63781cc58d28f20ef3_17688_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=minecraft-server-monitor data-hash="md5-ccdi7IOTCeM8hZccuWVFAQ==">
 </div>
 <div class=article-details>
 <h2 class=article-title>鯖管向け！Minecraftサーバーの監視ツールの制作</h2>
@@ -398,9 +398,9 @@ screen -p <span class=m>0</span> -S <span class=si>${</span><span class=nv>SCREE
 </a>
 </article>
 <article class=has-image>
-<a href=../../p/jokura-app/>
+<a href=/p/jokura-app/>
 <div class=article-image>
-<img src=../../p/jokura-app/cover.4c63b534b7e0c259380e10c218676cba_hu4de8297eba748400c5bc7c54477d6389_102123_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-app data-hash="md5-TGO1NLfgwlk4DhDCGGdsug==">
+<img src=/p/jokura-app/cover.4c63b534b7e0c259380e10c218676cba_hu4de8297eba748400c5bc7c54477d6389_102123_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-app data-hash="md5-TGO1NLfgwlk4DhDCGGdsug==">
 </div>
 <div class=article-details>
 <h2 class=article-title>アプリ版 Minecraft サーバー制御ツールの制作</h2>
@@ -408,9 +408,9 @@ screen -p <span class=m>0</span> -S <span class=si>${</span><span class=nv>SCREE
 </a>
 </article>
 <article class=has-image>
-<a href=../../p/wbot/>
+<a href=/p/wbot/>
 <div class=article-image>
-<img src=../../p/wbot/cover.65428b6ae5ac336636a35c92033d27fb_hub8c1acb45d2236871445ffc5c0753e18_55702_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=wbot data-hash="md5-ZUKLauWsM2Y2o1ySAz0n+w==">
+<img src=/p/wbot/cover.65428b6ae5ac336636a35c92033d27fb_hub8c1acb45d2236871445ffc5c0753e18_55702_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=wbot data-hash="md5-ZUKLauWsM2Y2o1ySAz0n+w==">
 </div>
 <div class=article-details>
 <h2 class=article-title>草bot (wbot) の開発談</h2>
@@ -469,7 +469,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 </div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
 </main>
 </div>
-<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=../../ts/main.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
 <script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
 </body>
 </html>

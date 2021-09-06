@@ -2,7 +2,7 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Cloud Functions for Firebase を使って、定期実行する監視ツールを作成しました。"><title>鯖管向け！Minecraftサーバーの監視ツールの制作</title>
 <link rel=canonical href=https://coalabo.net/p/minecraft-server-monitor/>
-<link rel=stylesheet href=../../scss/style.min.css><meta property="og:title" content="鯖管向け！Minecraftサーバーの監視ツールの制作">
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="鯖管向け！Minecraftサーバーの監視ツールの制作">
 <meta property="og:description" content="Cloud Functions for Firebase を使って、定期実行する監視ツールを作成しました。">
 <meta property="og:url" content="https://coalabo.net/p/minecraft-server-monitor/">
 <meta property="og:site_name" content="コアラボ (coalabo.)">
@@ -10,7 +10,7 @@
 <meta name=twitter:title content="鯖管向け！Minecraftサーバーの監視ツールの制作">
 <meta name=twitter:description content="Cloud Functions for Firebase を使って、定期実行する監視ツールを作成しました。"><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://coalabo.net/p/minecraft-server-monitor/cover.jpg">
-<link rel="shortcut icon" href=../../img/favicon.png>
+<link rel="shortcut icon" href=/img/favicon.png>
 <style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
@@ -27,29 +27,29 @@ on-phone--column extended">
 </button>
 <header class=site-info>
 <figure class=site-avatar>
-<img src=../../img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
 </figure>
 <h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
 <h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
 </header>
 <ol class=menu id=main-menu>
 <li>
-<a href=../../><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
 <span>ホーム</span>
 </a>
 </li>
 <li>
-<a href=../../about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
 <span>ブログを書いている人</span>
 </a>
 </li>
 <li>
-<a href=../../archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
 <span>記事一覧</span>
 </a>
 </li>
 <li>
-<a href=../../search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
 <span>記事を探す</span>
 </a>
 </li>
@@ -59,21 +59,21 @@ on-phone--column extended">
 <article class="has-image main-article">
 <header class=article-header>
 <div class=article-image>
-<a href=../../p/minecraft-server-monitor/>
-<img src=../../p/minecraft-server-monitor/cover_hu9bc544d4ea982a63781cc58d28f20ef3_17688_800x0_resize_q75_box.jpg srcset="../../p/minecraft-server-monitor/cover_hu9bc544d4ea982a63781cc58d28f20ef3_17688_800x0_resize_q75_box.jpg 800w, ../../p/minecraft-server-monitor/cover_hu9bc544d4ea982a63781cc58d28f20ef3_17688_1600x0_resize_q75_box.jpg 1600w" width=800 height=410 loading=lazy alt="Featured image of post 鯖管向け！Minecraftサーバーの監視ツールの制作">
+<a href=/p/minecraft-server-monitor/>
+<img src=/p/minecraft-server-monitor/cover_hu9bc544d4ea982a63781cc58d28f20ef3_17688_800x0_resize_q75_box.jpg srcset="/p/minecraft-server-monitor/cover_hu9bc544d4ea982a63781cc58d28f20ef3_17688_800x0_resize_q75_box.jpg 800w, /p/minecraft-server-monitor/cover_hu9bc544d4ea982a63781cc58d28f20ef3_17688_1600x0_resize_q75_box.jpg 1600w" width=800 height=410 loading=lazy alt="Featured image of post 鯖管向け！Minecraftサーバーの監視ツールの制作">
 </a>
 </div>
 <div class=article-details>
 <header class=article-category>
-<a href=../../categories/firebase/ style=background-color:#ffcc27;color:#fff>
+<a href=/categories/firebase/ style=background-color:#ffcc27;color:#fff>
 Firebase
 </a>
-<a href=../../categories/minecraft/ style=background-color:#ca0003;color:#fff>
+<a href=/categories/minecraft/ style=background-color:#ca0003;color:#fff>
 Minecraft
 </a>
 </header>
 <h2 class=article-title>
-<a href=../../p/minecraft-server-monitor/>鯖管向け！Minecraftサーバーの監視ツールの制作</a>
+<a href=/p/minecraft-server-monitor/>鯖管向け！Minecraftサーバーの監視ツールの制作</a>
 </h2>
 <h3 class=article-subtitle>
 Cloud Functions for Firebase を使って、定期実行する監視ツールを作成しました。
@@ -125,8 +125,8 @@ Container Registry のストレージ費用は、1 GB あたり月額約 $0.026 
 <p>Firebase の料金プランは、Spark → Blaze にアップグレードしておく必要があります。
 また、有効な支払い方法を登録しておく必要があります。</p>
 <p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
-<a href=../../p/minecraft-server-monitor/image_1.jpg data-size=3584x2240>
-<img src=../../p/minecraft-server-monitor/image_1.jpg width=3584 height=2240 srcset="../../p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_480x0_resize_q75_box.jpg 480w, ../../p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="Firebase 料金プラン">
+<a href=/p/minecraft-server-monitor/image_1.jpg data-size=3584x2240>
+<img src=/p/minecraft-server-monitor/image_1.jpg width=3584 height=2240 srcset="/p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_480x0_resize_q75_box.jpg 480w, /p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="Firebase 料金プラン">
 </a>
 <figcaption>Firebase 料金プラン</figcaption>
 </figure></p>
@@ -145,8 +145,8 @@ Container Registry のストレージ費用は、1 GB あたり月額約 $0.026 
 </blockquote>
 <p>新規 Firebase プロジェクトを利用する際には、初めにリージョンを設定しておかないといけないそうです！</p>
 <p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
-<a href=../../p/minecraft-server-monitor/image_2.jpg data-size=3584x2240>
-<img src=../../p/minecraft-server-monitor/image_2.jpg width=3584 height=2240 srcset="../../p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_480x0_resize_q75_box.jpg 480w, ../../p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="デフォルトの GCP リソースロケーション を設定">
+<a href=/p/minecraft-server-monitor/image_2.jpg data-size=3584x2240>
+<img src=/p/minecraft-server-monitor/image_2.jpg width=3584 height=2240 srcset="/p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_480x0_resize_q75_box.jpg 480w, /p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="デフォルトの GCP リソースロケーション を設定">
 </a>
 <figcaption>デフォルトの GCP リソースロケーション を設定</figcaption>
 </figure></p>
@@ -196,8 +196,8 @@ Container Registry のストレージ費用は、1 GB あたり月額約 $0.026 
 <p>無難に、<code>asia-northeast1</code> か <code>asia-northeast2</code> あたりがいいと思います。</p>
 <p>これできちんと新規プロジェクトの作成ができました！</p>
 <p><figure class=gallery-image style=flex-grow:141;flex-basis:338px>
-<a href=../../p/minecraft-server-monitor/image_3.png data-size=1364x966>
-<img src=../../p/minecraft-server-monitor/image_3.png width=1364 height=966 srcset="../../p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_480x0_resize_box_3.png 480w, ../../p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_1024x0_resize_box_3.png 1024w" loading=lazy alt="Firebase プロジェクトの新規作成">
+<a href=/p/minecraft-server-monitor/image_3.png data-size=1364x966>
+<img src=/p/minecraft-server-monitor/image_3.png width=1364 height=966 srcset="/p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_480x0_resize_box_3.png 480w, /p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_1024x0_resize_box_3.png 1024w" loading=lazy alt="Firebase プロジェクトの新規作成">
 </a>
 <figcaption>Firebase プロジェクトの新規作成</figcaption>
 </figure></p>
@@ -219,8 +219,8 @@ firebaseプロジェクト内に、オブジェクト形式で保存されてい
 <p>Minecraft サーバーを監視し、サーバーが落ちた際に Discord に通知してくれるサービス（Worker）を作成しました。</p>
 <p>詳しくは以下の GitHub リポジトリを参照してください！</p>
 <p><figure class=gallery-image style=flex-grow:68;flex-basis:164px>
-<a href=../../p/minecraft-server-monitor/image_4.jpg data-size=1482x2168>
-<img src=../../p/minecraft-server-monitor/image_4.jpg width=1482 height=2168 srcset="../../p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_480x0_resize_q75_box.jpg 480w, ../../p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="minecraft-server-monitor (README)">
+<a href=/p/minecraft-server-monitor/image_4.jpg data-size=1482x2168>
+<img src=/p/minecraft-server-monitor/image_4.jpg width=1482 height=2168 srcset="/p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_480x0_resize_q75_box.jpg 480w, /p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="minecraft-server-monitor (README)">
 </a>
 <figcaption>minecraft-server-monitor (README)</figcaption>
 </figure></p>
@@ -231,15 +231,15 @@ firebaseプロジェクト内に、オブジェクト形式で保存されてい
 <p>Discord にサーバの状態をログとして投げてくれます。</p>
 <p>ボットの名前とアイコンは、メンバーに勝手に変えられているので気にしないでください。。</p>
 <p><figure class=gallery-image style=flex-grow:370;flex-basis:888px>
-<a href=../../p/minecraft-server-monitor/image_5.jpg data-size=1184x320>
-<img src=../../p/minecraft-server-monitor/image_5.jpg width=1184 height=320 srcset="../../p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_480x0_resize_q75_box.jpg 480w, ../../p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=一般的なログ>
+<a href=/p/minecraft-server-monitor/image_5.jpg data-size=1184x320>
+<img src=/p/minecraft-server-monitor/image_5.jpg width=1184 height=320 srcset="/p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_480x0_resize_q75_box.jpg 480w, /p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=一般的なログ>
 </a>
 <figcaption>一般的なログ</figcaption>
 </figure></p>
 <p>また、GCP の minecraft サーバーが落ちたときは、通知用チャンネルに投稿されます。</p>
 <p><figure class=gallery-image style=flex-grow:385;flex-basis:926px>
-<a href=../../p/minecraft-server-monitor/image_6.jpg data-size=1204x312>
-<img src=../../p/minecraft-server-monitor/image_6.jpg width=1204 height=312 srcset="../../p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_480x0_resize_q75_box.jpg 480w, ../../p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=サーバーが落ちた時のログ>
+<a href=/p/minecraft-server-monitor/image_6.jpg data-size=1204x312>
+<img src=/p/minecraft-server-monitor/image_6.jpg width=1204 height=312 srcset="/p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_480x0_resize_q75_box.jpg 480w, /p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=サーバーが落ちた時のログ>
 </a>
 <figcaption>サーバーが落ちた時のログ</figcaption>
 </figure></p>
@@ -248,8 +248,8 @@ firebaseプロジェクト内に、オブジェクト形式で保存されてい
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=../../tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%A7%8B%E7%AF%89/>サーバー構築</a>
-<a href=../../tags/bot%E4%BD%9C%E6%88%90/>Bot作成</a>
+<a href=/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%A7%8B%E7%AF%89/>サーバー構築</a>
+<a href=/tags/bot%E4%BD%9C%E6%88%90/>Bot作成</a>
 </section>
 <section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
 <span>Licensed under CC BY-NC-SA 4.0</span>
@@ -261,9 +261,9 @@ firebaseプロジェクト内に、オブジェクト形式で保存されてい
 <div class=related-contents>
 <div class="flex article-list--tile">
 <article class=has-image>
-<a href=../../p/jokura-web/>
+<a href=/p/jokura-web/>
 <div class=article-image>
-<img src=../../p/jokura-web/cover.559e1c92a028ff6a97a0fdb7e7c7ec00_hu009098f9a09b5c87310a26959658631a_93318_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-web data-hash="md5-VZ4ckqAo/2qXoP2358fsAA==">
+<img src=/p/jokura-web/cover.559e1c92a028ff6a97a0fdb7e7c7ec00_hu009098f9a09b5c87310a26959658631a_93318_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-web data-hash="md5-VZ4ckqAo/2qXoP2358fsAA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</h2>
@@ -271,9 +271,9 @@ firebaseプロジェクト内に、オブジェクト形式で保存されてい
 </a>
 </article>
 <article class=has-image>
-<a href=../../p/jokura-app/>
+<a href=/p/jokura-app/>
 <div class=article-image>
-<img src=../../p/jokura-app/cover.4c63b534b7e0c259380e10c218676cba_hu4de8297eba748400c5bc7c54477d6389_102123_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-app data-hash="md5-TGO1NLfgwlk4DhDCGGdsug==">
+<img src=/p/jokura-app/cover.4c63b534b7e0c259380e10c218676cba_hu4de8297eba748400c5bc7c54477d6389_102123_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-app data-hash="md5-TGO1NLfgwlk4DhDCGGdsug==">
 </div>
 <div class=article-details>
 <h2 class=article-title>アプリ版 Minecraft サーバー制御ツールの制作</h2>
@@ -332,7 +332,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 </div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
 </main>
 </div>
-<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=../../ts/main.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
 <script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
 </body>
 </html>

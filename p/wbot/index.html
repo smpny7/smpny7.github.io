@@ -2,7 +2,7 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Discord用 Bot です。大人数サーバーで何かしら返事をくれます。"><title>草bot (wbot) の開発談</title>
 <link rel=canonical href=https://coalabo.net/p/wbot/>
-<link rel=stylesheet href=../../scss/style.min.css><meta property="og:title" content="草bot (wbot) の開発談">
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="草bot (wbot) の開発談">
 <meta property="og:description" content="Discord用 Bot です。大人数サーバーで何かしら返事をくれます。">
 <meta property="og:url" content="https://coalabo.net/p/wbot/">
 <meta property="og:site_name" content="コアラボ (coalabo.)">
@@ -10,7 +10,7 @@
 <meta name=twitter:title content="草bot (wbot) の開発談">
 <meta name=twitter:description content="Discord用 Bot です。大人数サーバーで何かしら返事をくれます。"><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://coalabo.net/p/wbot/cover.jpg">
-<link rel="shortcut icon" href=../../img/favicon.png>
+<link rel="shortcut icon" href=/img/favicon.png>
 <style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
@@ -27,29 +27,29 @@ on-phone--column extended">
 </button>
 <header class=site-info>
 <figure class=site-avatar>
-<img src=../../img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
 </figure>
 <h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
 <h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
 </header>
 <ol class=menu id=main-menu>
 <li>
-<a href=../../><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
 <span>ホーム</span>
 </a>
 </li>
 <li>
-<a href=../../about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
 <span>ブログを書いている人</span>
 </a>
 </li>
 <li>
-<a href=../../archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
 <span>記事一覧</span>
 </a>
 </li>
 <li>
-<a href=../../search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
 <span>記事を探す</span>
 </a>
 </li>
@@ -59,21 +59,21 @@ on-phone--column extended">
 <article class="has-image main-article">
 <header class=article-header>
 <div class=article-image>
-<a href=../../p/wbot/>
-<img src=../../p/wbot/cover_hub8c1acb45d2236871445ffc5c0753e18_55702_800x0_resize_q75_box.jpg srcset="../../p/wbot/cover_hub8c1acb45d2236871445ffc5c0753e18_55702_800x0_resize_q75_box.jpg 800w, ../../p/wbot/cover_hub8c1acb45d2236871445ffc5c0753e18_55702_1600x0_resize_q75_box.jpg 1600w" width=800 height=448 loading=lazy alt="Featured image of post 草bot (wbot) の開発談">
+<a href=/p/wbot/>
+<img src=/p/wbot/cover_hub8c1acb45d2236871445ffc5c0753e18_55702_800x0_resize_q75_box.jpg srcset="/p/wbot/cover_hub8c1acb45d2236871445ffc5c0753e18_55702_800x0_resize_q75_box.jpg 800w, /p/wbot/cover_hub8c1acb45d2236871445ffc5c0753e18_55702_1600x0_resize_q75_box.jpg 1600w" width=800 height=448 loading=lazy alt="Featured image of post 草bot (wbot) の開発談">
 </a>
 </div>
 <div class=article-details>
 <header class=article-category>
-<a href=../../categories/node.js/ style=background-color:#71bc52;color:#fff>
+<a href=/categories/node.js/ style=background-color:#71bc52;color:#fff>
 Node.js
 </a>
-<a href=../../categories/javascript/ style=background-color:#fdd83c;color:#fff>
+<a href=/categories/javascript/ style=background-color:#fdd83c;color:#fff>
 JavaScript
 </a>
 </header>
 <h2 class=article-title>
-<a href=../../p/wbot/>草bot (wbot) の開発談</a>
+<a href=/p/wbot/>草bot (wbot) の開発談</a>
 </h2>
 <h3 class=article-subtitle>
 Discord用 Bot です。大人数サーバーで何かしら返事をくれます。
@@ -94,8 +94,8 @@ Discord用 Bot です。大人数サーバーで何かしら返事をくれま�
 <h2 id=なんか盛り上がってつくることになった>なんか盛り上がって、つくることになった</h2>
 <p>草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。</p>
 <p><figure class=gallery-image style=flex-grow:593;flex-basis:1424px>
-<a href=../../p/wbot/image_1.jpg data-size=801x135>
-<img src=../../p/wbot/image_1.jpg width=801 height=135 srcset="../../p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_480x0_resize_q75_box.jpg 480w, ../../p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=草Botくん>
+<a href=/p/wbot/image_1.jpg data-size=801x135>
+<img src=/p/wbot/image_1.jpg width=801 height=135 srcset="/p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_480x0_resize_q75_box.jpg 480w, /p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=草Botくん>
 </a>
 <figcaption>草Botくん</figcaption>
 </figure></p>
@@ -108,16 +108,16 @@ Discord用 Bot です。大人数サーバーで何かしら返事をくれま�
 <hr>
 <p>これ何だかわかりますか？</p>
 <p><figure class=gallery-image style=flex-grow:445;flex-basis:1068px>
-<a href=../../p/wbot/image_2.jpg data-size=801x180>
-<img src=../../p/wbot/image_2.jpg width=801 height=180 srcset="../../p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_480x0_resize_q75_box.jpg 480w, ../../p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="お気に入り語録 その1">
+<a href=/p/wbot/image_2.jpg data-size=801x180>
+<img src=/p/wbot/image_2.jpg width=801 height=180 srcset="/p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_480x0_resize_q75_box.jpg 480w, /p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="お気に入り語録 その1">
 </a>
 <figcaption>お気に入り語録 その1</figcaption>
 </figure></p>
 <p>↑ これをみてピンときた人はさすがですね ！</p>
 <hr>
 <p><figure class=gallery-image style=flex-grow:447;flex-basis:1073px>
-<a href=../../p/wbot/image_3.jpg data-size=801x179>
-<img src=../../p/wbot/image_3.jpg width=801 height=179 srcset="../../p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_480x0_resize_q75_box.jpg 480w, ../../p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=実はこれ>
+<a href=/p/wbot/image_3.jpg data-size=801x179>
+<img src=/p/wbot/image_3.jpg width=801 height=179 srcset="/p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_480x0_resize_q75_box.jpg 480w, /p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=実はこれ>
 </a>
 <figcaption>実はこれ</figcaption>
 </figure></p>
@@ -132,8 +132,8 @@ Discord用 Bot です。大人数サーバーで何かしら返事をくれま�
 <hr>
 <p>もう一つのお気に入りはこれです。</p>
 <p><figure class=gallery-image style=flex-grow:419;flex-basis:1006px>
-<a href=../../p/wbot/image_4.jpg data-size=801x191>
-<img src=../../p/wbot/image_4.jpg width=801 height=191 srcset="../../p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_480x0_resize_q75_box.jpg 480w, ../../p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=「腹痛」に反応します>
+<a href=/p/wbot/image_4.jpg data-size=801x191>
+<img src=/p/wbot/image_4.jpg width=801 height=191 srcset="/p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_480x0_resize_q75_box.jpg 480w, /p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=「腹痛」に反応します>
 </a>
 <figcaption>「腹痛」に反応します</figcaption>
 </figure></p>
@@ -206,8 +206,8 @@ GitHubのmainブランチにプッシュされた時に Webhook が飛ばされ 
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=../../tags/bot%E4%BD%9C%E6%88%90/>Bot作成</a>
-<a href=../../tags/%E3%83%8D%E3%82%BF%E5%9B%9E/>ネタ回</a>
+<a href=/tags/bot%E4%BD%9C%E6%88%90/>Bot作成</a>
+<a href=/tags/%E3%83%8D%E3%82%BF%E5%9B%9E/>ネタ回</a>
 </section>
 <section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
 <span>Licensed under CC BY-NC-SA 4.0</span>
@@ -219,9 +219,9 @@ GitHubのmainブランチにプッシュされた時に Webhook が飛ばされ 
 <div class=related-contents>
 <div class="flex article-list--tile">
 <article class=has-image>
-<a href=../../p/jokura-web/>
+<a href=/p/jokura-web/>
 <div class=article-image>
-<img src=../../p/jokura-web/cover.559e1c92a028ff6a97a0fdb7e7c7ec00_hu009098f9a09b5c87310a26959658631a_93318_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-web data-hash="md5-VZ4ckqAo/2qXoP2358fsAA==">
+<img src=/p/jokura-web/cover.559e1c92a028ff6a97a0fdb7e7c7ec00_hu009098f9a09b5c87310a26959658631a_93318_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-web data-hash="md5-VZ4ckqAo/2qXoP2358fsAA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</h2>
@@ -280,7 +280,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 </div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
 </main>
 </div>
-<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=../../ts/main.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
 <script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
 </body>
 </html>
