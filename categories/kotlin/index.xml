@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kotlin on コアラボ (coalabo.)</title><link>https://coalabo.net/categories/kotlin/</link><description>Recent content in Kotlin on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 23 Apr 2021 09:19:41 +0900</lastBuildDate><atom:link href="https://coalabo.net/categories/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>アプリ版 Minecraft サーバー制御ツールの制作</title><link>https://coalabo.net/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://coalabo.net/p/jokura-app/</guid><description>やっぱアプリ化、したいよね！！ Webベースのツールを作ると、そのアプリ版を作りたくなる、ここまでがテンプレですよね。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kotlin on コアラボ (coalabo.)</title><link>https://coalabo.net/categories/kotlin/</link><description>Recent content in Kotlin on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 03 Sep 2021 02:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/categories/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>【コロナ対策】部室の在室状況・体調記録アプリ</title><link>https://coalabo.net/p/i10jan/</link><pubDate>Fri, 03 Sep 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/i10jan/</guid><description>昔々、大学で対面授業が再開し始めた頃&amp;hellip; 2020年夏頃、活動時の体温記録を条件に、岡山大学での部活動が再開されました。
+私は 岡山大学電子計算機研究会 という部活の部長を務めているのですが、 活動の際には、全員の「体温・息苦しさなどの症状があるか・だるさや倦怠感を感じるか・入室時刻・退室時刻」を記録するよう指示がありました。
+最初の1週間は Google スプレッドシートを共有して、部室に来た部員に手入力してもらってたのですが、 特に 帰る時にパソコン（スマホ）を開いて現在時刻を入力する のがとても面倒&amp;hellip;
+どうにかできないかと考え、課題を感じた時に技術で解決するのがエンジニアでしょ！ ということで、部室に設置するアプリを制作することになりました。
+その前に この部活では、部員全員にニックネームがついています。 これは、先輩後輩関係なく気軽に呼び合い、技術の共有などコミュニケーションを円滑にするためです。
+そして、部屋の入り口にかけてある自分のネームプレートを、入室時には首にかけることになっています。
+私のネームプレート（紹介映像より抜粋）
+その後ろに、今回小さなQRコードをしのばせました！
+QRコード（紹介映像より抜粋）
+QRコードの中身のデータは、部内でユニークなuuidを発行しています。
+作りたいもの 入退室管理アプリをつくり、部室の入り口に設置します。 必要な機能は以下の通りです。
+入室時刻が記録できる 入室時の体温を記録できる 入室時の健康状況をチェックできる 退室時刻が記録できる そして、一番大事なことは、できるだけ入力の手間を最小限にすること です。 何回もボタンをぽちぽちするようなUI・UXでは、そのうち面倒になって誰も入力してくれません! できるだけ画面数を少なくし、アニメーションたっぷりで気持ち良いアプリに仕上げることで入力してくれる人が増えると考えました。
+さぁ一番大好きなデザイン（UI設計）の時間です！ ま、まぁもちろん一番好きなのはコーディングですよ&amp;hellip;？
+どういうものを作ろうかと構想する、良いアイデアを思いついてアプリに組み込んでいく時間が、一番ワクワクして楽しいですよね。
+今回も Figma で、ある程度のデザインを仕上げました。
+デザインを制作しました！
+左2枚のスクリーンが実際に使用した画面です。
+体調チェックについては、最初は一番右のデザインでしたが、入力者が「良好」・「不調」や「なし」・「あり」等のボタン内の文字を読む時間（コスト）がかかってしまい、また分かりにくいので、真ん中のデザインの直感的でわかりやすいチェックボックス式へと改良したりしています。
+実際に制作していこう！ 今回使うのはこちら↓
+【 材料 】
+MacBook Pro: 一人前 herokuサーバ（Heroku Postgres をトッピング）: 一台 部内設置端末（Android）: お好みで 【 調味料 】
+Kotlin（フロント） Node.</description></item><item><title>アプリ版 Minecraft サーバー制御ツールの制作</title><link>https://coalabo.net/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://coalabo.net/p/jokura-app/</guid><description>やっぱアプリ化、したいよね！！ Webベースのツールを作ると、そのアプリ版を作りたくなる、ここまでがテンプレですよね。
 今回は、ストアにリリースが手軽な Android アプリを制作したいと思います。
 Android Studio 使いやすい&amp;hellip; この時、プログラミングというものに触れてまだ半年もたっていませんでした。 なので初心者でも使いやすい Visual Studio Code を当時愛用していました。（今でも時々使っています）
 しかし今回アプリ開発というのもあり、デバッグのしやすいエディタを使うことにしました。 まぁもちろん Android Studio 一択になるわけですが。 JetBrains 社が開発したソフトウェアを初めて触ったのですが、 これがまた使いやすいソフトウェアで感動したのを覚えています。 （私が JetBrains 信徒になる話はまたいつか）
