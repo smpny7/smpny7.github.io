@@ -1,4 +1,196 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 19 Aug 2021 11:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>VIVACE（音ゲー）待望のアプリ化！</title><link>https://coalabo.net/p/vivace-asset-bundle/</link><pubDate>Thu, 19 Aug 2021 11:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace-asset-bundle/</guid><description>&lt;img src="https://coalabo.net/p/vivace-asset-bundle/cover.jpg" alt="Featured image of post VIVACE（音ゲー）待望のアプリ化！" />&lt;h2 id="これは１年前のお話">これは１年前のお話&amp;hellip;&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 03 Sep 2021 02:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>【コロナ対策】部室の在室状況・体調記録アプリ</title><link>https://coalabo.net/p/i10jan/</link><pubDate>Fri, 03 Sep 2021 02:00:00 +2100</pubDate><guid>https://coalabo.net/p/i10jan/</guid><description>&lt;img src="https://coalabo.net/p/i10jan/cover.jpg" alt="Featured image of post 【コロナ対策】部室の在室状況・体調記録アプリ" />&lt;h2 id="昔々大学で対面授業が再開し始めた頃">昔々、大学で対面授業が再開し始めた頃&amp;hellip;&lt;/h2>
+&lt;p>2020年夏頃、活動時の体温記録を条件に、岡山大学での部活動が再開されました。&lt;/p>
+&lt;p>私は &lt;a class="link" href="https://oucrc.net/" target="_blank" rel="noopener"
+>岡山大学電子計算機研究会&lt;/a> という部活の部長を務めているのですが、
+活動の際には、全員の「体温・息苦しさなどの症状があるか・だるさや倦怠感を感じるか・入室時刻・退室時刻」を記録するよう指示がありました。&lt;/p>
+&lt;p>最初の1週間は Google スプレッドシートを共有して、部室に来た部員に手入力してもらってたのですが、
+特に &lt;code>帰る時にパソコン（スマホ）を開いて現在時刻を入力する&lt;/code> のがとても面倒&amp;hellip;&lt;/p>
+&lt;p>どうにかできないかと考え、&lt;strong>課題を感じた時に技術で解決するのがエンジニアでしょ！&lt;/strong> ということで、部室に設置するアプリを制作することになりました。&lt;/p>
+&lt;h2 id="その前に">その前に&lt;/h2>
+&lt;p>この部活では、部員全員にニックネームがついています。
+これは、先輩後輩関係なく気軽に呼び合い、技術の共有などコミュニケーションを円滑にするためです。&lt;/p>
+&lt;p>そして、部屋の入り口にかけてある自分のネームプレートを、入室時には首にかけることになっています。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 178;
+flex-basis: 427px"
+>
+&lt;a href="./p/i10jan/image_1.jpg" data-size="3563x1998">
+&lt;img src="./p/i10jan/image_1.jpg"
+width="3563"
+height="1998"
+srcset="./p/i10jan/image_1_hu1e3723281b15cfea67e91c589b53cecc_278234_480x0_resize_q75_box.jpg 480w, ./p/i10jan/image_1_hu1e3723281b15cfea67e91c589b53cecc_278234_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="私のネームプレート（紹介映像より抜粋）">
+&lt;/a>
+&lt;figcaption>私のネームプレート（紹介映像より抜粋）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>その後ろに、今回小さなQRコードをしのばせました！&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 179;
+flex-basis: 429px"
+>
+&lt;a href="./p/i10jan/image_2.jpg" data-size="3566x1992">
+&lt;img src="./p/i10jan/image_2.jpg"
+width="3566"
+height="1992"
+srcset="./p/i10jan/image_2_hu9dccf6d05fb1e99e3c55ff2b62d08f1f_325451_480x0_resize_q75_box.jpg 480w, ./p/i10jan/image_2_hu9dccf6d05fb1e99e3c55ff2b62d08f1f_325451_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="QRコード（紹介映像より抜粋）">
+&lt;/a>
+&lt;figcaption>QRコード（紹介映像より抜粋）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>QRコードの中身のデータは、部内でユニークなuuidを発行しています。&lt;/p>
+&lt;h2 id="作りたいもの">作りたいもの&lt;/h2>
+&lt;p>入退室管理アプリをつくり、部室の入り口に設置します。
+必要な機能は以下の通りです。&lt;/p>
+&lt;ul>
+&lt;li>入室時刻が記録できる&lt;/li>
+&lt;li>入室時の体温を記録できる&lt;/li>
+&lt;li>入室時の健康状況をチェックできる&lt;/li>
+&lt;li>退室時刻が記録できる&lt;/li>
+&lt;/ul>
+&lt;p>そして、一番大事なことは、&lt;strong>できるだけ入力の手間を最小限にすること&lt;/strong> です。
+何回もボタンをぽちぽちするようなUI・UXでは、そのうち面倒になって誰も入力してくれません!
+できるだけ画面数を少なくし、アニメーションたっぷりで気持ち良いアプリに仕上げることで入力してくれる人が増えると考えました。&lt;/p>
+&lt;h2 id="さぁ一番大好きなデザインui設計の時間です">さぁ一番大好きなデザイン（UI設計）の時間です！&lt;/h2>
+&lt;p>&lt;del>ま、まぁもちろん一番好きなのはコーディングですよ&amp;hellip;？&lt;/del>&lt;/p>
+&lt;p>どういうものを作ろうかと構想する、良いアイデアを思いついてアプリに組み込んでいく時間が、一番ワクワクして楽しいですよね。&lt;/p>
+&lt;p>今回も Figma で、ある程度のデザインを仕上げました。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/i10jan/image_3.jpg" data-size="3584x2240">
+&lt;img src="./p/i10jan/image_3.jpg"
+width="3584"
+height="2240"
+srcset="./p/i10jan/image_3_hu66ba50fff54842033edf69ea384c6390_172166_480x0_resize_q75_box.jpg 480w, ./p/i10jan/image_3_hu66ba50fff54842033edf69ea384c6390_172166_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="デザインを制作しました！">
+&lt;/a>
+&lt;figcaption>デザインを制作しました！&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>左2枚のスクリーンが実際に使用した画面です。&lt;/p>
+&lt;p>体調チェックについては、最初は一番右のデザインでしたが、入力者が「良好」・「不調」や「なし」・「あり」等のボタン内の文字を読む時間（コスト）がかかってしまい、また分かりにくいので、真ん中のデザインの直感的でわかりやすいチェックボックス式へと改良したりしています。&lt;/p>
+&lt;h2 id="実際に制作していこう">実際に制作していこう！&lt;/h2>
+&lt;p>今回使うのはこちら↓&lt;/p>
+&lt;p>【 材料 】&lt;/p>
+&lt;ul>
+&lt;li>MacBook Pro: 一人前&lt;/li>
+&lt;li>herokuサーバ（Heroku Postgres をトッピング）: 一台&lt;/li>
+&lt;li>部内設置端末（Android）: お好みで&lt;/li>
+&lt;/ul>
+&lt;p>【 調味料 】&lt;/p>
+&lt;ul>
+&lt;li>Kotlin（フロント）&lt;/li>
+&lt;li>Node.js + TypeScript + Express（バックエンド）&lt;/li>
+&lt;li>Docker （herokuにしたので使わなくなった）&lt;/li>
+&lt;/ul>
+&lt;p>完成品は &lt;a class="link" href="#github-%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa" >こちら&lt;/a> に用意してあります！&lt;/p>
+&lt;h2 id="工夫した点">工夫した点&lt;/h2>
+&lt;p>今回、本番環境での安定した・長期的な保守ができるように意識して制作しました。
+まぁコロナが終われば使うことは無くなるのですが、勉強も兼ねて結構丁寧に作成しました。（卒業時にコロナ禍が収束していなければ、後輩にソースコードを引き継ぐことになりますし&amp;hellip;）&lt;/p>
+&lt;p>例えば、ルーティングをバージョンごとに &lt;code>app.ts&lt;/code> で切り分けて、バックエンドのAPIバージョンアップしても管理しやすいようにまとめていたり、PostgreSQLのデータベースも、きちんとマイグレーションファイルを作成して、DBの追加・修正を行いやすいようにしています。&lt;/p>
+&lt;p>herokuを使うということで、今回初めてPostgreSQLを触ったのですが、Connection Pool でだいぶ苦労しました&amp;hellip;
+接続を切るところをクエリ発行の直後にしないといけなく（ライブラリのせいかもしれないです？）、Connection が閉じられていないままになっており、謎のタイミングでサーバが落ちたりしていました。&lt;/p>
+&lt;p>粘り強く原因を探して、なんとか解決しました&amp;hellip;（後日まとめようと思います）&lt;/p>
+&lt;h2 id="最初の1週間はgasをバックエンドにしてました">最初の1週間はGASをバックエンドにしてました&lt;/h2>
+&lt;p>最初はGoogle スプレッドシートと連携して、バックエンドのAPIにして、アプリでの入力データを格納していました。
+しかし、GASのAPIはレスポンスに5秒くらいかかるんですよね&amp;hellip;&lt;/p>
+&lt;p>最初に掲げた通り、ストレスなく入力できるアプリを目標としていたので、通信のくるくるが5秒続くようではストレスフリーとは言えません。そのため、heroku サーバをバックエンドにして作り直しました！&lt;/p>
+&lt;h2 id="動作映像">動作映像&lt;/h2>
+&lt;p>今回、このアプリケーションを大学に発表する場があり、友人が動作映像を編集してくれました。（一部抜粋）&lt;/p>
+&lt;div class="video-wrapper">
+&lt;video
+controls
+src="demo.mp4"
+>
+&lt;p>
+Your browser doesn't support HTML5 video. Here is a
+&lt;a href="demo.mp4">link to the video&lt;/a> instead.
+&lt;/p>
+&lt;/video>
+&lt;/div>
+&lt;h2 id="おまけ機能">おまけ機能&lt;/h2>
+&lt;p>動画内でも紹介しているのですが、2つのおまけ機能がついています。&lt;/p>
+&lt;ul>
+&lt;li>Webサイトから部室内に人がいるか確認できる機能&lt;/li>
+&lt;li>Slack の Bot から、部室に誰がいるか確認できる機能&lt;/li>
+&lt;/ul>
+&lt;p>1つ目の機能は、ejs でパパッとデータ取得 &amp;amp; 画像切り替えをしています。&lt;/p>
+&lt;p>表示させている画像は、部員が書いてくれました！！
+この部活には公式キャラクターなるものがいて、部屋に人がいる・いないバージョンの絵を描いてくれました。
+名前は「ことちゃん」です、以後よろしくお願いします(笑)&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 167;
+flex-basis: 401px"
+>
+&lt;a href="./p/i10jan/image_4.jpg" data-size="3610x2160">
+&lt;img src="./p/i10jan/image_4.jpg"
+width="3610"
+height="2160"
+srcset="./p/i10jan/image_4_hu7048dd8b05c9613e4649769026d471c5_186060_480x0_resize_q75_box.jpg 480w, ./p/i10jan/image_4_hu7048dd8b05c9613e4649769026d471c5_186060_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="OPEN">
+&lt;/a>
+&lt;figcaption>OPEN&lt;/figcaption>
+&lt;/figure>
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 139;
+flex-basis: 334px"
+>
+&lt;a href="./p/i10jan/image_5.jpg" data-size="1438x1033">
+&lt;img src="./p/i10jan/image_5.jpg"
+width="1438"
+height="1033"
+srcset="./p/i10jan/image_5_hubf1d6d33fc26b0fdbb622cf20c184d22_54681_480x0_resize_q75_box.jpg 480w, ./p/i10jan/image_5_hubf1d6d33fc26b0fdbb622cf20c184d22_54681_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="CLOSE">
+&lt;/a>
+&lt;figcaption>CLOSE&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>2つ目の機能は、後輩が作ってくれました！&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 503;
+flex-basis: 1207px"
+>
+&lt;a href="./p/i10jan/image_6.jpg" data-size="3582x712">
+&lt;img src="./p/i10jan/image_6.jpg"
+width="3582"
+height="712"
+srcset="./p/i10jan/image_6_hua24cd891f9d286554e91f1e95e447abb_49285_480x0_resize_q75_box.jpg 480w, ./p/i10jan/image_6_hua24cd891f9d286554e91f1e95e447abb_49285_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Slack Bot">
+&lt;/a>
+&lt;figcaption>Slack Bot&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>ことちゃんが部室にいるメンバーを教えてくれます。かわいいですね！&lt;/p>
+&lt;h2 id="github-リポジトリ">GitHub リポジトリ&lt;/h2>
+&lt;p>拙いコードですが、もしこういったアプリを一時的に用意したい場合はぜひご活用ください。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://github.com/smpny7/i10jan-kotlin" target="_blank" rel="noopener"
+>&lt;strong>smpny7/i10jan-kotlin&lt;/strong>&lt;/a>　https://github.com/smpny7/i10jan-kotlin&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://github.com/smpny7/i10jan-api" target="_blank" rel="noopener"
+>&lt;strong>smpny7/i10jan-api&lt;/strong>&lt;/a>　https://github.com/smpny7/i10jan-api&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://github.com/smpny7/i10jan-gas" target="_blank" rel="noopener"
+>&lt;strong>smpny7/i10jan-gas&lt;/strong>&lt;/a>　https://github.com/smpny7/i10jan-gas&lt;/p>
+&lt;/blockquote></description></item><item><title>VIVACE（音ゲー）待望のアプリ化！</title><link>https://coalabo.net/p/vivace-asset-bundle/</link><pubDate>Thu, 19 Aug 2021 11:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace-asset-bundle/</guid><description>&lt;img src="https://coalabo.net/p/vivace-asset-bundle/cover.jpg" alt="Featured image of post VIVACE（音ゲー）待望のアプリ化！" />&lt;h2 id="これは１年前のお話">これは１年前のお話&amp;hellip;&lt;/h2>
 &lt;p>学祭に向けて、昨年同級生と3人で&lt;a class="link" href="https://coalabo.net/p/vivace" target="_blank" rel="noopener"
 >音ゲーを作った話&lt;/a>は過去に記事にしたと思います。&lt;/p>
 &lt;p>当日の朝4時まで Discord をつないでコーディングをし、学祭ギリギリでビルドして、エラーがないことも確認できました。&lt;/p>
@@ -24,11 +216,17 @@
 &lt;p>&lt;a class="link" href="https://github.com/Unity-Technologies/AssetBundles-Browser" target="_blank" rel="noopener"
 >&lt;strong>AssetBundleBrowser&lt;/strong> (GitHub)&lt;/a>　https://github.com/Unity-Technologies/AssetBundles-Browser&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;figure style="flex-grow: 183; flex-basis: 439px">
-&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_1.png" data-size="2638x1440">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_1.png"
-srcset="https://coalabo.net/p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_480x0_resize_box_2.png 480w, https://coalabo.net/p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_1024x0_resize_box_2.png 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 183;
+flex-basis: 439px"
+>
+&lt;a href="./p/vivace-asset-bundle/image_1.png" data-size="2638x1440">
+&lt;img src="./p/vivace-asset-bundle/image_1.png"
 width="2638"
 height="1440"
+srcset="./p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_480x0_resize_box_3.png 480w, ./p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="AssetBundleBrowser">
 &lt;/a>
@@ -37,11 +235,17 @@ alt="AssetBundleBrowser">
 &lt;p>使い方は簡単、このツールに AssetBundle にまとめたいものをドラッグします。
 今回だと、音源とプレビュー用の音源、各難易度の譜面とアートワークをセットし、
 Build タブに移動します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 183; flex-basis: 439px">
-&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_2.png" data-size="2638x1440">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_2.png"
-srcset="https://coalabo.net/p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_480x0_resize_box_2.png 480w, https://coalabo.net/p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_1024x0_resize_box_2.png 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 183;
+flex-basis: 439px"
+>
+&lt;a href="./p/vivace-asset-bundle/image_2.png" data-size="2638x1440">
+&lt;img src="./p/vivace-asset-bundle/image_2.png"
 width="2638"
 height="1440"
+srcset="./p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_480x0_resize_box_3.png 480w, ./p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="AssetBundleBrowser (Build)">
 &lt;/a>
@@ -62,27 +266,39 @@ Google Cloud Platform を使用しているため、あまりディスク容量�
 &lt;p>&lt;strong>https://drive.google.com/uc?id=&lt;/strong> hogehoge &lt;strong>&amp;amp;usp=sharing&lt;/strong>&lt;/p>
 &lt;/blockquote>
 &lt;p>毎回リンクを手動で変更させるのは面倒なので、データベースには共有リンクで登録しておき、アプリ内でリンクを変換させるようにしておきます。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cs" data-lang="cs">&lt;span class="n">music&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">asset_bundle_ios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;https://drive.google.com/file/d/&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;https://drive.google.com/uc?id=&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cs" data-lang="cs">&lt;span class="n">music&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">asset_bundle_ios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;https://drive.google.com/file/d/&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;https://drive.google.com/uc?id=&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="p">.&lt;/span>&lt;span class="n">Replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;/view?usp=sharing&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&amp;amp;usp=sharing&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>また、曲選択画面に表示される曲一覧は、DB と同期できるようにしてあります。
 急遽任意の曲を非表示にするときや、楽曲を追加した時でもリアルタイム更新できるようになりました。
 （セキュリティのため、通信には JWT での認証が必要です）&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 122; flex-basis: 293px">
-&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_3.jpg" data-size="2411x1972">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_3.jpg"
-srcset="https://coalabo.net/p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 122;
+flex-basis: 293px"
+>
+&lt;a href="./p/vivace-asset-bundle/image_3.jpg" data-size="2411x1972">
+&lt;img src="./p/vivace-asset-bundle/image_3.jpg"
 width="2411"
 height="1972"
+srcset="./p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_480x0_resize_q75_box.jpg 480w, ./p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="楽曲一覧を返すAPI（認証必要）">
 &lt;/a>
 &lt;figcaption>楽曲一覧を返すAPI（認証必要）&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>アプリ内画面では、APIのデータを取得しこのように表示されます。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_4.jpg" data-size="2208x1242">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_4.jpg"
-srcset="https://coalabo.net/p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/vivace-asset-bundle/image_4.jpg" data-size="2208x1242">
+&lt;img src="./p/vivace-asset-bundle/image_4.jpg"
 width="2208"
 height="1242"
+srcset="./p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_480x0_resize_q75_box.jpg 480w, ./p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="VIVACE 曲選択画面">
 &lt;/a>
@@ -96,7 +312,7 @@ alt="VIVACE 曲選択画面">
 同じくキャッシュが行われるそうです。（非推奨になりつつありますが、&lt;code>WWW.LoadFromCacheOrDownload&lt;/code> を使ってキャッシュする場合は version の型は int に変わるそうなので注意）&lt;/p>
 &lt;p>ちなみに非推奨という点では、SendWebRequest の後のリクエスト処理も、&lt;code>request.isNetworkError&lt;/code> ではなく、
 &lt;code>request.result&lt;/code>の値を、&lt;code>UnityWebRequest.Result.Success&lt;/code>・&lt;code>UnityWebRequest.Result.ConnectionError&lt;/code>・&lt;code>UnityWebRequest.Result.ProtocolError&lt;/code>&amp;hellip; といった用意されたクラスの enum の値で識別するのを推奨するようになりましたね。見やすくてとても気に入っています。（コード詳細↓）&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cs" data-lang="cs">&lt;span class="k">private&lt;/span> &lt;span class="n">IEnumerator&lt;/span> &lt;span class="n">DownloadAssetBundle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">MusicList&lt;/span> &lt;span class="n">music&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="n">downloadUrl&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cs" data-lang="cs">&lt;span class="k">private&lt;/span> &lt;span class="n">IEnumerator&lt;/span> &lt;span class="n">DownloadAssetBundle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">MusicList&lt;/span> &lt;span class="n">music&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">string&lt;/span> &lt;span class="n">downloadUrl&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="p">{&lt;/span>
 &lt;span class="kt">var&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">CachedAssetBundle&lt;/span>
 &lt;span class="p">{&lt;/span>
@@ -127,21 +343,33 @@ alt="VIVACE 曲選択画面">
 リソース使用部分を全て AssetBundle から読み込むように設定し直します。&lt;/p>
 &lt;p>今回のプロジェクトの場合、バックエンドのスコア登録機能も、データベースの楽曲テーブルと同期させる必要がありました。&lt;/p>
 &lt;h2 id="無事ストアリリースできました">無事ストアリリースできました！！&lt;/h2>
-&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_5.jpg" data-size="3840x2160">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_5.jpg"
-srcset="https://coalabo.net/p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/vivace-asset-bundle/image_5.jpg" data-size="3840x2160">
+&lt;img src="./p/vivace-asset-bundle/image_5.jpg"
 width="3840"
 height="2160"
+srcset="./p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_480x0_resize_q75_box.jpg 480w, ./p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="AppStore">
 &lt;/a>
 &lt;figcaption>AppStore&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/vivace-asset-bundle/image_6.jpg" data-size="3840x2160">&lt;img src="https://coalabo.net/p/vivace-asset-bundle/image_6.jpg"
-srcset="https://coalabo.net/p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/vivace-asset-bundle/image_6.jpg" data-size="3840x2160">
+&lt;img src="./p/vivace-asset-bundle/image_6.jpg"
 width="3840"
 height="2160"
+srcset="./p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_480x0_resize_q75_box.jpg 480w, ./p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="GooglePlayStore">
 &lt;/a>
@@ -159,11 +387,17 @@ alt="GooglePlayStore">
 >https://bit.ly/vivace-app-android&lt;/a>&lt;/p>
 &lt;/blockquote></description></item><item><title>iPhoneXSのディスプレイを交換する</title><link>https://coalabo.net/p/iphone-display-replacement/</link><pubDate>Thu, 12 Aug 2021 00:00:00 +1900</pubDate><guid>https://coalabo.net/p/iphone-display-replacement/</guid><description>&lt;img src="https://coalabo.net/p/iphone-display-replacement/cover.jpg" alt="Featured image of post iPhoneXSのディスプレイを交換する" />&lt;h2 id="だってお風呂で音楽聴きたいもん">だってお風呂で音楽聴きたいもん&amp;hellip;&lt;/h2>
 &lt;p>こちらの iPhoneXS、毎日お風呂で使ってたんですが水没しちゃいました。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 56; flex-basis: 135px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_1.gif" data-size="360x640">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_1.gif"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_1_hu4f29866169058d1a0ebe58438449ebea_2806561_480x0_resize_box.gif 480w, https://coalabo.net/p/iphone-display-replacement/image_1_hu4f29866169058d1a0ebe58438449ebea_2806561_1024x0_resize_box.gif 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 56;
+flex-basis: 135px"
+>
+&lt;a href="./p/iphone-display-replacement/image_1.gif" data-size="360x640">
+&lt;img src="./p/iphone-display-replacement/image_1.gif"
 width="360"
 height="640"
+srcset="./p/iphone-display-replacement/image_1_hu4f29866169058d1a0ebe58438449ebea_2806561_480x0_resize_box.gif 480w, ./p/iphone-display-replacement/image_1_hu4f29866169058d1a0ebe58438449ebea_2806561_1024x0_resize_box.gif 1024w"
 loading="lazy"
 alt="水没したiPhoneXS（クリックで再生）">
 &lt;/a>
@@ -172,11 +406,17 @@ alt="水没したiPhoneXS（クリックで再生）">
 &lt;p>iPhoneXS は 2018 年に発売され、IEC規格60529に基づくIP68等級に適合しているそうです。
 どのくらいかというと、最大水深2メートルで最大30分間使用できるらしい。。&lt;/p>
 &lt;p>毎日お風呂で壁に立てかけて音楽を聴いてたんですが（風呂に携帯持ち込むなと、友人にめちゃめちゃ怒られました）、突然ディスプレイがちらつき始めたのです。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 75; flex-basis: 180px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_2.jpg" data-size="336x448">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_2.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_2_hucdb69b6e321b57a3ef555caeb56b992d_10294_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_2_hucdb69b6e321b57a3ef555caeb56b992d_10294_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 75;
+flex-basis: 180px"
+>
+&lt;a href="./p/iphone-display-replacement/image_2.jpg" data-size="336x448">
+&lt;img src="./p/iphone-display-replacement/image_2.jpg"
 width="336"
 height="448"
+srcset="./p/iphone-display-replacement/image_2_hucdb69b6e321b57a3ef555caeb56b992d_10294_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_2_hucdb69b6e321b57a3ef555caeb56b992d_10294_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="先ほどの映像から1時間後のiPhoneXS">
 &lt;/a>
@@ -191,11 +431,17 @@ alt="先ほどの映像から1時間後のiPhoneXS">
 >https://www.amazon.co.jp/gp/product/B08RYRPJGK/ref=ppx_yo_dt_b_asin_title_o06_s01&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="届きました修理開始です">届きました！修理開始です&lt;/h2>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_3.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_3.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_3_hu8ac18cddfb6f4f669d47fe2b4dfef765_118142_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_3_hu8ac18cddfb6f4f669d47fe2b4dfef765_118142_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_3.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_3.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_3_hu8ac18cddfb6f4f669d47fe2b4dfef765_118142_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_3_hu8ac18cddfb6f4f669d47fe2b4dfef765_118142_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="有機ELディスプレイ">
 &lt;/a>
@@ -204,11 +450,17 @@ alt="有機ELディスプレイ">
 &lt;p>ディスプレイが届きました！めちゃめちゃ綺麗な箱に入って届いて、若干テンションが上がりました(笑)&lt;/p>
 &lt;p>今回のキットにはドライバー3本とピンセット、ヘラ、吸盤、開口ツールなどの工具に加え、防水フレームステッカー（大切）とおまけのガラスフィルムもついてきました。
 写真はは左から順に、星型ドライバー、十字型ドライバー、Y字型ドライバーです。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 186; flex-basis: 448px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_4.jpg" data-size="2048x1096">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_4.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_4_hu8c4aec880049bbf3a93da3fcfc43c1e1_86155_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_4_hu8c4aec880049bbf3a93da3fcfc43c1e1_86155_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 186;
+flex-basis: 448px"
+>
+&lt;a href="./p/iphone-display-replacement/image_4.jpg" data-size="2048x1096">
+&lt;img src="./p/iphone-display-replacement/image_4.jpg"
 width="2048"
 height="1096"
+srcset="./p/iphone-display-replacement/image_4_hu8c4aec880049bbf3a93da3fcfc43c1e1_86155_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_4_hu8c4aec880049bbf3a93da3fcfc43c1e1_86155_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="今回のキットの付属品">
 &lt;/a>
@@ -216,11 +468,17 @@ alt="今回のキットの付属品">
 &lt;/figure>&lt;/p>
 &lt;p>まずはおしりのネジ2つを外していきます。YouTube で分解動画などがよくありますが、皆さん簡単そうに回していますが一番ここが難しかったです。
 少しでも力を抜くと、すぐにネジがなめてしまうので注意しましょう。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 165; flex-basis: 396px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_5.jpg" data-size="2048x1241">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_5.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_5_hu000a15b2b1e631d18bbb09ceaff338ff_65188_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_5_hu000a15b2b1e631d18bbb09ceaff338ff_65188_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 165;
+flex-basis: 396px"
+>
+&lt;a href="./p/iphone-display-replacement/image_5.jpg" data-size="2048x1241">
+&lt;img src="./p/iphone-display-replacement/image_5.jpg"
 width="2048"
 height="1241"
+srcset="./p/iphone-display-replacement/image_5_hu000a15b2b1e631d18bbb09ceaff338ff_65188_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_5_hu000a15b2b1e631d18bbb09ceaff338ff_65188_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="こちらは星型ネジです">
 &lt;/a>
@@ -232,22 +490,34 @@ alt="こちらは星型ネジです">
 ゴムが水分で、画像のように粉々になっていました。（あとで綺麗に除去しておきました。）
 交換用の防水フレームシールが入っていてよかったです！&lt;/p>
 &lt;p>本体正面から見て右側にケーブルがあるので、あまり深くヘラを差し込まないようにしましょう。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_6.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_6.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_6_huf332b9c6568a4baf831fd8c3f64dea26_123830_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_6_huf332b9c6568a4baf831fd8c3f64dea26_123830_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_6.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_6.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_6_huf332b9c6568a4baf831fd8c3f64dea26_123830_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_6_huf332b9c6568a4baf831fd8c3f64dea26_123830_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="どんどん隙間を作って開いていきます">
 &lt;/a>
 &lt;figcaption>どんどん隙間を作って開いていきます&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;h2 id="ようやくご対面です一苦労">ようやくご対面です（一苦労）&lt;/h2>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_7.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_7.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_7_hu5faf6190c4ae691b54f5c4509fcdc029_208358_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_7_hu5faf6190c4ae691b54f5c4509fcdc029_208358_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_7.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_7.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_7_hu5faf6190c4ae691b54f5c4509fcdc029_208358_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_7_hu5faf6190c4ae691b54f5c4509fcdc029_208358_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="iPhoneXSの中身">
 &lt;/a>
@@ -257,22 +527,34 @@ alt="iPhoneXSの中身">
 &lt;p>ケーブルが接続されているところにはカバーがついているのですが、ここをネジで外します。
 驚いたのはネジの高さ（深さ？）で、1~2mm くらいしかありませんでした。
 さすが Apple 製品、コンパクトな作りです。（紛失注意）&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_8.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_8.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_8_hua374c5b0ece84c3b3198fd0c5844630a_151383_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_8_hua374c5b0ece84c3b3198fd0c5844630a_151383_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_8.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_8.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_8_hua374c5b0ece84c3b3198fd0c5844630a_151383_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_8_hua374c5b0ece84c3b3198fd0c5844630a_151383_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="ケーブルカバー部">
 &lt;/a>
 &lt;figcaption>ケーブルカバー部&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>こちらがカバーを外した画像です。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_9.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_9.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_9_hude5357958f724463c9a63fc3244b9b5d_177156_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_9_hude5357958f724463c9a63fc3244b9b5d_177156_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_9.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_9.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_9_hude5357958f724463c9a63fc3244b9b5d_177156_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_9_hude5357958f724463c9a63fc3244b9b5d_177156_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="ケーブルカバーを外した様子">
 &lt;/a>
@@ -280,22 +562,34 @@ alt="ケーブルカバーを外した様子">
 &lt;/figure>&lt;/p>
 &lt;p>まずはバッテリーの接続をはずし、通電するといけないので端子をセロハンテープ等で巻いておきます。&lt;/p>
 &lt;p>そして、てこの原理をつかってディスプレイのケーブルコネクタを解除します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_10.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_10.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_10_hu10c35a3d23ad7657f911dd3cd71fc592_214539_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_10_hu10c35a3d23ad7657f911dd3cd71fc592_214539_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_10.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_10.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_10_hu10c35a3d23ad7657f911dd3cd71fc592_214539_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_10_hu10c35a3d23ad7657f911dd3cd71fc592_214539_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="端子を外しました！">
 &lt;/a>
 &lt;figcaption>端子を外しました！&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>これで iPhone の 2枚おろしの完成です！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_11.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_11.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_11_hu899ad977db9ea6c13e4ef0e6ddc240ba_163976_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_11_hu899ad977db9ea6c13e4ef0e6ddc240ba_163976_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_11.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_11.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_11_hu899ad977db9ea6c13e4ef0e6ddc240ba_163976_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_11_hu899ad977db9ea6c13e4ef0e6ddc240ba_163976_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="さばかれたiPhone">
 &lt;/a>
@@ -304,11 +598,17 @@ alt="さばかれたiPhone">
 &lt;h2 id="新しいディスプレイに-faceid-部分を移植します">新しいディスプレイに FaceID 部分を移植します&lt;/h2>
 &lt;p>ここが一番緊張しました。&lt;/p>
 &lt;p>上部のカメラ部分を新しいディスプレイに移すのですが、あまりネジで強く締めすぎるとディスプレイが割れてしまうので、慎重に作業を行います。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_12.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_12.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_12_hu76a75acc5b810d162b46029ef2a4a4f2_137824_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_12_hu76a75acc5b810d162b46029ef2a4a4f2_137824_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_12.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_12.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_12_hu76a75acc5b810d162b46029ef2a4a4f2_137824_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_12_hu76a75acc5b810d162b46029ef2a4a4f2_137824_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="新旧ディスプレイ、右が新品です">
 &lt;/a>
@@ -317,11 +617,17 @@ alt="新旧ディスプレイ、右が新品です">
 &lt;h2 id="あとは逆の手順でもとに戻していきます">あとは逆の手順でもとに戻していきます&lt;/h2>
 &lt;p>組み立ては端子を挿すだけでいいので、簡単でした。&lt;/p>
 &lt;p>蓋を閉じる前に、動作確認をしておきます！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_13.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_13.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_13_hu0bc71ae7266c1b718b059ce0ee2d6380_177215_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_13_hu0bc71ae7266c1b718b059ce0ee2d6380_177215_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_13.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_13.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_13_hu0bc71ae7266c1b718b059ce0ee2d6380_177215_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_13_hu0bc71ae7266c1b718b059ce0ee2d6380_177215_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="復元完了！電源は入るのか&amp;hellip;？">
 &lt;/a>
@@ -332,11 +638,17 @@ alt="復元完了！電源は入るのか&amp;hellip;？">
 &lt;p>もう一度電源を切って、蓋を閉めておきます。
 耐水性がなくなってしまうので、付属したフレームステッカーを貼るのを忘れないようにしましょう。&lt;/p>
 &lt;p>閉めるときに、おしりのネジを片方なめてしまったことは内緒です。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 150; flex-basis: 360px">
-&lt;a href="https://coalabo.net/p/iphone-display-replacement/image_14.jpg" data-size="2048x1365">&lt;img src="https://coalabo.net/p/iphone-display-replacement/image_14.jpg"
-srcset="https://coalabo.net/p/iphone-display-replacement/image_14_hu02f42124eea6318abb67305274ac819b_95787_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/iphone-display-replacement/image_14_hu02f42124eea6318abb67305274ac819b_95787_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 150;
+flex-basis: 360px"
+>
+&lt;a href="./p/iphone-display-replacement/image_14.jpg" data-size="2048x1365">
+&lt;img src="./p/iphone-display-replacement/image_14.jpg"
 width="2048"
 height="1365"
+srcset="./p/iphone-display-replacement/image_14_hu02f42124eea6318abb67305274ac819b_95787_480x0_resize_q75_box.jpg 480w, ./p/iphone-display-replacement/image_14_hu02f42124eea6318abb67305274ac819b_95787_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Hello">
 &lt;/a>
@@ -356,21 +668,33 @@ alt="Hello">
 &lt;p>その当時、新しいジャンルのものに挑戦したい！とずっと考えており、Unity に挑戦することにしました。&lt;/p>
 &lt;p>同級生のエンジニア 3名で作ったのですが、制作物は 3人とも大好きな「音ゲー」にしました。&lt;/p>
 &lt;p>こんな感じの音ゲーを制作しました（ネタバレ）↓&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/vivace/image_1.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/vivace/image_1.jpg"
-srcset="https://coalabo.net/p/vivace/image_1_hu9a8e108379b3f54dd8a3b896da5d54b6_221912_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_1_hu9a8e108379b3f54dd8a3b896da5d54b6_221912_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/vivace/image_1.jpg" data-size="1920x1080">
+&lt;img src="./p/vivace/image_1.jpg"
 width="1920"
 height="1080"
+srcset="./p/vivace/image_1_hu9a8e108379b3f54dd8a3b896da5d54b6_221912_480x0_resize_q75_box.jpg 480w, ./p/vivace/image_1_hu9a8e108379b3f54dd8a3b896da5d54b6_221912_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="スプラッシュ画面">
 &lt;/a>
 &lt;figcaption>スプラッシュ画面&lt;/figcaption>
 &lt;/figure>
-&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/vivace/image_2.jpg" data-size="1610x906">&lt;img src="https://coalabo.net/p/vivace/image_2.jpg"
-srcset="https://coalabo.net/p/vivace/image_2_hu4cd3db7fb58ff83aaea5039d16da9a20_227693_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_2_hu4cd3db7fb58ff83aaea5039d16da9a20_227693_1024x0_resize_q75_box.jpg 1024w"
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/vivace/image_2.jpg" data-size="1610x906">
+&lt;img src="./p/vivace/image_2.jpg"
 width="1610"
 height="906"
+srcset="./p/vivace/image_2_hu4cd3db7fb58ff83aaea5039d16da9a20_227693_480x0_resize_q75_box.jpg 480w, ./p/vivace/image_2_hu4cd3db7fb58ff83aaea5039d16da9a20_227693_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="プレイ画面">
 &lt;/a>
@@ -383,11 +707,17 @@ alt="プレイ画面">
 &lt;h2 id="デザイン作成">デザイン作成！&lt;/h2>
 &lt;p>デザインを作成するのが一番好きかもしれません（おい）&lt;/p>
 &lt;p>最近はデザインを作成するだけで満足感を得ることができるようになりました。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 207; flex-basis: 498px">
-&lt;a href="https://coalabo.net/p/vivace/image_3.jpg" data-size="2482x1196">&lt;img src="https://coalabo.net/p/vivace/image_3.jpg"
-srcset="https://coalabo.net/p/vivace/image_3_hu5a3d569f3e86769650b80e6e0cb903bf_239954_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_3_hu5a3d569f3e86769650b80e6e0cb903bf_239954_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 207;
+flex-basis: 498px"
+>
+&lt;a href="./p/vivace/image_3.jpg" data-size="2482x1196">
+&lt;img src="./p/vivace/image_3.jpg"
 width="2482"
 height="1196"
+srcset="./p/vivace/image_3_hu5a3d569f3e86769650b80e6e0cb903bf_239954_480x0_resize_q75_box.jpg 480w, ./p/vivace/image_3_hu5a3d569f3e86769650b80e6e0cb903bf_239954_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="デザイン作成">
 &lt;/a>
@@ -397,21 +727,33 @@ alt="デザイン作成">
 &lt;p>本来であればタッチで遊べる仕様ですが、とりあえずキーボードでノーツを叩けるようにします。&lt;/p>
 &lt;p>中央から順に、&lt;code>Perfect&lt;/code>・&lt;code>Great&lt;/code>・&lt;code>Good&lt;/code> の3つの &lt;code>Box Collider&lt;/code> を設置し、
 ノーツ落下時の &lt;code>onTriggerEnter&lt;/code> と &lt;code>onTriggerExit&lt;/code> の2つで判定を検知します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 158; flex-basis: 380px">
-&lt;a href="https://coalabo.net/p/vivace/image_4.jpg" data-size="541x341">&lt;img src="https://coalabo.net/p/vivace/image_4.jpg"
-srcset="https://coalabo.net/p/vivace/image_4_hu4f001d61d1a587084869942b6a54a3f4_14778_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_4_hu4f001d61d1a587084869942b6a54a3f4_14778_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 158;
+flex-basis: 380px"
+>
+&lt;a href="./p/vivace/image_4.jpg" data-size="541x341">
+&lt;img src="./p/vivace/image_4.jpg"
 width="541"
 height="341"
+srcset="./p/vivace/image_4_hu4f001d61d1a587084869942b6a54a3f4_14778_480x0_resize_q75_box.jpg 480w, ./p/vivace/image_4_hu4f001d61d1a587084869942b6a54a3f4_14778_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="イメージ画像">
 &lt;/a>
 &lt;figcaption>イメージ画像&lt;/figcaption>
 &lt;/figure>&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 216; flex-basis: 518px">
-&lt;a href="https://coalabo.net/p/vivace/image_5.jpg" data-size="1898x878">&lt;img src="https://coalabo.net/p/vivace/image_5.jpg"
-srcset="https://coalabo.net/p/vivace/image_5_huf006652439d18c46964515f450384cef_68695_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_5_huf006652439d18c46964515f450384cef_68695_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 216;
+flex-basis: 518px"
+>
+&lt;a href="./p/vivace/image_5.jpg" data-size="1898x878">
+&lt;img src="./p/vivace/image_5.jpg"
 width="1898"
 height="878"
+srcset="./p/vivace/image_5_huf006652439d18c46964515f450384cef_68695_480x0_resize_q75_box.jpg 480w, ./p/vivace/image_5_huf006652439d18c46964515f450384cef_68695_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Rider画面">
 &lt;/a>
@@ -420,11 +762,17 @@ alt="Rider画面">
 &lt;p>スコアに関しては、共同開発したメンバーが区分求積法での加算を実装してくれました（天才）&lt;/p>
 &lt;p>ん&amp;hellip; 区分求積法ってなんだっけ？&lt;/p>
 &lt;p>これです！高校数学で習いましたね！（私は gg った）&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 172; flex-basis: 413px">
-&lt;a href="https://coalabo.net/p/vivace/image_6.jpg" data-size="541x314">&lt;img src="https://coalabo.net/p/vivace/image_6.jpg"
-srcset="https://coalabo.net/p/vivace/image_6_hu80c159b536215a2a3a7986786ea41fba_6961_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_6_hu80c159b536215a2a3a7986786ea41fba_6961_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 172;
+flex-basis: 413px"
+>
+&lt;a href="./p/vivace/image_6.jpg" data-size="541x314">
+&lt;img src="./p/vivace/image_6.jpg"
 width="541"
 height="314"
+srcset="./p/vivace/image_6_hu80c159b536215a2a3a7986786ea41fba_6961_480x0_resize_q75_box.jpg 480w, ./p/vivace/image_6_hu80c159b536215a2a3a7986786ea41fba_6961_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="区分求積法">
 &lt;/a>
@@ -433,7 +781,7 @@ alt="区分求積法">
 &lt;h2 id="ノーツの読み込み仕様を決定">ノーツの読み込み仕様を決定&lt;/h2>
 &lt;p>とりあえず、CSV形式（カンマ区切り）で譜面を制作することにしました！&lt;/p>
 &lt;p>こんな感じ ↓&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">1.6901408450704225,1
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">1.6901408450704225,1
 1.6901408450704225,3
 2.007042253521127,2
 2.323943661971831,3
@@ -448,11 +796,17 @@ alt="区分求積法">
 ...
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>ノーツタッチの時刻と、それに対応するレーン（0〜4）番号を保存しています。&lt;/p>
 &lt;p>また、これを生成するツールも Python で実装しました！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 144; flex-basis: 346px">
-&lt;a href="https://coalabo.net/p/vivace/image_7.png" data-size="1394x966">&lt;img src="https://coalabo.net/p/vivace/image_7.png"
-srcset="https://coalabo.net/p/vivace/image_7_huf5bf0cb86f39d7079dacdecf48ca5fcf_451000_480x0_resize_box_2.png 480w, https://coalabo.net/p/vivace/image_7_huf5bf0cb86f39d7079dacdecf48ca5fcf_451000_1024x0_resize_box_2.png 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 144;
+flex-basis: 346px"
+>
+&lt;a href="./p/vivace/image_7.png" data-size="1394x966">
+&lt;img src="./p/vivace/image_7.png"
 width="1394"
 height="966"
+srcset="./p/vivace/image_7_huf5bf0cb86f39d7079dacdecf48ca5fcf_451000_480x0_resize_box_3.png 480w, ./p/vivace/image_7_huf5bf0cb86f39d7079dacdecf48ca5fcf_451000_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="Notes Maker">
 &lt;/a>
@@ -461,15 +815,22 @@ alt="Notes Maker">
 &lt;p>詳しくはこちら ↓&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://github.com/smpny7/notes-maker" target="_blank" rel="noopener"
->&lt;strong>notes-maker（GitHub）&lt;/strong>&lt;/a> &lt;a href="https://github.com/smpny7/notes-maker">https://github.com/smpny7/notes-maker&lt;/a>&lt;/p>
+>&lt;strong>notes-maker（GitHub）&lt;/strong>&lt;/a> &lt;a class="link" href="https://github.com/smpny7/notes-maker" target="_blank" rel="noopener"
+>https://github.com/smpny7/notes-maker&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="さて次は楽しい楽しいバックエンド">さて、次は楽しい楽しいバックエンド&lt;/h2>
 &lt;p>VIVACE には、「ランキングボード」という機能があり、各曲上位スコア10名の名前とスコアがクリア時に掲載されます。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/vivace/image_8.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/vivace/image_8.jpg"
-srcset="https://coalabo.net/p/vivace/image_8_hu12f811843f9fbda2c33f11a63863c5fd_176894_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace/image_8_hu12f811843f9fbda2c33f11a63863c5fd_176894_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/vivace/image_8.jpg" data-size="1920x1080">
+&lt;img src="./p/vivace/image_8.jpg"
 width="1920"
 height="1080"
+srcset="./p/vivace/image_8_hu12f811843f9fbda2c33f11a63863c5fd_176894_480x0_resize_q75_box.jpg 480w, ./p/vivace/image_8_hu12f811843f9fbda2c33f11a63863c5fd_176894_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="クリア画面（サンプル）">
 &lt;/a>
@@ -486,7 +847,8 @@ alt="クリア画面（サンプル）">
 &lt;p>詳しくはこちら ↓&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://github.com/smpny7/vivace-api" target="_blank" rel="noopener"
->&lt;strong>vivace-api（GitHub）&lt;/strong>&lt;/a> &lt;a href="https://github.com/smpny7/vivace-api">https://github.com/smpny7/vivace-api&lt;/a>&lt;/p>
+>&lt;strong>vivace-api（GitHub）&lt;/strong>&lt;/a> &lt;a class="link" href="https://github.com/smpny7/vivace-api" target="_blank" rel="noopener"
+>https://github.com/smpny7/vivace-api&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="共同作業の始まりだ">共同作業の始まりだ！&lt;/h2>
 &lt;p>ここからプロジェクトを GitHub Organizations のリポジトリに移植し、
@@ -516,9 +878,9 @@ alt="クリア画面（サンプル）">
 &lt;p>はじめて共同プロジェクトを立ち上げた時に、とあるネット上の人のコミットメッセージの書き方を真似て、マイルールとしていました。&lt;/p>
 &lt;p>大かっこ[]の中に Prefix を入れ（例：&lt;code>add&lt;/code> &lt;code>fix&lt;/code> &lt;code>hotfix&lt;/code> など）、その後に日本語でコミットメッセージを記入するという形でしたが、
 あまりこの書き方をしている人が多くなかったのです&amp;hellip;&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="o">[&lt;/span>add&lt;span class="o">]&lt;/span> リアルタイムデータベースとの通信機能
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="o">[&lt;/span>add&lt;span class="o">]&lt;/span> リアルタイムデータベースとの通信機能
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="もっとも多かった印象がある--かっこよかったもの">もっとも多かった印象がある &amp;amp; かっこよかったもの&lt;/h2>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">Add: リアルタイムデータベースとの通信機能
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">Add: リアルタイムデータベースとの通信機能
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>やっぱこういう Prefix のつけ方がかっこいいですよね。&lt;/p>
 &lt;p>あと当たり前ですが、英語でのコミットメッセージが多かったので、個人開発は英語、友人との共同開発は日本語という感じに分けてもいいですね。&lt;/p>
 &lt;h2 id="prefix-で代表的なもの">Prefix で代表的なもの&lt;/h2>
@@ -660,12 +1022,12 @@ alt="クリア画面（サンプル）">
 &lt;p>1行目に &lt;code>Subject&lt;/code>、2行目に空行で、3行目に内容を書きます。
 1行目の &lt;code>Subject&lt;/code> に書く内容は72文字以上は省略されるので、72文字以内が良さそうです。&lt;/p>
 &lt;p>イメージとしては以下の書き方です。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-txt" data-lang="txt">Add: リアルタイムデータベースとの通信機能
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">Add: リアルタイムデータベースとの通信機能
 Firebase を使ってランキングを保存できるようにしました。
 ...（略）...
 #103 Issue のタイトル
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>また、&lt;code>Body&lt;/code> と &lt;code>Footer&lt;/code> は分けず、以下のようにしているものもありました。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-txt" data-lang="txt">Add: リアルタイムデータベースとの通信機能
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-txt" data-lang="txt">Add: リアルタイムデータベースとの通信機能
 refs #103 Firebase を使ってランキングを保存できるようにしました。
 ...（略）...
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>ですが、個人で開発するプロジェクトに関しては、ここまでしなくても内容はわかるかなとも思います。&lt;/p>
@@ -709,11 +1071,17 @@ Container Registry のストレージ費用は、1 GB あたり月額約 $0.026 
 &lt;p>はい、もうほとんど無料ですね。&lt;/p>
 &lt;p>Firebase の料金プランは、Spark → Blaze にアップグレードしておく必要があります。
 また、有効な支払い方法を登録しておく必要があります。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_1.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_1.jpg"
-srcset="https://coalabo.net/p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/minecraft-server-monitor/image_1.jpg" data-size="3584x2240">
+&lt;img src="./p/minecraft-server-monitor/image_1.jpg"
 width="3584"
 height="2240"
+srcset="./p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_480x0_resize_q75_box.jpg 480w, ./p/minecraft-server-monitor/image_1_huebd564048d03d880e7b94b29a373ffaf_209243_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Firebase 料金プラン">
 &lt;/a>
@@ -721,23 +1089,30 @@ alt="Firebase 料金プラン">
 &lt;/figure>&lt;/p>
 &lt;h2 id="cloud-functions-プロジェクトの作成">Cloud Functions プロジェクトの作成&lt;/h2>
 &lt;p>Cloud Functions にデプロイするには、Firebase CLI を導入する必要があります。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ npm install -g firebase-tools
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ npm install -g firebase-tools
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>お使いの Google アカウントでログインしておく必要があります。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase login
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase login
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>最後に、プロジェクトを新規作成するには&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase init
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase init
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>で新規プロジェクトを作成できます。が&amp;hellip;&lt;/p>
 &lt;h2 id="firebase-init-でハマった">firebase init でハマった！&lt;/h2>
 &lt;p>&lt;code>firebase init&lt;/code> を実行すると、なにやら不穏なメッセージが出ます。&lt;/p>
 &lt;blockquote>
-&lt;p>Error: Cloud resource location is not set for this project but the operation you are attempting to perform in Cloud Firestore requires it. Please see this documentation for more details: &lt;a href="https://firebase.google.com/docs/projects/locations">https://firebase.google.com/docs/projects/locations&lt;/a> .&lt;/p>
+&lt;p>Error: Cloud resource location is not set for this project but the operation you are attempting to perform in Cloud Firestore requires it. Please see this documentation for more details: &lt;a class="link" href="https://firebase.google.com/docs/projects/locations" target="_blank" rel="noopener"
+>https://firebase.google.com/docs/projects/locations&lt;/a> .&lt;/p>
 &lt;/blockquote>
 &lt;p>新規 Firebase プロジェクトを利用する際には、初めにリージョンを設定しておかないといけないそうです！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_2.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_2.jpg"
-srcset="https://coalabo.net/p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/minecraft-server-monitor/image_2.jpg" data-size="3584x2240">
+&lt;img src="./p/minecraft-server-monitor/image_2.jpg"
 width="3584"
 height="2240"
+srcset="./p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_480x0_resize_q75_box.jpg 480w, ./p/minecraft-server-monitor/image_2_hu7048dd8b05c9613e4649769026d471c5_169502_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="デフォルトの GCP リソースロケーション を設定">
 &lt;/a>
@@ -788,11 +1163,17 @@ alt="デフォルトの GCP リソースロケーション を設定">
 &lt;/table>
 &lt;p>無難に、&lt;code>asia-northeast1&lt;/code> か &lt;code>asia-northeast2&lt;/code> あたりがいいと思います。&lt;/p>
 &lt;p>これできちんと新規プロジェクトの作成ができました！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 141; flex-basis: 338px">
-&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_3.png" data-size="1364x966">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_3.png"
-srcset="https://coalabo.net/p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_480x0_resize_box_2.png 480w, https://coalabo.net/p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_1024x0_resize_box_2.png 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 141;
+flex-basis: 338px"
+>
+&lt;a href="./p/minecraft-server-monitor/image_3.png" data-size="1364x966">
+&lt;img src="./p/minecraft-server-monitor/image_3.png"
 width="1364"
 height="966"
+srcset="./p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_480x0_resize_box_3.png 480w, ./p/minecraft-server-monitor/image_3_hu1f09cff624b0d1511c86c3ae5e22fc41_305498_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="Firebase プロジェクトの新規作成">
 &lt;/a>
@@ -802,24 +1183,30 @@ alt="Firebase プロジェクトの新規作成">
 &lt;p>Cloud Functions には、環境変数を設定できるのですが、&lt;code>.env&lt;/code> ファイルではありません。
 firebaseプロジェクト内に、オブジェクト形式で保存されていきます。&lt;/p>
 &lt;p>例えば今回のプロジェクトでは、&lt;code>address&lt;/code> と &lt;code>port&lt;/code> という環境変数が必要になるのですが、&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:set server.address&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;minecraft-sample-server.com&amp;#34;&lt;/span> server.port&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;25565&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:set server.address&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;minecraft-sample-server.com&amp;#34;&lt;/span> server.port&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;25565&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>上記のコマンドで、環境変数を設定できます。&lt;/p>
 &lt;p>プロジェクトの環境構成に現在保存されているものを調べるには、&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:get
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:get
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>で、JSON が出力されます。&lt;/p>
 &lt;h2 id="環境変数をローカルエミュレート時に使えるようにする">環境変数をローカルエミュレート時に使えるようにする&lt;/h2>
 &lt;p>Cloud Functions の環境変数を、ローカルエミュレート時にも使うことは多いと思います。&lt;/p>
 &lt;p>調べてみたところ、&lt;code>.runtimeconfig.json&lt;/code> というファイルに環境変数の JSON を出力して
 &lt;code>functions&lt;/code> ディレクトリ直下に置いておくことで、ローカルでも環境変数を取り込むことができるそうです。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:get &amp;gt; .runtimeconfig.json
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ firebase functions:config:get &amp;gt; .runtimeconfig.json
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="今回作成したもの">今回作成したもの&lt;/h2>
 &lt;p>Minecraft サーバーを監視し、サーバーが落ちた際に Discord に通知してくれるサービス（Worker）を作成しました。&lt;/p>
 &lt;p>詳しくは以下の GitHub リポジトリを参照してください！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 68; flex-basis: 164px">
-&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_4.jpg" data-size="1482x2168">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_4.jpg"
-srcset="https://coalabo.net/p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 68;
+flex-basis: 164px"
+>
+&lt;a href="./p/minecraft-server-monitor/image_4.jpg" data-size="1482x2168">
+&lt;img src="./p/minecraft-server-monitor/image_4.jpg"
 width="1482"
 height="2168"
+srcset="./p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_480x0_resize_q75_box.jpg 480w, ./p/minecraft-server-monitor/image_4_hu4d3f0ea5b8f2776ddc2a4936fd24a230_142004_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="minecraft-server-monitor (README)">
 &lt;/a>
@@ -831,22 +1218,34 @@ alt="minecraft-server-monitor (README)">
 &lt;h2 id="discord-の-情クラ-minecraftサーバー-チャンネル">Discord の 情クラ (minecraftサーバー) チャンネル&lt;/h2>
 &lt;p>Discord にサーバの状態をログとして投げてくれます。&lt;/p>
 &lt;p>ボットの名前とアイコンは、メンバーに勝手に変えられているので気にしないでください。。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 370; flex-basis: 888px">
-&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_5.jpg" data-size="1184x320">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_5.jpg"
-srcset="https://coalabo.net/p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 370;
+flex-basis: 888px"
+>
+&lt;a href="./p/minecraft-server-monitor/image_5.jpg" data-size="1184x320">
+&lt;img src="./p/minecraft-server-monitor/image_5.jpg"
 width="1184"
 height="320"
+srcset="./p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_480x0_resize_q75_box.jpg 480w, ./p/minecraft-server-monitor/image_5_huef166d70a36918b139d83edb3125647c_16621_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="一般的なログ">
 &lt;/a>
 &lt;figcaption>一般的なログ&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>また、GCP の minecraft サーバーが落ちたときは、通知用チャンネルに投稿されます。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 385; flex-basis: 926px">
-&lt;a href="https://coalabo.net/p/minecraft-server-monitor/image_6.jpg" data-size="1204x312">&lt;img src="https://coalabo.net/p/minecraft-server-monitor/image_6.jpg"
-srcset="https://coalabo.net/p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 385;
+flex-basis: 926px"
+>
+&lt;a href="./p/minecraft-server-monitor/image_6.jpg" data-size="1204x312">
+&lt;img src="./p/minecraft-server-monitor/image_6.jpg"
 width="1204"
 height="312"
+srcset="./p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_480x0_resize_q75_box.jpg 480w, ./p/minecraft-server-monitor/image_6_hub09a344d6e7e38b0bb8902af27ffb694_16240_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="サーバーが落ちた時のログ">
 &lt;/a>
@@ -866,11 +1265,17 @@ alt="サーバーが落ちた時のログ">
 &lt;h2 id="書き出しめっちゃ速い">書き出しめっちゃ速い！！&lt;/h2>
 &lt;p>記事を Markdown で書いていくのですが、保存するたびホットリロードでブラウザに反映してくれます。&lt;/p>
 &lt;p>その速度が明らかに速いのです！（私が React や Nuxt.js などに慣れているからかもしれませんが&amp;hellip;）&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/hugo/image_1.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_1.jpg"
-srcset="https://coalabo.net/p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/hugo/image_1.jpg" data-size="3584x2240">
+&lt;img src="./p/hugo/image_1.jpg"
 width="3584"
 height="2240"
+srcset="./p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_480x0_resize_q75_box.jpg 480w, ./p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="書き出し速度がやばい！">
 &lt;/a>
@@ -884,9 +1289,9 @@ alt="書き出し速度がやばい！">
 &lt;p>今回 &lt;a class="link" href="https://themes.gohugo.io/hugo-theme-stack" target="_blank" rel="noopener"
 >Hugo Theme Stack&lt;/a>というテーマパックを編集して使ったのですが、
 これを submodule 登録しておきます。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>また、git から clone する時は、submodule も忘れず引っ張ってくるようにしましょう。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">$ git clone --recurse-submodules --depth &lt;span class="m">1&lt;/span> git@github.com:smpny7/coalabo.git
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">$ git clone --recurse-submodules --depth &lt;span class="m">1&lt;/span> git@github.com:smpny7/coalabo.git
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="github-actions-で自動化しよう">GitHub Actions で自動化しよう&lt;/h2>
 &lt;p>今度こそ、GitHub Actions で GitHub Pages に自動デプロイするように設定していきます。&lt;/p>
 &lt;p>今回 GitHub Pages 用に、&lt;code>&amp;lt;GitHub ユーザー名&amp;gt;.github.io&lt;/code> のリポジトリを作成しました。
@@ -895,7 +1300,7 @@ alt="書き出し速度がやばい！">
 &lt;p>GitHub Actions には &lt;a class="link" href="https://github.com/marketplace/actions/github-pages-action#getting-started" target="_blank" rel="noopener"
 >GitHub Pages action&lt;/a> というのが
 マーケットプレイスに公開されていたので、これを参考に作成しました。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github pages&lt;/span>&lt;span class="w">
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github pages&lt;/span>&lt;span class="w">
 &lt;/span>&lt;span class="w">
 &lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
 &lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
@@ -935,11 +1340,17 @@ alt="書き出し速度がやばい！">
 &lt;p>そして GitHub の Secrets に、&lt;code>ACTIONS_DEPLOY_KEY&lt;/code> という名前で SSH のプライベートキーを設定しておきます。&lt;/p>
 &lt;h2 id="ドメインが-35円だと">ドメインが 35円だと！？&lt;/h2>
 &lt;p>本当にたまたまです。&lt;code>.com&lt;/code> ドメインや &lt;code>.net&lt;/code> ドメインが 35円セールしてました。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/hugo/image_2.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_2.jpg"
-srcset="https://coalabo.net/p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/hugo/image_2.jpg" data-size="3584x2240">
+&lt;img src="./p/hugo/image_2.jpg"
 width="3584"
 height="2240"
+srcset="./p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_480x0_resize_q75_box.jpg 480w, ./p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="お名前.com（2021/4/28 執筆時点）">
 &lt;/a>
@@ -949,22 +1360,34 @@ alt="お名前.com（2021/4/28 執筆時点）">
 &lt;p>サイト名に迷走して、3つくらいドメインをとってしまったのは秘密です。&lt;/p>
 &lt;h2 id="取得したドメイン名に設定しよう">取得したドメイン名に設定しよう&lt;/h2>
 &lt;p>お名前.com の管理画面に行き、&lt;code>DNS 設定 &amp;gt; DNSレコード設定を利用する&lt;/code> を選択します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/hugo/image_3.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_3.jpg"
-srcset="https://coalabo.net/p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/hugo/image_3.jpg" data-size="3584x2240">
+&lt;img src="./p/hugo/image_3.jpg"
 width="3584"
 height="2240"
+srcset="./p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_480x0_resize_q75_box.jpg 480w, ./p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="DNS 設定画面（お名前.com）">
 &lt;/a>
 &lt;figcaption>DNS 設定画面（お名前.com）&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>Aレコードに、GitHub Pages のアドレスを入力します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/hugo/image_4.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_4.jpg"
-srcset="https://coalabo.net/p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/hugo/image_4.jpg" data-size="3584x2240">
+&lt;img src="./p/hugo/image_4.jpg"
 width="3584"
 height="2240"
+srcset="./p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_480x0_resize_q75_box.jpg 480w, ./p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="DNS 設定（お名前.com）">
 &lt;/a>
@@ -984,22 +1407,34 @@ alt="DNS 設定（お名前.com）">
 &lt;h2 id="github-actions-を設定">GitHub Actions を設定&lt;/h2>
 &lt;p>構築も終盤にさしかかってきました。&lt;/p>
 &lt;p>GitHub Pages 設定の &lt;code>Custom domain&lt;/code> 項目に、使用したいドメインを入力します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/hugo/image_5.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_5.jpg"
-srcset="https://coalabo.net/p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/hugo/image_5.jpg" data-size="3584x2240">
+&lt;img src="./p/hugo/image_5.jpg"
 width="3584"
 height="2240"
+srcset="./p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_480x0_resize_q75_box.jpg 480w, ./p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="GitHub Pages 設定画面">
 &lt;/a>
 &lt;figcaption>GitHub Pages 設定画面&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>Save を押すと、ドメインが &lt;code>github.io&lt;/code> に転送されるかのチェックが行われます。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 160; flex-basis: 384px">
-&lt;a href="https://coalabo.net/p/hugo/image_6.jpg" data-size="3584x2240">&lt;img src="https://coalabo.net/p/hugo/image_6.jpg"
-srcset="https://coalabo.net/p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="./p/hugo/image_6.jpg" data-size="3584x2240">
+&lt;img src="./p/hugo/image_6.jpg"
 width="3584"
 height="2240"
+srcset="./p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_480x0_resize_q75_box.jpg 480w, ./p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="GitHub Pages 設定画面">
 &lt;/a>
@@ -1018,7 +1453,7 @@ alt="GitHub Pages 設定画面">
 &lt;p>&lt;code>style用ファイル&lt;/code> には自分がカスタムした部分のCSSを、
 &lt;code>analytics用 JSファイル&lt;/code>には例の Google Analytics 用コード9行が書かれています。&lt;/p>
 &lt;p>また、customファイルは以下の通りです。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="c">&amp;lt;!-- Custom Style --&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="c">&amp;lt;!-- Custom Style --&amp;gt;&lt;/span>
 {{ partial &amp;#34;style/custom&amp;#34; . }}
 &lt;span class="c">&amp;lt;!-- Analytics --&amp;gt;&lt;/span>
 {{ if not .Site.IsServer }}
@@ -1027,11 +1462,17 @@ alt="GitHub Pages 設定画面">
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>↑ デバッグでは Google Analytics がうごかないようにしています&lt;/p>
 &lt;h2 id="さいごに">さいごに&lt;/h2>
 &lt;p>カスタマイズしたサイトは以下のようになりました！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/hugo/image_7.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/hugo/image_7.jpg"
-srcset="https://coalabo.net/p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/hugo/image_7.jpg" data-size="1920x1080">
+&lt;img src="./p/hugo/image_7.jpg"
 width="1920"
 height="1080"
+srcset="./p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_480x0_resize_q75_box.jpg 480w, ./p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="COALABO. 完成">
 &lt;/a>
@@ -1046,11 +1487,17 @@ alt="COALABO. 完成">
 &lt;p>この Bot は、みんなが登録したキーワードを打つと対応した語録を発言してくれます。&lt;/p>
 &lt;h2 id="なんか盛り上がってつくることになった">なんか盛り上がって、つくることになった&lt;/h2>
 &lt;p>草Botくん、「草」という文字が入っていると、「草」と返してくれることからこの名前がついたんです。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 593; flex-basis: 1424px">
-&lt;a href="https://coalabo.net/p/wbot/image_1.jpg" data-size="801x135">&lt;img src="https://coalabo.net/p/wbot/image_1.jpg"
-srcset="https://coalabo.net/p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 593;
+flex-basis: 1424px"
+>
+&lt;a href="./p/wbot/image_1.jpg" data-size="801x135">
+&lt;img src="./p/wbot/image_1.jpg"
 width="801"
 height="135"
+srcset="./p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_480x0_resize_q75_box.jpg 480w, ./p/wbot/image_1_hua3bf971103680b20a1b666a9fc2d9a8e_4219_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="草Botくん">
 &lt;/a>
@@ -1064,11 +1511,17 @@ alt="草Botくん">
 &lt;p>せっかくなので、自分のお気に入り語録を紹介しましょう。&lt;/p>
 &lt;hr>
 &lt;p>これ何だかわかりますか？&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 445; flex-basis: 1068px">
-&lt;a href="https://coalabo.net/p/wbot/image_2.jpg" data-size="801x180">&lt;img src="https://coalabo.net/p/wbot/image_2.jpg"
-srcset="https://coalabo.net/p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 445;
+flex-basis: 1068px"
+>
+&lt;a href="./p/wbot/image_2.jpg" data-size="801x180">
+&lt;img src="./p/wbot/image_2.jpg"
 width="801"
 height="180"
+srcset="./p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_480x0_resize_q75_box.jpg 480w, ./p/wbot/image_2_hu7a9c175328f5b7d4755e767439989923_8444_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="お気に入り語録 その1">
 &lt;/a>
@@ -1076,11 +1529,17 @@ alt="お気に入り語録 その1">
 &lt;/figure>&lt;/p>
 &lt;p>↑ これをみてピンときた人はさすがですね ！&lt;/p>
 &lt;hr>
-&lt;p>&lt;figure style="flex-grow: 447; flex-basis: 1073px">
-&lt;a href="https://coalabo.net/p/wbot/image_3.jpg" data-size="801x179">&lt;img src="https://coalabo.net/p/wbot/image_3.jpg"
-srcset="https://coalabo.net/p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 447;
+flex-basis: 1073px"
+>
+&lt;a href="./p/wbot/image_3.jpg" data-size="801x179">
+&lt;img src="./p/wbot/image_3.jpg"
 width="801"
 height="179"
+srcset="./p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_480x0_resize_q75_box.jpg 480w, ./p/wbot/image_3_hucc9b73f89db2386e0e79142d46a04e8c_12036_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="実はこれ">
 &lt;/a>
@@ -1096,11 +1555,17 @@ alt="実はこれ">
 &lt;p>という経緯で追加されました(笑)&lt;/p>
 &lt;hr>
 &lt;p>もう一つのお気に入りはこれです。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 419; flex-basis: 1006px">
-&lt;a href="https://coalabo.net/p/wbot/image_4.jpg" data-size="801x191">&lt;img src="https://coalabo.net/p/wbot/image_4.jpg"
-srcset="https://coalabo.net/p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 419;
+flex-basis: 1006px"
+>
+&lt;a href="./p/wbot/image_4.jpg" data-size="801x191">
+&lt;img src="./p/wbot/image_4.jpg"
 width="801"
 height="191"
+srcset="./p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_480x0_resize_q75_box.jpg 480w, ./p/wbot/image_4_hu481bc9f7a64d92da7e96f4cf74784a11_7355_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="「腹痛」に反応します">
 &lt;/a>
@@ -1140,9 +1605,9 @@ GitHubのmainブランチにプッシュされた時に Webhook が飛ばされ 
 &lt;/blockquote>
 &lt;p>しかし自動的に検知してくれなかったのか、私の環境では実行されなかったので &lt;code>Procfile&lt;/code> を作成しました。&lt;/p>
 &lt;p>書き方は以下の通りです。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="o">(&lt;/span>processType&lt;span class="o">)&lt;/span> : &lt;span class="o">(&lt;/span>&lt;span class="nb">command&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="o">(&lt;/span>processType&lt;span class="o">)&lt;/span> : &lt;span class="o">(&lt;/span>&lt;span class="nb">command&lt;/span>&lt;span class="o">)&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>今回の場合、以下の記述が必要です。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">worker: node index.js
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">worker: node index.js
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>Procfile&lt;/code> はアプリのルートディレクトリに設置する必要があります。&lt;/p>
 &lt;h2 id="dyno-を-worker-に設定すること">dyno を worker に設定すること&lt;/h2>
 &lt;p>もう1つ、今回 Heroku 独特のプロセス処理の種類である &lt;code>dyno&lt;/code> をデフォルトから変更する必要がありました。&lt;/p>
@@ -1171,7 +1636,7 @@ GitHubのmainブランチにプッシュされた時に Webhook が飛ばされ 
 &lt;/table>
 &lt;p>今回、Discord Bot では常にチャンネルのテキストを取得する必要があるため、&lt;code>worker&lt;/code> に設定する必要があります。&lt;/p>
 &lt;p>HerokuCLI を導入している場合は、以下のコマンドで &lt;code>worker&lt;/code> に切り替えることができます。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">heroku ps:scale &lt;span class="nv">worker&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">heroku ps:scale &lt;span class="nv">worker&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="さいごに">さいごに&lt;/h2>
 &lt;p>なんだかんだ、やっぱりBotがいてくれると楽しいですよね。&lt;/p>
 &lt;p>次はもっと有用な Bot を作りたいと思います (笑)&lt;/p></description></item><item><title>アプリ版 Minecraft サーバー制御ツールの制作</title><link>https://coalabo.net/p/jokura-app/</link><pubDate>Fri, 23 Apr 2021 09:19:41 +0900</pubDate><guid>https://coalabo.net/p/jokura-app/</guid><description>&lt;img src="https://coalabo.net/p/jokura-app/cover.jpg" alt="Featured image of post アプリ版 Minecraft サーバー制御ツールの制作" />&lt;h2 id="やっぱアプリ化したいよね">やっぱアプリ化、したいよね！！&lt;/h2>
@@ -1185,11 +1650,17 @@ GitHubのmainブランチにプッシュされた時に Webhook が飛ばされ 
 JetBrains 社が開発したソフトウェアを初めて触ったのですが、
 これがまた使いやすいソフトウェアで感動したのを覚えています。
 （私が JetBrains 信徒になる話はまたいつか）&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 157; flex-basis: 378px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_1.png" data-size="3808x2414">&lt;img src="https://coalabo.net/p/jokura-app/image_1.png"
-srcset="https://coalabo.net/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_480x0_resize_box_2.png 480w, https://coalabo.net/p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_1024x0_resize_box_2.png 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 157;
+flex-basis: 378px"
+>
+&lt;a href="./p/jokura-app/image_1.png" data-size="3808x2414">
+&lt;img src="./p/jokura-app/image_1.png"
 width="3808"
 height="2414"
+srcset="./p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_480x0_resize_box_3.png 480w, ./p/jokura-app/image_1_hu8e2bc46808c320c0a577ca01858cd9e2_1191307_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="Android Studio のデザイン画面">
 &lt;/a>
@@ -1198,11 +1669,17 @@ alt="Android Studio のデザイン画面">
 &lt;h2 id="さぁ開発だ">さぁ開発だ！&lt;/h2>
 &lt;p>の前に、デザインを作っていきます。&lt;/p>
 &lt;p>スマホによってサイズが異なるので、対応できるデザインを意識して作成しました。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 174; flex-basis: 417px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_2.png" data-size="4064x2334">&lt;img src="https://coalabo.net/p/jokura-app/image_2.png"
-srcset="https://coalabo.net/p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_480x0_resize_box_2.png 480w, https://coalabo.net/p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_1024x0_resize_box_2.png 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 174;
+flex-basis: 417px"
+>
+&lt;a href="./p/jokura-app/image_2.png" data-size="4064x2334">
+&lt;img src="./p/jokura-app/image_2.png"
 width="4064"
 height="2334"
+srcset="./p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_480x0_resize_box_3.png 480w, ./p/jokura-app/image_2_hu1b6d1af6b273a6db207a0e3a4b141e0a_1388025_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="Adobe XD">
 &lt;/a>
@@ -1210,20 +1687,32 @@ alt="Adobe XD">
 &lt;/figure>&lt;/p>
 &lt;h2 id="コーディング-すべしぬべし">コーディング すべしぬべし&lt;/h2>
 &lt;p>今回の技術的な部分です。サーバーの様子を取得するのとリクエストを送る機能をつけます！（大したことはしてませんが）&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_3.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_3.jpg"
-srcset="https://coalabo.net/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 53;
+flex-basis: 128px"
+>
+&lt;a href="./p/jokura-app/image_3.jpg" data-size="720x1344">
+&lt;img src="./p/jokura-app/image_3.jpg"
 width="720"
 height="1344"
+srcset="./p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_480x0_resize_q75_box.jpg 480w, ./p/jokura-app/image_3_hu9872aa2b6807dbab56e95d68534cb1bc_7150_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="スプラッシュ画面（情クラ！アプリ）">
 &lt;/a>
 &lt;figcaption>スプラッシュ画面（情クラ！アプリ）&lt;/figcaption>
-&lt;/figure>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_4.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_4.jpg"
-srcset="https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
+&lt;/figure>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 53;
+flex-basis: 128px"
+>
+&lt;a href="./p/jokura-app/image_4.jpg" data-size="720x1344">
+&lt;img src="./p/jokura-app/image_4.jpg"
 width="720"
 height="1344"
+srcset="./p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, ./p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="ホーム（情クラ！アプリ）">
 &lt;/a>
@@ -1239,14 +1728,14 @@ APIからの画像取得には、Picasso というライブラリを使用しま
 >https://square.github.io/picasso/&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;p>具体的には、以下のような書き方でさくっとインターネットから画像取得ができちゃうものです！&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">Picasso&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">Picasso&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;span class="p">.&lt;/span>&lt;span class="nx">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;https://jokura.net/api/getSkin?id=minecraft_id&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 今回作成したAPI
 &lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">into&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">face1&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>face1&lt;/code>というのは ImageView の id で、APIから取得した画像を流し込んでくれます！&lt;/p>
 &lt;p>また、プレイヤーがオンラインかどうかは、用意したAPIから返ってきた情報を元に表示を切り替えます。
 APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利なライブラリがありますが、
 この時は初心者だったこともあり、Java通信（HttpUrlConnection）で実装しました(笑)&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">var&lt;/span> &lt;span class="nx">connection&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">HttpURLConnection&lt;/span>&lt;span class="o">?&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">var&lt;/span> &lt;span class="nx">connection&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">HttpURLConnection&lt;/span>&lt;span class="o">?&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">reader&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">BufferedReader&lt;/span>&lt;span class="o">?&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>
 &lt;span class="nx">val&lt;/span> &lt;span class="nx">buffer&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">StringBuffer&lt;/span>
 &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
@@ -1295,20 +1784,32 @@ APIからのGET・POSTメソッドには、便利な OkHttp3 などの便利な�
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>一部抜粋していますが、こんな感じでリクエストをかいています。&lt;/p>
 &lt;h2 id="ちょっと脱線しちゃいましたね">ちょっと脱線しちゃいましたね&lt;/h2>
 &lt;p>他にどんな機能を実装したのかみてみましょう！たぶんこちらの方が興味ありますよね (笑)&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_4.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_4.jpg"
-srcset="https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 53;
+flex-basis: 128px"
+>
+&lt;a href="./p/jokura-app/image_4.jpg" data-size="720x1344">
+&lt;img src="./p/jokura-app/image_4.jpg"
 width="720"
 height="1344"
+srcset="./p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_480x0_resize_q75_box.jpg 480w, ./p/jokura-app/image_4_hube6eee43bd7073f82c8bd897121f032a_40381_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="ホーム（情クラ！アプリ）">
 &lt;/a>
 &lt;figcaption>ホーム（情クラ！アプリ）&lt;/figcaption>
-&lt;/figure>&lt;figure style="flex-grow: 53; flex-basis: 128px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_5.jpg" data-size="720x1344">&lt;img src="https://coalabo.net/p/jokura-app/image_5.jpg"
-srcset="https://coalabo.net/p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_1024x0_resize_q75_box.jpg 1024w"
+&lt;/figure>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 53;
+flex-basis: 128px"
+>
+&lt;a href="./p/jokura-app/image_5.jpg" data-size="720x1344">
+&lt;img src="./p/jokura-app/image_5.jpg"
 width="720"
 height="1344"
+srcset="./p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_480x0_resize_q75_box.jpg 480w, ./p/jokura-app/image_5_huf368a7455d3e035d1fd15c1962bfe02c_60958_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="サーバー稼働状況（情クラ！アプリ）">
 &lt;/a>
@@ -1323,20 +1824,32 @@ WebView で表示させるとよかったですね (笑)&lt;/p>
 &lt;h2 id="今回のメインディッシュ">今回のメインディッシュ&lt;/h2>
 &lt;p>本アプリのメイン機能は、なんといってもこの2つです！&lt;/p>
 &lt;p>トップに設置されている「バックアップ」「再起動」の機能について説明します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 54; flex-basis: 131px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_6.jpg" data-size="1080x1977">&lt;img src="https://coalabo.net/p/jokura-app/image_6.jpg"
-srcset="https://coalabo.net/p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 54;
+flex-basis: 131px"
+>
+&lt;a href="./p/jokura-app/image_6.jpg" data-size="1080x1977">
+&lt;img src="./p/jokura-app/image_6.jpg"
 width="1080"
 height="1977"
+srcset="./p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_480x0_resize_q75_box.jpg 480w, ./p/jokura-app/image_6_hu833e6882c2e58499d7b79ac000a1192c_62734_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="バックアップ 実行不可（情クラ！アプリ）">
 &lt;/a>
 &lt;figcaption>バックアップ 実行不可（情クラ！アプリ）&lt;/figcaption>
-&lt;/figure>&lt;figure style="flex-grow: 54; flex-basis: 131px">
-&lt;a href="https://coalabo.net/p/jokura-app/image_7.jpg" data-size="1080x1977">&lt;img src="https://coalabo.net/p/jokura-app/image_7.jpg"
-srcset="https://coalabo.net/p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_1024x0_resize_q75_box.jpg 1024w"
+&lt;/figure>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 54;
+flex-basis: 131px"
+>
+&lt;a href="./p/jokura-app/image_7.jpg" data-size="1080x1977">
+&lt;img src="./p/jokura-app/image_7.jpg"
 width="1080"
 height="1977"
+srcset="./p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_480x0_resize_q75_box.jpg 480w, ./p/jokura-app/image_7_huabd1397f24f4873519c9e062a2d6616d_61514_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="バックアップ 実行可能（情クラ！アプリ）">
 &lt;/a>
@@ -1364,11 +1877,17 @@ alt="バックアップ 実行可能（情クラ！アプリ）">
 &lt;p>Minecraft って、複数人でプレイすると沼ですよね。&lt;/p>
 &lt;p>「 情クラ！」という、知り合い十数名程度の Minecraft サーバーで遊んでいるのですが、
 今や大陸内には高速道路が広がり、複数の大陸間には大きな橋が建築されています。（やばすぎ）&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 192; flex-basis: 462px">
-&lt;a href="https://coalabo.net/p/jokura-web/image_1.jpg" data-size="2378x1233">&lt;img src="https://coalabo.net/p/jokura-web/image_1.jpg"
-srcset="https://coalabo.net/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 192;
+flex-basis: 462px"
+>
+&lt;a href="./p/jokura-web/image_1.jpg" data-size="2378x1233">
+&lt;img src="./p/jokura-web/image_1.jpg"
 width="2378"
 height="1233"
+srcset="./p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, ./p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="瀬戸大橋（こんなのが 5, 6本架かっています）">
 &lt;/a>
@@ -1384,11 +1903,17 @@ alt="瀬戸大橋（こんなのが 5, 6本架かっています）">
 当時GCPには、年間 30,000円分の無料クレジットが付属していました。
 それをちょうど1年間で使い切る&lt;code>n1-standard-1&lt;/code> プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）で運用していたのですが、
 大人数が長時間プレイしていると動作がもっさりしてくるのです。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 110; flex-basis: 264px">
-&lt;a href="https://coalabo.net/p/jokura-web/image_2.jpg" data-size="1870x1694">&lt;img src="https://coalabo.net/p/jokura-web/image_2.jpg"
-srcset="https://coalabo.net/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 110;
+flex-basis: 264px"
+>
+&lt;a href="./p/jokura-web/image_2.jpg" data-size="1870x1694">
+&lt;img src="./p/jokura-web/image_2.jpg"
 width="1870"
 height="1694"
+srcset="./p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, ./p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="GCPの料金（N1 標準マシンタイプ）">
 &lt;/a>
@@ -1397,20 +1922,32 @@ alt="GCPの料金（N1 標準マシンタイプ）">
 &lt;p>サーバー管理者だった私は、連絡を受けるたび SSH 接続してサーバーを再起動していました。&lt;/p>
 &lt;p>ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバーを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。&lt;/p>
 &lt;h2 id="まずは完成品をどうぞ">まずは完成品をどうぞ&lt;/h2>
-&lt;p>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://coalabo.net/p/jokura-web/image_3.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_3.jpg"
-srcset="https://coalabo.net/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 56;
+flex-basis: 134px"
+>
+&lt;a href="./p/jokura-web/image_3.jpg" data-size="750x1334">
+&lt;img src="./p/jokura-web/image_3.jpg"
 width="750"
 height="1334"
+srcset="./p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, ./p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="トップページ（情クラ！）">
 &lt;/a>
 &lt;figcaption>トップページ（情クラ！）&lt;/figcaption>
-&lt;/figure>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://coalabo.net/p/jokura-web/image_4.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_4.jpg"
-srcset="https://coalabo.net/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w"
+&lt;/figure>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 56;
+flex-basis: 134px"
+>
+&lt;a href="./p/jokura-web/image_4.jpg" data-size="750x1334">
+&lt;img src="./p/jokura-web/image_4.jpg"
 width="750"
 height="1334"
+srcset="./p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, ./p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="サーバー状況確認ページ（情クラ！）">
 &lt;/a>
@@ -1483,7 +2020,7 @@ alt="サーバー状況確認ページ（情クラ！）">
 &lt;/table>
 &lt;p>ここで重要なのが、このレスポンスを待たずに続けてリクエストパケットを送信します。
 その応答パケットとして、サーバーが以下のようなJSONを返します。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="p">{&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="p">{&lt;/span>
 &lt;span class="nt">&amp;#34;version&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;1.16.1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
 &lt;span class="nt">&amp;#34;protocol&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">47&lt;/span>
@@ -1518,20 +2055,32 @@ alt="サーバー状況確認ページ（情クラ！）">
 &lt;h2 id="実装した機能">実装した機能&lt;/h2>
 &lt;p>あまり技術的な話をすると長くなっちゃいそうなので、次に行きます。&lt;/p>
 &lt;p>他に実装した機能も紹介します。&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://coalabo.net/p/jokura-web/image_5.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_5.jpg"
-srcset="https://coalabo.net/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 56;
+flex-basis: 134px"
+>
+&lt;a href="./p/jokura-web/image_5.jpg" data-size="750x1334">
+&lt;img src="./p/jokura-web/image_5.jpg"
 width="750"
 height="1334"
+srcset="./p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, ./p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="ナビゲーションバー（情クラ！）">
 &lt;/a>
 &lt;figcaption>ナビゲーションバー（情クラ！）&lt;/figcaption>
-&lt;/figure>&lt;figure style="flex-grow: 56; flex-basis: 134px">
-&lt;a href="https://coalabo.net/p/jokura-web/image_6.jpg" data-size="750x1334">&lt;img src="https://coalabo.net/p/jokura-web/image_6.jpg"
-srcset="https://coalabo.net/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w"
+&lt;/figure>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 56;
+flex-basis: 134px"
+>
+&lt;a href="./p/jokura-web/image_6.jpg" data-size="750x1334">
+&lt;img src="./p/jokura-web/image_6.jpg"
 width="750"
 height="1334"
+srcset="./p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, ./p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="再起動（情クラ！）">
 &lt;/a>
@@ -1591,7 +2140,7 @@ alt="再起動（情クラ！）">
 &lt;h2 id="マイクラサーバーのバックエンドはどうなってるの">マイクラサーバーのバックエンドはどうなってるの？&lt;/h2>
 &lt;p>Minecraft サーバーでは、Node.js + TypeScript でAPIを構築しています。&lt;/p>
 &lt;p>たとえば、以下は Minecraft サーバーを起動するルーティングの一部抜粋です。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-typescript" data-lang="typescript">&lt;span class="c1">// --- Start Server ------------------------------------------------------------
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-typescript" data-lang="typescript">&lt;span class="c1">// --- Start Server ------------------------------------------------------------
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/api/run/start&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>: &lt;span class="kt">express.Request&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>: &lt;span class="kt">express.Response&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kr">const&lt;/span> &lt;span class="nx">schema&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">Joi&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kt">object&lt;/span>&lt;span class="p">({&lt;/span>
 &lt;span class="nx">user&lt;/span>: &lt;span class="kt">Joi.string&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nx">required&lt;/span>&lt;span class="p">(),&lt;/span>
@@ -1626,7 +2175,7 @@ alt="再起動（情クラ！）">
 そして、post( ) という関数がありますが、これはサーバーのエラーなどを Discord のサーバーに通知するための関数として用意してあります。
 server.jar は screen 上で走らせているのですが、screen の二重起動にならないように初めに起動してもよいかのチェックも行っています。&lt;/p>
 &lt;p>また、実行系はシェルにまとめてあります。&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="cp">#!/bin/bash
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="cp">#!/bin/bash
 &lt;/span>&lt;span class="cp">&lt;/span>
 &lt;span class="nv">JARFILE&lt;/span>&lt;span class="o">=&lt;/span>/home/jokura_server/minecraft/server.jar
 &lt;span class="nv">MEM&lt;/span>&lt;span class="o">=&lt;/span>15000M
@@ -1634,7 +2183,7 @@ server.jar は screen 上で走らせているのですが、screen の二重起
 screen -UAmdS minecraft java -server -Xms&lt;span class="si">${&lt;/span>&lt;span class="nv">MEM&lt;/span>&lt;span class="si">}&lt;/span> -Xmx&lt;span class="si">${&lt;/span>&lt;span class="nv">MEM&lt;/span>&lt;span class="si">}&lt;/span> -jar &lt;span class="si">${&lt;/span>&lt;span class="nv">JARFILE&lt;/span>&lt;span class="si">}&lt;/span> nogui
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>上記のファイルは、起動用のシェルです。&lt;/p>
 &lt;p>他にも再起動用やバックアップ用などのシェルも用意してあります。（下記は 再起動用）&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="cp">#!/bin/bash
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="cp">#!/bin/bash
 &lt;/span>&lt;span class="cp">&lt;/span>
 &lt;span class="nv">WAIT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">30&lt;/span>
 &lt;span class="nv">STARTSCRIPT&lt;/span>&lt;span class="o">=&lt;/span>/home/jokura_server/minecraft/start.sh
@@ -1654,11 +2203,17 @@ sleep &lt;span class="m">1&lt;/span>
 &lt;p>2021年4月から、Minecraft サーバーを別のメンバーが自宅サーバーで建ててくれることになりました。
 やはり GCP などの従量課金制のサーバーで運用するには、かなり気を使ってしまうので正直解放されました。&lt;/p>
 &lt;p>かといって、情クラ！での活動はまだまだ続けていく予定なので、ぜひこのブログでも活動を共有していけたらなと思います！&lt;/p>
-&lt;p>&lt;figure style="flex-grow: 177; flex-basis: 426px">
-&lt;a href="https://coalabo.net/p/jokura-web/image_7.jpg" data-size="1920x1080">&lt;img src="https://coalabo.net/p/jokura-web/image_7.jpg"
-srcset="https://coalabo.net/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w"
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="./p/jokura-web/image_7.jpg" data-size="1920x1080">
+&lt;img src="./p/jokura-web/image_7.jpg"
 width="1920"
 height="1080"
+srcset="./p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, ./p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="アクティブすぎるメンバーの写真">
 &lt;/a>

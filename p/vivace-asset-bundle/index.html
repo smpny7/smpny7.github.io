@@ -1,17 +1,169 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。"><title>VIVACE（音ゲー）待望のアプリ化！</title><link rel=canonical href=https://coalabo.net/p/vivace-asset-bundle/><link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="VIVACE（音ゲー）待望のアプリ化！"><meta property="og:description" content="1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。"><meta property="og:url" content="https://coalabo.net/p/vivace-asset-bundle/"><meta property="og:site_name" content="コアラボ (coalabo.)"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="ゲーム制作"><meta property="article:published_time" content="2021-08-19T11:00:00+21:00"><meta property="article:modified_time" content="2021-08-19T11:00:00+21:00"><meta property="og:image" content="https://coalabo.net/p/vivace-asset-bundle/cover.jpg"><meta name=twitter:title content="VIVACE（音ゲー）待望のアプリ化！"><meta name=twitter:description content="1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://coalabo.net/p/vivace-asset-bundle/cover.jpg"><link rel="shortcut icon" href=/img/favicon.png><style>:root{--accent-color: #694745;--accent-color-darker: #533432;--blockquote-background-color: #F3F0EB;--body-background: #F1EEE5;--body-text-color: #C6BABA;--card-background: #F8F6F3;--card-border-radius: 20px;--card-separator-color: #C6BABA;--card-text-color-main: #533432;--card-text-color-secondary: #A08381;--card-text-color-tertiary: #A08381;--code-background-color: #EEE3E2;--code-text-color: #694745;--table-border-color: #EEE3E2;--tr-even-background-color: #F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-7JJHEMJ2DC');</script></head><body><script>(function(){const colorSchemeKey='StackColorScheme';localStorage.setItem(colorSchemeKey,"light");})();</script><script>(function(){const colorSchemeKey='StackColorScheme';const colorSchemeItem=localStorage.getItem(colorSchemeKey);const supportDarkMode=window.matchMedia('(prefers-color-scheme: dark)').matches===true;if(colorSchemeItem=='dark'||colorSchemeItem==='auto'&&supportDarkMode){document.body.dataset.scheme='dark';}else{document.body.dataset.scheme='light';}})();</script><div class="container main-container flex on-phone--column extended article-page with-toolbar"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header class=site-info><figure class=site-avatar><img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar></figure><h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1><h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2></header><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>ホーム</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>ブログを書いている人</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>記事一覧</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>記事を探す</span></a></li></ol></aside><main class="main full-width"><div id=article-toolbar><a href=https://coalabo.net class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg><span>Back</span></a></div><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/vivace-asset-bundle/><img src=/p/vivace-asset-bundle/cover_hu11a9bebba324fcb5c6a0017cac699a96_232738_800x0_resize_q75_box.jpg srcset="/p/vivace-asset-bundle/cover_hu11a9bebba324fcb5c6a0017cac699a96_232738_800x0_resize_q75_box.jpg 800w, /p/vivace-asset-bundle/cover_hu11a9bebba324fcb5c6a0017cac699a96_232738_1600x0_resize_q75_box.jpg 1600w" width=800 height=450 loading=lazy alt="Featured image of post VIVACE（音ゲー）待望のアプリ化！"></a></div><div class=article-details><header class=article-category><a href=/categories/unity/ style=background-color:#040608;color:#fff>Unity</a></header><h2 class=article-title><a href=/p/vivace-asset-bundle/>VIVACE（音ゲー）待望のアプリ化！</a></h2><h3 class=article-subtitle>1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。</h3><footer class=article-time><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--published>Aug 19, 2021</time></footer></div></header><section class=article-content><h2 id=これは１年前のお話>これは１年前のお話&mldr;</h2><p>学祭に向けて、昨年同級生と3人で<a class=link href=https://coalabo.net/p/vivace target=_blank rel=noopener>音ゲーを作った話</a>は過去に記事にしたと思います。</p><p>当日の朝4時まで Discord をつないでコーディングをし、学祭ギリギリでビルドして、エラーがないことも確認できました。</p><h2 id=discord-の通話を切った後悲劇は起こります>Discord の通話を切った後、悲劇は起こります</h2><blockquote><p>私: 「じゃぁもう4時半だし、PlayStore に APK ファイルをアップロードして、寝るか〜〜」</p><p>カチッ</p><p>カチッ</p><p>（ドラッグの音）</p><p>Google Play Store: 「<strong>エラー:</strong> APK ファイルのサイズを 100 MB まで小さくするか、APK 拡張ファイルを使用する必要があります。」</p><p>私: 「 ！！！！！！！！！」</p></blockquote><p><strong>そうです、この音ゲーアプリ、楽曲ファイルが原因で軽く100MBを超えちゃってるんです。</strong></p><p>さすがに眠くて、Google Play Store でのリリースは諦めました。（当日は APK 配布）</p><h2 id=今回は追加ダウンロード機能を実装してアプリストアへのリリースまでやります>今回は追加ダウンロード機能を実装して、アプリストアへのリリースまでやります！</h2><p>大体の音ゲーって、アプリサイズ縮小のために、起動後にコンテンツのダウンロードを行いますよね。</p><p>今回はそれを、AssetBundle と用意している API サーバを用いて実装していきます。</p><p>AssetBundle とは、アプリのビルド時に行っている処理を事前に行っておく事により、実行時に外部からアセットがロードできるようにしたものです。
-これを Web サーバなどに置いておくことで、ダウンロードしてリソースを使用できるようになります。</p><h2 id=assetbundle-の作成>AssetBundle の作成</h2><p>今回は AssetBundleBrowser を使用します。これはプレリリース版ですので、使用は自己責任でお願いします。</p><blockquote><p><a class=link href=https://github.com/Unity-Technologies/AssetBundles-Browser target=_blank rel=noopener><strong>AssetBundleBrowser</strong> (GitHub)</a>　https://github.com/Unity-Technologies/AssetBundles-Browser</p></blockquote><p><figure style=flex-grow:183;flex-basis:439px><a href=/p/vivace-asset-bundle/image_1.png data-size=2638x1440><img src=/p/vivace-asset-bundle/image_1.png srcset="/p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_480x0_resize_box_2.png 480w, /p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_1024x0_resize_box_2.png 1024w" width=2638 height=1440 loading=lazy alt=AssetBundleBrowser></a><figcaption>AssetBundleBrowser</figcaption></figure></p><p>使い方は簡単、このツールに AssetBundle にまとめたいものをドラッグします。
+<!doctype html><html lang=ja>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。"><title>VIVACE（音ゲー）待望のアプリ化！</title>
+<link rel=canonical href=https://coalabo.net/p/vivace-asset-bundle/>
+<link rel=stylesheet href=../../scss/style.min.css><meta property="og:title" content="VIVACE（音ゲー）待望のアプリ化！">
+<meta property="og:description" content="1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。">
+<meta property="og:url" content="https://coalabo.net/p/vivace-asset-bundle/">
+<meta property="og:site_name" content="コアラボ (coalabo.)">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="ゲーム制作"><meta property="article:published_time" content="2021-08-19T11:00:00+21:00"><meta property="article:modified_time" content="2021-08-19T11:00:00+21:00"><meta property="og:image" content="https://coalabo.net/p/vivace-asset-bundle/cover.jpg">
+<meta name=twitter:title content="VIVACE（音ゲー）待望のアプリ化！">
+<meta name=twitter:description content="1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://coalabo.net/p/vivace-asset-bundle/cover.jpg">
+<link rel="shortcut icon" href=../../img/favicon.png>
+<style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"light")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=../../img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
+<h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=../../><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>ホーム</span>
+</a>
+</li>
+<li>
+<a href=../../about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>ブログを書いている人</span>
+</a>
+</li>
+<li>
+<a href=../../archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>記事一覧</span>
+</a>
+</li>
+<li>
+<a href=../../search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>記事を探す</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=../../p/vivace-asset-bundle/>
+<img src=../../p/vivace-asset-bundle/cover_hu11a9bebba324fcb5c6a0017cac699a96_232738_800x0_resize_q75_box.jpg srcset="../../p/vivace-asset-bundle/cover_hu11a9bebba324fcb5c6a0017cac699a96_232738_800x0_resize_q75_box.jpg 800w, ../../p/vivace-asset-bundle/cover_hu11a9bebba324fcb5c6a0017cac699a96_232738_1600x0_resize_q75_box.jpg 1600w" width=800 height=450 loading=lazy alt="Featured image of post VIVACE（音ゲー）待望のアプリ化！">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=../../categories/unity/ style=background-color:#040608;color:#fff>
+Unity
+</a>
+</header>
+<h2 class=article-title>
+<a href=../../p/vivace-asset-bundle/>VIVACE（音ゲー）待望のアプリ化！</a>
+</h2>
+<h3 class=article-subtitle>
+1年前にUnityで製作した音ゲーを、AppStore・GooglePlayStoreにリリースします。
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Aug 19, 2021</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=これは１年前のお話>これは１年前のお話&mldr;</h2>
+<p>学祭に向けて、昨年同級生と3人で<a class=link href=https://coalabo.net/p/vivace target=_blank rel=noopener>音ゲーを作った話</a>は過去に記事にしたと思います。</p>
+<p>当日の朝4時まで Discord をつないでコーディングをし、学祭ギリギリでビルドして、エラーがないことも確認できました。</p>
+<h2 id=discord-の通話を切った後悲劇は起こります>Discord の通話を切った後、悲劇は起こります</h2>
+<blockquote>
+<p>私: 「じゃぁもう4時半だし、PlayStore に APK ファイルをアップロードして、寝るか〜〜」</p>
+<p>カチッ</p>
+<p>カチッ</p>
+<p>（ドラッグの音）</p>
+<p>Google Play Store: 「<strong>エラー:</strong> APK ファイルのサイズを 100 MB まで小さくするか、APK 拡張ファイルを使用する必要があります。」</p>
+<p>私: 「 ！！！！！！！！！」</p>
+</blockquote>
+<p><strong>そうです、この音ゲーアプリ、楽曲ファイルが原因で軽く100MBを超えちゃってるんです。</strong></p>
+<p>さすがに眠くて、Google Play Store でのリリースは諦めました。（当日は APK 配布）</p>
+<h2 id=今回は追加ダウンロード機能を実装してアプリストアへのリリースまでやります>今回は追加ダウンロード機能を実装して、アプリストアへのリリースまでやります！</h2>
+<p>大体の音ゲーって、アプリサイズ縮小のために、起動後にコンテンツのダウンロードを行いますよね。</p>
+<p>今回はそれを、AssetBundle と用意している API サーバを用いて実装していきます。</p>
+<p>AssetBundle とは、アプリのビルド時に行っている処理を事前に行っておく事により、実行時に外部からアセットがロードできるようにしたものです。
+これを Web サーバなどに置いておくことで、ダウンロードしてリソースを使用できるようになります。</p>
+<h2 id=assetbundle-の作成>AssetBundle の作成</h2>
+<p>今回は AssetBundleBrowser を使用します。これはプレリリース版ですので、使用は自己責任でお願いします。</p>
+<blockquote>
+<p><a class=link href=https://github.com/Unity-Technologies/AssetBundles-Browser target=_blank rel=noopener><strong>AssetBundleBrowser</strong> (GitHub)</a>　https://github.com/Unity-Technologies/AssetBundles-Browser</p>
+</blockquote>
+<p><figure class=gallery-image style=flex-grow:183;flex-basis:439px>
+<a href=../../p/vivace-asset-bundle/image_1.png data-size=2638x1440>
+<img src=../../p/vivace-asset-bundle/image_1.png width=2638 height=1440 srcset="../../p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_480x0_resize_box_3.png 480w, ../../p/vivace-asset-bundle/image_1_hu9a727652be43fb9d28feb9963ee524d6_229015_1024x0_resize_box_3.png 1024w" loading=lazy alt=AssetBundleBrowser>
+</a>
+<figcaption>AssetBundleBrowser</figcaption>
+</figure></p>
+<p>使い方は簡単、このツールに AssetBundle にまとめたいものをドラッグします。
 今回だと、音源とプレビュー用の音源、各難易度の譜面とアートワークをセットし、
-Build タブに移動します。</p><p><figure style=flex-grow:183;flex-basis:439px><a href=/p/vivace-asset-bundle/image_2.png data-size=2638x1440><img src=/p/vivace-asset-bundle/image_2.png srcset="/p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_480x0_resize_box_2.png 480w, /p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_1024x0_resize_box_2.png 1024w" width=2638 height=1440 loading=lazy alt="AssetBundleBrowser (Build)"></a><figcaption>AssetBundleBrowser (Build)</figcaption></figure></p><p>AssetBundle は各プラットフォームごとに分かれています。
-今回のリリースは、iOS と Android に絞ってますので、この2つを作成します。</p><h2 id=配信するためのサーバを用意します>配信するためのサーバを用意します</h2><p>本来は用意してあるバックエンドサーバから、AssetBundle を DL できるようにするといいのですが、
-Google Cloud Platform を使用しているため、あまりディスク容量を増やしたくありません。</p><p>ということで、Google Drive のいつもの作戦を使います！</p><p>本来 Google Drive で共有リンクを生成すると、</p><blockquote><p><strong>https://drive.google.com/file/d/</strong> hogehoge <strong>/view?usp=sharing</strong></p></blockquote><p>というリンクになるのですが、以下のようにリンクを変更すると、ファイルをダウンロードさせるヘッダーに変更できます。</p><blockquote><p><strong>https://drive.google.com/uc?id=</strong> hogehoge <strong>&usp=sharing</strong></p></blockquote><p>毎回リンクを手動で変更させるのは面倒なので、データベースには共有リンクで登録しておき、アプリ内でリンクを変換させるようにしておきます。</p><div class=highlight><pre class=chroma><code class=language-cs data-lang=cs><span class=n>music</span><span class=p>.</span><span class=n>asset_bundle_ios</span><span class=p>.</span><span class=n>Replace</span><span class=p>(</span><span class=s>&#34;https://drive.google.com/file/d/&#34;</span><span class=p>,</span> <span class=s>&#34;https://drive.google.com/uc?id=&#34;</span><span class=p>)</span>
+Build タブに移動します。</p>
+<p><figure class=gallery-image style=flex-grow:183;flex-basis:439px>
+<a href=../../p/vivace-asset-bundle/image_2.png data-size=2638x1440>
+<img src=../../p/vivace-asset-bundle/image_2.png width=2638 height=1440 srcset="../../p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_480x0_resize_box_3.png 480w, ../../p/vivace-asset-bundle/image_2_hudf69419b64c922032097dda0a3a20ea1_195309_1024x0_resize_box_3.png 1024w" loading=lazy alt="AssetBundleBrowser (Build)">
+</a>
+<figcaption>AssetBundleBrowser (Build)</figcaption>
+</figure></p>
+<p>AssetBundle は各プラットフォームごとに分かれています。
+今回のリリースは、iOS と Android に絞ってますので、この2つを作成します。</p>
+<h2 id=配信するためのサーバを用意します>配信するためのサーバを用意します</h2>
+<p>本来は用意してあるバックエンドサーバから、AssetBundle を DL できるようにするといいのですが、
+Google Cloud Platform を使用しているため、あまりディスク容量を増やしたくありません。</p>
+<p>ということで、Google Drive のいつもの作戦を使います！</p>
+<p>本来 Google Drive で共有リンクを生成すると、</p>
+<blockquote>
+<p><strong>https://drive.google.com/file/d/</strong> hogehoge <strong>/view?usp=sharing</strong></p>
+</blockquote>
+<p>というリンクになるのですが、以下のようにリンクを変更すると、ファイルをダウンロードさせるヘッダーに変更できます。</p>
+<blockquote>
+<p><strong>https://drive.google.com/uc?id=</strong> hogehoge <strong>&usp=sharing</strong></p>
+</blockquote>
+<p>毎回リンクを手動で変更させるのは面倒なので、データベースには共有リンクで登録しておき、アプリ内でリンクを変換させるようにしておきます。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-cs data-lang=cs><span class=n>music</span><span class=p>.</span><span class=n>asset_bundle_ios</span><span class=p>.</span><span class=n>Replace</span><span class=p>(</span><span class=s>&#34;https://drive.google.com/file/d/&#34;</span><span class=p>,</span> <span class=s>&#34;https://drive.google.com/uc?id=&#34;</span><span class=p>)</span>
                         <span class=p>.</span><span class=n>Replace</span><span class=p>(</span><span class=s>&#34;/view?usp=sharing&#34;</span><span class=p>,</span> <span class=s>&#34;&amp;usp=sharing&#34;</span><span class=p>);</span>
 </code></pre></div><p>また、曲選択画面に表示される曲一覧は、DB と同期できるようにしてあります。
 急遽任意の曲を非表示にするときや、楽曲を追加した時でもリアルタイム更新できるようになりました。
-（セキュリティのため、通信には JWT での認証が必要です）</p><p><figure style=flex-grow:122;flex-basis:293px><a href=/p/vivace-asset-bundle/image_3.jpg data-size=2411x1972><img src=/p/vivace-asset-bundle/image_3.jpg srcset="/p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_480x0_resize_q75_box.jpg 480w, /p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_1024x0_resize_q75_box.jpg 1024w" width=2411 height=1972 loading=lazy alt=楽曲一覧を返すAPI（認証必要）></a><figcaption>楽曲一覧を返すAPI（認証必要）</figcaption></figure></p><p>アプリ内画面では、APIのデータを取得しこのように表示されます。</p><p><figure style=flex-grow:177;flex-basis:426px><a href=/p/vivace-asset-bundle/image_4.jpg data-size=2208x1242><img src=/p/vivace-asset-bundle/image_4.jpg srcset="/p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_480x0_resize_q75_box.jpg 480w, /p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_1024x0_resize_q75_box.jpg 1024w" width=2208 height=1242 loading=lazy alt="VIVACE 曲選択画面"></a><figcaption>VIVACE 曲選択画面</figcaption></figure></p><p>運用・メンテナンスしていく上では、こういうリモートでの更新機能も大切ですね。</p><h2 id=unity-内部のコード>Unity 内部のコード</h2><p>調べてみると、<code>UnityWebRequest</code> には AssetBundle をダウンロードする専用の <code>UnityWebRequestAssetBundle</code> が用意されているようです。</p><p>また、一度DLした楽曲はキャッシュしておきたいので、第2引数に CachedAssetBundle を入れて呼び出すことで、2回目以降の起動でダウンロードを省略できます。</p><p>キャッシュされる条件ですが、CachedAssetBundle 以外にも <code>version (uint)</code> や <code>hash (Hash128)</code> を第2引数に入れてロードすることで、
-同じくキャッシュが行われるそうです。（非推奨になりつつありますが、<code>WWW.LoadFromCacheOrDownload</code> を使ってキャッシュする場合は version の型は int に変わるそうなので注意）</p><p>ちなみに非推奨という点では、SendWebRequest の後のリクエスト処理も、<code>request.isNetworkError</code> ではなく、
-<code>request.result</code>の値を、<code>UnityWebRequest.Result.Success</code>・<code>UnityWebRequest.Result.ConnectionError</code>・<code>UnityWebRequest.Result.ProtocolError</code>&mldr; といった用意されたクラスの enum の値で識別するのを推奨するようになりましたね。見やすくてとても気に入っています。（コード詳細↓）</p><div class=highlight><pre class=chroma><code class=language-cs data-lang=cs><span class=k>private</span> <span class=n>IEnumerator</span> <span class=n>DownloadAssetBundle</span><span class=p>(</span><span class=n>MusicList</span> <span class=n>music</span><span class=p>,</span> <span class=kt>string</span> <span class=n>downloadUrl</span><span class=p>)</span>
+（セキュリティのため、通信には JWT での認証が必要です）</p>
+<p><figure class=gallery-image style=flex-grow:122;flex-basis:293px>
+<a href=../../p/vivace-asset-bundle/image_3.jpg data-size=2411x1972>
+<img src=../../p/vivace-asset-bundle/image_3.jpg width=2411 height=1972 srcset="../../p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_480x0_resize_q75_box.jpg 480w, ../../p/vivace-asset-bundle/image_3_hu7048dd8b05c9613e4649769026d471c5_192482_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=楽曲一覧を返すAPI（認証必要）>
+</a>
+<figcaption>楽曲一覧を返すAPI（認証必要）</figcaption>
+</figure></p>
+<p>アプリ内画面では、APIのデータを取得しこのように表示されます。</p>
+<p><figure class=gallery-image style=flex-grow:177;flex-basis:426px>
+<a href=../../p/vivace-asset-bundle/image_4.jpg data-size=2208x1242>
+<img src=../../p/vivace-asset-bundle/image_4.jpg width=2208 height=1242 srcset="../../p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_480x0_resize_q75_box.jpg 480w, ../../p/vivace-asset-bundle/image_4_hubacad2c2896eb07db59890425f392a23_275156_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="VIVACE 曲選択画面">
+</a>
+<figcaption>VIVACE 曲選択画面</figcaption>
+</figure></p>
+<p>運用・メンテナンスしていく上では、こういうリモートでの更新機能も大切ですね。</p>
+<h2 id=unity-内部のコード>Unity 内部のコード</h2>
+<p>調べてみると、<code>UnityWebRequest</code> には AssetBundle をダウンロードする専用の <code>UnityWebRequestAssetBundle</code> が用意されているようです。</p>
+<p>また、一度DLした楽曲はキャッシュしておきたいので、第2引数に CachedAssetBundle を入れて呼び出すことで、2回目以降の起動でダウンロードを省略できます。</p>
+<p>キャッシュされる条件ですが、CachedAssetBundle 以外にも <code>version (uint)</code> や <code>hash (Hash128)</code> を第2引数に入れてロードすることで、
+同じくキャッシュが行われるそうです。（非推奨になりつつありますが、<code>WWW.LoadFromCacheOrDownload</code> を使ってキャッシュする場合は version の型は int に変わるそうなので注意）</p>
+<p>ちなみに非推奨という点では、SendWebRequest の後のリクエスト処理も、<code>request.isNetworkError</code> ではなく、
+<code>request.result</code>の値を、<code>UnityWebRequest.Result.Success</code>・<code>UnityWebRequest.Result.ConnectionError</code>・<code>UnityWebRequest.Result.ProtocolError</code>&mldr; といった用意されたクラスの enum の値で識別するのを推奨するようになりましたね。見やすくてとても気に入っています。（コード詳細↓）</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-cs data-lang=cs><span class=k>private</span> <span class=n>IEnumerator</span> <span class=n>DownloadAssetBundle</span><span class=p>(</span><span class=n>MusicList</span> <span class=n>music</span><span class=p>,</span> <span class=kt>string</span> <span class=n>downloadUrl</span><span class=p>)</span>
 <span class=p>{</span>
     <span class=kt>var</span> <span class=n>c</span> <span class=p>=</span> <span class=k>new</span> <span class=n>CachedAssetBundle</span>
     <span class=p>{</span>
@@ -42,13 +194,109 @@ Google Cloud Platform を使用しているため、あまりディスク容量�
 <span class=p>}</span>
 </code></pre></div><p>CachedAssetBundle を使用することで、URL から抽出されるファイル名と指定したバージョン番号を意識しなくて良くなり
 （そもそも Google Drive のリンクなのでできないですが&mldr;）、
-保存場所の衝突など AssetBundle でよく発生する問題をハッシュ値で回避することができます。</p><p>あとは対応するプラットフォーム毎にダウンロードURLを切り替え、
-リソース使用部分を全て AssetBundle から読み込むように設定し直します。</p><p>今回のプロジェクトの場合、バックエンドのスコア登録機能も、データベースの楽曲テーブルと同期させる必要がありました。</p><h2 id=無事ストアリリースできました>無事ストアリリースできました！！</h2><p><figure style=flex-grow:177;flex-basis:426px><a href=/p/vivace-asset-bundle/image_5.jpg data-size=3840x2160><img src=/p/vivace-asset-bundle/image_5.jpg srcset="/p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_480x0_resize_q75_box.jpg 480w, /p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_1024x0_resize_q75_box.jpg 1024w" width=3840 height=2160 loading=lazy alt=AppStore></a><figcaption>AppStore</figcaption></figure></p><p><figure style=flex-grow:177;flex-basis:426px><a href=/p/vivace-asset-bundle/image_6.jpg data-size=3840x2160><img src=/p/vivace-asset-bundle/image_6.jpg srcset="/p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_480x0_resize_q75_box.jpg 480w, /p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_1024x0_resize_q75_box.jpg 1024w" width=3840 height=2160 loading=lazy alt=GooglePlayStore></a><figcaption>GooglePlayStore</figcaption></figure></p><p>ストアリリース後、1日で60人の方が遊んでくれて、<del>正直GCPの料金が上がらないか心配</del> <strong>とても嬉しい</strong> です。</p><p>ということで、是非こちらから遊んでみてくださいね ♪</p><p>今秋、楽曲追加も予定しています。</p><blockquote><p><strong>AppStore:</strong>
-<a class=link href=https://bit.ly/vivace-app-ios target=_blank rel=noopener>https://bit.ly/vivace-app-ios</a></p><p><strong>GooglePlayStore:</strong>
-<a class=link href=https://bit.ly/vivace-app-android target=_blank rel=noopener>https://bit.ly/vivace-app-android</a></p></blockquote></section><footer class=article-footer><section class=article-tags><a href=/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E5%88%B6%E4%BD%9C/>ゲーム制作</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-contents--wrapper><h2 class=section-title>関連するコンテンツ</h2><div class=related-contents><div class="flex article-list--tile"><article class=has-image><a href=/p/vivace/><div class=article-image><img src=/p/vivace/cover.3df9a3c349b8c7e990b68fa8b1c3cb22_hud5546a21fdb7b23d24fd1a26ba364382_211510_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=vivace data-hash="md5-Pfmjw0m4x+mQto+oscPLIg=="></div><div class=article-details><h2 class=article-title>学祭2020向け音ゲーの制作: VIVACE</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+保存場所の衝突など AssetBundle でよく発生する問題をハッシュ値で回避することができます。</p>
+<p>あとは対応するプラットフォーム毎にダウンロードURLを切り替え、
+リソース使用部分を全て AssetBundle から読み込むように設定し直します。</p>
+<p>今回のプロジェクトの場合、バックエンドのスコア登録機能も、データベースの楽曲テーブルと同期させる必要がありました。</p>
+<h2 id=無事ストアリリースできました>無事ストアリリースできました！！</h2>
+<p><figure class=gallery-image style=flex-grow:177;flex-basis:426px>
+<a href=../../p/vivace-asset-bundle/image_5.jpg data-size=3840x2160>
+<img src=../../p/vivace-asset-bundle/image_5.jpg width=3840 height=2160 srcset="../../p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_480x0_resize_q75_box.jpg 480w, ../../p/vivace-asset-bundle/image_5_hu3802cd9337a74f1b6be16cda9fad10dc_194315_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=AppStore>
+</a>
+<figcaption>AppStore</figcaption>
+</figure></p>
+<p><figure class=gallery-image style=flex-grow:177;flex-basis:426px>
+<a href=../../p/vivace-asset-bundle/image_6.jpg data-size=3840x2160>
+<img src=../../p/vivace-asset-bundle/image_6.jpg width=3840 height=2160 srcset="../../p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_480x0_resize_q75_box.jpg 480w, ../../p/vivace-asset-bundle/image_6_hu8c56193e12d65b6b77694aea2efe5883_345732_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=GooglePlayStore>
+</a>
+<figcaption>GooglePlayStore</figcaption>
+</figure></p>
+<p>ストアリリース後、1日で60人の方が遊んでくれて、<del>正直GCPの料金が上がらないか心配</del> <strong>とても嬉しい</strong> です。</p>
+<p>ということで、是非こちらから遊んでみてくださいね ♪</p>
+<p>今秋、楽曲追加も予定しています。</p>
+<blockquote>
+<p><strong>AppStore:</strong>
+<a class=link href=https://bit.ly/vivace-app-ios target=_blank rel=noopener>https://bit.ly/vivace-app-ios</a></p>
+<p><strong>GooglePlayStore:</strong>
+<a class=link href=https://bit.ly/vivace-app-android target=_blank rel=noopener>https://bit.ly/vivace-app-android</a></p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=../../tags/%E3%82%B2%E3%83%BC%E3%83%A0%E5%88%B6%E4%BD%9C/>ゲーム制作</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>関連するコンテンツ</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article class=has-image>
+<a href=../../p/vivace/>
+<div class=article-image>
+<img src=../../p/vivace/cover.3df9a3c349b8c7e990b68fa8b1c3cb22_hud5546a21fdb7b23d24fd1a26ba364382_211510_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=vivace data-hash="md5-Pfmjw0m4x+mQto+oscPLIg==">
+</div>
+<div class=article-details>
+<h2 class=article-title>学祭2020向け音ゲーの制作: VIVACE</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
 2020 -
-2021 コアラボ (coalabo.)</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.3.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+2021 コアラボ (coalabo.)
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.2.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const customFont=document.createElement('link');customFont.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";customFont.type="text/css";customFont.rel="stylesheet";document.head.appendChild(customFont);}());</script></body></html>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=../../ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

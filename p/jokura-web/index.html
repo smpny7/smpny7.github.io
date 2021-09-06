@@ -1,19 +1,204 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。"><title>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</title><link rel=canonical href=https://coalabo.net/p/jokura-web/><link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）"><meta property="og:description" content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。"><meta property="og:url" content="https://coalabo.net/p/jokura-web/"><meta property="og:site_name" content="コアラボ (coalabo.)"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="ゲーム"><meta property="article:tag" content="サーバー構築"><meta property="article:published_time" content="2021-04-22T09:06:44+09:00"><meta property="article:modified_time" content="2021-04-22T09:06:44+09:00"><meta property="og:image" content="https://coalabo.net/p/jokura-web/cover.jpg"><meta name=twitter:title content="Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）"><meta name=twitter:description content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://coalabo.net/p/jokura-web/cover.jpg"><link rel="shortcut icon" href=/img/favicon.png><style>:root{--accent-color: #694745;--accent-color-darker: #533432;--blockquote-background-color: #F3F0EB;--body-background: #F1EEE5;--body-text-color: #C6BABA;--card-background: #F8F6F3;--card-border-radius: 20px;--card-separator-color: #C6BABA;--card-text-color-main: #533432;--card-text-color-secondary: #A08381;--card-text-color-tertiary: #A08381;--code-background-color: #EEE3E2;--code-text-color: #694745;--table-border-color: #EEE3E2;--tr-even-background-color: #F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-7JJHEMJ2DC');</script></head><body><script>(function(){const colorSchemeKey='StackColorScheme';localStorage.setItem(colorSchemeKey,"light");})();</script><script>(function(){const colorSchemeKey='StackColorScheme';const colorSchemeItem=localStorage.getItem(colorSchemeKey);const supportDarkMode=window.matchMedia('(prefers-color-scheme: dark)').matches===true;if(colorSchemeItem=='dark'||colorSchemeItem==='auto'&&supportDarkMode){document.body.dataset.scheme='dark';}else{document.body.dataset.scheme='light';}})();</script><div class="container main-container flex on-phone--column extended article-page with-toolbar"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header class=site-info><figure class=site-avatar><img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar></figure><h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1><h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2></header><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>ホーム</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>ブログを書いている人</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>記事一覧</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>記事を探す</span></a></li></ol></aside><main class="main full-width"><div id=article-toolbar><a href=https://coalabo.net class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg><span>Back</span></a></div><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/jokura-web/><img src=/p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg srcset="/p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg 800w, /p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_1600x0_resize_q75_box.jpg 1600w" width=800 height=450 loading=lazy alt="Featured image of post Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）"></a></div><div class=article-details><header class=article-category><a href=/categories/minecraft/ style=background-color:#ca0003;color:#fff>Minecraft</a>
-<a href=/categories/php/ style=background-color:#6580bb;color:#fff>PHP</a>
-<a href=/categories/node.js/ style=background-color:#71bc52;color:#fff>Node.js</a>
-<a href=/categories/typescript/ style=background-color:#2d79c7;color:#fff>TypeScript</a></header><h2 class=article-title><a href=/p/jokura-web/>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</a></h2><h3 class=article-subtitle>プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。</h3><footer class=article-time><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--published>Apr 22, 2021</time></footer></div></header><section class=article-content><h2 id=minecraft-っていいよね>Minecraft っていいよね</h2><p>Minecraft って、複数人でプレイすると沼ですよね。</p><p>「 情クラ！」という、知り合い十数名程度の Minecraft サーバーで遊んでいるのですが、
-今や大陸内には高速道路が広がり、複数の大陸間には大きな橋が建築されています。（やばすぎ）</p><p><figure style=flex-grow:192;flex-basis:462px><a href=/p/jokura-web/image_1.jpg data-size=2378x1233><img src=/p/jokura-web/image_1.jpg srcset="/p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w" width=2378 height=1233 loading=lazy alt="瀬戸大橋（こんなのが 5, 6本架かっています）"></a><figcaption>瀬戸大橋（こんなのが 5, 6本架かっています）</figcaption></figure></p><h2 id=ある日minecraft-のサーバー管理者になった>ある日、Minecraft のサーバー管理者になった</h2><p>最初はみんなで家に集まって、ローカルでサーバーを建ててプレイしていました。
-しかしプレイヤーがどんどん増えてきたため、Google Cloud Platform（GCP）でサーバーを立てることにしました。</p><p>これが、「情クラ！」という Minecraft サーバーの誕生のきっかけです。</p><p>いつどこでも Minecraft サーバーで遊べる環境が完成し、ワールドの発展度合いが加速度的に大きくなったのですが、
-しかし1つ大きな問題がでてきました。</p><p>これは、Google Cloud Platform（GCP）がまだ365日無料トライアルだった頃の話なのですが、
+<!doctype html><html lang=ja>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。"><title>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</title>
+<link rel=canonical href=https://coalabo.net/p/jokura-web/>
+<link rel=stylesheet href=../../scss/style.min.css><meta property="og:title" content="Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
+<meta property="og:description" content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。">
+<meta property="og:url" content="https://coalabo.net/p/jokura-web/">
+<meta property="og:site_name" content="コアラボ (coalabo.)">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="ゲーム"><meta property="article:tag" content="サーバー構築"><meta property="article:published_time" content="2021-04-22T09:06:44+09:00"><meta property="article:modified_time" content="2021-04-22T09:06:44+09:00"><meta property="og:image" content="https://coalabo.net/p/jokura-web/cover.jpg">
+<meta name=twitter:title content="Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
+<meta name=twitter:description content="プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://coalabo.net/p/jokura-web/cover.jpg">
+<link rel="shortcut icon" href=../../img/favicon.png>
+<style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"light")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=../../img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
+<h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=../../><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>ホーム</span>
+</a>
+</li>
+<li>
+<a href=../../about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>ブログを書いている人</span>
+</a>
+</li>
+<li>
+<a href=../../archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>記事一覧</span>
+</a>
+</li>
+<li>
+<a href=../../search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>記事を探す</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=../../p/jokura-web/>
+<img src=../../p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg srcset="../../p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_800x0_resize_q75_box.jpg 800w, ../../p/jokura-web/cover_hu009098f9a09b5c87310a26959658631a_93318_1600x0_resize_q75_box.jpg 1600w" width=800 height=450 loading=lazy alt="Featured image of post Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=../../categories/minecraft/ style=background-color:#ca0003;color:#fff>
+Minecraft
+</a>
+<a href=../../categories/php/ style=background-color:#6580bb;color:#fff>
+PHP
+</a>
+<a href=../../categories/node.js/ style=background-color:#71bc52;color:#fff>
+Node.js
+</a>
+<a href=../../categories/typescript/ style=background-color:#2d79c7;color:#fff>
+TypeScript
+</a>
+</header>
+<h2 class=article-title>
+<a href=../../p/jokura-web/>Minecraftサーバーのリモート制御サイトを制作したお話（情クラ！）</a>
+</h2>
+<h3 class=article-subtitle>
+プログラミングを始めた頃に構築した、Minecraftサーバーのリモート制御サイトの開発体験記です。
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Apr 22, 2021</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=minecraft-っていいよね>Minecraft っていいよね</h2>
+<p>Minecraft って、複数人でプレイすると沼ですよね。</p>
+<p>「 情クラ！」という、知り合い十数名程度の Minecraft サーバーで遊んでいるのですが、
+今や大陸内には高速道路が広がり、複数の大陸間には大きな橋が建築されています。（やばすぎ）</p>
+<p><figure class=gallery-image style=flex-grow:192;flex-basis:462px>
+<a href=../../p/jokura-web/image_1.jpg data-size=2378x1233>
+<img src=../../p/jokura-web/image_1.jpg width=2378 height=1233 srcset="../../p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_1_hu4afd0714b430b88aa4956b050a66bbf9_160480_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="瀬戸大橋（こんなのが 5, 6本架かっています）">
+</a>
+<figcaption>瀬戸大橋（こんなのが 5, 6本架かっています）</figcaption>
+</figure></p>
+<h2 id=ある日minecraft-のサーバー管理者になった>ある日、Minecraft のサーバー管理者になった</h2>
+<p>最初はみんなで家に集まって、ローカルでサーバーを建ててプレイしていました。
+しかしプレイヤーがどんどん増えてきたため、Google Cloud Platform（GCP）でサーバーを立てることにしました。</p>
+<p>これが、「情クラ！」という Minecraft サーバーの誕生のきっかけです。</p>
+<p>いつどこでも Minecraft サーバーで遊べる環境が完成し、ワールドの発展度合いが加速度的に大きくなったのですが、
+しかし1つ大きな問題がでてきました。</p>
+<p>これは、Google Cloud Platform（GCP）がまだ365日無料トライアルだった頃の話なのですが、
 当時GCPには、年間 30,000円分の無料クレジットが付属していました。
 それをちょうど1年間で使い切る<code>n1-standard-1</code> プラン（仮想 CPU 数: 1, メモリ: 3.75 GB）で運用していたのですが、
-大人数が長時間プレイしていると動作がもっさりしてくるのです。</p><p><figure style=flex-grow:110;flex-basis:264px><a href=/p/jokura-web/image_2.jpg data-size=1870x1694><img src=/p/jokura-web/image_2.jpg srcset="/p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w" width=1870 height=1694 loading=lazy alt="GCPの料金（N1 標準マシンタイプ）"></a><figcaption>GCPの料金（N1 標準マシンタイプ）</figcaption></figure></p><p>サーバー管理者だった私は、連絡を受けるたび SSH 接続してサーバーを再起動していました。</p><p>ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバーを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。</p><h2 id=まずは完成品をどうぞ>まずは完成品をどうぞ</h2><p><figure style=flex-grow:56;flex-basis:134px><a href=/p/jokura-web/image_3.jpg data-size=750x1334><img src=/p/jokura-web/image_3.jpg srcset="/p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w" width=750 height=1334 loading=lazy alt=トップページ（情クラ！）></a><figcaption>トップページ（情クラ！）</figcaption></figure><figure style=flex-grow:56;flex-basis:134px><a href=/p/jokura-web/image_4.jpg data-size=750x1334><img src=/p/jokura-web/image_4.jpg srcset="/p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w" width=750 height=1334 loading=lazy alt=サーバー状況確認ページ（情クラ！）></a><figcaption>サーバー状況確認ページ（情クラ！）</figcaption></figure></p><p>最初に実装したのは、「ホーム」のお知らせ（左）と「サーバー状況」の確認画面（右）です。
-モバイルファーストのデザインですが、きちんとレスポンシブ対応させています。</p><p>以下、それぞれの軽い機能紹介です。</p><table><thead><tr><th>ページ</th><th>機能</th></tr></thead><tbody><tr><td>ホーム</td><td>プレイヤーが自由に建築報告を投稿することができます</td></tr><tr><td>サーバー状況</td><td>サーバーの起動・停止状況やオンラインメンバーを確認できます</td></tr></tbody></table><h2 id=ここで少し技術的な話をしましょう>ここで、少し技術的な話をしましょう</h2><p>一応そういうブログ（ ？）なので、今回 Minecraft サーバーと連携したノウハウについて記述しておきます。</p><p>Minecraft サーバーでは、ある特定のパケットを受け取ると、現在のサーバーのステータスを返す機能が搭載されています。
+大人数が長時間プレイしていると動作がもっさりしてくるのです。</p>
+<p><figure class=gallery-image style=flex-grow:110;flex-basis:264px>
+<a href=../../p/jokura-web/image_2.jpg data-size=1870x1694>
+<img src=../../p/jokura-web/image_2.jpg width=1870 height=1694 srcset="../../p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_2_hude9f6067a81827fd4bd0fcd91b7d098e_112991_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="GCPの料金（N1 標準マシンタイプ）">
+</a>
+<figcaption>GCPの料金（N1 標準マシンタイプ）</figcaption>
+</figure></p>
+<p>サーバー管理者だった私は、連絡を受けるたび SSH 接続してサーバーを再起動していました。</p>
+<p>ですがここは、ぜひ技術の力で課題解決をしよう！ということで、Minecraftサーバーを誰でも簡単に制御できる、Webアプリケーションを作成することになりました。</p>
+<h2 id=まずは完成品をどうぞ>まずは完成品をどうぞ</h2>
+<p><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
+<a href=../../p/jokura-web/image_3.jpg data-size=750x1334>
+<img src=../../p/jokura-web/image_3.jpg width=750 height=1334 srcset="../../p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_3_hu3e11a2584ac5d820d2c10170e24cb2af_83437_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=トップページ（情クラ！）>
+</a>
+<figcaption>トップページ（情クラ！）</figcaption>
+</figure><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
+<a href=../../p/jokura-web/image_4.jpg data-size=750x1334>
+<img src=../../p/jokura-web/image_4.jpg width=750 height=1334 srcset="../../p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_4_hu46471f196a2944efda5599a29a1186d9_60874_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=サーバー状況確認ページ（情クラ！）>
+</a>
+<figcaption>サーバー状況確認ページ（情クラ！）</figcaption>
+</figure></p>
+<p>最初に実装したのは、「ホーム」のお知らせ（左）と「サーバー状況」の確認画面（右）です。
+モバイルファーストのデザインですが、きちんとレスポンシブ対応させています。</p>
+<p>以下、それぞれの軽い機能紹介です。</p>
+<table>
+<thead>
+<tr>
+<th>ページ</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ホーム</td>
+<td>プレイヤーが自由に建築報告を投稿することができます</td>
+</tr>
+<tr>
+<td>サーバー状況</td>
+<td>サーバーの起動・停止状況やオンラインメンバーを確認できます</td>
+</tr>
+</tbody>
+</table>
+<h2 id=ここで少し技術的な話をしましょう>ここで、少し技術的な話をしましょう</h2>
+<p>一応そういうブログ（ ？）なので、今回 Minecraft サーバーと連携したノウハウについて記述しておきます。</p>
+<p>Minecraft サーバーでは、ある特定のパケットを受け取ると、現在のサーバーのステータスを返す機能が搭載されています。
 <a class=link href=https://wiki.vg/Server_List_Ping target=_blank rel=noopener>こちらのページ</a>に詳しい仕様が載っています。
-これらの仕様は、Minecraft 起動時のマルチプレイ選択画面などに利用されているそうです。</p><p>続いて、詳しい仕様について順を追って説明していきます。</p><p>まず、クライアント側が以下のような Handshake パケットを送信します。</p><table><thead><tr><th>Packet ID</th><th>Field Name</th><th>Field Type</th><th>Notes</th></tr></thead><tbody><tr><td>0x00</td><td>Protocol Version</td><td>VarInt</td><td>See protocol version numbers. The version that the client plans on using to connect to the server (which is not important for the ping). If the client is pinging to determine what version to use, by convention -1 should be set.</td></tr><tr><td>^</td><td>Server Address</td><td>String</td><td>Hostname or IP, e.g. localhost or 127.0.0.1, that was used to connect. The Notchian server does not use this information. Note that SRV records are a complete redirect, e.g. if _minecraft._tcp.example.com points to mc.example.org, users connecting to example.com will provide mc.example.org as server address in addition to connecting to it.</td></tr><tr><td>^</td><td>Server Port</td><td>Unsigned Short</td><td>Default is 25565. The Notchian server does not use this information.</td></tr><tr><td>^</td><td>Next state</td><td>VarInt</td><td>Should be 1 for status, but could also be 2 for login.</td></tr></tbody></table><p>ここで重要なのが、このレスポンスを待たずに続けてリクエストパケットを送信します。
-その応答パケットとして、サーバーが以下のようなJSONを返します。</p><div class=highlight><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+これらの仕様は、Minecraft 起動時のマルチプレイ選択画面などに利用されているそうです。</p>
+<p>続いて、詳しい仕様について順を追って説明していきます。</p>
+<p>まず、クライアント側が以下のような Handshake パケットを送信します。</p>
+<table>
+<thead>
+<tr>
+<th>Packet ID</th>
+<th>Field Name</th>
+<th>Field Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00</td>
+<td>Protocol Version</td>
+<td>VarInt</td>
+<td>See protocol version numbers. The version that the client plans on using to connect to the server (which is not important for the ping). If the client is pinging to determine what version to use, by convention -1 should be set.</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Server Address</td>
+<td>String</td>
+<td>Hostname or IP, e.g. localhost or 127.0.0.1, that was used to connect. The Notchian server does not use this information. Note that SRV records are a complete redirect, e.g. if _minecraft._tcp.example.com points to mc.example.org, users connecting to example.com will provide mc.example.org as server address in addition to connecting to it.</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Server Port</td>
+<td>Unsigned Short</td>
+<td>Default is 25565. The Notchian server does not use this information.</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Next state</td>
+<td>VarInt</td>
+<td>Should be 1 for status, but could also be 2 for login.</td>
+</tr>
+</tbody>
+</table>
+<p>ここで重要なのが、このレスポンスを待たずに続けてリクエストパケットを送信します。
+その応答パケットとして、サーバーが以下のようなJSONを返します。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
     <span class=nt>&#34;version&#34;</span><span class=p>:</span> <span class=p>{</span>
         <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;1.16.1&#34;</span><span class=p>,</span>
         <span class=nt>&#34;protocol&#34;</span><span class=p>:</span> <span class=mi>47</span>
@@ -33,14 +218,82 @@ gtag('js',new Date());gtag('config','G-7JJHEMJ2DC');</script></head><body><scrip
     <span class=p>},</span>
     <span class=nt>&#34;favicon&#34;</span><span class=p>:</span> <span class=s2>&#34;data:image/png;base64,&lt;data&gt;&#34;</span>
 <span class=p>}</span>
-</code></pre></div><p>このJSONを使って、サーバの各情報が取得できます。</p><p>また、このパケットを送信するライブラリを探してみたところ、
+</code></pre></div><p>このJSONを使って、サーバの各情報が取得できます。</p>
+<p>また、このパケットを送信するライブラリを探してみたところ、
 <a class=link href=https://gist.github.com/csh/2480d14fbbb33b4bbae3 target=_blank rel=noopener>C#</a>・
 <a class=link href=https://gist.github.com/zh32/7190955 target=_blank rel=noopener>Java</a>・
 <a class=link href=https://gist.github.com/ewized/97814f57ac85af7128bf target=_blank rel=noopener>Python3</a>・
 <a class=link href=https://github.com/xPaw/PHP-Minecraft-Query target=_blank rel=noopener>PHP</a>
 用に作られたコードが見つかりました。
-今回は、PHPライブラリを使用しました。</p><h2 id=実装した機能>実装した機能</h2><p>あまり技術的な話をすると長くなっちゃいそうなので、次に行きます。</p><p>他に実装した機能も紹介します。</p><p><figure style=flex-grow:56;flex-basis:134px><a href=/p/jokura-web/image_5.jpg data-size=750x1334><img src=/p/jokura-web/image_5.jpg srcset="/p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w" width=750 height=1334 loading=lazy alt=ナビゲーションバー（情クラ！）></a><figcaption>ナビゲーションバー（情クラ！）</figcaption></figure><figure style=flex-grow:56;flex-basis:134px><a href=/p/jokura-web/image_6.jpg data-size=750x1334><img src=/p/jokura-web/image_6.jpg srcset="/p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w" width=750 height=1334 loading=lazy alt=再起動（情クラ！）></a><figcaption>再起動（情クラ！）</figcaption></figure></p><table><thead><tr><th>ページ</th><th>機能</th></tr></thead><tbody><tr><td>ピクチャ</td><td>プレイヤーが自由に画像を投稿することができます</td></tr><tr><td>オンラインユーザ</td><td>ホワイトリストに登録されたプレイヤーが表示され、サーバーに入っているかどうかがわかります</td></tr><tr><td>起動・停止</td><td>サーバーをしばらく利用しない場合は、GCP課金対策のためにサーバーを切ることができます</td></tr><tr><td>再起動</td><td>Minecraft サーバーを再起動させることができます</td></tr><tr><td>バックアップ実行</td><td>Minecraft サーバーのバックアップを作成します（毎日5:00に定期実行されます）</td></tr><tr><td>バックアップ履歴</td><td>バックアップ履歴の一覧を表示します</td></tr><tr><td>情クラマップ</td><td>情クラワールドの建築物紹介が載っています</td></tr><tr><td>情クラ！公式アプリ</td><td>公式アプリへのリンクです</td></tr></tbody></table><h2 id=みんなログインしよう>みんなログインしよう</h2><p>今回サーバーのコントロール機能が Web に公開されるので、ログイン機能を実装する必要があります。
-全員 Google アカウントを持っていたので、Firebase Authentication を使って Google ログインを実装しました。</p><p>Firebase に関する記事はたくさんあると思うので、今回説明は省略します。</p><p>以下の公式ドキュメントを読むとよくわかりますよ（雑）</p><blockquote><p><strong>Firebase Authentication（Google）</strong> <a class=link href="https://firebase.google.com/docs/auth/web/start?hl=ja" target=_blank rel=noopener>https://firebase.google.com/docs/auth/web/start?hl=ja</a></p></blockquote><h2 id=マイクラサーバーのバックエンドはどうなってるの>マイクラサーバーのバックエンドはどうなってるの？</h2><p>Minecraft サーバーでは、Node.js + TypeScript でAPIを構築しています。</p><p>たとえば、以下は Minecraft サーバーを起動するルーティングの一部抜粋です。</p><div class=highlight><pre class=chroma><code class=language-typescript data-lang=typescript><span class=c1>// --- Start Server ------------------------------------------------------------
+今回は、PHPライブラリを使用しました。</p>
+<h2 id=実装した機能>実装した機能</h2>
+<p>あまり技術的な話をすると長くなっちゃいそうなので、次に行きます。</p>
+<p>他に実装した機能も紹介します。</p>
+<p><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
+<a href=../../p/jokura-web/image_5.jpg data-size=750x1334>
+<img src=../../p/jokura-web/image_5.jpg width=750 height=1334 srcset="../../p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_5_hu33301e155b01a3f057182daf347c96c1_64778_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=ナビゲーションバー（情クラ！）>
+</a>
+<figcaption>ナビゲーションバー（情クラ！）</figcaption>
+</figure><figure class=gallery-image style=flex-grow:56;flex-basis:134px>
+<a href=../../p/jokura-web/image_6.jpg data-size=750x1334>
+<img src=../../p/jokura-web/image_6.jpg width=750 height=1334 srcset="../../p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_6_hub0ca0884213067acf24efcc3d5d07526_54652_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=再起動（情クラ！）>
+</a>
+<figcaption>再起動（情クラ！）</figcaption>
+</figure></p>
+<table>
+<thead>
+<tr>
+<th>ページ</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ピクチャ</td>
+<td>プレイヤーが自由に画像を投稿することができます</td>
+</tr>
+<tr>
+<td>オンラインユーザ</td>
+<td>ホワイトリストに登録されたプレイヤーが表示され、サーバーに入っているかどうかがわかります</td>
+</tr>
+<tr>
+<td>起動・停止</td>
+<td>サーバーをしばらく利用しない場合は、GCP課金対策のためにサーバーを切ることができます</td>
+</tr>
+<tr>
+<td>再起動</td>
+<td>Minecraft サーバーを再起動させることができます</td>
+</tr>
+<tr>
+<td>バックアップ実行</td>
+<td>Minecraft サーバーのバックアップを作成します（毎日5:00に定期実行されます）</td>
+</tr>
+<tr>
+<td>バックアップ履歴</td>
+<td>バックアップ履歴の一覧を表示します</td>
+</tr>
+<tr>
+<td>情クラマップ</td>
+<td>情クラワールドの建築物紹介が載っています</td>
+</tr>
+<tr>
+<td>情クラ！公式アプリ</td>
+<td>公式アプリへのリンクです</td>
+</tr>
+</tbody>
+</table>
+<h2 id=みんなログインしよう>みんなログインしよう</h2>
+<p>今回サーバーのコントロール機能が Web に公開されるので、ログイン機能を実装する必要があります。
+全員 Google アカウントを持っていたので、Firebase Authentication を使って Google ログインを実装しました。</p>
+<p>Firebase に関する記事はたくさんあると思うので、今回説明は省略します。</p>
+<p>以下の公式ドキュメントを読むとよくわかりますよ（雑）</p>
+<blockquote>
+<p><strong>Firebase Authentication（Google）</strong> <a class=link href="https://firebase.google.com/docs/auth/web/start?hl=ja" target=_blank rel=noopener>https://firebase.google.com/docs/auth/web/start?hl=ja</a></p>
+</blockquote>
+<h2 id=マイクラサーバーのバックエンドはどうなってるの>マイクラサーバーのバックエンドはどうなってるの？</h2>
+<p>Minecraft サーバーでは、Node.js + TypeScript でAPIを構築しています。</p>
+<p>たとえば、以下は Minecraft サーバーを起動するルーティングの一部抜粋です。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=c1>// --- Start Server ------------------------------------------------------------
 </span><span class=c1></span><span class=nx>router</span><span class=p>.</span><span class=nx>post</span><span class=p>(</span><span class=s1>&#39;/api/run/start&#39;</span><span class=p>,</span> <span class=p>(</span><span class=nx>req</span>: <span class=kt>express.Request</span><span class=p>,</span> <span class=nx>res</span>: <span class=kt>express.Response</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=p>{</span>
     <span class=kr>const</span> <span class=nx>schema</span> <span class=o>=</span> <span class=nx>Joi</span><span class=p>.</span><span class=kt>object</span><span class=p>({</span>
         <span class=nx>user</span>: <span class=kt>Joi.string</span><span class=p>().</span><span class=nx>required</span><span class=p>(),</span>
@@ -75,7 +328,9 @@ gtag('js',new Date());gtag('config','G-7JJHEMJ2DC');</script></head><body><scrip
 <span class=c1>// -----------------------------------------------------------------------------
 </span></code></pre></div><p>まず、Joi という npm パッケージを利用して、送信されたクエリパラメータなどのバリデーションを行います。
 そして、post( ) という関数がありますが、これはサーバーのエラーなどを Discord のサーバーに通知するための関数として用意してあります。
-server.jar は screen 上で走らせているのですが、screen の二重起動にならないように初めに起動してもよいかのチェックも行っています。</p><p>また、実行系はシェルにまとめてあります。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell><span class=cp>#!/bin/bash
+server.jar は screen 上で走らせているのですが、screen の二重起動にならないように初めに起動してもよいかのチェックも行っています。</p>
+<p>また、実行系はシェルにまとめてあります。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=cp>#!/bin/bash
 </span><span class=cp></span>
 <span class=nv>JARFILE</span><span class=o>=</span>/home/jokura_server/minecraft/server.jar
 
@@ -83,7 +338,9 @@ server.jar は screen 上で走らせているのですが、screen の二重起
 
 <span class=nb>cd</span> <span class=sb>`</span>dirname <span class=nv>$0</span><span class=sb>`</span>
 screen -UAmdS minecraft java -server -Xms<span class=si>${</span><span class=nv>MEM</span><span class=si>}</span> -Xmx<span class=si>${</span><span class=nv>MEM</span><span class=si>}</span> -jar <span class=si>${</span><span class=nv>JARFILE</span><span class=si>}</span> nogui
-</code></pre></div><p>上記のファイルは、起動用のシェルです。</p><p>他にも再起動用やバックアップ用などのシェルも用意してあります。（下記は 再起動用）</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell><span class=cp>#!/bin/bash
+</code></pre></div><p>上記のファイルは、起動用のシェルです。</p>
+<p>他にも再起動用やバックアップ用などのシェルも用意してあります。（下記は 再起動用）</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=cp>#!/bin/bash
 </span><span class=cp></span>
 <span class=nv>WAIT</span><span class=o>=</span><span class=m>30</span>
 
@@ -103,13 +360,116 @@ screen -p <span class=m>0</span> -S <span class=si>${</span><span class=nv>SCREE
 	sleep <span class=m>1</span>
 <span class=k>done</span>
 	<span class=nv>$STARTSCRIPT</span>
-</code></pre></div><h2 id=今現在の-情クラ>今現在の 情クラ！</h2><p>今は残念ながら、Webサービスを終了しています。
-（Minecraft の活動自体はしています！）</p><p>2021年4月から、Minecraft サーバーを別のメンバーが自宅サーバーで建ててくれることになりました。
-やはり GCP などの従量課金制のサーバーで運用するには、かなり気を使ってしまうので正直解放されました。</p><p>かといって、情クラ！での活動はまだまだ続けていく予定なので、ぜひこのブログでも活動を共有していけたらなと思います！</p><p><figure style=flex-grow:177;flex-basis:426px><a href=/p/jokura-web/image_7.jpg data-size=1920x1080><img src=/p/jokura-web/image_7.jpg srcset="/p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, /p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w" width=1920 height=1080 loading=lazy alt=アクティブすぎるメンバーの写真></a><figcaption>アクティブすぎるメンバーの写真</figcaption></figure></p></section><footer class=article-footer><section class=article-tags><a href=/tags/%E3%82%B2%E3%83%BC%E3%83%A0/>ゲーム</a>
-<a href=/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%A7%8B%E7%AF%89/>サーバー構築</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-contents--wrapper><h2 class=section-title>関連するコンテンツ</h2><div class=related-contents><div class="flex article-list--tile"><article class=has-image><a href=/p/minecraft-server-monitor/><div class=article-image><img src=/p/minecraft-server-monitor/cover.71c762ec839309e33c85971cb9654501_hu9bc544d4ea982a63781cc58d28f20ef3_17688_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=minecraft-server-monitor data-hash="md5-ccdi7IOTCeM8hZccuWVFAQ=="></div><div class=article-details><h2 class=article-title>鯖管向け！Minecraftサーバーの監視ツールの制作</h2></div></a></article><article class=has-image><a href=/p/jokura-app/><div class=article-image><img src=/p/jokura-app/cover.4c63b534b7e0c259380e10c218676cba_hu4de8297eba748400c5bc7c54477d6389_102123_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-app data-hash="md5-TGO1NLfgwlk4DhDCGGdsug=="></div><div class=article-details><h2 class=article-title>アプリ版 Minecraft サーバー制御ツールの制作</h2></div></a></article><article class=has-image><a href=/p/wbot/><div class=article-image><img src=/p/wbot/cover.65428b6ae5ac336636a35c92033d27fb_hub8c1acb45d2236871445ffc5c0753e18_55702_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=wbot data-hash="md5-ZUKLauWsM2Y2o1ySAz0n+w=="></div><div class=article-details><h2 class=article-title>草bot (wbot) の開発談</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+</code></pre></div><h2 id=今現在の-情クラ>今現在の 情クラ！</h2>
+<p>今は残念ながら、Webサービスを終了しています。
+（Minecraft の活動自体はしています！）</p>
+<p>2021年4月から、Minecraft サーバーを別のメンバーが自宅サーバーで建ててくれることになりました。
+やはり GCP などの従量課金制のサーバーで運用するには、かなり気を使ってしまうので正直解放されました。</p>
+<p>かといって、情クラ！での活動はまだまだ続けていく予定なので、ぜひこのブログでも活動を共有していけたらなと思います！</p>
+<p><figure class=gallery-image style=flex-grow:177;flex-basis:426px>
+<a href=../../p/jokura-web/image_7.jpg data-size=1920x1080>
+<img src=../../p/jokura-web/image_7.jpg width=1920 height=1080 srcset="../../p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_480x0_resize_q75_box.jpg 480w, ../../p/jokura-web/image_7_huace687ff975c9ebcf26ac6a2a773413a_114939_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=アクティブすぎるメンバーの写真>
+</a>
+<figcaption>アクティブすぎるメンバーの写真</figcaption>
+</figure></p>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=../../tags/%E3%82%B2%E3%83%BC%E3%83%A0/>ゲーム</a>
+<a href=../../tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%A7%8B%E7%AF%89/>サーバー構築</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>関連するコンテンツ</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article class=has-image>
+<a href=../../p/minecraft-server-monitor/>
+<div class=article-image>
+<img src=../../p/minecraft-server-monitor/cover.71c762ec839309e33c85971cb9654501_hu9bc544d4ea982a63781cc58d28f20ef3_17688_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=minecraft-server-monitor data-hash="md5-ccdi7IOTCeM8hZccuWVFAQ==">
+</div>
+<div class=article-details>
+<h2 class=article-title>鯖管向け！Minecraftサーバーの監視ツールの制作</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=../../p/jokura-app/>
+<div class=article-image>
+<img src=../../p/jokura-app/cover.4c63b534b7e0c259380e10c218676cba_hu4de8297eba748400c5bc7c54477d6389_102123_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=jokura-app data-hash="md5-TGO1NLfgwlk4DhDCGGdsug==">
+</div>
+<div class=article-details>
+<h2 class=article-title>アプリ版 Minecraft サーバー制御ツールの制作</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=../../p/wbot/>
+<div class=article-image>
+<img src=../../p/wbot/cover.65428b6ae5ac336636a35c92033d27fb_hub8c1acb45d2236871445ffc5c0753e18_55702_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=wbot data-hash="md5-ZUKLauWsM2Y2o1ySAz0n+w==">
+</div>
+<div class=article-details>
+<h2 class=article-title>草bot (wbot) の開発談</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
 2020 -
-2021 コアラボ (coalabo.)</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.3.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+2021 コアラボ (coalabo.)
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.2.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const customFont=document.createElement('link');customFont.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";customFont.type="text/css";customFont.rel="stylesheet";document.head.appendChild(customFont);}());</script></body></html>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=../../ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

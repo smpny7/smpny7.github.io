@@ -1,15 +1,128 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="コアラボ (coalabo.) 構築物語です。"><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title><link rel=canonical href=https://coalabo.net/p/hugo/><link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Hugo + GitHub Pages + 独自ドメイン でサイトを構築する"><meta property="og:description" content="コアラボ (coalabo.) 構築物語です。"><meta property="og:url" content="https://coalabo.net/p/hugo/"><meta property="og:site_name" content="コアラボ (coalabo.)"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="サイト構築"><meta property="article:published_time" content="2021-04-28T00:00:00+09:00"><meta property="article:modified_time" content="2021-04-28T00:00:00+09:00"><meta property="og:image" content="https://coalabo.net/p/hugo/cover.jpg"><meta name=twitter:title content="Hugo + GitHub Pages + 独自ドメイン でサイトを構築する"><meta name=twitter:description content="コアラボ (coalabo.) 構築物語です。"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://coalabo.net/p/hugo/cover.jpg"><link rel="shortcut icon" href=/img/favicon.png><style>:root{--accent-color: #694745;--accent-color-darker: #533432;--blockquote-background-color: #F3F0EB;--body-background: #F1EEE5;--body-text-color: #C6BABA;--card-background: #F8F6F3;--card-border-radius: 20px;--card-separator-color: #C6BABA;--card-text-color-main: #533432;--card-text-color-secondary: #A08381;--card-text-color-tertiary: #A08381;--code-background-color: #EEE3E2;--code-text-color: #694745;--table-border-color: #EEE3E2;--tr-even-background-color: #F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-7JJHEMJ2DC');</script></head><body><script>(function(){const colorSchemeKey='StackColorScheme';localStorage.setItem(colorSchemeKey,"light");})();</script><script>(function(){const colorSchemeKey='StackColorScheme';const colorSchemeItem=localStorage.getItem(colorSchemeKey);const supportDarkMode=window.matchMedia('(prefers-color-scheme: dark)').matches===true;if(colorSchemeItem=='dark'||colorSchemeItem==='auto'&&supportDarkMode){document.body.dataset.scheme='dark';}else{document.body.dataset.scheme='light';}})();</script><div class="container main-container flex on-phone--column extended article-page with-toolbar"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header class=site-info><figure class=site-avatar><img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar></figure><h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1><h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2></header><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>ホーム</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>ブログを書いている人</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>記事一覧</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>記事を探す</span></a></li></ol></aside><main class="main full-width"><div id=article-toolbar><a href=https://coalabo.net class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg><span>Back</span></a></div><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/hugo/><img src=/p/hugo/cover_hud1f34bc1807131a1cc8a7fd3b9d7a094_12938_800x0_resize_q75_box.jpg srcset="/p/hugo/cover_hud1f34bc1807131a1cc8a7fd3b9d7a094_12938_800x0_resize_q75_box.jpg 800w, /p/hugo/cover_hud1f34bc1807131a1cc8a7fd3b9d7a094_12938_1600x0_resize_q75_box.jpg 1600w" width=800 height=410 loading=lazy alt="Featured image of post Hugo + GitHub Pages + 独自ドメイン でサイトを構築する"></a></div><div class=article-details><header class=article-category><a href=/categories/hugo/ style=background-color:#ff4088;color:#fff>Hugo</a>
-<a href=/categories/github/ style=background-color:#000;color:#fff>GitHub</a></header><h2 class=article-title><a href=/p/hugo/>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</a></h2><h3 class=article-subtitle>コアラボ (coalabo.) 構築物語です。</h3><footer class=article-time><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--published>Apr 28, 2021</time></footer></div></header><section class=article-content><h2 id=ブログを始めてみたい>ブログを始めてみたい！</h2><p>ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。</p><p>せっかく作ったものが消えて日の目を浴びなくなるのは勿体ないので、
-ブログという形で供養してやります！</p><h2 id=なんかかっこいい方法でホスティングしたい>なんかかっこいい方法でホスティングしたい</h2><p>第一として、運用費用があまりかからないようにする必要があります。
-なので、Nuxt.js を使って静的サイトを書き出し、GitHub Pages にデプロイしようかと考えていました。</p><p>ただ、フロントエンドやデザインのお仕事が続いており、自分でフロントを作成するのもなんだかなぁという状態でした。</p><p>とその時、知り合いからHugoを布教されました。なんとHugoにはテンプレートがたくさんあるじゃないですか！</p><p>Hugoは触ったことがなかったので、勉強がてら（といっても使い方の知見を得るだけですが）これを使ってブログを作成することにしました。</p><h2 id=書き出しめっちゃ速い>書き出しめっちゃ速い！！</h2><p>記事を Markdown で書いていくのですが、保存するたびホットリロードでブラウザに反映してくれます。</p><p>その速度が明らかに速いのです！（私が React や Nuxt.js などに慣れているからかもしれませんが&mldr;）</p><p><figure style=flex-grow:160;flex-basis:384px><a href=/p/hugo/image_1.jpg data-size=3584x2240><img src=/p/hugo/image_1.jpg srcset="/p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_480x0_resize_q75_box.jpg 480w, /p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_1024x0_resize_q75_box.jpg 1024w" width=3584 height=2240 loading=lazy alt=書き出し速度がやばい！></a><figcaption>書き出し速度がやばい！</figcaption></figure></p><p>Terminal 上に表示されている再レンダリング時間は <code>9ms</code> とでていますね。</p><p>もう、一目惚れしました。</p><h2 id=github-pages-にデプロイしよう>GitHub Pages にデプロイしよう</h2><p>すいません、タイトル詐欺です。
-デプロイする前に1つすることがありました。</p><p>今回 <a class=link href=https://themes.gohugo.io/hugo-theme-stack target=_blank rel=noopener>Hugo Theme Stack</a>というテーマパックを編集して使ったのですが、
-これを submodule 登録しておきます。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>$ git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack
-</code></pre></div><p>また、git から clone する時は、submodule も忘れず引っ張ってくるようにしましょう。</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>$ git clone --recurse-submodules --depth <span class=m>1</span> git@github.com:smpny7/coalabo.git
-</code></pre></div><h2 id=github-actions-で自動化しよう>GitHub Actions で自動化しよう</h2><p>今度こそ、GitHub Actions で GitHub Pages に自動デプロイするように設定していきます。</p><p>今回 GitHub Pages 用に、<code>&lt;GitHub ユーザー名>.github.io</code> のリポジトリを作成しました。
-なぜそうしたかというと、<code>https://&lt;GitHub ユーザー名>.github.io</code> でそのサイトが閲覧できるようになるからです。</p><p>ドメイン後にパスが続かないのは、カスタムドメインを設定する際に大切です。</p><p>GitHub Actions には <a class=link href=https://github.com/marketplace/actions/github-pages-action#getting-started target=_blank rel=noopener>GitHub Pages action</a> というのが
-マーケットプレイスに公開されていたので、これを参考に作成しました。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>github pages</span><span class=w>
+<!doctype html><html lang=ja>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="コアラボ (coalabo.) 構築物語です。"><title>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</title>
+<link rel=canonical href=https://coalabo.net/p/hugo/>
+<link rel=stylesheet href=../../scss/style.min.css><meta property="og:title" content="Hugo + GitHub Pages + 独自ドメイン でサイトを構築する">
+<meta property="og:description" content="コアラボ (coalabo.) 構築物語です。">
+<meta property="og:url" content="https://coalabo.net/p/hugo/">
+<meta property="og:site_name" content="コアラボ (coalabo.)">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="サイト構築"><meta property="article:published_time" content="2021-04-28T00:00:00+09:00"><meta property="article:modified_time" content="2021-04-28T00:00:00+09:00"><meta property="og:image" content="https://coalabo.net/p/hugo/cover.jpg">
+<meta name=twitter:title content="Hugo + GitHub Pages + 独自ドメイン でサイトを構築する">
+<meta name=twitter:description content="コアラボ (coalabo.) 構築物語です。"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://coalabo.net/p/hugo/cover.jpg">
+<link rel="shortcut icon" href=../../img/favicon.png>
+<style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"light")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=../../img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
+<h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=../../><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>ホーム</span>
+</a>
+</li>
+<li>
+<a href=../../about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>ブログを書いている人</span>
+</a>
+</li>
+<li>
+<a href=../../archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>記事一覧</span>
+</a>
+</li>
+<li>
+<a href=../../search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>記事を探す</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=../../p/hugo/>
+<img src=../../p/hugo/cover_hud1f34bc1807131a1cc8a7fd3b9d7a094_12938_800x0_resize_q75_box.jpg srcset="../../p/hugo/cover_hud1f34bc1807131a1cc8a7fd3b9d7a094_12938_800x0_resize_q75_box.jpg 800w, ../../p/hugo/cover_hud1f34bc1807131a1cc8a7fd3b9d7a094_12938_1600x0_resize_q75_box.jpg 1600w" width=800 height=410 loading=lazy alt="Featured image of post Hugo + GitHub Pages + 独自ドメイン でサイトを構築する">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=../../categories/hugo/ style=background-color:#ff4088;color:#fff>
+Hugo
+</a>
+<a href=../../categories/github/ style=background-color:#000;color:#fff>
+GitHub
+</a>
+</header>
+<h2 class=article-title>
+<a href=../../p/hugo/>Hugo + GitHub Pages + 独自ドメイン でサイトを構築する</a>
+</h2>
+<h3 class=article-subtitle>
+コアラボ (coalabo.) 構築物語です。
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Apr 28, 2021</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=ブログを始めてみたい>ブログを始めてみたい！</h2>
+<p>ブログを始めたいと思ったきっかけは、自分が作ったサービスが終了してしまうことでした。</p>
+<p>せっかく作ったものが消えて日の目を浴びなくなるのは勿体ないので、
+ブログという形で供養してやります！</p>
+<h2 id=なんかかっこいい方法でホスティングしたい>なんかかっこいい方法でホスティングしたい</h2>
+<p>第一として、運用費用があまりかからないようにする必要があります。
+なので、Nuxt.js を使って静的サイトを書き出し、GitHub Pages にデプロイしようかと考えていました。</p>
+<p>ただ、フロントエンドやデザインのお仕事が続いており、自分でフロントを作成するのもなんだかなぁという状態でした。</p>
+<p>とその時、知り合いからHugoを布教されました。なんとHugoにはテンプレートがたくさんあるじゃないですか！</p>
+<p>Hugoは触ったことがなかったので、勉強がてら（といっても使い方の知見を得るだけですが）これを使ってブログを作成することにしました。</p>
+<h2 id=書き出しめっちゃ速い>書き出しめっちゃ速い！！</h2>
+<p>記事を Markdown で書いていくのですが、保存するたびホットリロードでブラウザに反映してくれます。</p>
+<p>その速度が明らかに速いのです！（私が React や Nuxt.js などに慣れているからかもしれませんが&mldr;）</p>
+<p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
+<a href=../../p/hugo/image_1.jpg data-size=3584x2240>
+<img src=../../p/hugo/image_1.jpg width=3584 height=2240 srcset="../../p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_480x0_resize_q75_box.jpg 480w, ../../p/hugo/image_1_hu8149e3cc377252b5c483f556b468b391_305877_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=書き出し速度がやばい！>
+</a>
+<figcaption>書き出し速度がやばい！</figcaption>
+</figure></p>
+<p>Terminal 上に表示されている再レンダリング時間は <code>9ms</code> とでていますね。</p>
+<p>もう、一目惚れしました。</p>
+<h2 id=github-pages-にデプロイしよう>GitHub Pages にデプロイしよう</h2>
+<p>すいません、タイトル詐欺です。
+デプロイする前に1つすることがありました。</p>
+<p>今回 <a class=link href=https://themes.gohugo.io/hugo-theme-stack target=_blank rel=noopener>Hugo Theme Stack</a>というテーマパックを編集して使ったのですが、
+これを submodule 登録しておきます。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>$ git submodule add https://github.com/CaiJimmy/hugo-theme-stack themes/hugo-theme-stack
+</code></pre></div><p>また、git から clone する時は、submodule も忘れず引っ張ってくるようにしましょう。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>$ git clone --recurse-submodules --depth <span class=m>1</span> git@github.com:smpny7/coalabo.git
+</code></pre></div><h2 id=github-actions-で自動化しよう>GitHub Actions で自動化しよう</h2>
+<p>今度こそ、GitHub Actions で GitHub Pages に自動デプロイするように設定していきます。</p>
+<p>今回 GitHub Pages 用に、<code>&lt;GitHub ユーザー名>.github.io</code> のリポジトリを作成しました。
+なぜそうしたかというと、<code>https://&lt;GitHub ユーザー名>.github.io</code> でそのサイトが閲覧できるようになるからです。</p>
+<p>ドメイン後にパスが続かないのは、カスタムドメインを設定する際に大切です。</p>
+<p>GitHub Actions には <a class=link href=https://github.com/marketplace/actions/github-pages-action#getting-started target=_blank rel=noopener>GitHub Pages action</a> というのが
+マーケットプレイスに公開されていたので、これを参考に作成しました。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>github pages</span><span class=w>
 </span><span class=w>
 </span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
@@ -45,22 +158,169 @@ gtag('js',new Date());gtag('config','G-7JJHEMJ2DC');</script></head><body><scrip
 </span><span class=w>          </span><span class=nt>external_repository</span><span class=p>:</span><span class=w> </span><span class=l>smpny7/smpny7.github.io</span><span class=w>
 </span><span class=w>          </span><span class=nt>publish_branch</span><span class=p>:</span><span class=w> </span><span class=l>main</span><span class=w>
 </span><span class=w>          </span><span class=nt>cname</span><span class=p>:</span><span class=w> </span><span class=l>coalabo.net</span><span class=w>
-</span></code></pre></div><p>submodule を一緒に引っ張ってくるのも、忘れないように設定しましょう。</p><p>そして GitHub の Secrets に、<code>ACTIONS_DEPLOY_KEY</code> という名前で SSH のプライベートキーを設定しておきます。</p><h2 id=ドメインが-35円だと>ドメインが 35円だと！？</h2><p>本当にたまたまです。<code>.com</code> ドメインや <code>.net</code> ドメインが 35円セールしてました。</p><p><figure style=flex-grow:160;flex-basis:384px><a href=/p/hugo/image_2.jpg data-size=3584x2240><img src=/p/hugo/image_2.jpg srcset="/p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_480x0_resize_q75_box.jpg 480w, /p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_1024x0_resize_q75_box.jpg 1024w" width=3584 height=2240 loading=lazy alt="お名前.com（2021/4/28 執筆時点）"></a><figcaption>お名前.com（2021/4/28 執筆時点）</figcaption></figure></p><p>ドメイン移管が安くなるのはしょっちゅう見てましたが、ドメイン自体が安くなっているのを見たのは初めてでした！</p><p>サイト名に迷走して、3つくらいドメインをとってしまったのは秘密です。</p><h2 id=取得したドメイン名に設定しよう>取得したドメイン名に設定しよう</h2><p>お名前.com の管理画面に行き、<code>DNS 設定 > DNSレコード設定を利用する</code> を選択します。</p><p><figure style=flex-grow:160;flex-basis:384px><a href=/p/hugo/image_3.jpg data-size=3584x2240><img src=/p/hugo/image_3.jpg srcset="/p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_480x0_resize_q75_box.jpg 480w, /p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_1024x0_resize_q75_box.jpg 1024w" width=3584 height=2240 loading=lazy alt="DNS 設定画面（お名前.com）"></a><figcaption>DNS 設定画面（お名前.com）</figcaption></figure></p><p>Aレコードに、GitHub Pages のアドレスを入力します。</p><p><figure style=flex-grow:160;flex-basis:384px><a href=/p/hugo/image_4.jpg data-size=3584x2240><img src=/p/hugo/image_4.jpg srcset="/p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_480x0_resize_q75_box.jpg 480w, /p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_1024x0_resize_q75_box.jpg 1024w" width=3584 height=2240 loading=lazy alt="DNS 設定（お名前.com）"></a><figcaption>DNS 設定（お名前.com）</figcaption></figure></p><p>本来は、CNAMEレコードに <code>github.io</code> のドメインを登録するのが良いのですが、
-私の場合うまく動かなかったので Aレコードで登録しました。</p><p>GitHub Pages の仕様変更によって、グローバルIPアドレスが変わる恐れもあるので、その辺りは今後の検討課題です。</p><h2 id=google-search-console-を登録する>Google Search Console を登録する</h2><p>Google Search Console とは、検索順位やサイト内のエラーを取得してくれる Google のサービスです。
-通称 Googleサチコです。</p><p>今回登録するにあたり、サイト所有確認なのですが、ドメイン認証にしようと思っているのでここで設定してしまいましょう。</p><p>先程のレコード登録画面で、レコードを <code>TXT</code>に、<code>VALUE</code>をサチコで表示されたコードに設定します。</p><blockquote><p>諸説ありますが、最後の「転送用のネームサーバーに変更する」は一応チェックを外しておきましょう。</p></blockquote><h2 id=github-actions-を設定>GitHub Actions を設定</h2><p>構築も終盤にさしかかってきました。</p><p>GitHub Pages 設定の <code>Custom domain</code> 項目に、使用したいドメインを入力します。</p><p><figure style=flex-grow:160;flex-basis:384px><a href=/p/hugo/image_5.jpg data-size=3584x2240><img src=/p/hugo/image_5.jpg srcset="/p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_480x0_resize_q75_box.jpg 480w, /p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_1024x0_resize_q75_box.jpg 1024w" width=3584 height=2240 loading=lazy alt="GitHub Pages 設定画面"></a><figcaption>GitHub Pages 設定画面</figcaption></figure></p><p>Save を押すと、ドメインが <code>github.io</code> に転送されるかのチェックが行われます。</p><p><figure style=flex-grow:160;flex-basis:384px><a href=/p/hugo/image_6.jpg data-size=3584x2240><img src=/p/hugo/image_6.jpg srcset="/p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_480x0_resize_q75_box.jpg 480w, /p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_1024x0_resize_q75_box.jpg 1024w" width=3584 height=2240 loading=lazy alt="GitHub Pages 設定画面"></a><figcaption>GitHub Pages 設定画面</figcaption></figure></p><p>確認されたら <code>Enforce HTTPS</code> が選択できるようになるので、チェックを入れておきましょう。</p><h2 id=でたな-gtagjs定期>でたな gtag.js（定期）</h2><p>Google Analytics が最近変更になったらしく、昔は <code>UA-XXXXXX-X</code> というタグだったのですが、
-今は Gタグと呼ばれる <code>G-XXXXXXX</code> というものに変更されています。</p><p>これに伴い、JavaScript 部分も変更になるので、使用していたテーマパックの Google Analytics が正常に動きませんでした。</p><p>私の使用しているテーマパックでは以下のように対応しました。</p><ol><li><code>layouts > partials > head > custom.html</code> というファイルを作成すると、そこに記述されたコードがサイトの <code>head</code> に挿入されることがわかった。</li><li>カスタムテーマにしたかったので、<code>custom.html</code> から <code>style用ファイル</code> と <code>analytics用 JSファイル</code> を読み込みようにした。</li></ol><p><code>style用ファイル</code> には自分がカスタムした部分のCSSを、
-<code>analytics用 JSファイル</code>には例の Google Analytics 用コード9行が書かれています。</p><p>また、customファイルは以下の通りです。</p><div class=highlight><pre class=chroma><code class=language-html data-lang=html><span class=c>&lt;!-- Custom Style --&gt;</span>
+</span></code></pre></div><p>submodule を一緒に引っ張ってくるのも、忘れないように設定しましょう。</p>
+<p>そして GitHub の Secrets に、<code>ACTIONS_DEPLOY_KEY</code> という名前で SSH のプライベートキーを設定しておきます。</p>
+<h2 id=ドメインが-35円だと>ドメインが 35円だと！？</h2>
+<p>本当にたまたまです。<code>.com</code> ドメインや <code>.net</code> ドメインが 35円セールしてました。</p>
+<p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
+<a href=../../p/hugo/image_2.jpg data-size=3584x2240>
+<img src=../../p/hugo/image_2.jpg width=3584 height=2240 srcset="../../p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_480x0_resize_q75_box.jpg 480w, ../../p/hugo/image_2_hu5d36e630e58f4aa4adc485db5ac4c17f_208524_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="お名前.com（2021/4/28 執筆時点）">
+</a>
+<figcaption>お名前.com（2021/4/28 執筆時点）</figcaption>
+</figure></p>
+<p>ドメイン移管が安くなるのはしょっちゅう見てましたが、ドメイン自体が安くなっているのを見たのは初めてでした！</p>
+<p>サイト名に迷走して、3つくらいドメインをとってしまったのは秘密です。</p>
+<h2 id=取得したドメイン名に設定しよう>取得したドメイン名に設定しよう</h2>
+<p>お名前.com の管理画面に行き、<code>DNS 設定 > DNSレコード設定を利用する</code> を選択します。</p>
+<p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
+<a href=../../p/hugo/image_3.jpg data-size=3584x2240>
+<img src=../../p/hugo/image_3.jpg width=3584 height=2240 srcset="../../p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_480x0_resize_q75_box.jpg 480w, ../../p/hugo/image_3_hu85482214b96a242b2bdfb1cde4d6b35f_243704_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="DNS 設定画面（お名前.com）">
+</a>
+<figcaption>DNS 設定画面（お名前.com）</figcaption>
+</figure></p>
+<p>Aレコードに、GitHub Pages のアドレスを入力します。</p>
+<p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
+<a href=../../p/hugo/image_4.jpg data-size=3584x2240>
+<img src=../../p/hugo/image_4.jpg width=3584 height=2240 srcset="../../p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_480x0_resize_q75_box.jpg 480w, ../../p/hugo/image_4_hufeaa9d87c36b47ae481adf1c8c626989_203520_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="DNS 設定（お名前.com）">
+</a>
+<figcaption>DNS 設定（お名前.com）</figcaption>
+</figure></p>
+<p>本来は、CNAMEレコードに <code>github.io</code> のドメインを登録するのが良いのですが、
+私の場合うまく動かなかったので Aレコードで登録しました。</p>
+<p>GitHub Pages の仕様変更によって、グローバルIPアドレスが変わる恐れもあるので、その辺りは今後の検討課題です。</p>
+<h2 id=google-search-console-を登録する>Google Search Console を登録する</h2>
+<p>Google Search Console とは、検索順位やサイト内のエラーを取得してくれる Google のサービスです。
+通称 Googleサチコです。</p>
+<p>今回登録するにあたり、サイト所有確認なのですが、ドメイン認証にしようと思っているのでここで設定してしまいましょう。</p>
+<p>先程のレコード登録画面で、レコードを <code>TXT</code>に、<code>VALUE</code>をサチコで表示されたコードに設定します。</p>
+<blockquote>
+<p>諸説ありますが、最後の「転送用のネームサーバーに変更する」は一応チェックを外しておきましょう。</p>
+</blockquote>
+<h2 id=github-actions-を設定>GitHub Actions を設定</h2>
+<p>構築も終盤にさしかかってきました。</p>
+<p>GitHub Pages 設定の <code>Custom domain</code> 項目に、使用したいドメインを入力します。</p>
+<p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
+<a href=../../p/hugo/image_5.jpg data-size=3584x2240>
+<img src=../../p/hugo/image_5.jpg width=3584 height=2240 srcset="../../p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_480x0_resize_q75_box.jpg 480w, ../../p/hugo/image_5_hu419880e7adf0b4b46369bc2b7604e25d_163480_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="GitHub Pages 設定画面">
+</a>
+<figcaption>GitHub Pages 設定画面</figcaption>
+</figure></p>
+<p>Save を押すと、ドメインが <code>github.io</code> に転送されるかのチェックが行われます。</p>
+<p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
+<a href=../../p/hugo/image_6.jpg data-size=3584x2240>
+<img src=../../p/hugo/image_6.jpg width=3584 height=2240 srcset="../../p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_480x0_resize_q75_box.jpg 480w, ../../p/hugo/image_6_hu3255b2e7721e4256d8fe9e3ebeb8ac27_185338_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="GitHub Pages 設定画面">
+</a>
+<figcaption>GitHub Pages 設定画面</figcaption>
+</figure></p>
+<p>確認されたら <code>Enforce HTTPS</code> が選択できるようになるので、チェックを入れておきましょう。</p>
+<h2 id=でたな-gtagjs定期>でたな gtag.js（定期）</h2>
+<p>Google Analytics が最近変更になったらしく、昔は <code>UA-XXXXXX-X</code> というタグだったのですが、
+今は Gタグと呼ばれる <code>G-XXXXXXX</code> というものに変更されています。</p>
+<p>これに伴い、JavaScript 部分も変更になるので、使用していたテーマパックの Google Analytics が正常に動きませんでした。</p>
+<p>私の使用しているテーマパックでは以下のように対応しました。</p>
+<ol>
+<li><code>layouts > partials > head > custom.html</code> というファイルを作成すると、そこに記述されたコードがサイトの <code>head</code> に挿入されることがわかった。</li>
+<li>カスタムテーマにしたかったので、<code>custom.html</code> から <code>style用ファイル</code> と <code>analytics用 JSファイル</code> を読み込みようにした。</li>
+</ol>
+<p><code>style用ファイル</code> には自分がカスタムした部分のCSSを、
+<code>analytics用 JSファイル</code>には例の Google Analytics 用コード9行が書かれています。</p>
+<p>また、customファイルは以下の通りです。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=c>&lt;!-- Custom Style --&gt;</span>
 {{ partial &#34;style/custom&#34; . }}
 
 <span class=c>&lt;!-- Analytics --&gt;</span>
 {{ if not .Site.IsServer }}
     {{ partial &#34;google/analytics&#34; . }}
 {{ end }}
-</code></pre></div><p>↑ デバッグでは Google Analytics がうごかないようにしています</p><h2 id=さいごに>さいごに</h2><p>カスタマイズしたサイトは以下のようになりました！</p><p><figure style=flex-grow:177;flex-basis:426px><a href=/p/hugo/image_7.jpg data-size=1920x1080><img src=/p/hugo/image_7.jpg srcset="/p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_480x0_resize_q75_box.jpg 480w, /p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_1024x0_resize_q75_box.jpg 1024w" width=1920 height=1080 loading=lazy alt="COALABO. 完成"></a><figcaption>COALABO. 完成</figcaption></figure></p><p>自分があまりチャレンジしたことのない配色でデザインしてみたのですが、
-結構きれいにまとまってて気に入ってます！</p><p>データの蓄積された Google Analytics をみるのが楽しみです。</p></section><footer class=article-footer><section class=article-tags><a href=/tags/%E3%82%B5%E3%82%A4%E3%83%88%E6%A7%8B%E7%AF%89/>サイト構築</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-contents--wrapper><h2 class=section-title>関連するコンテンツ</h2><div class=related-contents><div class="flex article-list--tile"><article class=has-image><a href=/p/commit-message/><div class=article-image><img src=/p/commit-message/cover.386533e7086a01b58af0b8ff70502d2f_hue4284ab73e487a9951f506861ac54474_531710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=commit-message data-hash="md5-OGUz5whqAbWK8Lj/cFAtLw=="></div><div class=article-details><h2 class=article-title>誰にとってもわかりやすいコミットメッセージ</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+</code></pre></div><p>↑ デバッグでは Google Analytics がうごかないようにしています</p>
+<h2 id=さいごに>さいごに</h2>
+<p>カスタマイズしたサイトは以下のようになりました！</p>
+<p><figure class=gallery-image style=flex-grow:177;flex-basis:426px>
+<a href=../../p/hugo/image_7.jpg data-size=1920x1080>
+<img src=../../p/hugo/image_7.jpg width=1920 height=1080 srcset="../../p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_480x0_resize_q75_box.jpg 480w, ../../p/hugo/image_7_hu58039191d79a61d8b912ab889f247e25_85720_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="COALABO. 完成">
+</a>
+<figcaption>COALABO. 完成</figcaption>
+</figure></p>
+<p>自分があまりチャレンジしたことのない配色でデザインしてみたのですが、
+結構きれいにまとまってて気に入ってます！</p>
+<p>データの蓄積された Google Analytics をみるのが楽しみです。</p>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=../../tags/%E3%82%B5%E3%82%A4%E3%83%88%E6%A7%8B%E7%AF%89/>サイト構築</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>関連するコンテンツ</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article class=has-image>
+<a href=../../p/commit-message/>
+<div class=article-image>
+<img src=../../p/commit-message/cover.386533e7086a01b58af0b8ff70502d2f_hue4284ab73e487a9951f506861ac54474_531710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=commit-message data-hash="md5-OGUz5whqAbWK8Lj/cFAtLw==">
+</div>
+<div class=article-details>
+<h2 class=article-title>誰にとってもわかりやすいコミットメッセージ</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
 2020 -
-2021 コアラボ (coalabo.)</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.3.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+2021 コアラボ (coalabo.)
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.2.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const customFont=document.createElement('link');customFont.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";customFont.type="text/css";customFont.rel="stylesheet";document.head.appendChild(customFont);}());</script></body></html>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=../../ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>
