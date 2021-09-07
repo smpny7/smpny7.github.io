@@ -1,4 +1,281 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 07 Sep 2021 10:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>オンライン授業配信サービスの作成: 戸田塾オンライン</title><link>https://coalabo.net/p/toda-online/</link><pubDate>Tue, 07 Sep 2021 10:00:00 +0900</pubDate><guid>https://coalabo.net/p/toda-online/</guid><description>&lt;img src="https://coalabo.net/p/toda-online/cover.jpg" alt="Featured image of post オンライン授業配信サービスの作成: 戸田塾オンライン" />&lt;h2 id="最近edtechって流行ってますよね">最近、EdTechって流行ってますよね&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 07 Sep 2021 16:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>【アプリ・Webデザイナー必見】 デザインする際に参考にしているサイトまとめ</title><link>https://coalabo.net/p/design/</link><pubDate>Tue, 07 Sep 2021 16:00:00 +0900</pubDate><guid>https://coalabo.net/p/design/</guid><description>&lt;img src="https://coalabo.net/p/design/cover.jpg" alt="Featured image of post 【アプリ・Webデザイナー必見】 デザインする際に参考にしているサイトまとめ" />&lt;h2 id="はじめに">はじめに&lt;/h2>
+&lt;p>私がよく参考にさせて頂いているデザインサイト・フリーアイコンサイトをまとめてみました！&lt;/p>
+&lt;h2 id="デザイン編">デザイン編&lt;/h2>
+&lt;h3 id="dribbblehttpsdribbblecom">&lt;a class="link" href="https://dribbble.com/" target="_blank" rel="noopener"
+>Dribbble&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/design/image_1.jpg" data-size="1400x875">
+&lt;img src="https://coalabo.net/p/design/image_1.jpg"
+width="1400"
+height="875"
+srcset="https://coalabo.net/p/design/image_1_hu73e341b21981dbd7df0f7ad22743762c_97504_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_1_hu73e341b21981dbd7df0f7ad22743762c_97504_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Dribbble">
+&lt;/a>
+&lt;figcaption>Dribbble&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>全て閲覧するにはアカウントが必要&lt;/li>
+&lt;li>アニメーションやプロダクトデザインなども掲載されているのが面白いところ&lt;/li>
+&lt;li>Adobe Xd や Figma などのツール向けにダウンロードできるのが素晴らしい&lt;/li>
+&lt;/ul>
+&lt;h3 id="ui-garagehttpsuigaragenet">&lt;a class="link" href="https://uigarage.net/" target="_blank" rel="noopener"
+>UI Garage&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/design/image_2.jpg" data-size="1400x875">
+&lt;img src="https://coalabo.net/p/design/image_2.jpg"
+width="1400"
+height="875"
+srcset="https://coalabo.net/p/design/image_2_hu8d9beff4690aee080b762aab98894f7a_73623_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_2_hu8d9beff4690aee080b762aab98894f7a_73623_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="UI Garage">
+&lt;/a>
+&lt;figcaption>UI Garage&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>iOS・Web・Androidとジャンル分けされており、すぐに目的のデザインにたどり着ける&lt;/li>
+&lt;li>このサイトは細かいジャンル分けがされており、「404ページ」・「ダッシュボード」・「設定画面」など90種類以上の項目があり、参考にしたいパーツのデザインにどっぷりと浸かれる&lt;/li>
+&lt;li>記事ページでは、いろいろなサービスのデザイン考察や設計に役立つTipsを載せていて，暇な時間に軽く読める&lt;/li>
+&lt;/ul>
+&lt;h3 id="material-designhttpsmaterialio">&lt;a class="link" href="https://material.io/" target="_blank" rel="noopener"
+>Material Design&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/design/image_3.jpg" data-size="1400x875">
+&lt;img src="https://coalabo.net/p/design/image_3.jpg"
+width="1400"
+height="875"
+srcset="https://coalabo.net/p/design/image_3_hu1fdce1738090bce4a5fff7b0bda417e3_55487_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_3_hu1fdce1738090bce4a5fff7b0bda417e3_55487_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Material Design">
+&lt;/a>
+&lt;figcaption>Material Design&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>Googleさんが2014年にデザインガイドラインとして定めた、例の &amp;ldquo;Material Design&amp;rdquo;&lt;/li>
+&lt;li>視覚的に良いデザイン・悪いデザインを学習できるのは有名だが、動きや起動画面・テキストの表示方法などの細かいUI・UXも学習できる点に価値あり&lt;/li>
+&lt;li>アイコンやテーマもダウンロードできる&lt;/li>
+&lt;/ul>
+&lt;h3 id="動くwebデザインアイディア帳httpscoco-factoryjpugokuweb">&lt;a class="link" href="https://coco-factory.jp/ugokuweb/" target="_blank" rel="noopener"
+>動くWebデザインアイディア帳&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 183;
+flex-basis: 440px"
+>
+&lt;a href="https://coalabo.net/p/design/image_4.jpg" data-size="3580x1950">
+&lt;img src="https://coalabo.net/p/design/image_4.jpg"
+width="3580"
+height="1950"
+srcset="https://coalabo.net/p/design/image_4_hu55af1d17e6d11dc5c0fab3e31bcabb18_145944_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_4_hu55af1d17e6d11dc5c0fab3e31bcabb18_145944_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="動くWebデザインアイディア帳">
+&lt;/a>
+&lt;figcaption>動くWebデザインアイディア帳&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>ティザーサイトを制作する際にかなり重宝！！かなりかっこいい&lt;/li>
+&lt;li>1つの機能（例: ローディング）にもさまざまな配置パターンが用意されており、コードを書く作業がかなり減る&lt;/li>
+&lt;li>jQueryを使用するものが多いので、脱jQueryを目指している方には大変かも&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;h1 id="アイコン編">アイコン編&lt;/h1>
+&lt;p>お気に入りのアイコンを一言で紹介&lt;/p>
+&lt;h3 id="featherhttpsfeathericonscom">&lt;a class="link" href="https://feathericons.com/" target="_blank" rel="noopener"
+>Feather&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/design/image_5.jpg" data-size="1400x875">
+&lt;img src="https://coalabo.net/p/design/image_5.jpg"
+width="1400"
+height="875"
+srcset="https://coalabo.net/p/design/image_5_hua5f1817bda2d587465b0bb4f2d053683_44318_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_5_hua5f1817bda2d587465b0bb4f2d053683_44318_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Feather">
+&lt;/a>
+&lt;figcaption>Feather&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>角が取れた優しいストロークアイコン&lt;/li>
+&lt;li>アイコン数は若干少なめだが、アイコンが統一しているのでナビゲーションバーなどに使いやすい&lt;/li>
+&lt;/ul>
+&lt;h3 id="icons8httpsicons8jp">&lt;a class="link" href="https://icons8.jp/" target="_blank" rel="noopener"
+>icons8&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/design/image_6.jpg" data-size="1400x875">
+&lt;img src="https://coalabo.net/p/design/image_6.jpg"
+width="1400"
+height="875"
+srcset="https://coalabo.net/p/design/image_6_hu6f39217540ce22cd1b411c1bdd3da0fc_51136_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_6_hu6f39217540ce22cd1b411c1bdd3da0fc_51136_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="icons8">
+&lt;/a>
+&lt;figcaption>icons8&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>1つの画像に様々な画風のアイコンがたくさんあるため、このWebページを訪れれば欲しいタイプの画像が見つかる&lt;/li>
+&lt;li>私は 「iOS」 風が好き&lt;/li>
+&lt;/ul>
+&lt;h3 id="jamhttpsjam-iconscom">&lt;a class="link" href="https://jam-icons.com/" target="_blank" rel="noopener"
+>JAM&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 184;
+flex-basis: 443px"
+>
+&lt;a href="https://coalabo.net/p/design/image_7.jpg" data-size="3584x1941">
+&lt;img src="https://coalabo.net/p/design/image_7.jpg"
+width="3584"
+height="1941"
+srcset="https://coalabo.net/p/design/image_7_hu7048dd8b05c9613e4649769026d471c5_109602_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_7_hu7048dd8b05c9613e4649769026d471c5_109602_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="JAM">
+&lt;/a>
+&lt;figcaption>JAM&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>こちらも丸みを帯びたストロークアイコン&lt;/li>
+&lt;li>先程の Feather と比べ、アイコン数が結構多いのでよく使っている&lt;/li>
+&lt;/ul>
+&lt;h3 id="uiconshttpswwwflaticoncomuiconsinterface-icons">&lt;a class="link" href="https://www.flaticon.com/uicons/interface-icons/" target="_blank" rel="noopener"
+>Uicons&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 201;
+flex-basis: 482px"
+>
+&lt;a href="https://coalabo.net/p/design/image_8.jpg" data-size="3584x1783">
+&lt;img src="https://coalabo.net/p/design/image_8.jpg"
+width="3584"
+height="1783"
+srcset="https://coalabo.net/p/design/image_8_hu582c64837a82607822f202e9d8dc163b_109479_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_8_hu582c64837a82607822f202e9d8dc163b_109479_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Uicons">
+&lt;/a>
+&lt;figcaption>Uicons&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>flaticon の会社がやっている、Font Awesome のようなもの&lt;/li>
+&lt;li>アイコンがかなり可愛いのでよく使っている&lt;/li>
+&lt;li>ストロークアイコン以外にも、塗りつぶしアイコンにできたり線の角を角ばらせることもでき、拡張性は高い&lt;/li>
+&lt;/ul>
+&lt;h3 id="svg-repohttpswwwsvgrepocom">&lt;a class="link" href="https://www.svgrepo.com/" target="_blank" rel="noopener"
+>SVG Repo&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 184;
+flex-basis: 442px"
+>
+&lt;a href="https://coalabo.net/p/design/image_9.jpg" data-size="3584x1943">
+&lt;img src="https://coalabo.net/p/design/image_9.jpg"
+width="3584"
+height="1943"
+srcset="https://coalabo.net/p/design/image_9_hu82060651b633dc8fc3c300e7fa11a356_224966_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_9_hu82060651b633dc8fc3c300e7fa11a356_224966_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="SVG Repo">
+&lt;/a>
+&lt;figcaption>SVG Repo&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>&amp;ldquo;Collection&amp;quot;という単位があり、その Collection 内にあるアイコン（画像）はテーマが統一されており、同じ画面に複数のアイコンを使う際に見栄えが良い&lt;/li>
+&lt;li>この &amp;ldquo;Collecton&amp;rdquo; がたくさん用意されており（現時点で450+セットある）、フラットな天気アイコンや丸みを帯びた日本食アイコンなど、眺めるだけで楽しい&lt;/li>
+&lt;/ul>
+&lt;h3 id="font-awesomehttpsfontawesomecom">&lt;a class="link" href="https://fontawesome.com/" target="_blank" rel="noopener"
+>Font Awesome&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 184;
+flex-basis: 443px"
+>
+&lt;a href="https://coalabo.net/p/design/image_10.jpg" data-size="3584x1941">
+&lt;img src="https://coalabo.net/p/design/image_10.jpg"
+width="3584"
+height="1941"
+srcset="https://coalabo.net/p/design/image_10_hue7b22ec792f39ad6bfa1e46f1d156ca1_173942_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_10_hue7b22ec792f39ad6bfa1e46f1d156ca1_173942_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Font Awesome">
+&lt;/a>
+&lt;figcaption>Font Awesome&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>認知度は一番高いと思うが、一応入れておく&lt;/li>
+&lt;li>CDNやnpmなどから入れることができ、導入がかなり楽&lt;/li>
+&lt;li>アイコン数もずば抜けて多い&lt;/li>
+&lt;/ul>
+&lt;h3 id="undrawhttpsundrawcoillustrations">&lt;a class="link" href="https://undraw.co/illustrations" target="_blank" rel="noopener"
+>unDraw&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/design/image_11.jpg" data-size="1400x875">
+&lt;img src="https://coalabo.net/p/design/image_11.jpg"
+width="1400"
+height="875"
+srcset="https://coalabo.net/p/design/image_11_hu8f8fbca6575fa8936620aa00142de722_44443_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_11_hu8f8fbca6575fa8936620aa00142de722_44443_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="unDraw">
+&lt;/a>
+&lt;figcaption>unDraw&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>海外のデザイナーたちがよく使ってるフラットアイコン&lt;/li>
+&lt;/ul>
+&lt;h3 id="storieshttpsstoriesfreepikcomrafiki">&lt;a class="link" href="https://stories.freepik.com/rafiki" target="_blank" rel="noopener"
+>stories&lt;/a>&lt;/h3>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/design/image_12.jpg" data-size="1400x875">
+&lt;img src="https://coalabo.net/p/design/image_12.jpg"
+width="1400"
+height="875"
+srcset="https://coalabo.net/p/design/image_12_hu52fb143919c7df75c152f75d9bb1710b_91941_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/design/image_12_hu52fb143919c7df75c152f75d9bb1710b_91941_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="stories">
+&lt;/a>
+&lt;figcaption>stories&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>同じくフラットアイコン&lt;/li>
+&lt;/ul>
+&lt;h2 id="この記事は私の-qiita-からの転用です">この記事は、私の Qiita からの転用です&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://qiita.com/smpny7/items/d581820af4728aeb07d4" target="_blank" rel="noopener"
+>&lt;strong>デザインする際に参考にしているサイトまとめ&lt;/strong>&lt;/a>　https://qiita.com/smpny7/items/d581820af4728aeb07d4&lt;/p>
+&lt;/blockquote></description></item><item><title>オンライン授業配信サービスの作成: 戸田塾オンライン</title><link>https://coalabo.net/p/toda-online/</link><pubDate>Tue, 07 Sep 2021 10:00:00 +0900</pubDate><guid>https://coalabo.net/p/toda-online/</guid><description>&lt;img src="https://coalabo.net/p/toda-online/cover.jpg" alt="Featured image of post オンライン授業配信サービスの作成: 戸田塾オンライン" />&lt;h2 id="最近edtechって流行ってますよね">最近、EdTechって流行ってますよね&lt;/h2>
 &lt;p>私が高校生の時は、映像授業というものを受けてる学生が多かったです。&lt;/p>
 &lt;p>映像授業は、塾の講義と比べて場所と時間が限定されませんし、何度でも授業を聞き直すことができるのでとても評判が良かったです。
 ただ、&lt;strong>あれってすごく高い&lt;/strong> ですよね。一番地元で有名だった映像授業は、4教科で年間100万円近くかかってたそうです。あれだけのシステムを作って、東京の本部で撮影しているため、コストが高いのですかね&amp;hellip;？&lt;/p>
