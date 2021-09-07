@@ -1,4 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 03 Sep 2021 22:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>【コロナ対策】部室の在室状況・体調記録アプリ</title><link>https://coalabo.net/p/i10jan/</link><pubDate>Fri, 03 Sep 2021 22:00:00 +0900</pubDate><guid>https://coalabo.net/p/i10jan/</guid><description>&lt;img src="https://coalabo.net/p/i10jan/cover.jpg" alt="Featured image of post 【コロナ対策】部室の在室状況・体調記録アプリ" />&lt;h2 id="昔々大学で対面授業が再開し始めた頃">昔々、大学で対面授業が再開し始めた頃&amp;hellip;&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 07 Sep 2021 10:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>オンライン授業配信サービスの作成: 戸田塾オンライン</title><link>https://coalabo.net/p/toda-online/</link><pubDate>Tue, 07 Sep 2021 10:00:00 +0900</pubDate><guid>https://coalabo.net/p/toda-online/</guid><description>&lt;img src="https://coalabo.net/p/toda-online/cover.jpg" alt="Featured image of post オンライン授業配信サービスの作成: 戸田塾オンライン" />&lt;h2 id="最近edtechって流行ってますよね">最近、EdTechって流行ってますよね&lt;/h2>
+&lt;p>私が高校生の時は、映像授業というものを受けてる学生が多かったです。&lt;/p>
+&lt;p>映像授業は、塾の講義と比べて場所と時間が限定されませんし、何度でも授業を聞き直すことができるのでとても評判が良かったです。
+ただ、&lt;strong>あれってすごく高い&lt;/strong> ですよね。一番地元で有名だった映像授業は、4教科で年間100万円近くかかってたそうです。あれだけのシステムを作って、東京の本部で撮影しているため、コストが高いのですかね&amp;hellip;？&lt;/p>
+&lt;p>もちろんそんなシステムは、個人塾や地方の塾では到底構築できません。
+しかし、あまり塾にお金を出せない学生でも、オンラインの恩恵を受けられる選択肢があってもいいと思います。&lt;/p>
+&lt;p>ということで、地方の塾ではありますが、数学・物理専門の戸田塾と映像授業が見られるサービスを開始しました。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/toda-online/image_1.jpg" data-size="3584x2240">
+&lt;img src="https://coalabo.net/p/toda-online/image_1.jpg"
+width="3584"
+height="2240"
+srcset="https://coalabo.net/p/toda-online/image_1_hu1ffc4270fdc217dd5cd7a387b367a4da_243321_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/toda-online/image_1_hu1ffc4270fdc217dd5cd7a387b367a4da_243321_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="戸田塾オンライン (toda-online.com)">
+&lt;/a>
+&lt;figcaption>戸田塾オンライン (toda-online.com)&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="作成したもの">作成したもの&lt;/h2>
+&lt;p>収録した映像をログインユーザが見れるのは最低限として、付加価値としてさまざまな機能をつけたいと思います。&lt;/p>
+&lt;p>まずは、各講義映像に紐づいたオープンチャット欄をつけていきます。
+これは、1つの講義動画に対して質問があった際に、受講生がその動画の横にあるチャット欄で質問をすることができます。また、このチャットは全員が見れるようにしてあり、先生以外にも回答することができたり、同じ質問を持つ受講生が回答を見て理解できるような仕様になっています。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 187;
+flex-basis: 449px"
+>
+&lt;a href="https://coalabo.net/p/toda-online/image_2.jpg" data-size="2624x1400">
+&lt;img src="https://coalabo.net/p/toda-online/image_2.jpg"
+width="2624"
+height="1400"
+srcset="https://coalabo.net/p/toda-online/image_2_hu7048dd8b05c9613e4649769026d471c5_54588_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/toda-online/image_2_hu7048dd8b05c9613e4649769026d471c5_54588_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="コミュニティ機能（著作権上、動画は非表示にしています）">
+&lt;/a>
+&lt;figcaption>コミュニティ機能（著作権上、動画は非表示にしています）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>また、WiFiなどの通信環境がない生徒のことを考慮して、動画のファイルサイズを表記したり、1本の動画が何分で視聴できるかを表記しています。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 176;
+flex-basis: 424px"
+>
+&lt;a href="https://coalabo.net/p/toda-online/image_3.jpg" data-size="3584x2027">
+&lt;img src="https://coalabo.net/p/toda-online/image_3.jpg"
+width="3584"
+height="2027"
+srcset="https://coalabo.net/p/toda-online/image_3_hu3ca70988bf3a18bc19af480ebf1c48e3_74358_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/toda-online/image_3_hu3ca70988bf3a18bc19af480ebf1c48e3_74358_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="動画一覧画面（著作権上、動画は非表示にしています）">
+&lt;/a>
+&lt;figcaption>動画一覧画面（著作権上、動画は非表示にしています）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>また、1本の動画を5分以内にし、サクサク見れる、授業進度を感じられるようなサービスにしたいとのことだったので、各項目ごとの達成度をグラフィカルに分かるようなものにしました。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 179;
+flex-basis: 430px"
+>
+&lt;a href="https://coalabo.net/p/toda-online/image_4.jpg" data-size="3584x1999">
+&lt;img src="https://coalabo.net/p/toda-online/image_4.jpg"
+width="3584"
+height="1999"
+srcset="https://coalabo.net/p/toda-online/image_4_hu1e7a1cabe2c34ff03e271b657d3649e0_146598_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/toda-online/image_4_hu1e7a1cabe2c34ff03e271b657d3649e0_146598_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="各章 を選択する画面">
+&lt;/a>
+&lt;figcaption>各章 を選択する画面&lt;/figcaption>
+&lt;/figure>
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 179;
+flex-basis: 430px"
+>
+&lt;a href="https://coalabo.net/p/toda-online/image_5.jpg" data-size="3584x1999">
+&lt;img src="https://coalabo.net/p/toda-online/image_5.jpg"
+width="3584"
+height="1999"
+srcset="https://coalabo.net/p/toda-online/image_5_hu08461220845ae9f16c1009c36f1e4925_79497_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/toda-online/image_5_hu08461220845ae9f16c1009c36f1e4925_79497_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="各節 を選択する画面">
+&lt;/a>
+&lt;figcaption>各節 を選択する画面&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="スピード重視">スピード重視&lt;/h2>
+&lt;p>やはり、高校生（特に受験生）で映像授業を選択する学生は、勉強効率を重視していると思う( ？)ので、サービスも重くならないように気をつけました。&lt;/p>
+&lt;p>フレームワークは Laravel で作成していますが、通信などは axios 等で行い再読み込み時間等が最小限になるように工夫しました。&lt;/p>
+&lt;p>また、大抵の人は最初から順に講義動画を見ていくので、ホーム画面に「次に見る」動画をあらかじめ並べておくようにしました。最後に見た動画と、その前後1つずつの、計3つを表示させています。&lt;/p>
+&lt;p>そして、動画の内容は再々変わるものではないので、ポスターや動画の情報はキャッシュを表示させ、管理画面から一括でキャッシュを作成できるようにしています。&lt;/p>
+&lt;h2 id="最後に">最後に&lt;/h2>
+&lt;p>とりあえず今は、対面での受講生から順に募集を開始し、運用しています。
+このブログを見ている人に宣伝をしても、受講する人はいないと思うので、一応リンクだけ貼っておきます(笑)&lt;/p>
+&lt;p>興味のある方はぜひご連絡ください！ ( &lt;a class="link" href="https://www4.hp-ez.com/hp/todajyuku" target="_blank" rel="noopener"
+>公式サイト&lt;/a> )&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://toda-online.com" target="_blank" rel="noopener"
+>戸田塾オンライン&lt;/a>　https://toda-online.com&lt;/p>
+&lt;/blockquote></description></item><item><title>【コロナ対策】部室の在室状況・体調記録アプリ</title><link>https://coalabo.net/p/i10jan/</link><pubDate>Fri, 03 Sep 2021 22:00:00 +0900</pubDate><guid>https://coalabo.net/p/i10jan/</guid><description>&lt;img src="https://coalabo.net/p/i10jan/cover.jpg" alt="Featured image of post 【コロナ対策】部室の在室状況・体調記録アプリ" />&lt;h2 id="昔々大学で対面授業が再開し始めた頃">昔々、大学で対面授業が再開し始めた頃&amp;hellip;&lt;/h2>
 &lt;p>2020年夏頃、活動時の体温記録を条件に、岡山大学での部活動が再開されました。&lt;/p>
 &lt;p>私は &lt;a class="link" href="https://oucrc.net/" target="_blank" rel="noopener"
 >岡山大学電子計算機研究会&lt;/a> という部活の部長を務めているのですが、

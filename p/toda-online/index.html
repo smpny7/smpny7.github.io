@@ -1,0 +1,205 @@
+<!doctype html><html lang=ja>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="数学・物理専門: 戸田塾と協力して、オンラインで授業を受けられるサービスを作成しました。"><title>オンライン授業配信サービスの作成: 戸田塾オンライン</title>
+<link rel=canonical href=https://coalabo.net/p/toda-online/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="オンライン授業配信サービスの作成: 戸田塾オンライン">
+<meta property="og:description" content="数学・物理専門: 戸田塾と協力して、オンラインで授業を受けられるサービスを作成しました。">
+<meta property="og:url" content="https://coalabo.net/p/toda-online/">
+<meta property="og:site_name" content="コアラボ (coalabo.)">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Webサービス"><meta property="article:published_time" content="2021-09-07T10:00:00+09:00"><meta property="article:modified_time" content="2021-09-07T10:00:00+09:00"><meta property="og:image" content="https://coalabo.net/p/toda-online/cover.jpg">
+<meta name=twitter:title content="オンライン授業配信サービスの作成: 戸田塾オンライン">
+<meta name=twitter:description content="数学・物理専門: 戸田塾と協力して、オンラインで授業を受けられるサービスを作成しました。"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://coalabo.net/p/toda-online/cover.jpg">
+<link rel="shortcut icon" href=/img/favicon.png>
+<style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"light")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
+<h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>ホーム</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>ブログを書いている人</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>記事一覧</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>記事を探す</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/toda-online/>
+<img src=/p/toda-online/cover_hu3c2365b11e87ef9c22e3fd2ad55a41b3_184905_800x0_resize_q75_box.jpg srcset="/p/toda-online/cover_hu3c2365b11e87ef9c22e3fd2ad55a41b3_184905_800x0_resize_q75_box.jpg 800w, /p/toda-online/cover_hu3c2365b11e87ef9c22e3fd2ad55a41b3_184905_1600x0_resize_q75_box.jpg 1600w" width=800 height=467 loading=lazy alt="Featured image of post オンライン授業配信サービスの作成: 戸田塾オンライン">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/laravel/>
+Laravel
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/toda-online/>オンライン授業配信サービスの作成: 戸田塾オンライン</a>
+</h2>
+<h3 class=article-subtitle>
+数学・物理専門: 戸田塾と協力して、オンラインで授業を受けられるサービスを作成しました。
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Sep 07, 2021</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=最近edtechって流行ってますよね>最近、EdTechって流行ってますよね</h2>
+<p>私が高校生の時は、映像授業というものを受けてる学生が多かったです。</p>
+<p>映像授業は、塾の講義と比べて場所と時間が限定されませんし、何度でも授業を聞き直すことができるのでとても評判が良かったです。
+ただ、<strong>あれってすごく高い</strong> ですよね。一番地元で有名だった映像授業は、4教科で年間100万円近くかかってたそうです。あれだけのシステムを作って、東京の本部で撮影しているため、コストが高いのですかね&mldr;？</p>
+<p>もちろんそんなシステムは、個人塾や地方の塾では到底構築できません。
+しかし、あまり塾にお金を出せない学生でも、オンラインの恩恵を受けられる選択肢があってもいいと思います。</p>
+<p>ということで、地方の塾ではありますが、数学・物理専門の戸田塾と映像授業が見られるサービスを開始しました。</p>
+<p><figure class=gallery-image style=flex-grow:160;flex-basis:384px>
+<a href=/p/toda-online/image_1.jpg data-size=3584x2240>
+<img src=/p/toda-online/image_1.jpg width=3584 height=2240 srcset="/p/toda-online/image_1_hu1ffc4270fdc217dd5cd7a387b367a4da_243321_480x0_resize_q75_box.jpg 480w, /p/toda-online/image_1_hu1ffc4270fdc217dd5cd7a387b367a4da_243321_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="戸田塾オンライン (toda-online.com)">
+</a>
+<figcaption>戸田塾オンライン (toda-online.com)</figcaption>
+</figure></p>
+<h2 id=作成したもの>作成したもの</h2>
+<p>収録した映像をログインユーザが見れるのは最低限として、付加価値としてさまざまな機能をつけたいと思います。</p>
+<p>まずは、各講義映像に紐づいたオープンチャット欄をつけていきます。
+これは、1つの講義動画に対して質問があった際に、受講生がその動画の横にあるチャット欄で質問をすることができます。また、このチャットは全員が見れるようにしてあり、先生以外にも回答することができたり、同じ質問を持つ受講生が回答を見て理解できるような仕様になっています。</p>
+<p><figure class=gallery-image style=flex-grow:187;flex-basis:449px>
+<a href=/p/toda-online/image_2.jpg data-size=2624x1400>
+<img src=/p/toda-online/image_2.jpg width=2624 height=1400 srcset="/p/toda-online/image_2_hu7048dd8b05c9613e4649769026d471c5_54588_480x0_resize_q75_box.jpg 480w, /p/toda-online/image_2_hu7048dd8b05c9613e4649769026d471c5_54588_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=コミュニティ機能（著作権上、動画は非表示にしています）>
+</a>
+<figcaption>コミュニティ機能（著作権上、動画は非表示にしています）</figcaption>
+</figure></p>
+<p>また、WiFiなどの通信環境がない生徒のことを考慮して、動画のファイルサイズを表記したり、1本の動画が何分で視聴できるかを表記しています。</p>
+<p><figure class=gallery-image style=flex-grow:176;flex-basis:424px>
+<a href=/p/toda-online/image_3.jpg data-size=3584x2027>
+<img src=/p/toda-online/image_3.jpg width=3584 height=2027 srcset="/p/toda-online/image_3_hu3ca70988bf3a18bc19af480ebf1c48e3_74358_480x0_resize_q75_box.jpg 480w, /p/toda-online/image_3_hu3ca70988bf3a18bc19af480ebf1c48e3_74358_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=動画一覧画面（著作権上、動画は非表示にしています）>
+</a>
+<figcaption>動画一覧画面（著作権上、動画は非表示にしています）</figcaption>
+</figure></p>
+<p>また、1本の動画を5分以内にし、サクサク見れる、授業進度を感じられるようなサービスにしたいとのことだったので、各項目ごとの達成度をグラフィカルに分かるようなものにしました。</p>
+<p><figure class=gallery-image style=flex-grow:179;flex-basis:430px>
+<a href=/p/toda-online/image_4.jpg data-size=3584x1999>
+<img src=/p/toda-online/image_4.jpg width=3584 height=1999 srcset="/p/toda-online/image_4_hu1e7a1cabe2c34ff03e271b657d3649e0_146598_480x0_resize_q75_box.jpg 480w, /p/toda-online/image_4_hu1e7a1cabe2c34ff03e271b657d3649e0_146598_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="各章 を選択する画面">
+</a>
+<figcaption>各章 を選択する画面</figcaption>
+</figure>
+<figure class=gallery-image style=flex-grow:179;flex-basis:430px>
+<a href=/p/toda-online/image_5.jpg data-size=3584x1999>
+<img src=/p/toda-online/image_5.jpg width=3584 height=1999 srcset="/p/toda-online/image_5_hu08461220845ae9f16c1009c36f1e4925_79497_480x0_resize_q75_box.jpg 480w, /p/toda-online/image_5_hu08461220845ae9f16c1009c36f1e4925_79497_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="各節 を選択する画面">
+</a>
+<figcaption>各節 を選択する画面</figcaption>
+</figure></p>
+<h2 id=スピード重視>スピード重視</h2>
+<p>やはり、高校生（特に受験生）で映像授業を選択する学生は、勉強効率を重視していると思う( ？)ので、サービスも重くならないように気をつけました。</p>
+<p>フレームワークは Laravel で作成していますが、通信などは axios 等で行い再読み込み時間等が最小限になるように工夫しました。</p>
+<p>また、大抵の人は最初から順に講義動画を見ていくので、ホーム画面に「次に見る」動画をあらかじめ並べておくようにしました。最後に見た動画と、その前後1つずつの、計3つを表示させています。</p>
+<p>そして、動画の内容は再々変わるものではないので、ポスターや動画の情報はキャッシュを表示させ、管理画面から一括でキャッシュを作成できるようにしています。</p>
+<h2 id=最後に>最後に</h2>
+<p>とりあえず今は、対面での受講生から順に募集を開始し、運用しています。
+このブログを見ている人に宣伝をしても、受講する人はいないと思うので、一応リンクだけ貼っておきます(笑)</p>
+<p>興味のある方はぜひご連絡ください！ ( <a class=link href=https://www4.hp-ez.com/hp/todajyuku target=_blank rel=noopener>公式サイト</a> )</p>
+<blockquote>
+<p><a class=link href=https://toda-online.com target=_blank rel=noopener>戸田塾オンライン</a>　https://toda-online.com</p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/web%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/>Webサービス</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2020 -
+2021 コアラボ (coalabo.)
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.2.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>
