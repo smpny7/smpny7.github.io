@@ -1,4 +1,223 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 08 Sep 2021 17:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作</title><link>https://coalabo.net/p/oucrc/</link><pubDate>Wed, 08 Sep 2021 17:00:00 +0900</pubDate><guid>https://coalabo.net/p/oucrc/</guid><description>&lt;img src="https://coalabo.net/p/oucrc/cover.jpg" alt="Featured image of post Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作" />&lt;h2 id="部員が記事を投稿できるようにしたい">部員が記事を投稿できるようにしたい&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 23 Sep 2021 15:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring Boot + Kotlin でバックエンド構築！</title><link>https://coalabo.net/p/spring-boot/</link><pubDate>Thu, 23 Sep 2021 15:00:00 +0900</pubDate><guid>https://coalabo.net/p/spring-boot/</guid><description>&lt;img src="https://coalabo.net/p/spring-boot/cover.jpg" alt="Featured image of post Spring Boot + Kotlin でバックエンド構築！" />&lt;h2 id="バックエンドは結構javaが多いらしい">バックエンドは結構Javaが多いらしい&lt;/h2>
+&lt;p>今まで、PHP や JavaScript（TypeScript）の Express でしかバックエンドを作ったことがありませんでしたが、他にも Java や Ruby で構築することも多いそうです。特に、&lt;strong>Java を使った Spring Boot には前から興味がありました！&lt;/strong>&lt;/p>
+&lt;p>興味があるならやってみなさい、ということで、今回はSpring Boot を使ってバックエンドAPIを構築したいと思います。&lt;del>ちょうど現在受講中の夏季集中「オブジェクト指向言語」という講義で、課題があるそうなので、それの提出物にしちゃいましょう。&lt;/del>&lt;/p>
+&lt;h2 id="firebase-が-spring-boot-に対応-">Firebase が Spring Boot に対応 ！&lt;/h2>
+&lt;p>2020年5月にどうやら Google Cloud Functions が Java（Spring Boot）に対応したらしいです！
+Cloud Functions にデプロイできるのは node.js アプリケーションだけかと思っていました。。&lt;/p>
+&lt;p>まだ詳しくは決めてませんが、GCP 大好き人間なのでおそらく Firebase で運用すると思います！&lt;/p>
+&lt;h2 id="java-で書くとは言っていない">Java で書くとは言っていない&lt;/h2>
+&lt;p>私は、コードがスッキリきれいに書け、null safety な Kotlin が大好きなので、今回は Spring Boot + Kotlin で実装したいと思います。
+どうやら、Kotlin や Scala でも Spring Cloud Functions に対応しているそうです。&lt;/p>
+&lt;p>大学の先生に「提出は Java じゃなくて Kotlin でもいいですか&amp;hellip;？」とおそるおそる訪ねたところ、快諾していただけましたので、Kotlin で書いていきます！本来であればオブジェクト指向の勉強なので getter/setter 等の勉強のため こういった言語やフレームワークは使うべきではないと思いますが、気にせず Spring の恩恵を受けていきましょう！（こら）&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_1.jpg" data-size="3584x2240">
+&lt;img src="https://coalabo.net/p/spring-boot/image_1.jpg"
+width="3584"
+height="2240"
+srcset="https://coalabo.net/p/spring-boot/image_1_hu7048dd8b05c9613e4649769026d471c5_136733_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_1_hu7048dd8b05c9613e4649769026d471c5_136733_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="今回はこんな感じの構成でいきます">
+&lt;/a>
+&lt;figcaption>今回はこんな感じの構成でいきます&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="今回作るアプリ">今回作るアプリ&lt;/h2>
+&lt;p>ここは講義内容関係ないのですが、フロントのモバイルアプリでは、&lt;strong>Webサイトが落ちた際にアプリ通知してくれるようなもの&lt;/strong> を作ろうと思います。複数のwebサイトを管理できるようにする予定です。そうです、&lt;del>&lt;code>StatusC*ke&lt;/code> のようなサービスです&lt;/del>。&lt;/p>
+&lt;h2 id="実際に発表で使ったスライドを掲示">実際に発表で使ったスライドを掲示&lt;/h2>
+&lt;p>ここまで文字ばっかで飽きたと思うので、&lt;strong>実際に講義の最後で私が発表したスライド&lt;/strong> を載せていこうと思います。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_2.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_2.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_2_hua635c17a4c6132a9b19c60b45f2eb0c9_14760_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_2_hua635c17a4c6132a9b19c60b45f2eb0c9_14760_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド1: タイトル">
+&lt;/a>
+&lt;figcaption>スライド1: タイトル&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>今回は Firebase を最大限に使ったモバイルアプリケーションの作成を想定しています。
+オブジェクト指向言語の講義に関係あるのは、左上の Cloud Functions のところですね。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_3.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_3.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_3_hu99c4b9d7bd60c5496aa030e27e673061_62058_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_3_hu99c4b9d7bd60c5496aa030e27e673061_62058_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド2: 構成図">
+&lt;/a>
+&lt;figcaption>スライド2: 構成図&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>今回の発表では、フロント部分の実装が間に合いませんでしたが、APIからデータを取得していることがわかるよう、最低限の表示部分だけ完成させています。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_4.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_4.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_4_hue7cb57acddbe8d015d3a2815ddf9de34_51835_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_4_hue7cb57acddbe8d015d3a2815ddf9de34_51835_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド3: 制作したもの">
+&lt;/a>
+&lt;figcaption>スライド3: 制作したもの&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>ここからただの Kotlin の布教です (笑)&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_5.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_5.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_5_hue5521de3efb974db3094c6fe843159c4_34084_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_5_hue5521de3efb974db3094c6fe843159c4_34084_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド4: Kotlinとは">
+&lt;/a>
+&lt;figcaption>スライド4: Kotlinとは&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>緊張しながらも熱弁しました。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_6.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_6.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_6_hu90a889bdc83d7e31805a35b7248596fd_39867_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_6_hu90a889bdc83d7e31805a35b7248596fd_39867_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド5: Kotlinを選んだ理由">
+&lt;/a>
+&lt;figcaption>スライド5: Kotlinを選んだ理由&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>Kotlin についてはまだまだ経験が浅いので、Kotlin のコードをレビューしてくれる人が欲しいです。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_7.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_7.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_7_hu36915b9f5b39739927941bc505fdb3bd_86431_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_7_hu36915b9f5b39739927941bc505fdb3bd_86431_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド6: 工夫した点1">
+&lt;/a>
+&lt;figcaption>スライド6: 工夫した点1&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_8.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_8.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_8_hu139d41cc5e0a36bbac35ca1c01bb50de_56153_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_8_hu139d41cc5e0a36bbac35ca1c01bb50de_56153_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド7: 工夫した点2">
+&lt;/a>
+&lt;figcaption>スライド7: 工夫した点2&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>ここから、実際に制作した API がどのような動作をするのか、Postman を使ってプレゼンしています。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_9.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_9.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_9_hu7048dd8b05c9613e4649769026d471c5_11560_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_9_hu7048dd8b05c9613e4649769026d471c5_11560_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド8: APIリクエストのデモ">
+&lt;/a>
+&lt;figcaption>スライド8: APIリクエストのデモ&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>リクエストの様子はこんな感じ ↓&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 160;
+flex-basis: 384px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_10.jpg" data-size="3584x2240">
+&lt;img src="https://coalabo.net/p/spring-boot/image_10.jpg"
+width="3584"
+height="2240"
+srcset="https://coalabo.net/p/spring-boot/image_10_hu0d4c6647692a8a59d56d3dec490c6db8_149659_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_10_hu0d4c6647692a8a59d56d3dec490c6db8_149659_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Postman">
+&lt;/a>
+&lt;figcaption>Postman&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>最後にフロントエンドで取得する様子を動かしています。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 140;
+flex-basis: 337px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_11.jpg" data-size="1440x1024">
+&lt;img src="https://coalabo.net/p/spring-boot/image_11.jpg"
+width="1440"
+height="1024"
+srcset="https://coalabo.net/p/spring-boot/image_11_hu7048dd8b05c9613e4649769026d471c5_18930_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_11_hu7048dd8b05c9613e4649769026d471c5_18930_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド9: フロントエンド（一部）のデモ">
+&lt;/a>
+&lt;figcaption>スライド9: フロントエンド（一部）のデモ&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>きちんとデータが取得できていますね。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 61;
+flex-basis: 147px"
+>
+&lt;a href="https://coalabo.net/p/spring-boot/image_12.jpg" data-size="1282x2090">
+&lt;img src="https://coalabo.net/p/spring-boot/image_12.jpg"
+width="1282"
+height="2090"
+srcset="https://coalabo.net/p/spring-boot/image_12_hudfeb729c9b381d9c738d6e6d08a4fc33_69721_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/spring-boot/image_12_hudfeb729c9b381d9c738d6e6d08a4fc33_69721_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="スライド9: モバイルアプリ（制作中）">
+&lt;/a>
+&lt;figcaption>スライド9: モバイルアプリ（制作中）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="最後に">最後に&lt;/h2>
+&lt;p>&lt;code>StatusC*ke&lt;/code> のようなサービスを自分用にカスタマイズして作ってみたかったので、ちょうど良いタイミングで 講義・Spring と出会い、生かすことが出来たと思います。&lt;/p>
+&lt;p>フロントについては、完成次第また記事にしたいと思いますので、乞うご期待！&lt;/p></description></item><item><title>Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作</title><link>https://coalabo.net/p/oucrc/</link><pubDate>Wed, 08 Sep 2021 17:00:00 +0900</pubDate><guid>https://coalabo.net/p/oucrc/</guid><description>&lt;img src="https://coalabo.net/p/oucrc/cover.jpg" alt="Featured image of post Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作" />&lt;h2 id="部員が記事を投稿できるようにしたい">部員が記事を投稿できるようにしたい&lt;/h2>
 &lt;p>現在コロナ禍真っ最中。
 岡山大学 電子計算機研究会では、オンライン慣れ（？）してますので、Discord で普段と変わらず部会をしたりゲームしたりしてコミュニケーションを取れているわけですが、もちろん&lt;strong>対面での学祭やコミケなどの、制作物をアウトプットする場はここ１年以上ないまま&lt;/strong>です。&lt;/p>
 &lt;p>電子計算機研究会では、各々がいろんな活動をしています。例えば、プログラミングや電子工作、3Dプリンターや3Dモデルで遊んでいる人もいますし、DTM ガチ勢も多いです。
