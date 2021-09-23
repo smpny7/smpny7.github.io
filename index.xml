@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 07 Sep 2021 18:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>【岡山大学依頼】接触追跡アプリの制作</title><link>https://coalabo.net/p/cacao/</link><pubDate>Tue, 07 Sep 2021 18:00:00 +0900</pubDate><guid>https://coalabo.net/p/cacao/</guid><description>&lt;img src="https://coalabo.net/p/cacao/cover.jpg" alt="Featured image of post 【岡山大学依頼】接触追跡アプリの制作" />&lt;h2 id="以前に制作したアプリ">以前に制作したアプリ&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 08 Sep 2021 17:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作</title><link>https://coalabo.net/p/oucrc/</link><pubDate>Wed, 08 Sep 2021 17:00:00 +0900</pubDate><guid>https://coalabo.net/p/oucrc/</guid><description>&lt;img src="https://coalabo.net/p/oucrc/cover.jpg" alt="Featured image of post Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作" />&lt;h2 id="部員が記事を投稿できるようにしたい">部員が記事を投稿できるようにしたい&lt;/h2>
+&lt;p>現在コロナ禍真っ最中。
+岡山大学 電子計算機研究会では、オンライン慣れ（？）してますので、Discord で普段と変わらず部会をしたりゲームしたりしてコミュニケーションを取れているわけですが、もちろん&lt;strong>対面での学祭やコミケなどの、制作物をアウトプットする場はここ１年以上ないまま&lt;/strong>です。&lt;/p>
+&lt;p>電子計算機研究会では、各々がいろんな活動をしています。例えば、プログラミングや電子工作、3Dプリンターや3Dモデルで遊んでいる人もいますし、DTM ガチ勢も多いです。
+例年はコミケなどで、そういった活動を記事にして1冊の本として出すのですが、その場も失われているため、部長としてこりゃいかん（ ？）と感じ、&lt;strong>ホームページ上で記事を公開できるように改築しよう&lt;/strong>と思います！&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 515;
+flex-basis: 1236px"
+>
+&lt;a href="https://coalabo.net/p/oucrc/image_1.jpg" data-size="1886x366">
+&lt;img src="https://coalabo.net/p/oucrc/image_1.jpg"
+width="1886"
+height="366"
+srcset="https://coalabo.net/p/oucrc/image_1_huad730ab0485dc41521e7d69fd8251b16_33008_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/oucrc/image_1_huad730ab0485dc41521e7d69fd8251b16_33008_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="電子計算機研究会（通称: 電算研）のロゴ、かっこいい">
+&lt;/a>
+&lt;figcaption>電子計算機研究会（通称: 電算研）のロゴ、かっこいい&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="部でwebリニューアルチームを立ち上げる">部で「Webリニューアルチーム」を立ち上げる&lt;/h2>
+&lt;p>ちょうど3月で、来月から新入生も来るということで、もっと部のことを知ってもらおうと思い、少し新歓向けにリニューアルすることにしました。&lt;/p>
+&lt;ul>
+&lt;li>部員が記事を投稿できる機能&lt;/li>
+&lt;li>部員のプロフィールページ（SNS や GitHub へのリンク付き）&lt;/li>
+&lt;li>部室の紹介ページ&lt;/li>
+&lt;li>入部申し込みフォーム&lt;/li>
+&lt;li>部からのお知らせ&lt;/li>
+&lt;/ul>
+&lt;p>ここら辺を実装していきたいと思います！&lt;/p>
+&lt;p>「Webリニューアルチーム」には、6,7名の部員が参加してくれました。
+半分ずつに分かれ、フロント（Nuxt.js）班とバックエンド（microCMSのセットアップやデータ登録）班を作り、作業開始です！&lt;/p>
+&lt;p>最初は Nuxt.js + microCMS ではなく、実は WordPress で実装しようとしていました。
+そんなに新しいものではありませんが、記事を投稿するなら WordPress という印象が強かったので選んだのですが、&lt;strong>WordPress についての知識が無く、簡単なのだろうと下調べをしていなかったため、Git管理の仕方が難しくグダグダになってしまいました&lt;/strong>&amp;hellip;（部員の皆さんすいません&amp;hellip;）&lt;/p>
+&lt;p>結局初日は作業量0で終わってしまいました。&lt;/p>
+&lt;p>そんな中先輩にヘッドレスCMSでの構築を提案していただき、Nuxt.js をフロントに計画を練り直すことにしました。&lt;/p>
+&lt;h2 id="デザイン作成">デザイン作成&lt;/h2>
+&lt;p>まずは、作業分担しながら進められるように、デザインを作っていきます！&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 141;
+flex-basis: 338px"
+>
+&lt;a href="https://coalabo.net/p/oucrc/image_2.jpg" data-size="2460x1742">
+&lt;img src="https://coalabo.net/p/oucrc/image_2.jpg"
+width="2460"
+height="1742"
+srcset="https://coalabo.net/p/oucrc/image_2_hu414f7f0547a3820b9b027a5f418b59ec_222694_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/oucrc/image_2_hu414f7f0547a3820b9b027a5f418b59ec_222694_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="リニューアルホームページのデザイン">
+&lt;/a>
+&lt;figcaption>リニューアルホームページのデザイン&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="恐るべき開発スピード">恐るべき開発スピード&lt;/h2>
+&lt;p>フロント班は自分含め3人で全てのページの実装をしたのですが、開発開始から約3日でほぼ全てのページが完成しました&amp;hellip;！？
+春休みということもあり、常に誰かがプルリクエストを出している状態で、恐るべきスピード開発でした。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 188;
+flex-basis: 452px"
+>
+&lt;a href="https://coalabo.net/p/oucrc/image_3.jpg" data-size="3584x1902">
+&lt;img src="https://coalabo.net/p/oucrc/image_3.jpg"
+width="3584"
+height="1902"
+srcset="https://coalabo.net/p/oucrc/image_3_hufd70a88948cf62f5a3f07e71cae16555_449793_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/oucrc/image_3_hufd70a88948cf62f5a3f07e71cae16555_449793_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="リニューアルされたOUCRCサイト">
+&lt;/a>
+&lt;figcaption>リニューアルされたOUCRCサイト&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="nuxtjs-便利">Nuxt.js 便利！！&lt;/h2>
+&lt;p>Vue.js で開発をする場合、&lt;code>vuex&lt;/code> や &lt;code>vue-router&lt;/code> を入れる必要がありますが、その手間を省けるのが一番大きいかなと思います。また、記事が更新された時にビルドすれば大丈夫なので、静的サイトに設定してますが、かなり読み込みは早いと思います。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 62;
+flex-basis: 149px"
+>
+&lt;a href="https://coalabo.net/p/oucrc/image_4.png" data-size="1500x2414">
+&lt;img src="https://coalabo.net/p/oucrc/image_4.png"
+width="1500"
+height="2414"
+srcset="https://coalabo.net/p/oucrc/image_4_hu6566c733fd7c49f9e849f0df63112784_715336_480x0_resize_box_3.png 480w, https://coalabo.net/p/oucrc/image_4_hu6566c733fd7c49f9e849f0df63112784_715336_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="頑張った。">
+&lt;/a>
+&lt;figcaption>頑張った。&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="入部フォーム">入部フォーム&lt;/h2>
+&lt;p>今回、入部フォームどうしようかな（Google Form でも埋め込もうかな）と考えていたのですが、面白い記事を発見しました。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://www.gorilla-web.net/2020new_google_form_custmize/" target="_blank" rel="noopener"
+>https://www.gorilla-web.net/2020new_google_form_custmize/&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>&amp;hellip;ん、天才じゃない ？？&lt;/p>
+&lt;p>今回はこの方法を採用し、Google スプレッドシートで管理できるようにしました。&lt;/p>
+&lt;h2 id="最後に">最後に&lt;/h2>
+&lt;p>すごい大満足な仕上がりになった割には、書くことがなくて困っていますが、後輩とのホームページの制作期間は楽しかったです✨&lt;/p>
+&lt;p>SPA・SSR・SSG あたりの勉強にもなりました。&lt;/p>
+&lt;p>岡山大学電子計算機研究会の公式HPでは、部員の活動を日々記事にして掲載しています。
+かなり内容が面白いので、興味のある方は是非覗いていってください！&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://oucrc.net" target="_blank" rel="noopener"
+>&lt;strong>岡山大学電子計算機研究会&lt;/strong>&lt;/a>　https://oucrc.net&lt;/p>
+&lt;/blockquote></description></item><item><title>【岡山大学依頼】接触追跡アプリの制作</title><link>https://coalabo.net/p/cacao/</link><pubDate>Tue, 07 Sep 2021 18:00:00 +0900</pubDate><guid>https://coalabo.net/p/cacao/</guid><description>&lt;img src="https://coalabo.net/p/cacao/cover.jpg" alt="Featured image of post 【岡山大学依頼】接触追跡アプリの制作" />&lt;h2 id="以前に制作したアプリ">以前に制作したアプリ&lt;/h2>
 &lt;p>過去に部活内で使用するために、以前 &lt;a class="link" href="http://localhost:1313/p/i10jan" target="_blank" rel="noopener"
 >こんなアプリ（部室の在室状況・体調記録アプリ）&lt;/a> を作りました。&lt;/p>
 &lt;p>&lt;figure

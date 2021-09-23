@@ -1,0 +1,220 @@
+<!doctype html><html lang=ja>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="岡山大学 電子計算機研究会の公式サイトを記事が投稿できるように、ヘッドレスCMSを使ってリニューアルします"><title>Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作</title>
+<link rel=canonical href=https://coalabo.net/p/oucrc/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作">
+<meta property="og:description" content="岡山大学 電子計算機研究会の公式サイトを記事が投稿できるように、ヘッドレスCMSを使ってリニューアルします">
+<meta property="og:url" content="https://coalabo.net/p/oucrc/">
+<meta property="og:site_name" content="コアラボ (coalabo.)">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="サイト構築"><meta property="article:published_time" content="2021-09-08T17:00:00+09:00"><meta property="article:modified_time" content="2021-09-08T17:00:00+09:00"><meta property="og:image" content="https://coalabo.net/p/oucrc/cover.jpg">
+<meta name=twitter:title content="Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作">
+<meta name=twitter:description content="岡山大学 電子計算機研究会の公式サイトを記事が投稿できるように、ヘッドレスCMSを使ってリニューアルします"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://coalabo.net/p/oucrc/cover.jpg">
+<link rel="shortcut icon" href=/img/favicon.png>
+<style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-background-selected:#F3F0EB;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"light")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
+<h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>ホーム</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>ブログを書いている人</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>記事一覧</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>記事を探す</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/oucrc/>
+<img src=/p/oucrc/cover_hu7048dd8b05c9613e4649769026d471c5_393125_800x0_resize_q75_box.jpg srcset="/p/oucrc/cover_hu7048dd8b05c9613e4649769026d471c5_393125_800x0_resize_q75_box.jpg 800w, /p/oucrc/cover_hu7048dd8b05c9613e4649769026d471c5_393125_1600x0_resize_q75_box.jpg 1600w" width=800 height=373 loading=lazy alt="Featured image of post Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/nuxt.js/ style=background-color:#04c28e;color:#fff>
+Nuxt.js
+</a>
+<a href=/categories/microcms/ style=background-color:#2b2c30;color:#fff>
+microCMS
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/oucrc/>Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作</a>
+</h2>
+<h3 class=article-subtitle>
+岡山大学 電子計算機研究会の公式サイトを記事が投稿できるように、ヘッドレスCMSを使ってリニューアルします
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Sep 08, 2021</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=部員が記事を投稿できるようにしたい>部員が記事を投稿できるようにしたい</h2>
+<p>現在コロナ禍真っ最中。
+岡山大学 電子計算機研究会では、オンライン慣れ（？）してますので、Discord で普段と変わらず部会をしたりゲームしたりしてコミュニケーションを取れているわけですが、もちろん<strong>対面での学祭やコミケなどの、制作物をアウトプットする場はここ１年以上ないまま</strong>です。</p>
+<p>電子計算機研究会では、各々がいろんな活動をしています。例えば、プログラミングや電子工作、3Dプリンターや3Dモデルで遊んでいる人もいますし、DTM ガチ勢も多いです。
+例年はコミケなどで、そういった活動を記事にして1冊の本として出すのですが、その場も失われているため、部長としてこりゃいかん（ ？）と感じ、<strong>ホームページ上で記事を公開できるように改築しよう</strong>と思います！</p>
+<p><figure class=gallery-image style=flex-grow:515;flex-basis:1236px>
+<a href=/p/oucrc/image_1.jpg data-size=1886x366>
+<img src=/p/oucrc/image_1.jpg width=1886 height=366 srcset="/p/oucrc/image_1_huad730ab0485dc41521e7d69fd8251b16_33008_480x0_resize_q75_box.jpg 480w, /p/oucrc/image_1_huad730ab0485dc41521e7d69fd8251b16_33008_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="電子計算機研究会（通称: 電算研）のロゴ、かっこいい">
+</a>
+<figcaption>電子計算機研究会（通称: 電算研）のロゴ、かっこいい</figcaption>
+</figure></p>
+<h2 id=部でwebリニューアルチームを立ち上げる>部で「Webリニューアルチーム」を立ち上げる</h2>
+<p>ちょうど3月で、来月から新入生も来るということで、もっと部のことを知ってもらおうと思い、少し新歓向けにリニューアルすることにしました。</p>
+<ul>
+<li>部員が記事を投稿できる機能</li>
+<li>部員のプロフィールページ（SNS や GitHub へのリンク付き）</li>
+<li>部室の紹介ページ</li>
+<li>入部申し込みフォーム</li>
+<li>部からのお知らせ</li>
+</ul>
+<p>ここら辺を実装していきたいと思います！</p>
+<p>「Webリニューアルチーム」には、6,7名の部員が参加してくれました。
+半分ずつに分かれ、フロント（Nuxt.js）班とバックエンド（microCMSのセットアップやデータ登録）班を作り、作業開始です！</p>
+<p>最初は Nuxt.js + microCMS ではなく、実は WordPress で実装しようとしていました。
+そんなに新しいものではありませんが、記事を投稿するなら WordPress という印象が強かったので選んだのですが、<strong>WordPress についての知識が無く、簡単なのだろうと下調べをしていなかったため、Git管理の仕方が難しくグダグダになってしまいました</strong>&mldr;（部員の皆さんすいません&mldr;）</p>
+<p>結局初日は作業量0で終わってしまいました。</p>
+<p>そんな中先輩にヘッドレスCMSでの構築を提案していただき、Nuxt.js をフロントに計画を練り直すことにしました。</p>
+<h2 id=デザイン作成>デザイン作成</h2>
+<p>まずは、作業分担しながら進められるように、デザインを作っていきます！</p>
+<p><figure class=gallery-image style=flex-grow:141;flex-basis:338px>
+<a href=/p/oucrc/image_2.jpg data-size=2460x1742>
+<img src=/p/oucrc/image_2.jpg width=2460 height=1742 srcset="/p/oucrc/image_2_hu414f7f0547a3820b9b027a5f418b59ec_222694_480x0_resize_q75_box.jpg 480w, /p/oucrc/image_2_hu414f7f0547a3820b9b027a5f418b59ec_222694_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=リニューアルホームページのデザイン>
+</a>
+<figcaption>リニューアルホームページのデザイン</figcaption>
+</figure></p>
+<h2 id=恐るべき開発スピード>恐るべき開発スピード</h2>
+<p>フロント班は自分含め3人で全てのページの実装をしたのですが、開発開始から約3日でほぼ全てのページが完成しました&mldr;！？
+春休みということもあり、常に誰かがプルリクエストを出している状態で、恐るべきスピード開発でした。</p>
+<p><figure class=gallery-image style=flex-grow:188;flex-basis:452px>
+<a href=/p/oucrc/image_3.jpg data-size=3584x1902>
+<img src=/p/oucrc/image_3.jpg width=3584 height=1902 srcset="/p/oucrc/image_3_hufd70a88948cf62f5a3f07e71cae16555_449793_480x0_resize_q75_box.jpg 480w, /p/oucrc/image_3_hufd70a88948cf62f5a3f07e71cae16555_449793_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=リニューアルされたOUCRCサイト>
+</a>
+<figcaption>リニューアルされたOUCRCサイト</figcaption>
+</figure></p>
+<h2 id=nuxtjs-便利>Nuxt.js 便利！！</h2>
+<p>Vue.js で開発をする場合、<code>vuex</code> や <code>vue-router</code> を入れる必要がありますが、その手間を省けるのが一番大きいかなと思います。また、記事が更新された時にビルドすれば大丈夫なので、静的サイトに設定してますが、かなり読み込みは早いと思います。</p>
+<p><figure class=gallery-image style=flex-grow:62;flex-basis:149px>
+<a href=/p/oucrc/image_4.png data-size=1500x2414>
+<img src=/p/oucrc/image_4.png width=1500 height=2414 srcset="/p/oucrc/image_4_hu6566c733fd7c49f9e849f0df63112784_715336_480x0_resize_box_3.png 480w, /p/oucrc/image_4_hu6566c733fd7c49f9e849f0df63112784_715336_1024x0_resize_box_3.png 1024w" loading=lazy alt=頑張った。>
+</a>
+<figcaption>頑張った。</figcaption>
+</figure></p>
+<h2 id=入部フォーム>入部フォーム</h2>
+<p>今回、入部フォームどうしようかな（Google Form でも埋め込もうかな）と考えていたのですが、面白い記事を発見しました。</p>
+<blockquote>
+<p><a class=link href=https://www.gorilla-web.net/2020new_google_form_custmize/ target=_blank rel=noopener>https://www.gorilla-web.net/2020new_google_form_custmize/</a></p>
+</blockquote>
+<p>&mldr;ん、天才じゃない ？？</p>
+<p>今回はこの方法を採用し、Google スプレッドシートで管理できるようにしました。</p>
+<h2 id=最後に>最後に</h2>
+<p>すごい大満足な仕上がりになった割には、書くことがなくて困っていますが、後輩とのホームページの制作期間は楽しかったです✨</p>
+<p>SPA・SSR・SSG あたりの勉強にもなりました。</p>
+<p>岡山大学電子計算機研究会の公式HPでは、部員の活動を日々記事にして掲載しています。
+かなり内容が面白いので、興味のある方は是非覗いていってください！</p>
+<blockquote>
+<p><a class=link href=https://oucrc.net target=_blank rel=noopener><strong>岡山大学電子計算機研究会</strong></a>　https://oucrc.net</p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E3%82%B5%E3%82%A4%E3%83%88%E6%A7%8B%E7%AF%89/>サイト構築</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2020 -
+2021 コアラボ (coalabo.)
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.2.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

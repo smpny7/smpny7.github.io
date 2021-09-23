@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 07 Sep 2021 18:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>【岡山大学依頼】接触追跡アプリの制作</title><link>https://coalabo.net/p/cacao/</link><pubDate>Tue, 07 Sep 2021 18:00:00 +0900</pubDate><guid>https://coalabo.net/p/cacao/</guid><description>以前に制作したアプリ 過去に部活内で使用するために、以前 こんなアプリ（部室の在室状況・体調記録アプリ） を作りました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on コアラボ (coalabo.)</title><link>https://coalabo.net/post/</link><description>Recent content in Posts on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 08 Sep 2021 17:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Nuxt.js + microCMS（ヘッドレスCMS）で部の公式サイト制作</title><link>https://coalabo.net/p/oucrc/</link><pubDate>Wed, 08 Sep 2021 17:00:00 +0900</pubDate><guid>https://coalabo.net/p/oucrc/</guid><description>部員が記事を投稿できるようにしたい 現在コロナ禍真っ最中。 岡山大学 電子計算機研究会では、オンライン慣れ（？）してますので、Discord で普段と変わらず部会をしたりゲームしたりしてコミュニケーションを取れているわけですが、もちろん対面での学祭やコミケなどの、制作物をアウトプットする場はここ１年以上ないままです。
+電子計算機研究会では、各々がいろんな活動をしています。例えば、プログラミングや電子工作、3Dプリンターや3Dモデルで遊んでいる人もいますし、DTM ガチ勢も多いです。 例年はコミケなどで、そういった活動を記事にして1冊の本として出すのですが、その場も失われているため、部長としてこりゃいかん（ ？）と感じ、ホームページ上で記事を公開できるように改築しようと思います！
+電子計算機研究会（通称: 電算研）のロゴ、かっこいい
+部で「Webリニューアルチーム」を立ち上げる ちょうど3月で、来月から新入生も来るということで、もっと部のことを知ってもらおうと思い、少し新歓向けにリニューアルすることにしました。
+部員が記事を投稿できる機能 部員のプロフィールページ（SNS や GitHub へのリンク付き） 部室の紹介ページ 入部申し込みフォーム 部からのお知らせ ここら辺を実装していきたいと思います！
+「Webリニューアルチーム」には、6,7名の部員が参加してくれました。 半分ずつに分かれ、フロント（Nuxt.js）班とバックエンド（microCMSのセットアップやデータ登録）班を作り、作業開始です！
+最初は Nuxt.js + microCMS ではなく、実は WordPress で実装しようとしていました。 そんなに新しいものではありませんが、記事を投稿するなら WordPress という印象が強かったので選んだのですが、WordPress についての知識が無く、簡単なのだろうと下調べをしていなかったため、Git管理の仕方が難しくグダグダになってしまいました&amp;hellip;（部員の皆さんすいません&amp;hellip;）
+結局初日は作業量0で終わってしまいました。
+そんな中先輩にヘッドレスCMSでの構築を提案していただき、Nuxt.js をフロントに計画を練り直すことにしました。
+デザイン作成 まずは、作業分担しながら進められるように、デザインを作っていきます！
+リニューアルホームページのデザイン
+恐るべき開発スピード フロント班は自分含め3人で全てのページの実装をしたのですが、開発開始から約3日でほぼ全てのページが完成しました&amp;hellip;！？ 春休みということもあり、常に誰かがプルリクエストを出している状態で、恐るべきスピード開発でした。
+リニューアルされたOUCRCサイト
+Nuxt.js 便利！！ Vue.js で開発をする場合、vuex や vue-router を入れる必要がありますが、その手間を省けるのが一番大きいかなと思います。また、記事が更新された時にビルドすれば大丈夫なので、静的サイトに設定してますが、かなり読み込みは早いと思います。
+頑張った。
+入部フォーム 今回、入部フォームどうしようかな（Google Form でも埋め込もうかな）と考えていたのですが、面白い記事を発見しました。
+https://www.gorilla-web.net/2020new_google_form_custmize/
+&amp;hellip;ん、天才じゃない ？？</description></item><item><title>【岡山大学依頼】接触追跡アプリの制作</title><link>https://coalabo.net/p/cacao/</link><pubDate>Tue, 07 Sep 2021 18:00:00 +0900</pubDate><guid>https://coalabo.net/p/cacao/</guid><description>以前に制作したアプリ 過去に部活内で使用するために、以前 こんなアプリ（部室の在室状況・体調記録アプリ） を作りました。
 電子計算機研究会で使用しているアプリ
 これが岡大理事の耳に入ったらしく、コロナ対策のため、全学向けにアプリを作ることになりました!!
 具体的には、部活棟を中心に各部屋に1台 Android 端末を設置し、そこに学生証をかざすことで入退室を管理します。 感染者が出た場合は、学務課がその学籍番号を入力することで、2週間以内に同じ部屋にいた人を割り出すことができます。
