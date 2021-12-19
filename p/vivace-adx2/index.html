@@ -1,0 +1,306 @@
+<!doctype html><html lang=ja>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="SonicSYNC技術を使って、製作中の音ゲーの効果音遅延を限りなく0に近づけます。"><title>Unityでサウンド遅延を最低限に抑える ~CRI ADX2の導入とSonicSYNC~</title>
+<link rel=canonical href=https://coalabo.net/p/vivace-adx2/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Unityでサウンド遅延を最低限に抑える ~CRI ADX2の導入とSonicSYNC~">
+<meta property="og:description" content="SonicSYNC技術を使って、製作中の音ゲーの効果音遅延を限りなく0に近づけます。">
+<meta property="og:url" content="https://coalabo.net/p/vivace-adx2/">
+<meta property="og:site_name" content="コアラボ (coalabo.)">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="ゲーム制作"><meta property="article:published_time" content="2021-12-19T00:00:00+21:00"><meta property="article:modified_time" content="2021-12-19T00:00:00+21:00"><meta property="og:image" content="https://coalabo.net/p/vivace-adx2/cover.jpg">
+<meta name=twitter:title content="Unityでサウンド遅延を最低限に抑える ~CRI ADX2の導入とSonicSYNC~">
+<meta name=twitter:description content="SonicSYNC技術を使って、製作中の音ゲーの効果音遅延を限りなく0に近づけます。"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://coalabo.net/p/vivace-adx2/cover.jpg">
+<link rel="shortcut icon" href=/img/favicon.png>
+<style>:root{--accent-color:#694745;--accent-color-darker:#533432;--blockquote-background-color:#F3F0EB;--body-background:#F1EEE5;--body-text-color:#C6BABA;--card-background:#F8F6F3;--card-background-selected:#F3F0EB;--card-border-radius:20px;--card-separator-color:#C6BABA;--card-text-color-main:#533432;--card-text-color-secondary:#A08381;--card-text-color-tertiary:#A08381;--code-background-color:#EEE3E2;--code-text-color:#694745;--table-border-color:#EEE3E2;--tr-even-background-color:#F5F1EC}.article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6{margin-top:50px}.article-title{letter-spacing:2px;line-height:2.8rem;margin-bottom:10px}.article-subtitle{font-size:1.4rem;letter-spacing:1px}.site-description{font-size:1.4rem!important;line-height:2.2rem}.article-content .gallery figure{margin:0 40px}@media(max-width:812px){.article-content .gallery figure{margin:0 10px}}.article-content .gallery figure a img{border-radius:15px}@media(max-width:812px){.article-content .gallery figure a img{border-radius:5px}}.article-content code{padding:2px 8px}.article-content figure figcaption{letter-spacing:1px}.article-content blockquote{padding:2px calc(var(--card-padding) - var(--blockquote-border-size))}@media(max-width:812px){.menu{border-radius:15px;margin:auto 15px}}.powerby{display:none}.highlight{padding:0 30px}@media(max-width:812px){.highlight{padding:0 10px}}.chroma{border-radius:15px}@media(max-width:812px){.chroma{border-radius:10px}}[data-scheme=light] .chroma{background-color:#343434;color:var(--body-text-color)}[data-scheme=light] .chroma .p,[data-scheme=light] .chroma .n,[data-scheme=light] .chroma .nb,[data-scheme=light] .chroma .nn,[data-scheme=light] .chroma .nv{color:var(--body-text-color)}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JJHEMJ2DC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-7JJHEMJ2DC')</script>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"light")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=メニューを開く・閉じる>
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=/img/avator.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://coalabo.net>コアラボ (coalabo.)</a></h1>
+<h2 class=site-description>プログラミングで、今まで経験してきたことをブログにしてます</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>ホーム</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>ブログを書いている人</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>記事一覧</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>記事を探す</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/vivace-adx2/>
+<img src=/p/vivace-adx2/cover_hu83c87904ad5c9efd7e96b78de1af0b04_123650_800x0_resize_q75_box.jpg srcset="/p/vivace-adx2/cover_hu83c87904ad5c9efd7e96b78de1af0b04_123650_800x0_resize_q75_box.jpg 800w, /p/vivace-adx2/cover_hu83c87904ad5c9efd7e96b78de1af0b04_123650_1600x0_resize_q75_box.jpg 1600w" width=800 height=450 loading=lazy alt="Featured image of post Unityでサウンド遅延を最低限に抑える ~CRI ADX2の導入とSonicSYNC~">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/unity/ style=background-color:#040608;color:#fff>
+Unity
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/vivace-adx2/>Unityでサウンド遅延を最低限に抑える ~CRI ADX2の導入とSonicSYNC~</a>
+</h2>
+<h3 class=article-subtitle>
+SonicSYNC技術を使って、製作中の音ゲーの効果音遅延を限りなく0に近づけます。
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Dec 19, 2021</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h2 id=ノーツタッチ時の遅延がなかなか改善できませんでした>ノーツタッチ時の遅延がなかなか改善できませんでした</h2>
+<p>改善前は、効果音はUnity標準のサウンドアセットを使用していました。この再生方式は、安定した音声を再生するために十分な量のデータをバッファに溜め込んでから出力しています。</p>
+<p>これまでBufferingTimeを短くしたり、音声データの先頭余白をギリギリまでカットしたりすることで、体感上遅延が少なくなるように工夫してきましたが、ノーツが多く同時に効果音が再生される箇所では遅延が若干感じられました。</p>
+<p><figure class=gallery-image style=flex-grow:177;flex-basis:426px>
+<a href=/p/vivace-adx2/image_1.jpg data-size=2000x1125>
+<img src=/p/vivace-adx2/image_1.jpg width=2000 height=1125 srcset="/p/vivace-adx2/image_1_hu9b9b3683d66912aba0b699da351d938e_88742_480x0_resize_q75_box.jpg 480w, /p/vivace-adx2/image_1_hu9b9b3683d66912aba0b699da351d938e_88742_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=ノーツの少ない箇所（遅延が小さい）>
+</a>
+<figcaption>ノーツの少ない箇所（遅延が小さい）</figcaption>
+</figure>
+<figure class=gallery-image style=flex-grow:177;flex-basis:426px>
+<a href=/p/vivace-adx2/image_2.jpg data-size=2000x1125>
+<img src=/p/vivace-adx2/image_2.jpg width=2000 height=1125 srcset="/p/vivace-adx2/image_2_hu3cf9b3c0668f0b069b9895bb742236eb_92064_480x0_resize_q75_box.jpg 480w, /p/vivace-adx2/image_2_hu3cf9b3c0668f0b069b9895bb742236eb_92064_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=ノーツの多い箇所（遅延が大きい）>
+</a>
+<figcaption>ノーツの多い箇所（遅延が大きい）</figcaption>
+</figure></p>
+<h2 id=プロセカで使われている-sonicsync-技術の解説動画を発見しました>プロセカで使われている SonicSYNC 技術の解説動画を発見しました</h2>
+<p>たまたまチャンネル登録していた CA.Developer チャンネルで、<code>「プロジェクトセカイ」の音声再生の仕組みとSonicSYNCで変わったこと | CA.Unity#3</code> という動画が、5日ほど前に投稿されました。</p>
+<blockquote>
+<p><strong>「プロジェクトセカイ」の音声再生の仕組みとSonicSYNCで変わったこと | CA.Unity#3</strong>
+<a class=link href="https://www.youtube.com/watch?v=7ql4CNBehes" target=_blank rel=noopener>https://www.youtube.com/watch?v=7ql4CNBehes</a></p>
+</blockquote>
+<p>SonicSYNC とは、「スマートフォンでの音声再生遅延を限りなくゼロにする機能」で、ハードウェアと同期して即座に音声信号を生成することにより、ソフトウェア処理による再生遅延を限りなくゼロにできる技術です。音声処理が短時間で終わるように細かく分割し、音が必要になった時にすぐに準備して鳴らすという工程を繰り返すことで、これまでのようにバッファーに溜めておく必要がないため遅延が改善されます。</p>
+<h2 id=個人が無償で使えるadx2-leというミドルウェア>個人が無償で使えるADX2 LEというミドルウェア</h2>
+<p>本来であれば企業向けである ADX2 が有償で提供されているのですが、学生や個人が無償で使うことができる ADX2 LE というものがあります。（コンテンツの売り上げが1,000万円以内であることなど、一定の条件はあります。）今回 ADX2 LE を導入して、ノーツタッチ時の効果音の遅延を改善していきたいと思います。</p>
+<h2 id=必要な音声ファイルを生成する>必要な音声ファイルを生成する</h2>
+<p>今回の ADX2 では、音声ファイルを以下のものに変換する必要があります。</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.acf</td>
+<td>環境設定やACBファイルから参照されるキューシート共通の情報を格納する</td>
+</tr>
+<tr>
+<td>.acb</td>
+<td>キュー情報、再生パラメータ、メモリ再生用波形データをキューシート単位でパッキング</td>
+</tr>
+<tr>
+<td>.awb</td>
+<td>ストリーム再生用波形データをキューシート単位でパッキング（ストリームにする場合のみ、今回は使用しない）</td>
+</tr>
+</tbody>
+</table>
+<p>これらのファイルを生成するために、「CRI Atom Craft」というソフトウェアを使用します。</p>
+<blockquote>
+<p><strong>CRI Atom Craft</strong>
+<a class=link href=https://game.criware.jp/learn/tutorial/atomcraft/ target=_blank rel=noopener>https://game.criware.jp/learn/tutorial/atomcraft/</a></p>
+</blockquote>
+<p>変換元の素材ファイルは以下のものが使用できます。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>データ情報</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ファイル種類</td>
+<td>WAVファイル（.wav）または AIFFファイル（.aif）</td>
+</tr>
+<tr>
+<td>チャンネル数</td>
+<td>最大6チャンネル</td>
+</tr>
+<tr>
+<td>量子化ビット数</td>
+<td>16ビット</td>
+</tr>
+</tbody>
+</table>
+<p>今回は1つのキューシートに、<code>Perfect</code> <code>Great</code> <code>Good</code> の3つのサウンドを登録します。
+最後の書き出し時には、<code>Unity Assets出力</code> にチェックを忘れないようにしましょう。</p>
+<p><figure class=gallery-image style=flex-grow:157;flex-basis:378px>
+<a href=/p/vivace-adx2/image_3.png data-size=3808x2414>
+<img src=/p/vivace-adx2/image_3.png width=3808 height=2414 srcset="/p/vivace-adx2/image_3_hue7446ed6acd4b773d957976008328c8e_1172730_480x0_resize_box_3.png 480w, /p/vivace-adx2/image_3_hue7446ed6acd4b773d957976008328c8e_1172730_1024x0_resize_box_3.png 1024w" loading=lazy alt="CRI Atom Craft">
+</a>
+<figcaption>CRI Atom Craft</figcaption>
+</figure></p>
+<p>書き出したファイルは、Unity の CRIWARE からインポートすることで、StreamingAssets フォルダに保存されます。</p>
+<h2 id=ハマったところ>ハマったところ</h2>
+<p>Unity 側で CRI Atom のスクリプトがありますので、読み込んだ<code>ACFファイル</code> <code>ACBファイル</code> を指定します。
+ここで、<code>Don't Destroy On Load</code> のチェックをつけておきます。読み込み後に destroy してしまうと、Sceneを2回目に読み込んだ際（2曲目をプレイする際）にサウンド再生ができなくなります。</p>
+<p><figure class=gallery-image style=flex-grow:159;flex-basis:383px>
+<a href=/p/vivace-adx2/image_4.jpg data-size=3218x2014>
+<img src=/p/vivace-adx2/image_4.jpg width=3218 height=2014 srcset="/p/vivace-adx2/image_4_hu518852b2cd73b0f1afa10fc8fc463fd1_188319_480x0_resize_q75_box.jpg 480w, /p/vivace-adx2/image_4_hu518852b2cd73b0f1afa10fc8fc463fd1_188319_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=CRIWARE>
+</a>
+<figcaption>CRIWARE</figcaption>
+</figure></p>
+<p>そして、<code>Don't Initialize On Awake</code> のチェックを外しておきます。</p>
+<p><figure class=gallery-image style=flex-grow:161;flex-basis:386px>
+<a href=/p/vivace-adx2/image_5.jpg data-size=3220x1998>
+<img src=/p/vivace-adx2/image_5.jpg width=3220 height=1998 srcset="/p/vivace-adx2/image_5_hu9a8fa5252b016d65132c800c540ca1a2_164727_480x0_resize_q75_box.jpg 480w, /p/vivace-adx2/image_5_hu9a8fa5252b016d65132c800c540ca1a2_164727_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=CriWareLibraryInitializer>
+</a>
+<figcaption>CriWareLibraryInitializer</figcaption>
+</figure></p>
+<p>また、ビルドする際に <strong>強制的にUnity 標準オーディオが無効化</strong> されます。
+Unity標準のオーディオが無効化されることで、アプリケーションのCPU負荷およびメモリ使用量を軽減できるそうです。
+しかし今回は、プレイ音源は Assetbundle を使用しているため、Unity標準オーディオと共存させます。</p>
+<p><code>CriWareBuildPreprocessorPrefs.asset</code> という設定ファイルを書き出し、<code>Mute Other Audio</code> を解除します。
+<figure class=gallery-image style=flex-grow:101;flex-basis:243px>
+<a href=/p/vivace-adx2/image_6.jpg data-size=1006x990>
+<img src=/p/vivace-adx2/image_6.jpg width=1006 height=990 srcset="/p/vivace-adx2/image_6_hud2db39513c5a3d4e6665a58f2f9df4a2_64530_480x0_resize_q75_box.jpg 480w, /p/vivace-adx2/image_6_hud2db39513c5a3d4e6665a58f2f9df4a2_64530_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt=CRIWARE設定ファイルの書き出し>
+</a>
+<figcaption>CRIWARE設定ファイルの書き出し</figcaption>
+</figure></p>
+<p><figure class=gallery-image style=flex-grow:242;flex-basis:581px>
+<a href=/p/vivace-adx2/image_7.jpg data-size=940x388>
+<img src=/p/vivace-adx2/image_7.jpg width=940 height=388 srcset="/p/vivace-adx2/image_7_hu0634d724c1e85c74ed3b1d96f6f029b7_20232_480x0_resize_q75_box.jpg 480w, /p/vivace-adx2/image_7_hu0634d724c1e85c74ed3b1d96f6f029b7_20232_1024x0_resize_q75_box.jpg 1024w" loading=lazy alt="Mute Other Audio のチェックを外す">
+</a>
+<figcaption>Mute Other Audio のチェックを外す</figcaption>
+</figure></p>
+<p>これでビルド時に、強制的にUnity標準オーディオが無効化されないようになります。</p>
+<h2 id=導入後の遅延の測定>導入後の遅延の測定</h2>
+<p>計測した結果、ノーツをタッチしてから効果音が鳴るまで、約60~70ミリ秒まで遅延を減らすことができました。
+CRIWAREの公式サイトでは、iOS・Android共に「画面をタップしてから音が出るまで」53ミリ秒程度と記載されていたので、vivace（製作中の音ゲー）のタッチ入力のアルゴリズムに改善方法があるということになります。
+しかし、ノーツが多い時の効果音遅延が劇的に改善されているので、DEMON譜面をプレイされるガチプレイヤーさんたちには大きなアップデートになるのではないでしょうか。もう少しアルゴリズムを改修してからストアにリリースしようと思いますので、お楽しみに〜</p>
+<h2 id=ダウンロードはこちら>ダウンロードはこちら</h2>
+<p>さっきDBをみてみると、登録ユーザー数が299人になっていました！</p>
+<p>これを見たあなた、ぜひ300番目のプレイヤーになってください</p>
+<blockquote>
+<p><strong>AppStore:</strong>
+<a class=link href=https://bit.ly/vivace-app-ios target=_blank rel=noopener>https://bit.ly/vivace-app-ios</a></p>
+<p><strong>GooglePlayStore:</strong>
+<a class=link href=https://bit.ly/vivace-app-android target=_blank rel=noopener>https://bit.ly/vivace-app-android</a></p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E5%88%B6%E4%BD%9C/>ゲーム制作</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>関連するコンテンツ</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article class=has-image>
+<a href=/p/vivace-asset-bundle/>
+<div class=article-image>
+<img src=/p/vivace-asset-bundle/cover.ed3411950b982489d8922089a92da18e_hu11a9bebba324fcb5c6a0017cac699a96_232738_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=vivace-asset-bundle data-hash="md5-7TQRlQuYJInYkiCJqS2hjg==">
+</div>
+<div class=article-details>
+<h2 class=article-title>VIVACE（音ゲー）待望のアプリ化！</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=/p/vivace/>
+<div class=article-image>
+<img src=/p/vivace/cover.3df9a3c349b8c7e990b68fa8b1c3cb22_hud5546a21fdb7b23d24fd1a26ba364382_211510_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=vivace data-hash="md5-Pfmjw0m4x+mQto+oscPLIg==">
+</div>
+<div class=article-details>
+<h2 class=article-title>学祭2020向け音ゲーの制作: VIVACE</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2020 -
+2021 コアラボ (coalabo.)
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.2.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

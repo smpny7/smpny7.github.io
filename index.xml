@@ -1,4 +1,208 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 23 Sep 2021 15:00:00 +0900</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring Boot + Kotlin でバックエンド構築！</title><link>https://coalabo.net/p/spring-boot/</link><pubDate>Thu, 23 Sep 2021 15:00:00 +0900</pubDate><guid>https://coalabo.net/p/spring-boot/</guid><description>&lt;img src="https://coalabo.net/p/spring-boot/cover.jpg" alt="Featured image of post Spring Boot + Kotlin でバックエンド構築！" />&lt;h2 id="バックエンドは結構javaが多いらしい">バックエンドは結構Javaが多いらしい&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>コアラボ (coalabo.)</title><link>https://coalabo.net/</link><description>Recent content on コアラボ (coalabo.)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 19 Dec 2021 00:00:00 +2100</lastBuildDate><atom:link href="https://coalabo.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Unityでサウンド遅延を最低限に抑える ~CRI ADX2の導入とSonicSYNC~</title><link>https://coalabo.net/p/vivace-adx2/</link><pubDate>Sun, 19 Dec 2021 00:00:00 +2100</pubDate><guid>https://coalabo.net/p/vivace-adx2/</guid><description>&lt;img src="https://coalabo.net/p/vivace-adx2/cover.jpg" alt="Featured image of post Unityでサウンド遅延を最低限に抑える ~CRI ADX2の導入とSonicSYNC~" />&lt;h2 id="ノーツタッチ時の遅延がなかなか改善できませんでした">ノーツタッチ時の遅延がなかなか改善できませんでした&lt;/h2>
+&lt;p>改善前は、効果音はUnity標準のサウンドアセットを使用していました。この再生方式は、安定した音声を再生するために十分な量のデータをバッファに溜め込んでから出力しています。&lt;/p>
+&lt;p>これまでBufferingTimeを短くしたり、音声データの先頭余白をギリギリまでカットしたりすることで、体感上遅延が少なくなるように工夫してきましたが、ノーツが多く同時に効果音が再生される箇所では遅延が若干感じられました。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="https://coalabo.net/p/vivace-adx2/image_1.jpg" data-size="2000x1125">
+&lt;img src="https://coalabo.net/p/vivace-adx2/image_1.jpg"
+width="2000"
+height="1125"
+srcset="https://coalabo.net/p/vivace-adx2/image_1_hu9b9b3683d66912aba0b699da351d938e_88742_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-adx2/image_1_hu9b9b3683d66912aba0b699da351d938e_88742_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="ノーツの少ない箇所（遅延が小さい）">
+&lt;/a>
+&lt;figcaption>ノーツの少ない箇所（遅延が小さい）&lt;/figcaption>
+&lt;/figure>
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 177;
+flex-basis: 426px"
+>
+&lt;a href="https://coalabo.net/p/vivace-adx2/image_2.jpg" data-size="2000x1125">
+&lt;img src="https://coalabo.net/p/vivace-adx2/image_2.jpg"
+width="2000"
+height="1125"
+srcset="https://coalabo.net/p/vivace-adx2/image_2_hu3cf9b3c0668f0b069b9895bb742236eb_92064_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-adx2/image_2_hu3cf9b3c0668f0b069b9895bb742236eb_92064_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="ノーツの多い箇所（遅延が大きい）">
+&lt;/a>
+&lt;figcaption>ノーツの多い箇所（遅延が大きい）&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;h2 id="プロセカで使われている-sonicsync-技術の解説動画を発見しました">プロセカで使われている SonicSYNC 技術の解説動画を発見しました&lt;/h2>
+&lt;p>たまたまチャンネル登録していた CA.Developer チャンネルで、&lt;code>「プロジェクトセカイ」の音声再生の仕組みとSonicSYNCで変わったこと | CA.Unity#3&lt;/code> という動画が、5日ほど前に投稿されました。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>「プロジェクトセカイ」の音声再生の仕組みとSonicSYNCで変わったこと | CA.Unity#3&lt;/strong>
+&lt;a class="link" href="https://www.youtube.com/watch?v=7ql4CNBehes" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=7ql4CNBehes&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>SonicSYNC とは、「スマートフォンでの音声再生遅延を限りなくゼロにする機能」で、ハードウェアと同期して即座に音声信号を生成することにより、ソフトウェア処理による再生遅延を限りなくゼロにできる技術です。音声処理が短時間で終わるように細かく分割し、音が必要になった時にすぐに準備して鳴らすという工程を繰り返すことで、これまでのようにバッファーに溜めておく必要がないため遅延が改善されます。&lt;/p>
+&lt;h2 id="個人が無償で使えるadx2-leというミドルウェア">個人が無償で使えるADX2 LEというミドルウェア&lt;/h2>
+&lt;p>本来であれば企業向けである ADX2 が有償で提供されているのですが、学生や個人が無償で使うことができる ADX2 LE というものがあります。（コンテンツの売り上げが1,000万円以内であることなど、一定の条件はあります。）今回 ADX2 LE を導入して、ノーツタッチ時の効果音の遅延を改善していきたいと思います。&lt;/p>
+&lt;h2 id="必要な音声ファイルを生成する">必要な音声ファイルを生成する&lt;/h2>
+&lt;p>今回の ADX2 では、音声ファイルを以下のものに変換する必要があります。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>形式&lt;/th>
+&lt;th>説明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>.acf&lt;/td>
+&lt;td>環境設定やACBファイルから参照されるキューシート共通の情報を格納する&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>.acb&lt;/td>
+&lt;td>キュー情報、再生パラメータ、メモリ再生用波形データをキューシート単位でパッキング&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>.awb&lt;/td>
+&lt;td>ストリーム再生用波形データをキューシート単位でパッキング（ストリームにする場合のみ、今回は使用しない）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>これらのファイルを生成するために、「CRI Atom Craft」というソフトウェアを使用します。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>CRI Atom Craft&lt;/strong>
+&lt;a class="link" href="https://game.criware.jp/learn/tutorial/atomcraft/" target="_blank" rel="noopener"
+>https://game.criware.jp/learn/tutorial/atomcraft/&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>変換元の素材ファイルは以下のものが使用できます。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>データ情報&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ファイル種類&lt;/td>
+&lt;td>WAVファイル（.wav）または AIFFファイル（.aif）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>チャンネル数&lt;/td>
+&lt;td>最大6チャンネル&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>量子化ビット数&lt;/td>
+&lt;td>16ビット&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>今回は1つのキューシートに、&lt;code>Perfect&lt;/code> &lt;code>Great&lt;/code> &lt;code>Good&lt;/code> の3つのサウンドを登録します。
+最後の書き出し時には、&lt;code>Unity Assets出力&lt;/code> にチェックを忘れないようにしましょう。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 157;
+flex-basis: 378px"
+>
+&lt;a href="https://coalabo.net/p/vivace-adx2/image_3.png" data-size="3808x2414">
+&lt;img src="https://coalabo.net/p/vivace-adx2/image_3.png"
+width="3808"
+height="2414"
+srcset="https://coalabo.net/p/vivace-adx2/image_3_hue7446ed6acd4b773d957976008328c8e_1172730_480x0_resize_box_3.png 480w, https://coalabo.net/p/vivace-adx2/image_3_hue7446ed6acd4b773d957976008328c8e_1172730_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="CRI Atom Craft">
+&lt;/a>
+&lt;figcaption>CRI Atom Craft&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>書き出したファイルは、Unity の CRIWARE からインポートすることで、StreamingAssets フォルダに保存されます。&lt;/p>
+&lt;h2 id="ハマったところ">ハマったところ&lt;/h2>
+&lt;p>Unity 側で CRI Atom のスクリプトがありますので、読み込んだ&lt;code>ACFファイル&lt;/code> &lt;code>ACBファイル&lt;/code> を指定します。
+ここで、&lt;code>Don't Destroy On Load&lt;/code> のチェックをつけておきます。読み込み後に destroy してしまうと、Sceneを2回目に読み込んだ際（2曲目をプレイする際）にサウンド再生ができなくなります。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 159;
+flex-basis: 383px"
+>
+&lt;a href="https://coalabo.net/p/vivace-adx2/image_4.jpg" data-size="3218x2014">
+&lt;img src="https://coalabo.net/p/vivace-adx2/image_4.jpg"
+width="3218"
+height="2014"
+srcset="https://coalabo.net/p/vivace-adx2/image_4_hu518852b2cd73b0f1afa10fc8fc463fd1_188319_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-adx2/image_4_hu518852b2cd73b0f1afa10fc8fc463fd1_188319_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="CRIWARE">
+&lt;/a>
+&lt;figcaption>CRIWARE&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>そして、&lt;code>Don't Initialize On Awake&lt;/code> のチェックを外しておきます。&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 161;
+flex-basis: 386px"
+>
+&lt;a href="https://coalabo.net/p/vivace-adx2/image_5.jpg" data-size="3220x1998">
+&lt;img src="https://coalabo.net/p/vivace-adx2/image_5.jpg"
+width="3220"
+height="1998"
+srcset="https://coalabo.net/p/vivace-adx2/image_5_hu9a8fa5252b016d65132c800c540ca1a2_164727_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-adx2/image_5_hu9a8fa5252b016d65132c800c540ca1a2_164727_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="CriWareLibraryInitializer">
+&lt;/a>
+&lt;figcaption>CriWareLibraryInitializer&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>また、ビルドする際に &lt;strong>強制的にUnity 標準オーディオが無効化&lt;/strong> されます。
+Unity標準のオーディオが無効化されることで、アプリケーションのCPU負荷およびメモリ使用量を軽減できるそうです。
+しかし今回は、プレイ音源は Assetbundle を使用しているため、Unity標準オーディオと共存させます。&lt;/p>
+&lt;p>&lt;code>CriWareBuildPreprocessorPrefs.asset&lt;/code> という設定ファイルを書き出し、&lt;code>Mute Other Audio&lt;/code> を解除します。
+&lt;figure
+class="gallery-image"
+style="
+flex-grow: 101;
+flex-basis: 243px"
+>
+&lt;a href="https://coalabo.net/p/vivace-adx2/image_6.jpg" data-size="1006x990">
+&lt;img src="https://coalabo.net/p/vivace-adx2/image_6.jpg"
+width="1006"
+height="990"
+srcset="https://coalabo.net/p/vivace-adx2/image_6_hud2db39513c5a3d4e6665a58f2f9df4a2_64530_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-adx2/image_6_hud2db39513c5a3d4e6665a58f2f9df4a2_64530_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="CRIWARE設定ファイルの書き出し">
+&lt;/a>
+&lt;figcaption>CRIWARE設定ファイルの書き出し&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 242;
+flex-basis: 581px"
+>
+&lt;a href="https://coalabo.net/p/vivace-adx2/image_7.jpg" data-size="940x388">
+&lt;img src="https://coalabo.net/p/vivace-adx2/image_7.jpg"
+width="940"
+height="388"
+srcset="https://coalabo.net/p/vivace-adx2/image_7_hu0634d724c1e85c74ed3b1d96f6f029b7_20232_480x0_resize_q75_box.jpg 480w, https://coalabo.net/p/vivace-adx2/image_7_hu0634d724c1e85c74ed3b1d96f6f029b7_20232_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Mute Other Audio のチェックを外す">
+&lt;/a>
+&lt;figcaption>Mute Other Audio のチェックを外す&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>これでビルド時に、強制的にUnity標準オーディオが無効化されないようになります。&lt;/p>
+&lt;h2 id="導入後の遅延の測定">導入後の遅延の測定&lt;/h2>
+&lt;p>計測した結果、ノーツをタッチしてから効果音が鳴るまで、約60~70ミリ秒まで遅延を減らすことができました。
+CRIWAREの公式サイトでは、iOS・Android共に「画面をタップしてから音が出るまで」53ミリ秒程度と記載されていたので、vivace（製作中の音ゲー）のタッチ入力のアルゴリズムに改善方法があるということになります。
+しかし、ノーツが多い時の効果音遅延が劇的に改善されているので、DEMON譜面をプレイされるガチプレイヤーさんたちには大きなアップデートになるのではないでしょうか。もう少しアルゴリズムを改修してからストアにリリースしようと思いますので、お楽しみに〜&lt;/p>
+&lt;h2 id="ダウンロードはこちら">ダウンロードはこちら&lt;/h2>
+&lt;p>さっきDBをみてみると、登録ユーザー数が299人になっていました！&lt;/p>
+&lt;p>これを見たあなた、ぜひ300番目のプレイヤーになってください&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>AppStore:&lt;/strong>
+&lt;a class="link" href="https://bit.ly/vivace-app-ios" target="_blank" rel="noopener"
+>https://bit.ly/vivace-app-ios&lt;/a>&lt;/p>
+&lt;p>&lt;strong>GooglePlayStore:&lt;/strong>
+&lt;a class="link" href="https://bit.ly/vivace-app-android" target="_blank" rel="noopener"
+>https://bit.ly/vivace-app-android&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Spring Boot + Kotlin でバックエンド構築！</title><link>https://coalabo.net/p/spring-boot/</link><pubDate>Thu, 23 Sep 2021 15:00:00 +0900</pubDate><guid>https://coalabo.net/p/spring-boot/</guid><description>&lt;img src="https://coalabo.net/p/spring-boot/cover.jpg" alt="Featured image of post Spring Boot + Kotlin でバックエンド構築！" />&lt;h2 id="バックエンドは結構javaが多いらしい">バックエンドは結構Javaが多いらしい&lt;/h2>
 &lt;p>今まで、PHP や JavaScript（TypeScript）の Express でしかバックエンドを作ったことがありませんでしたが、他にも Java や Ruby で構築することも多いそうです。特に、&lt;strong>Java を使った Spring Boot には前から興味がありました！&lt;/strong>&lt;/p>
 &lt;p>興味があるならやってみなさい、ということで、今回はSpring Boot を使ってバックエンドAPIを構築したいと思います。&lt;del>ちょうど現在受講中の夏季集中「オブジェクト指向言語」という講義で、課題があるそうなので、それの提出物にしちゃいましょう。&lt;/del>&lt;/p>
 &lt;h2 id="firebase-が-spring-boot-に対応-">Firebase が Spring Boot に対応 ！&lt;/h2>
